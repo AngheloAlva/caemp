@@ -1,5 +1,4 @@
 import { ArrowUpRightIcon } from "lucide-react"
-import { Link } from "@tanstack/react-router"
 
 import { HoverScale } from "@/components/animations/hover-scale"
 import { SlideIn } from "@/components/animations/slide-in"
@@ -49,7 +48,7 @@ export default function Hero(): React.ReactElement {
 									size="lg"
 									className="group text-primary-purple relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
 								>
-									<Link to="/crecimiento/talleres">Ver Talleres</Link>
+									<a href="#">Ver Talleres</a>
 									<div className="relative h-4 w-4 overflow-hidden">
 										<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
 											<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
@@ -65,7 +64,7 @@ export default function Hero(): React.ReactElement {
 									className="hover:text-primary-purple border-white bg-white/10 text-white hover:bg-white/90"
 									asChild
 								>
-									<Link to="/crecimiento/contacto">Contáctanos</Link>
+									<a href="#">Contáctanos</a>
 								</Button>
 							</HoverScale>
 						</div>

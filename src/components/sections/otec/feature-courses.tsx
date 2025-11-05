@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from "lucide-react"
-import { Link } from "@tanstack/react-router"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
@@ -49,7 +48,7 @@ export default function FeatureCourses(): React.ReactElement {
 											vigente.
 										</p>
 										<Button asChild className="w-full">
-											<Link to="/cursos/riesgos-electricos">Ver Detalles</Link>
+											<a href="#">Ver Detalles</a>
 										</Button>
 									</CardContent>
 								</Card>
@@ -79,7 +78,7 @@ export default function FeatureCourses(): React.ReactElement {
 											certificado.
 										</p>
 										<Button asChild className="w-full">
-											<Link to="/cursos/rescate-altura">Ver Detalles</Link>
+											<a href="#">Ver Detalles</a>
 										</Button>
 									</CardContent>
 								</Card>
@@ -109,7 +108,7 @@ export default function FeatureCourses(): React.ReactElement {
 											trabajo.
 										</p>
 										<Button asChild className="w-full">
-											<Link to="/cursos/primeros-auxilios">Ver Detalles</Link>
+											<a href="#">Ver Detalles</a>
 										</Button>
 									</CardContent>
 								</Card>
@@ -138,7 +137,7 @@ export default function FeatureCourses(): React.ReactElement {
 											Capacitación integral para brigadas de emergencia y protocolos de evacuación.
 										</p>
 										<Button asChild className="w-full">
-											<Link to="/cursos/brigadas">Ver Detalles</Link>
+											<a href="#">Ver Detalles</a>
 										</Button>
 									</CardContent>
 								</Card>
@@ -151,10 +150,10 @@ export default function FeatureCourses(): React.ReactElement {
 					<div className="mt-12 text-center">
 						<HoverScale>
 							<Button size="lg" variant="outline" asChild className="bg-transparent">
-								<Link to="/cursos">
+								<a href="#">
 									Ver Todos los Cursos
 									<ArrowRightIcon className="ml-2 h-5 w-5" />
-								</Link>
+								</a>
 							</Button>
 						</HoverScale>
 					</div>

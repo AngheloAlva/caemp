@@ -44,7 +44,7 @@ export default function Hero(): React.ReactElement {
 									size="lg"
 									className="text-primary group relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
 								>
-									<Link to="/cursos">Ver Cursos</Link>
+									<Link to="/otec/cursos">Ver Cursos</Link>
 									<div className="relative h-4 w-4 overflow-hidden">
 										<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
 											<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
@@ -61,7 +61,7 @@ export default function Hero(): React.ReactElement {
 									asChild
 									className="border-primary-foreground/20 hover:bg-primary-foreground/10 bg-transparent text-base text-white hover:text-white"
 								>
-									<Link to="/cotizacion">Solicitar Cotización</Link>
+									<Link to="/otec/cotizacion">Solicitar Cotización</Link>
 								</Button>
 							</HoverScale>
 						</div>

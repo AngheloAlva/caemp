@@ -1,5 +1,4 @@
 import { ArrowRight, BookOpen } from "lucide-react"
-import { Link } from "@tanstack/react-router"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
@@ -121,7 +120,7 @@ export default function Workshops(): React.ReactElement {
 												}}
 												asChild
 											>
-												<Link to={`/talleres/${taller.id}`}>Más información</Link>
+												<a href={`#`}>Más información</a>
 											</Button>
 										</CardContent>
 									</Card>
@@ -143,10 +142,10 @@ export default function Workshops(): React.ReactElement {
 								}}
 								asChild
 							>
-								<Link to="/crecimiento/talleres">
+								<a href="#">
 									Ver todos los talleres
 									<ArrowRight className="h-5 w-5" />
-								</Link>
+								</a>
 							</Button>
 						</HoverScale>
 					</div>

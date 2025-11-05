@@ -1,10 +1,9 @@
-import { motion } from "motion/react"
-import { Link } from "@tanstack/react-router"
 import { Shield, ArrowRight } from "lucide-react"
+import { motion } from "motion/react"
 
-import { Button } from "@/components/ui/button"
-import { FadeIn } from "@/components/animations/fade-in"
 import { SlideIn } from "@/components/animations/slide-in"
+import { FadeIn } from "@/components/animations/fade-in"
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
 export default function Hero() {
@@ -43,10 +42,10 @@ export default function Hero() {
 							<div className="flex flex-wrap gap-4">
 								<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 									<Button asChild size="lg" className="bg-primary-green hover:bg-[#16A34A]">
-										<Link to="/plus/productos">
+										<a href="#">
 											Ver Productos
 											<ArrowRight className="h-5 w-5" />
-										</Link>
+										</a>
 									</Button>
 								</motion.div>
 								<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -56,7 +55,7 @@ export default function Hero() {
 										variant="outline"
 										className="border-primary-green text-primary-green hover:bg-primary-green hover:text-white"
 									>
-										<Link to="/plus/cotizacion">Solicitar Cotización</Link>
+										<a href="#">Solicitar Cotización</a>
 									</Button>
 								</motion.div>
 							</div>
