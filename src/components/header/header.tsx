@@ -44,7 +44,7 @@ export function Header() {
 					navItems: [
 						{ to: "/crecimiento", label: "Inicio" },
 						{ to: "#", label: "Talleres" },
-						{ to: "#", label: "Nosotros" },
+						{ to: "/crecimiento/nosotros", label: "Nosotros" },
 						{ to: "#", label: "Contacto" },
 					],
 					ctaButton: { to: "/crecimiento/cotizacion", label: "Solicitar Cotización" },
@@ -56,7 +56,7 @@ export function Header() {
 						homeLink: "/plus",
 						navItems: [
 							{ to: "/plus", label: "Inicio" },
-							{ to: "#", label: "Servicios" },
+							{ to: "/plus/nosotros", label: "Nosotros" },
 							{ to: "#", label: "Productos" },
 							{ to: "#", label: "Contacto" },
 						],
@@ -209,13 +209,13 @@ export function Header() {
 									</Link>
 									<Link
 										to="/plus"
-										className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50 hover:text-[#22C55E]"
+										className="hover:text-primary-green rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
 									>
 										🟩 CAEMP PLUS
 									</Link>
 									<Link
 										to="/crecimiento"
-										className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50 hover:text-[#8B5CF6]"
+										className="hover:text-primary-purple rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
 									>
 										🟪 CRECIMIENTO
 									</Link>

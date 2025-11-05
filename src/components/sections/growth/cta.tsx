@@ -8,13 +8,14 @@ import { Button } from "@/components/ui/button"
 export default function Cta(): React.ReactElement {
 	return (
 		<section
-			className="relative overflow-hidden py-16 text-white md:py-24"
+			className="relative w-screen overflow-hidden py-16 text-white md:py-28"
 			style={{ backgroundColor: "#8B5CF6" }}
 		>
-			<div className="absolute inset-0 bg-linear-to-br from-[#8B5CF6] via-[#7C3AED] to-[#8B5CF6] opacity-90" />
-			<div className="relative container">
+			<div className="from-primary-purple to-primary-purple absolute inset-0 bg-linear-to-br via-[#7C3AED] opacity-90" />
+
+			<div className="relative container mx-auto max-w-3xl">
 				<FadeIn>
-					<div className="mx-auto max-w-3xl space-y-6 text-center">
+					<div className="space-y-6 text-center">
 						<h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">
 							¿Listo para transformar tu organización?
 						</h2>
@@ -24,7 +25,11 @@ export default function Cta(): React.ReactElement {
 						</p>
 						<div className="flex flex-wrap justify-center gap-4 pt-4">
 							<HoverScale>
-								<Button size="lg" className="bg-white text-[#8B5CF6] hover:bg-white/90" asChild>
+								<Button
+									size="lg"
+									className="text-primary-purple bg-white hover:bg-white/90"
+									asChild
+								>
 									<Link to="/crecimiento/cotizacion">
 										Solicitar Información
 										<ArrowRightIcon className="h-5 w-5" />
@@ -35,7 +40,7 @@ export default function Cta(): React.ReactElement {
 								<Button
 									size="lg"
 									variant="outline"
-									className="border-white bg-white/10 text-white hover:bg-white/90 hover:text-[#8B5CF6]"
+									className="hover:text-primary-purple border-white bg-white/10 text-white hover:bg-white/90"
 									asChild
 								>
 									<a href="tel:+56987654321">Llamar Ahora</a>

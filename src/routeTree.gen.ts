@@ -16,11 +16,14 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PlusIndexRouteImport } from './routes/plus/index'
 import { Route as OtecIndexRouteImport } from './routes/otec/index'
 import { Route as CrecimientoIndexRouteImport } from './routes/crecimiento/index'
+import { Route as PlusNosotrosRouteImport } from './routes/plus/nosotros'
 import { Route as OtecNosotrosRouteImport } from './routes/otec/nosotros'
 import { Route as OtecGaleriaRouteImport } from './routes/otec/galeria'
 import { Route as OtecCotizacionRouteImport } from './routes/otec/cotizacion'
 import { Route as OtecContactoRouteImport } from './routes/otec/contacto'
+import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/nosotros'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
+import { Route as PlusProductosProductIdRouteImport } from './routes/plus/productos.$productId'
 import { Route as OtecCursosCourseSlugRouteImport } from './routes/otec/cursos/$courseSlug'
 
 const PlusRoute = PlusRouteImport.update({
@@ -58,6 +61,11 @@ const CrecimientoIndexRoute = CrecimientoIndexRouteImport.update({
   path: '/',
   getParentRoute: () => CrecimientoRoute,
 } as any)
+const PlusNosotrosRoute = PlusNosotrosRouteImport.update({
+  id: '/nosotros',
+  path: '/nosotros',
+  getParentRoute: () => PlusRoute,
+} as any)
 const OtecNosotrosRoute = OtecNosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
@@ -78,10 +86,20 @@ const OtecContactoRoute = OtecContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => OtecRoute,
 } as any)
+const CrecimientoNosotrosRoute = CrecimientoNosotrosRouteImport.update({
+  id: '/nosotros',
+  path: '/nosotros',
+  getParentRoute: () => CrecimientoRoute,
+} as any)
 const OtecCursosIndexRoute = OtecCursosIndexRouteImport.update({
   id: '/cursos/',
   path: '/cursos/',
   getParentRoute: () => OtecRoute,
+} as any)
+const PlusProductosProductIdRoute = PlusProductosProductIdRouteImport.update({
+  id: '/productos/$productId',
+  path: '/productos/$productId',
+  getParentRoute: () => PlusRoute,
 } as any)
 const OtecCursosCourseSlugRoute = OtecCursosCourseSlugRouteImport.update({
   id: '/cursos/$courseSlug',
@@ -94,26 +112,32 @@ export interface FileRoutesByFullPath {
   '/crecimiento': typeof CrecimientoRouteWithChildren
   '/otec': typeof OtecRouteWithChildren
   '/plus': typeof PlusRouteWithChildren
+  '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
+  '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
   '/plus/': typeof PlusIndexRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
+  '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
+  '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento': typeof CrecimientoIndexRoute
   '/otec': typeof OtecIndexRoute
   '/plus': typeof PlusIndexRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
+  '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
 export interface FileRoutesById {
@@ -122,14 +146,17 @@ export interface FileRoutesById {
   '/crecimiento': typeof CrecimientoRouteWithChildren
   '/otec': typeof OtecRouteWithChildren
   '/plus': typeof PlusRouteWithChildren
+  '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
+  '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
   '/plus/': typeof PlusIndexRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
+  '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/otec/cursos/': typeof OtecCursosIndexRoute
 }
 export interface FileRouteTypes {
@@ -139,26 +166,32 @@ export interface FileRouteTypes {
     | '/crecimiento'
     | '/otec'
     | '/plus'
+    | '/crecimiento/nosotros'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
     | '/otec/nosotros'
+    | '/plus/nosotros'
     | '/crecimiento/'
     | '/otec/'
     | '/plus/'
     | '/otec/cursos/$courseSlug'
+    | '/plus/productos/$productId'
     | '/otec/cursos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/crecimiento/nosotros'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
     | '/otec/nosotros'
+    | '/plus/nosotros'
     | '/crecimiento'
     | '/otec'
     | '/plus'
     | '/otec/cursos/$courseSlug'
+    | '/plus/productos/$productId'
     | '/otec/cursos'
   id:
     | '__root__'
@@ -166,14 +199,17 @@ export interface FileRouteTypes {
     | '/crecimiento'
     | '/otec'
     | '/plus'
+    | '/crecimiento/nosotros'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
     | '/otec/nosotros'
+    | '/plus/nosotros'
     | '/crecimiento/'
     | '/otec/'
     | '/plus/'
     | '/otec/cursos/$courseSlug'
+    | '/plus/productos/$productId'
     | '/otec/cursos/'
   fileRoutesById: FileRoutesById
 }
@@ -235,6 +271,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CrecimientoIndexRouteImport
       parentRoute: typeof CrecimientoRoute
     }
+    '/plus/nosotros': {
+      id: '/plus/nosotros'
+      path: '/nosotros'
+      fullPath: '/plus/nosotros'
+      preLoaderRoute: typeof PlusNosotrosRouteImport
+      parentRoute: typeof PlusRoute
+    }
     '/otec/nosotros': {
       id: '/otec/nosotros'
       path: '/nosotros'
@@ -263,12 +306,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtecContactoRouteImport
       parentRoute: typeof OtecRoute
     }
+    '/crecimiento/nosotros': {
+      id: '/crecimiento/nosotros'
+      path: '/nosotros'
+      fullPath: '/crecimiento/nosotros'
+      preLoaderRoute: typeof CrecimientoNosotrosRouteImport
+      parentRoute: typeof CrecimientoRoute
+    }
     '/otec/cursos/': {
       id: '/otec/cursos/'
       path: '/cursos'
       fullPath: '/otec/cursos'
       preLoaderRoute: typeof OtecCursosIndexRouteImport
       parentRoute: typeof OtecRoute
+    }
+    '/plus/productos/$productId': {
+      id: '/plus/productos/$productId'
+      path: '/productos/$productId'
+      fullPath: '/plus/productos/$productId'
+      preLoaderRoute: typeof PlusProductosProductIdRouteImport
+      parentRoute: typeof PlusRoute
     }
     '/otec/cursos/$courseSlug': {
       id: '/otec/cursos/$courseSlug'
@@ -281,10 +338,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface CrecimientoRouteChildren {
+  CrecimientoNosotrosRoute: typeof CrecimientoNosotrosRoute
   CrecimientoIndexRoute: typeof CrecimientoIndexRoute
 }
 
 const CrecimientoRouteChildren: CrecimientoRouteChildren = {
+  CrecimientoNosotrosRoute: CrecimientoNosotrosRoute,
   CrecimientoIndexRoute: CrecimientoIndexRoute,
 }
 
@@ -315,11 +374,15 @@ const OtecRouteChildren: OtecRouteChildren = {
 const OtecRouteWithChildren = OtecRoute._addFileChildren(OtecRouteChildren)
 
 interface PlusRouteChildren {
+  PlusNosotrosRoute: typeof PlusNosotrosRoute
   PlusIndexRoute: typeof PlusIndexRoute
+  PlusProductosProductIdRoute: typeof PlusProductosProductIdRoute
 }
 
 const PlusRouteChildren: PlusRouteChildren = {
+  PlusNosotrosRoute: PlusNosotrosRoute,
   PlusIndexRoute: PlusIndexRoute,
+  PlusProductosProductIdRoute: PlusProductosProductIdRoute,
 }
 
 const PlusRouteWithChildren = PlusRoute._addFileChildren(PlusRouteChildren)

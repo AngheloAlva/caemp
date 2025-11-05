@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import Hero from "@/components/sections/growth/hero"
+import Testimonials from "@/components/sections/growth/testimonials"
 import Workshops from "@/components/sections/growth/workshops"
-import Benefits from "@/components/sections/growth/benefits"
 import WhyChose from "@/components/sections/growth/why-chose"
-import Modalities from "@/components/sections/growth/modalities"
+import Benefits from "@/components/sections/growth/benefits"
+import Hero from "@/components/sections/growth/hero"
 import Cta from "@/components/sections/growth/cta"
 
 export const Route = createFileRoute("/crecimiento/")({
@@ -18,7 +18,8 @@ function RouteComponent() {
 			<Workshops />
 			<Benefits />
 			<WhyChose />
-			<Modalities />
+			{/* <Modalities /> */}
+			<Testimonials />
 			<Cta />
 		</main>
 	)

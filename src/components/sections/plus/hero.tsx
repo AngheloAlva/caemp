@@ -14,7 +14,7 @@ export default function Hero() {
 				<div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
 					<div className="flex flex-col justify-center">
 						<FadeIn>
-							<Badge className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#22C55E]/10 text-[#22C55E] [&>svg]:h-4 [&>svg]:w-4">
+							<Badge className="bg-primary-green/10 text-primary-green mb-6 inline-flex items-center gap-2 rounded-full [&>svg]:h-4 [&>svg]:w-4">
 								<Shield />
 								<span className="text-sm font-semibold">
 									Asesoría Técnica y Equipos de Protección
@@ -23,30 +23,26 @@ export default function Hero() {
 						</FadeIn>
 
 						<SlideIn direction="up" delay={0.2}>
-							<h1 className="mb-6 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-								<span className="text-[#22C55E]">CAEMP PLUS</span>
-								<br />
-								Innovación y seguridad al servicio de las personas
+							<h1 className="text-primary-green mb-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+								Máxima Seguridad, Máximo Rendimiento
 							</h1>
 						</SlideIn>
 
 						<SlideIn direction="up" delay={0.3}>
 							<p className="mb-8 text-lg text-gray-600 md:text-xl">
-								Brindamos{" "}
-								<span className="font-semibold text-[#22C55E]">asesoría técnica experta</span> y
-								venta de{" "}
-								<span className="font-semibold text-[#22C55E]">
-									equipos de protección personal y colectiva
+								Protege a tu equipo con{" "}
+								<span className="text-primary-green font-semibold">asesoría experta</span> y{" "}
+								<span className="text-primary-green font-semibold">
+									equipos de última generación
 								</span>{" "}
-								de última generación. Nuestro objetivo es garantizar entornos laborales seguros y
-								eficientes.
+								para un entorno de trabajo seguro y eficiente.
 							</p>
 						</SlideIn>
 
 						<SlideIn direction="up" delay={0.4}>
 							<div className="flex flex-wrap gap-4">
 								<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-									<Button asChild size="lg" className="bg-[#22C55E] hover:bg-[#16A34A]">
+									<Button asChild size="lg" className="bg-primary-green hover:bg-[#16A34A]">
 										<Link to="/plus/productos">
 											Ver Productos
 											<ArrowRight className="h-5 w-5" />
@@ -58,7 +54,7 @@ export default function Hero() {
 										asChild
 										size="lg"
 										variant="outline"
-										className="border-[#22C55E] text-[#22C55E] hover:bg-[#22C55E] hover:text-white"
+										className="border-primary-green text-primary-green hover:bg-primary-green hover:text-white"
 									>
 										<Link to="/plus/cotizacion">Solicitar Cotización</Link>
 									</Button>
@@ -69,9 +65,9 @@ export default function Hero() {
 
 					<FadeIn delay={0.5}>
 						<div className="relative flex items-center justify-center">
-							<div className="absolute inset-0 bg-[#22C55E]/10 blur-3xl" />
-							<div className="relative rounded-2xl bg-linear-to-br from-[#22C55E]/20 to-[#16A34A]/20 p-12">
-								<Shield className="h-64 w-64 text-[#22C55E]" strokeWidth={1} />
+							<div className="bg-primary-green/10 absolute inset-0 blur-3xl" />
+							<div className="from-primary-green/20 relative rounded-2xl bg-linear-to-br to-[#16A34A]/20 p-12">
+								<Shield className="text-primary-green h-64 w-64" strokeWidth={1} />
 							</div>
 						</div>
 					</FadeIn>

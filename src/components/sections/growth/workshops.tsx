@@ -18,7 +18,7 @@ const talleres = [
 		duration: "16 horas",
 		level: "Avanzado",
 		price: "1.000.000",
-		image: "/excel.png",
+		image: "/images/crecimiento/excel.png",
 	},
 	{
 		id: "trabajo-equipo",
@@ -28,7 +28,7 @@ const talleres = [
 		duration: "12 horas",
 		level: "Medio",
 		price: "1.000.000",
-		image: "/excel.png",
+		image: "/images/crecimiento/excel.png",
 	},
 	{
 		id: "coaching-empresarial",
@@ -38,7 +38,7 @@ const talleres = [
 		duration: "20 horas",
 		level: "Básico",
 		price: "1.000.000",
-		image: "/excel.png",
+		image: "/images/crecimiento/excel.png",
 	},
 	{
 		id: "comunicacion-efectiva",
@@ -48,7 +48,7 @@ const talleres = [
 		duration: "8 horas",
 		level: "Básico",
 		price: "1.000.000",
-		image: "/placeholder.svg?height=400&width=600",
+		image: "/images/crecimiento/excel.png",
 	},
 ]
 

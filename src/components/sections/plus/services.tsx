@@ -39,7 +39,7 @@ export default function Services() {
 			<div className="container mx-auto max-w-7xl px-4">
 				<FadeIn>
 					<div className="mb-16 text-center">
-						<h2 className="mb-4 text-3xl font-bold text-[#22C55E] md:text-4xl lg:text-5xl">
+						<h2 className="text-primary-green mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
 							Nuestros Servicios
 						</h2>
 						<p className="mx-auto max-w-3xl text-lg text-gray-700">
@@ -60,10 +60,10 @@ export default function Services() {
 									transition={{ duration: 0.3 }}
 									className="h-full"
 								>
-									<Card className="h-full border-[#22C55E]/20 transition-all hover:border-[#22C55E] hover:shadow-lg">
+									<Card className="border-primary-green/20 hover:border-primary-green h-full transition-all hover:shadow-lg">
 										<CardHeader>
-											<div className="mb-4 inline-flex w-fit rounded-full bg-[#22C55E]/10 p-4">
-												<Icon className="h-8 w-8 text-[#22C55E]" />
+											<div className="bg-primary-green/10 mb-4 inline-flex w-fit rounded-full p-4">
+												<Icon className="text-primary-green h-8 w-8" />
 											</div>
 											<CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
 										</CardHeader>
@@ -78,17 +78,17 @@ export default function Services() {
 				</StaggerContainer>
 
 				<FadeIn delay={0.6}>
-					<div className="mt-8 rounded-lg bg-linear-to-br from-[#22C55E]/10 to-[#16A34A]/10 p-8 md:p-10">
+					<div className="from-primary-green/10 mt-8 rounded-lg bg-linear-to-br to-[#16A34A]/10 p-8 md:p-10">
 						<div className="flex items-start gap-4">
-							<div className="rounded-full bg-[#22C55E] p-3">
+							<div className="bg-primary-green rounded-full p-3">
 								<CheckCircle2 className="h-6 w-6 text-white" />
 							</div>
 							<div>
-								<h3 className="mb-2 text-2xl font-bold text-[#22C55E]">Valor Diferencial</h3>
+								<h3 className="text-primary-green mb-2 text-2xl font-bold">Valor Diferencial</h3>
 								<p className="text-lg text-gray-700">
 									Acompañamos a cada empresa desde la planificación hasta la implementación de
 									soluciones efectivas. No solo vendemos equipos, brindamos{" "}
-									<span className="font-semibold text-[#22C55E]">asesoría integral</span> para
+									<span className="text-primary-green font-semibold">asesoría integral</span> para
 									garantizar entornos laborales seguros y eficientes.
 								</p>
 							</div>

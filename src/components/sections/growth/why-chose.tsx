@@ -8,11 +8,11 @@ import { FadeIn } from "@/components/animations/fade-in"
 
 export default function WhyChose(): React.ReactElement {
 	return (
-		<section className="bg-muted/30 py-16 md:py-24">
-			<div className="container">
+		<section className="bg-muted/60 w-screen py-16 md:py-24">
+			<div className="container mx-auto">
 				<FadeIn>
 					<div className="mx-auto mb-12 max-w-2xl text-center">
-						<h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+						<h2 className="text-primary-purple mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
 							¿Por qué elegir Crecimiento?
 						</h2>
 						<p className="text-muted-foreground text-lg">
@@ -22,7 +22,7 @@ export default function WhyChose(): React.ReactElement {
 				</FadeIn>
 
 				<StaggerContainer staggerDelay={0.15}>
-					<div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+					<div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
 						<StaggerItem>
 							<HoverScale scale={1.03}>
 								<Card className="group h-full border-2 transition-all hover:border-[#55206C]/50">

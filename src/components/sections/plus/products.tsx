@@ -52,7 +52,7 @@ export default function Products() {
 			<div className="container mx-auto max-w-7xl px-4">
 				<FadeIn>
 					<div className="mb-16 text-center">
-						<h2 className="mb-4 text-3xl font-bold text-[#22C55E] md:text-4xl lg:text-5xl">
+						<h2 className="text-primary-green mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
 							Nuestros Productos
 						</h2>
 						<p className="mx-auto max-w-3xl text-lg text-gray-700">
@@ -72,13 +72,16 @@ export default function Products() {
 									transition={{ duration: 0.3 }}
 									className="h-full"
 								>
-									<Card className="h-full border-[#22C55E]/20 transition-all hover:border-[#22C55E] hover:shadow-xl">
+									<Card className="border-primary-green/20 hover:border-primary-green h-full transition-all hover:shadow-xl">
 										<CardHeader>
 											<div className="mb-4 flex items-start justify-between">
-												<div className="rounded-full bg-[#22C55E]/10 p-4">
-													<Icon className="h-8 w-8 text-[#22C55E]" />
+												<div className="bg-primary-green/10 rounded-full p-4">
+													<Icon className="text-primary-green h-8 w-8" />
 												</div>
-												<Badge variant="outline" className="border-[#22C55E] text-[#22C55E]">
+												<Badge
+													variant="outline"
+													className="border-primary-green text-primary-green"
+												>
 													{category.badge}
 												</Badge>
 											</div>
@@ -88,7 +91,7 @@ export default function Products() {
 											<ul className="space-y-2">
 												{category.items.map((item) => (
 													<li key={item} className="flex items-start gap-2 text-gray-600">
-														<span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#22C55E]" />
+														<span className="bg-primary-green mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" />
 														<span>{item}</span>
 													</li>
 												))}
