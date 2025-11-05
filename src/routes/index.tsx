@@ -1,27 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import FeatureCourses from "@/components/sections/home/feature-courses"
-import WhyChoseUs from "@/components/sections/home/why-chose-us"
-import Services from "@/components/sections/home/services"
-import Benefits from "@/components/sections/home/benefits"
-import TrustUs from "@/components/sections/home/trust-us"
-import Stats from "@/components/sections/home/stats"
-import Hero from "@/components/sections/home/hero"
-import Cta from "@/components/sections/home/cta"
+import Companies from "@/components/sections/grupo/companies"
+import Contact from "@/components/sections/grupo/contact"
+import About from "@/components/sections/grupo/about"
+import Hero from "@/components/sections/grupo/hero"
 
-export const Route = createFileRoute("/")({ component: App })
+export const Route = createFileRoute("/")({
+	component: RouteComponent,
+})
 
-function App() {
+function RouteComponent() {
 	return (
 		<main className="flex flex-col items-center justify-center">
 			<Hero />
-			<Stats />
-			<WhyChoseUs />
-			<Benefits />
-			<Services />
-			<FeatureCourses />
-			<TrustUs />
-			<Cta />
+			<About />
+			<Companies />
+			<Contact />
 		</main>
 	)
 }

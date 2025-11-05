@@ -1,8 +1,39 @@
 import { FacebookIcon, InstagramIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react"
-import { Link } from "@tanstack/react-router"
+import { Link, useRouterState } from "@tanstack/react-router"
 import { Image } from "@unpic/react"
 
 export function Footer() {
+	const routerState = useRouterState()
+	const pathname = routerState.location.pathname
+
+	const isOtec = pathname.startsWith("/otec")
+	const isCrecimiento = pathname.startsWith("/crecimiento")
+	const isPlus = pathname.startsWith("/plus")
+
+	const logoConfig = isOtec
+		? {
+				src: "/images/logo/logo-o-black.png",
+				alt: "CAEMP OTEC logo",
+				brandName: "CAEMP OTEC",
+			}
+		: isCrecimiento
+			? {
+					src: "/images/logo/logo-c-black.png",
+					alt: "CRECIMIENTO logo",
+					brandName: "CRECIMIENTO",
+				}
+			: isPlus
+				? {
+						src: "/images/logo/logo-p-black.png",
+						alt: "CAEMP PLUS logo",
+						brandName: "CAEMP PLUS",
+					}
+				: {
+						src: "/images/logo/logo-o-black.png",
+						alt: "Grupo CAEMP logo",
+						brandName: "Grupo CAEMP",
+					}
+
 	return (
 		<footer className="bg-muted/30 border-t">
 			<div className="container mx-auto px-4 py-12 md:py-16">
@@ -13,11 +44,11 @@ export function Footer() {
 								width={112}
 								height={112}
 								loading="lazy"
-								alt="CAEMP OTEC logo"
-								src="/images/logo/logo-o-black.png"
+								alt={logoConfig.alt}
+								src={logoConfig.src}
 								className="h-28 w-28 object-contain"
 							/>
-							<span className="text-xl font-bold">Grupo CAEMP</span>
+							<span className="text-xl font-bold">{logoConfig.brandName}</span>
 						</div>
 						<p className="text-muted-foreground text-sm leading-relaxed">
 							Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad
@@ -58,7 +89,7 @@ export function Footer() {
 							<ul className="space-y-3 text-sm">
 								<li>
 									<Link
-										to="/"
+										to="/otec"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Inicio
@@ -66,7 +97,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/cursos"
+										to="/otec/cursos"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Cursos
@@ -74,7 +105,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/nosotros"
+										to="/otec/nosotros"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Nosotros
@@ -82,7 +113,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/galeria"
+										to="/otec/galeria"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Galería
@@ -90,7 +121,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/contacto"
+										to="/otec/contacto"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Contacto
@@ -104,7 +135,7 @@ export function Footer() {
 							<ul className="space-y-3 text-sm">
 								<li>
 									<Link
-										to="/cursos"
+										to="/otec/cursos"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Riesgos Eléctricos
@@ -112,7 +143,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/cursos"
+										to="/otec/cursos"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Rescate en Altura
@@ -120,7 +151,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/cursos"
+										to="/otec/cursos"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Primeros Auxilios
@@ -128,7 +159,7 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/cursos"
+										to="/otec/cursos"
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Formación de Brigadas

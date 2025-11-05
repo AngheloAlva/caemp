@@ -6,7 +6,7 @@ import { QuoteForm } from "@/components/sections/quote/quote-form"
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 
-export const Route = createFileRoute("/cotizacion")({
+export const Route = createFileRoute("/otec/cotizacion")({
 	component: RouteComponent,
 })
 

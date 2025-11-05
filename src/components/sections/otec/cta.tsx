@@ -14,7 +14,7 @@ export default function Cta(): React.ReactElement {
 				style={{ animationDelay: "1.5s" }}
 			/>
 
-			<div className="relative container">
+			<div className="relative container mx-auto">
 				<FadeIn delay={0.2}>
 					<div className="mx-auto max-w-3xl space-y-8 text-center">
 						<h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl md:text-5xl">
@@ -27,7 +27,7 @@ export default function Cta(): React.ReactElement {
 						<div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
 							<HoverScale>
 								<Button size="lg" variant="secondary" asChild className="text-base">
-									<Link to="/cotizacion">Solicitar Cotización</Link>
+									<Link to="/otec/cotizacion">Solicitar Cotización</Link>
 								</Button>
 							</HoverScale>
 
@@ -38,7 +38,7 @@ export default function Cta(): React.ReactElement {
 									variant="outline"
 									className="border-primary-foreground/20 hover:bg-primary-foreground/10 bg-transparent text-base text-white hover:text-white"
 								>
-									<Link to="/cursos">Explorar Cursos</Link>
+									<Link to="/otec/cursos">Explorar Cursos</Link>
 								</Button>
 							</HoverScale>
 						</div>

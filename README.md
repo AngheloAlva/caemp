@@ -1,310 +1,169 @@
-Welcome to your new TanStack app! 
+# 🌐 GRUPO CAEMP
 
-# Getting Started
+**Ecosistema integral de seguridad, formación técnica y desarrollo humano**  
+_Color institucional: Azul #004080_
 
-To run this application:
+---
 
-```bash
-pnpm install
-pnpm start
-```
+## 🏠 Hero Principal
 
-# Building For Production
+**Cuidamos, enseñamos y transformamos la forma en que trabajamos y crecemos.**  
+Más de 15 años acompañando a las empresas de Chile en la construcción de entornos laborales más **seguros, conscientes y productivos**.
 
-To build this application for production:
+[Conoce nuestras áreas](#nuestras-empresas)
 
-```bash
-pnpm build
-```
+---
 
-## Testing
+## 🧭 Quiénes Somos
 
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
+**Grupo CAEMP** es un ecosistema integral de soluciones en **seguridad laboral, formación técnica y desarrollo organizacional**.  
+Nuestra sinergia nos permite ofrecer una **propuesta de valor diferenciada**, que abarca desde la **prevención de riesgos** hasta la **optimización del desempeño humano** en las organizaciones.
 
-```bash
-pnpm test
-```
+### Nuestra Historia
 
-## Styling
+Formado por un equipo multidisciplinario de **Ingenieros en Prevención de Riesgos**, **Ingenieros en Calidad** y **Coaches de Vida**,  
+**Grupo CAEMP** nace en 2010 con el propósito de **cuidar, enseñar y transformar la forma en que trabajamos y crecemos**.
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
+Desde entonces, más de **700 clientes** han confiado en nosotros para fortalecer sus capacidades, seguridad y liderazgo.
 
+---
 
-## Linting & Formatting
+## 🎯 Misión
 
+**Inspiramos a las personas y organizaciones a desarrollar su máximo potencial**, integrando seguridad, conocimiento y crecimiento humano.  
+A través de la capacitación técnica, la asesoría experta y el entrenamiento interpersonal, transformamos entornos laborales en espacios más **seguros, colaborativos y sostenibles**.
 
-This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
+---
 
-```bash
-pnpm lint
-pnpm format
-pnpm check
-```
+## 👁️ Visión
 
+Ser un **referente nacional e internacional** en la formación técnica y el desarrollo humano, consolidando una **cultura de seguridad, liderazgo y bienestar integral**.  
+Nos proyectamos como un **aliado estratégico** que conecta tecnología, prevención e inteligencia emocional para construir un futuro donde **trabajar y crecer sean una misma experiencia transformadora**.
 
-## Shadcn
+---
 
-Add components using the latest version of [Shadcn](https://ui.shadcn.com/).
+## 💎 Propuesta de Valor
 
-```bash
-pnpx shadcn@latest add button
-```
+En **Grupo CAEMP**, integramos tres unidades de negocio especializadas para brindar soluciones completas a nuestros clientes:
 
+1. **CAEMP (OTEC)** → Formación técnica y prevención de riesgos.
+2. **CAEMP PLUS** → Equipos y asesorías técnicas.
+3. **CRECIMIENTO** → Desarrollo humano y liderazgo organizacional.
 
+Cada una trabaja de forma independiente, pero comparte una misma misión:  
+**hacer de la seguridad y el desarrollo una cultura sostenible.**
 
-## Routing
-This project uses [TanStack Router](https://tanstack.com/router). The initial setup is a file based router. Which means that the routes are managed as files in `src/routes`.
+---
 
-### Adding A Route
+## 🧩 Nuestras Empresas
 
-To add a new route to your application just add another a new file in the `./src/routes` directory.
+### 🔶 CAEMP (OTEC) — _Formación Técnica y Prevención de Riesgos_
 
-TanStack will automatically generate the content of the route file for you.
+_Color: Naranja #F59E0B_
 
-Now that you have two routes you can use a `Link` component to navigate between them.
+**Capacitación, entrenamiento y respuesta ante emergencias.**  
+Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.  
+Formamos equipos capaces de **trabajar con seguridad, eficiencia y compromiso.**
 
-### Adding Links
+**Cursos destacados:**
 
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
+- Trabajos en Altura y Espacios Confinados
+- Control de Riesgos Eléctricos
+- Primeros Auxilios Industriales
+- Manejo de Sustancias Peligrosas
+- Operación de Maquinaria y Equipos
 
-```tsx
-import { Link } from "@tanstack/react-router";
-```
+**Modalidades:** Presencial, en terreno o e-learning.  
+[Ver más sobre CAEMP](#contacto)
 
-Then anywhere in your JSX you can use it like so:
+---
 
-```tsx
-<Link to="/about">About</Link>
-```
+### 🟩 CAEMP PLUS — _Asesoría Técnica y Equipos de Protección_
 
-This will create a link that will navigate to the `/about` route.
+_Color: Verde #22C55E_
 
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
+**Innovación y seguridad al servicio de las personas.**  
+Brindamos **asesoría técnica experta** y venta de **equipos de protección personal y colectiva** de última generación.  
+Nuestro objetivo es garantizar **entornos laborales seguros y eficientes**, cumpliendo con toda normativa vigente.
 
-### Using A Layout
+**Nuestros servicios:**
 
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you use the `<Outlet />` component.
+- Diagnóstico y asesoría en seguridad laboral
+- Suministro de EPP certificados
+- Señalética y protección colectiva
+- Implementación de normativas
 
-Here is an example layout that includes a header:
+**Valor diferencial:** acompañamos a cada empresa desde la planificación hasta la implementación de soluciones efectivas.
 
-```tsx
-import { Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+[Solicitar cotización](#contacto)
 
-import { Link } from "@tanstack/react-router";
+---
 
-export const Route = createRootRoute({
-  component: () => (
-    <>
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-        </nav>
-      </header>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
-})
-```
-
-The `<TanStackRouterDevtools />` component is not required so you can remove it if you don't want it in your layout.
-
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
-
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-const peopleRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/people",
-  loader: async () => {
-    const response = await fetch("https://swapi.dev/api/people");
-    return response.json() as Promise<{
-      results: {
-        name: string;
-      }[];
-    }>;
-  },
-  component: () => {
-    const data = peopleRoute.useLoaderData();
-    return (
-      <ul>
-        {data.results.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    );
-  },
-});
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-### React-Query
-
-React-Query is an excellent addition or alternative to route loading and integrating it into you application is a breeze.
-
-First add your dependencies:
-
-```bash
-pnpm add @tanstack/react-query @tanstack/react-query-devtools
-```
-
-Next we'll need to create a query client and provider. We recommend putting those in `main.tsx`.
-
-```tsx
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
-// ...
-
-const queryClient = new QueryClient();
-
-// ...
-
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement);
-
-  root.render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  );
-}
-```
-
-You can also add TanStack Query Devtools to the root route (optional).
-
-```tsx
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
-const rootRoute = createRootRoute({
-  component: () => (
-    <>
-      <Outlet />
-      <ReactQueryDevtools buttonPosition="top-right" />
-      <TanStackRouterDevtools />
-    </>
-  ),
-});
-```
-
-Now you can use `useQuery` to fetch your data.
-
-```tsx
-import { useQuery } from "@tanstack/react-query";
-
-import "./App.css";
-
-function App() {
-  const { data } = useQuery({
-    queryKey: ["people"],
-    queryFn: () =>
-      fetch("https://swapi.dev/api/people")
-        .then((res) => res.json())
-        .then((data) => data.results as { name: string }[]),
-    initialData: [],
-  });
+### 🟪 CRECIMIENTO — _Desarrollo Humano y Organizacional_
 
-  return (
-    <div>
-      <ul>
-        {data.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+_Color: Violeta #8B5CF6_
 
-export default App;
-```
+**Potenciamos el liderazgo, la comunicación y la colaboración.**  
+Diseñamos programas de capacitación y talleres personalizados que fortalecen las **habilidades blandas** y fomentan el trabajo en equipo.
 
-You can find out everything you need to know on how to use React-Query in the [React-Query documentation](https://tanstack.com/query/latest/docs/framework/react/overview).
+**Programas y talleres:**
 
-## State Management
+- Liderazgo Consciente
+- Comunicación Efectiva
+- Gestión del Estrés y Mindfulness
+- Coaching Organizacional
+- Trabajo en Equipo y Motivación
 
-Another common requirement for React applications is state management. There are many options for state management in React. TanStack Store provides a great starting point for your project.
+**Modalidades:** Presencial y asincrónica (plataforma virtual propia).  
+[Explorar talleres](#contacto)
 
-First you need to add TanStack Store as a dependency:
+---
 
-```bash
-pnpm add @tanstack/store
-```
+## 🤝 Valor Diferencial
 
-Now let's create a simple counter in the `src/App.tsx` file as a demonstration.
+**Grupo CAEMP** no solo entrega servicios individuales, sino **soluciones estratégicas integrales** para las organizaciones que buscan crecer con propósito:
 
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store } from "@tanstack/store";
-import "./App.css";
+- Cumple con las normativas de seguridad y reduce riesgos laborales.
+- Equipa a tus colaboradores con los mejores elementos de protección.
+- Desarrolla equipos eficientes y comprometidos.
+- Optimiza costos y mejora la productividad combinando **consultoría, formación y equipamiento**.
 
-const countStore = new Store(0);
+> _“La seguridad comienza con la conciencia y el compromiso humano.”_
 
-function App() {
-  const count = useStore(countStore);
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-    </div>
-  );
-}
+---
 
-export default App;
-```
+## 📈 Clientes y Experiencia
 
-One of the many nice features of TanStack Store is the ability to derive state from other state. That derived state will update when the base state updates.
+Más de **700 organizaciones** confían en nosotros.  
+Hemos trabajado con empresas de sectores **minero, energético, manufacturero, educativo y público**.
 
-Let's check this out by doubling the count using derived state.
+_(Espacio para logos o carrusel de marcas)_
 
-```tsx
-import { useStore } from "@tanstack/react-store";
-import { Store, Derived } from "@tanstack/store";
-import "./App.css";
+---
 
-const countStore = new Store(0);
+## 🗞️ Noticias y Actualizaciones
 
-const doubledStore = new Derived({
-  fn: () => countStore.state * 2,
-  deps: [countStore],
-});
-doubledStore.mount();
+Últimas novedades, alianzas y programas destacados.  
+_(Sección dinámica con cards o slider de publicaciones)_
 
-function App() {
-  const count = useStore(countStore);
-  const doubledCount = useStore(doubledStore);
+---
 
-  return (
-    <div>
-      <button onClick={() => countStore.setState((n) => n + 1)}>
-        Increment - {count}
-      </button>
-      <div>Doubled - {doubledCount}</div>
-    </div>
-  );
-}
+## 📬 Contacto
 
-export default App;
-```
+**¿Quieres capacitar a tu equipo o solicitar una asesoría?**  
+Completa el siguiente formulario y te responderemos a la brevedad.
 
-We use the `Derived` class to create a new store that is derived from another store. The `Derived` class has a `mount` method that will start the derived store updating.
+**Correo:** contacto@grupocaemp.cl  
+**Teléfono:** +56 9 0000 0000  
+**Dirección:** Santiago, Chile  
+**Sitios asociados:**  
+[caemp.cl](https://caemp.cl) | [caempplus.cl](https://caempplus.cl) | [crecimiento.cl](https://crecimiento.cl)
 
-Once we've created the derived store we can use it in the `App` component just like we would any other store using the `useStore` hook.
+---
 
-You can find out everything you need to know on how to use TanStack Store in the [TanStack Store documentation](https://tanstack.com/store/latest).
+## ⚙️ Footer
 
-# Demo files
+**© 2025 Grupo CAEMP.** Todos los derechos reservados.  
+Inspiramos personas. Transformamos organizaciones.
 
-Files prefixed with `demo` can be safely deleted. They are there to provide a starting point for you to play around with the features you've installed.
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
+---

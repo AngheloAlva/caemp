@@ -20,7 +20,7 @@ import {
 	UsersIcon,
 } from "lucide-react"
 
-export const Route = createFileRoute("/cursos/$courseSlug")({
+export const Route = createFileRoute("/otec/cursos/$courseSlug")({
 	component: RouteComponent,
 })
 

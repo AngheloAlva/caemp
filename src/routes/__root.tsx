@@ -38,7 +38,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="font-family">
+			<body className="font-family scroll-smooth">
 				<Header />
 				{children}
 				<Footer />
