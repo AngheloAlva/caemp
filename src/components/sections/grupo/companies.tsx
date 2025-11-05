@@ -34,12 +34,13 @@ const companies = [
 		color: "primary-green",
 		logo: "/images/logo/logo-p-black.png",
 		description:
-			"Innovación y seguridad al servicio de las personas. Brindamos asesoría técnica experta y venta de equipos de protección personal y colectiva de última generación.",
+			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
 		features: [
-			"Diagnóstico y asesoría en seguridad laboral",
-			"Suministro de EPP certificados",
-			"Señalética y protección colectiva",
-			"Implementación de normativas",
+			"Venta de EPP certificados (cascos, guantes, arneses)",
+			"Equipos de protección colectiva y líneas de vida",
+			"Asesoría técnica en selección de equipos",
+			"Señalética y elementos de seguridad industrial",
+			"Productos certificados y homologados",
 		],
 		link: "/plus",
 	},
