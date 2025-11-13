@@ -23,7 +23,7 @@ import { Route as OtecCotizacionRouteImport } from './routes/otec/cotizacion'
 import { Route as OtecContactoRouteImport } from './routes/otec/contacto'
 import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/nosotros'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
-import { Route as PlusProductosProductIdRouteImport } from './routes/plus/productos.$productId'
+import { Route as PlusProductosProductIdRouteImport } from './routes/plus/productos/$productId'
 import { Route as OtecCursosCourseSlugRouteImport } from './routes/otec/cursos/$courseSlug'
 
 const PlusRoute = PlusRouteImport.update({

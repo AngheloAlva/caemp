@@ -83,11 +83,19 @@ export function Header() {
 						transition={{ duration: 0.2 }}
 					>
 						<motion.div
-							className="h-14 w-14"
+							className="h-14 w-auto"
 							whileHover={{ rotate: 6 }}
 							transition={{ duration: 0.3 }}
 						>
-							<Image alt="Logo" width={64} height={64} src={config.logo} />
+							{isGrupo ? (
+								<div className="flex items-center">
+									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-o-black.png" />
+									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-c-black.png" />
+									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-p-black.png" />
+								</div>
+							) : (
+								<Image alt="Logo" width={64} height={64} src={config.logo} />
+							)}
 						</motion.div>
 						<span className="text-xl font-bold">{config.brandName}</span>
 					</motion.div>
