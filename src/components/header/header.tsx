@@ -24,7 +24,7 @@ export function Header() {
 
 	const config = isOtec
 		? {
-				logo: "/images/logo/logo-o-black.png",
+				logo: ["/images/logo/logo-o-black.png"],
 				brandName: "CAEMP OTEC",
 				homeLink: "/otec",
 				navItems: [
@@ -38,7 +38,7 @@ export function Header() {
 			}
 		: isCrecimiento
 			? {
-					logo: "/images/logo/logo-c-black.png",
+					logo: ["/images/logo/logo-c-black.png"],
 					brandName: "CRECIMIENTO",
 					homeLink: "/crecimiento",
 					navItems: [
@@ -51,7 +51,7 @@ export function Header() {
 				}
 			: isPlus
 				? {
-						logo: "/images/logo/logo-p-black.png",
+						logo: ["/images/logo/logo-p-black.png"],
 						brandName: "CAEMP PLUS",
 						homeLink: "/plus",
 						navItems: [
@@ -63,7 +63,11 @@ export function Header() {
 						ctaButton: { to: "/plus/cotizacion", label: "Solicitar Cotización" },
 					}
 				: {
-						logo: "/images/logo/logo-o-black.png",
+						logo: [
+							"/images/logo/logo-o-black.png",
+							"/images/logo/logo-c-black.png",
+							"/images/logo/logo-p-black.png",
+						],
 						brandName: "Grupo CAEMP",
 						homeLink: "/",
 						navItems: [
@@ -82,21 +86,34 @@ export function Header() {
 						whileHover={{ scale: 1.05 }}
 						transition={{ duration: 0.2 }}
 					>
-						<motion.div
-							className="h-14 w-auto"
-							whileHover={{ rotate: 6 }}
-							transition={{ duration: 0.3 }}
-						>
+						<div className="flex h-14 w-auto items-center">
 							{isGrupo ? (
-								<div className="flex items-center">
-									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-o-black.png" />
-									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-c-black.png" />
-									<Image alt="Logo" width={64} height={64} src="/images/logo/logo-p-black.png" />
-								</div>
+								config.logo.map((logo, index) => (
+									<motion.div
+										initial={{ opacity: 0, scale: 0, translateX: (index + 1) * -30 }}
+										animate={{ opacity: 1, scale: 1, translateX: 0 }}
+										transition={{
+											duration: 0.5,
+											delay: (index + 1) * 0.4,
+											scale: { type: "spring", visualDuration: 0.6, bounce: 0.5 },
+										}}
+									>
+										<Image alt="Logo" width={64} height={64} src={logo} />
+									</motion.div>
+								))
 							) : (
-								<Image alt="Logo" width={64} height={64} src={config.logo} />
+								<motion.div
+									initial={{ opacity: 0, scale: 0, translateX: -40 }}
+									animate={{ opacity: 1, scale: 1, translateX: 0 }}
+									transition={{
+										duration: 0.5,
+										scale: { type: "spring", visualDuration: 0.5, bounce: 0.5 },
+									}}
+								>
+									<Image alt="Logo" width={64} height={64} src={config.logo[0]} />
+								</motion.div>
 							)}
-						</motion.div>
+						</div>
 						<span className="text-xl font-bold">{config.brandName}</span>
 					</motion.div>
 				</Link>
