@@ -12,7 +12,12 @@ export default function Hero(): React.ReactElement {
 			className="relative w-screen overflow-hidden text-white"
 			style={{ backgroundColor: "#8B5CF6" }}
 		>
-			<div className="from-primary-purple to-primary-purple absolute inset-0 bg-linear-to-br via-[#7C3AED] opacity-90" />
+			{/* Imagen de fondo con transparencia */}
+			<div
+				className="absolute inset-0 bg-cover bg-center"
+				style={{ backgroundImage: "url(/images/crecimiento/hero.png)" }}
+			/>
+			<div className="from-primary-purple to-primary-purple absolute inset-0 bg-linear-to-br via-[#7C3AED] opacity-80" />
 			<div className="animate-float absolute top-20 left-10 h-20 w-20 rounded-full bg-white/10 blur-xl" />
 
 			<div
@@ -47,14 +52,17 @@ export default function Hero(): React.ReactElement {
 								<Button
 									size="lg"
 									className="group text-primary-purple relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
+									asChild
 								>
-									<a href="#">Ver Talleres</a>
-									<div className="relative h-4 w-4 overflow-hidden">
-										<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
-											<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
-											<ArrowUpRightIcon className="h-4 w-4 -translate-x-3 stroke-3" />
+									<a href="#talleres">
+										Ver Talleres
+										<div className="relative ml-2 h-4 w-4 overflow-hidden">
+											<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
+												<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
+												<ArrowUpRightIcon className="h-4 w-4 -translate-x-3 stroke-3" />
+											</div>
 										</div>
-									</div>
+									</a>
 								</Button>
 							</HoverScale>
 							<HoverScale>
@@ -64,7 +72,7 @@ export default function Hero(): React.ReactElement {
 									className="hover:text-primary-purple border-white bg-white/10 text-white hover:bg-white/90"
 									asChild
 								>
-									<a href="#">Contáctanos</a>
+									<a href="/crecimiento/cotizacion">Solicitar Cotización</a>
 								</Button>
 							</HoverScale>
 						</div>

@@ -43,7 +43,7 @@ export function Header() {
 					homeLink: "/crecimiento",
 					navItems: [
 						{ to: "/crecimiento", label: "Inicio" },
-						{ to: "#", label: "Talleres" },
+						{ to: "/crecimiento/talleres", label: "Talleres" },
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
 						{ to: "#", label: "Contacto" },
 					],

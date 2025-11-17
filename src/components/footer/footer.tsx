@@ -51,8 +51,9 @@ export function Footer() {
 							<span className="text-xl font-bold">{logoConfig.brandName}</span>
 						</div>
 						<p className="text-muted-foreground text-sm leading-relaxed">
-							Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad
-							laboral.
+							{isCrecimiento
+								? "Cambiamos culturas, despertamos líderes."
+								: "Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral."}
 						</p>
 
 						<div className="flex gap-4">
@@ -89,7 +90,7 @@ export function Footer() {
 							<ul className="space-y-3 text-sm">
 								<li>
 									<Link
-										to="/otec"
+										to={isCrecimiento ? "/crecimiento" : "/otec"}
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Inicio
@@ -97,15 +98,15 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/otec/cursos"
+										to={isCrecimiento ? "/crecimiento" : "/otec/cursos"}
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
-										Cursos
+										{isCrecimiento ? "Servicios" : "Cursos"}
 									</Link>
 								</li>
 								<li>
 									<Link
-										to="/otec/nosotros"
+										to={isCrecimiento ? "/crecimiento" : "/otec/nosotros"}
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Nosotros
@@ -113,58 +114,106 @@ export function Footer() {
 								</li>
 								<li>
 									<Link
-										to="/otec/galeria"
+										to={isCrecimiento ? "/crecimiento" : "/otec/galeria"}
 										className="text-muted-foreground hover:text-primary transition-colors"
 									>
 										Galería
 									</Link>
 								</li>
 								<li>
-									<Link
-										to="/otec/contacto"
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Contacto
-									</Link>
+									{isCrecimiento ? (
+										<a
+											href="#contacto"
+											className="text-muted-foreground hover:text-primary transition-colors"
+										>
+											Contacto
+										</a>
+									) : (
+										<Link
+											to="/otec/contacto"
+											className="text-muted-foreground hover:text-primary transition-colors"
+										>
+											Contacto
+										</Link>
+									)}
 								</li>
 							</ul>
 						</div>
 
 						<div>
-							<h3 className="mb-4 font-semibold">Cursos</h3>
+							<h3 className="mb-4 font-semibold">{isCrecimiento ? "Talleres" : "Cursos"}</h3>
 							<ul className="space-y-3 text-sm">
-								<li>
-									<Link
-										to="/otec/cursos"
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Riesgos Eléctricos
-									</Link>
-								</li>
-								<li>
-									<Link
-										to="/otec/cursos"
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Rescate en Altura
-									</Link>
-								</li>
-								<li>
-									<Link
-										to="/otec/cursos"
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Primeros Auxilios
-									</Link>
-								</li>
-								<li>
-									<Link
-										to="/otec/cursos"
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Formación de Brigadas
-									</Link>
-								</li>
+								{isCrecimiento ? (
+									<>
+										<li>
+											<Link
+												to="/crecimiento"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Coaching Personal
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/crecimiento"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Coaching Empresarial
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/crecimiento"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Liderazgo y Comunicación
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/crecimiento"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Trabajo en Equipo
+											</Link>
+										</li>
+									</>
+								) : (
+									<>
+										<li>
+											<Link
+												to="/otec/cursos"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Riesgos Eléctricos
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/otec/cursos"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Rescate en Altura
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/otec/cursos"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Primeros Auxilios
+											</Link>
+										</li>
+										<li>
+											<Link
+												to="/otec/cursos"
+												className="text-muted-foreground hover:text-primary transition-colors"
+											>
+												Formación de Brigadas
+											</Link>
+										</li>
+									</>
+								)}
 							</ul>
 						</div>
 

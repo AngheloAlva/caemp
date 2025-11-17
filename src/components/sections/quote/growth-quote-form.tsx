@@ -3,7 +3,6 @@ import { Calendar as CalendarIcon } from "lucide-react"
 import { revalidateLogic } from "@tanstack/react-form"
 import { format } from "date-fns"
 
-import { quoteFormSchema, type QuoteFormSchema } from "./quote.schema"
 import { cn } from "@/lib/utils"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
@@ -13,8 +12,31 @@ import { Calendar } from "@/components/ui/calendar"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select"
+import { z } from "zod"
 
-export function QuoteForm() {
+const growthQuoteFormSchema = z.object({
+	full_name: z.string().min(3, "El nombre debe tener al menos 3 caracteres"),
+	email: z.string().email("Email inválido"),
+	phone: z.string().min(9, "Teléfono inválido"),
+	role: z.string().min(2, "El cargo es requerido"),
+	company_name: z.string().optional(),
+	participans_number: z.number().min(1, "Debe haber al menos 1 participante"),
+	service_type: z.string().min(1, "Selecciona un tipo de servicio"),
+	services: z.array(z.string()).min(1, "Selecciona al menos un servicio"),
+	prefer_date: z.string().optional(),
+	message: z.string().optional(),
+})
+
+type GrowthQuoteFormSchema = z.infer<typeof growthQuoteFormSchema>
+
+export function GrowthQuoteForm() {
 	const draftForm = useAppForm({
 		defaultValues: {
 			full_name: "",
@@ -23,13 +45,14 @@ export function QuoteForm() {
 			role: "",
 			company_name: "",
 			participans_number: 0,
-			courses: [] as string[],
+			service_type: "",
+			services: [] as string[],
 			prefer_date: "",
 			message: "",
-		} as QuoteFormSchema,
+		} as GrowthQuoteFormSchema,
 		validationLogic: revalidateLogic(),
 		validators: {
-			onDynamic: quoteFormSchema,
+			onDynamic: growthQuoteFormSchema,
 			onDynamicAsyncDebounceMs: 300,
 		},
 		onSubmit: ({ value }) => {
@@ -38,7 +61,7 @@ export function QuoteForm() {
 		onSubmitInvalid({ formApi }) {
 			const errorMap = formApi.state.errorMap["onDynamic"]!
 			const inputs = Array.from(
-				document.querySelectorAll("#previewForm input")
+				document.querySelectorAll("#growthQuoteForm input")
 			) as HTMLInputElement[]
 			let firstInput: HTMLInputElement | undefined
 			for (const input of inputs) {
@@ -50,10 +73,11 @@ export function QuoteForm() {
 			firstInput?.focus()
 		},
 	})
+
 	return (
 		<div className="w-full">
 			<draftForm.AppForm>
-				<draftForm.Form className="flex w-full flex-col gap-4">
+				<draftForm.Form id="growthQuoteForm" className="flex w-full flex-col gap-4">
 					<div>
 						<h3 className="text-xl font-bold">Información Personal</h3>
 						<FieldDescription>Completa tus datos personales</FieldDescription>
@@ -131,7 +155,7 @@ export function QuoteForm() {
 										<field.FieldLabel htmlFor={"role"}>Cargo *</field.FieldLabel>
 										<Input
 											name={"role"}
-											placeholder="Gerente de RRHH"
+											placeholder="Gerente, Líder de equipo, Particular..."
 											type="text"
 											value={(field.state.value as string | undefined) ?? ""}
 											onBlur={field.handleBlur}
@@ -147,8 +171,8 @@ export function QuoteForm() {
 					</div>
 
 					<div className="mt-4">
-						<h3 className="text-xl font-bold">Información de la Empresa</h3>
-						<FieldDescription>Completa los datos de la empresa</FieldDescription>
+						<h3 className="text-xl font-bold">Información Adicional</h3>
+						<FieldDescription>Cuéntanos sobre tu organización o contexto</FieldDescription>
 					</div>
 
 					<div className="flex w-full flex-wrap items-center justify-between gap-2 sm:flex-nowrap">
@@ -157,7 +181,7 @@ export function QuoteForm() {
 								<field.FieldSet className="w-full">
 									<field.Field>
 										<field.FieldLabel htmlFor={"company_name"}>
-											Nombre de la Empresa *
+											Nombre de la Empresa (Opcional)
 										</field.FieldLabel>
 										<Input
 											name={"company_name"}
@@ -180,11 +204,11 @@ export function QuoteForm() {
 								<field.FieldSet className="w-full">
 									<field.Field>
 										<field.FieldLabel htmlFor={"participans_number"}>
-											Numero de Participantes *
+											Número de Participantes *
 										</field.FieldLabel>
 										<Input
 											type="number"
-											placeholder="10"
+											placeholder="5"
 											inputMode="decimal"
 											onBlur={field.handleBlur}
 											name={"participans_number"}
@@ -201,23 +225,52 @@ export function QuoteForm() {
 					</div>
 
 					<div className="mt-4">
-						<h3 className="text-xl font-bold">Cursos de Interés</h3>
-						<FieldDescription>Selecciona uno o más cursos de interés *</FieldDescription>
+						<h3 className="text-xl font-bold">Tipo de Servicio</h3>
+						<FieldDescription>Selecciona el tipo de servicio que te interesa *</FieldDescription>
 					</div>
 
-					<draftForm.AppField name={"courses"}>
+					<draftForm.AppField name={"service_type"}>
+						{(field) => (
+							<field.FieldSet className="w-full">
+								<field.Field>
+									<Select
+										onValueChange={field.handleChange}
+										value={(field.state.value as string | undefined) ?? ""}
+									>
+										<SelectTrigger
+											className="w-full"
+											aria-invalid={!!field.state.meta.errors.length}
+										>
+											<SelectValue placeholder="Selecciona un tipo de servicio" />
+										</SelectTrigger>
+										<SelectContent>
+											<SelectItem value="coaching_personal">Coaching Personal</SelectItem>
+											<SelectItem value="coaching_empresarial">Coaching Empresarial</SelectItem>
+											<SelectItem value="talleres">Talleres</SelectItem>
+											<SelectItem value="programas">Programas de Capacitación</SelectItem>
+										</SelectContent>
+									</Select>
+								</field.Field>
+
+								<field.FieldError />
+							</field.FieldSet>
+						)}
+					</draftForm.AppField>
+
+					<div className="mt-4">
+						<h3 className="text-xl font-bold">Servicios de Interés</h3>
+						<FieldDescription>Selecciona uno o más servicios de interés *</FieldDescription>
+					</div>
+
+					<draftForm.AppField name={"services"}>
 						{(field) => {
 							const options = [
-								{ label: "Control de Riesgos Eléctricos", value: "control_de_riesgos_electricos" },
-								{ label: "Técnicas de Rescate en Altura", value: "tecnicas_de_rescate_en_altura" },
-								{
-									label: "Primeros Auxilios y Manejo del Trauma",
-									value: "primeros_auxilios_y_manjeo_del_trauma",
-								},
-								{
-									label: "Trabajo en Espacios Confinados",
-									value: "trabajo_en_espacios_confinados",
-								},
+								{ label: "Liderazgo y Comunicación", value: "liderazgo_comunicacion" },
+								{ label: "Trabajo en Equipo", value: "trabajo_equipo" },
+								{ label: "Gestión Emocional", value: "gestion_emocional" },
+								{ label: "Coaching Ejecutivo", value: "coaching_ejecutivo" },
+								{ label: "Desarrollo Personal", value: "desarrollo_personal" },
+								{ label: "Convivencia Laboral", value: "convivencia_laboral" },
 							]
 
 							return (
@@ -232,11 +285,11 @@ export function QuoteForm() {
 										>
 											{options.map(({ label, value }) => (
 												<ToggleGroupItem
-													name={"courses"}
+													name={"services"}
 													value={value}
 													key={value}
 													disabled={false}
-													className="data-[spacing=0]:data-[variant=outline]:first:border-lz h-auto min-h-[48px] rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
+													className="h-auto min-h-[48px] rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
 												>
 													{label}
 												</ToggleGroupItem>
@@ -312,7 +365,7 @@ export function QuoteForm() {
 										Mensaje o Requerimientos Especiales{" "}
 									</field.FieldLabel>
 									<Textarea
-										placeholder="Cuéntanos más sobre tus necesidades específicas..."
+										placeholder="Cuéntanos más sobre tus objetivos y necesidades específicas..."
 										required={false}
 										disabled={false}
 										value={(field.state.value as string | undefined) ?? ""}
@@ -329,7 +382,7 @@ export function QuoteForm() {
 					</draftForm.AppField>
 
 					<div className="flex w-full items-center justify-end pt-3">
-						<draftForm.SubmitButton label="Enviar solicitud" />
+						<draftForm.SubmitButton className="bg-primary-purple" label="Solicitar Cotización" />
 					</div>
 				</draftForm.Form>
 			</draftForm.AppForm>

@@ -70,10 +70,12 @@ export default function Testimonials() {
 							Testimonios
 						</h2>
 						<p className="mx-auto mb-2 max-w-2xl text-xl font-semibold text-gray-900">
-							Experiencias que inspiran
+							Historias reales de transformación
 						</p>
-						<p className="mx-auto max-w-2xl text-lg text-gray-700">
-							Descubre cómo nuestros programas han transformado vidas y carreras
+						<p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-700">
+							Cada testimonio refleja un viaje único. Son relatos de personas y equipos que
+							decidieron avanzar, romper límites y descubrir nuevas posibilidades. Ellos vivieron la
+							experiencia… ahora tú puedes vivir la tuya.
 						</p>
 					</div>
 				</FadeIn>
