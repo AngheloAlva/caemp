@@ -34,7 +34,11 @@ export function Header() {
 					{ to: "#", label: "Galería" },
 					{ to: "#", label: "Contacto" },
 				],
-				ctaButton: { to: "/otec/cotizacion", label: "Solicitar Cotización" },
+				ctaButton: {
+					to: "/otec/cotizacion",
+					label: "Solicitar Cotización",
+					className: "bg-primary text-white",
+				},
 			}
 		: isCrecimiento
 			? {
@@ -47,7 +51,11 @@ export function Header() {
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
 						{ to: "#", label: "Contacto" },
 					],
-					ctaButton: { to: "/crecimiento/cotizacion", label: "Solicitar Cotización" },
+					ctaButton: {
+						to: "/crecimiento/cotizacion",
+						label: "Solicitar Cotización",
+						className: "bg-primary-purple text-white",
+					},
 				}
 			: isPlus
 				? {
@@ -60,7 +68,11 @@ export function Header() {
 							{ to: "#", label: "Productos" },
 							{ to: "#", label: "Contacto" },
 						],
-						ctaButton: { to: "/plus/cotizacion", label: "Solicitar Cotización" },
+						ctaButton: {
+							to: "/plus/cotizacion",
+							label: "Solicitar Cotización",
+							className: "bg-primary-green text-white",
+						},
 					}
 				: {
 						logo: [
@@ -74,7 +86,6 @@ export function Header() {
 							{ to: "/", label: "Inicio" },
 							{ to: "#contacto", label: "Contacto" },
 						],
-						ctaButton: null,
 					}
 
 	return (
@@ -120,7 +131,7 @@ export function Header() {
 
 				<nav className="hidden items-center gap-6 md:flex">
 					{config.navItems.map((item) => (
-						<NavItem key={item.to} to={item.to} label={item.label} />
+						<NavItem key={`${item.label}-${item.to}`} to={item.to} label={item.label} />
 					))}
 
 					<div
@@ -190,7 +201,7 @@ export function Header() {
 				>
 					{config.ctaButton && (
 						<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-							<Button asChild className="hidden md:inline-flex">
+							<Button asChild className={cn("hidden md:inline-flex", config.ctaButton.className)}>
 								<Link to={config.ctaButton.to}>{config.ctaButton.label}</Link>
 							</Button>
 						</motion.div>
@@ -220,33 +231,33 @@ export function Header() {
 					>
 						<nav className="container flex flex-col gap-4 p-4">
 							{config.navItems.map((item) => (
-								<NavItem key={item.to} to={item.to} label={item.label} />
+								<NavItem key={`${item.label}-${item.to}`} to={item.to} label={item.label} />
 							))}
 
 							<div className="border-t pt-4">
-								<p className="mb-2 text-xs font-semibold text-gray-500">EMPRESAS</p>
+								<p className="mb-2 text-xs font-semibold text-gray-500">Lineas de Negocio</p>
 								<div className="flex flex-col gap-2">
 									<Link
 										to="/otec"
-										className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#F59E0B]"
+										className="rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#F59E0B]"
 									>
-										🔶 CAEMP OTEC
+										CAEMP OTEC
 									</Link>
 									<Link
 										to="/plus"
-										className="hover:text-primary-green rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
+										className="hover:text-primary-green rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
 									>
-										🟩 CAEMP PLUS
+										CAEMP PLUS
 									</Link>
 									<Link
 										to="/crecimiento"
-										className="hover:text-primary-purple rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
+										className="hover:text-primary-purple rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
 									>
-										🟪 CRECIMIENTO
+										CRECIMIENTO
 									</Link>
 									<Link
 										to="/"
-										className="rounded-md px-3 py-2 text-sm font-semibold text-[#004080] hover:bg-blue-50"
+										className="rounded-md py-2 text-sm font-semibold text-[#004080] hover:bg-blue-50"
 									>
 										← Grupo CAEMP
 									</Link>
@@ -255,7 +266,7 @@ export function Header() {
 
 							{config.ctaButton && (
 								<motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-									<Button asChild className="w-full">
+									<Button asChild className={cn("w-full", config.ctaButton.className)}>
 										<Link to={config.ctaButton.to}>{config.ctaButton.label}</Link>
 									</Button>
 								</motion.div>

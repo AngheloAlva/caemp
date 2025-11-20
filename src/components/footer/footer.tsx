@@ -10,45 +10,68 @@ export function Footer() {
 	const isCrecimiento = pathname.startsWith("/crecimiento")
 	const isPlus = pathname.startsWith("/plus")
 
-	const logoConfig = isOtec
+	const config = isOtec
 		? {
-				src: "/images/logo/logo-o-black.png",
+				logo: "/images/logo/logo-o-black.png",
 				alt: "CAEMP OTEC logo",
 				brandName: "CAEMP OTEC",
+				navItems: [
+					{ to: "/otec", label: "Inicio" },
+					{ to: "/otec/cursos", label: "Cursos" },
+					{ to: "#", label: "Nosotros" },
+					{ to: "#", label: "Galería" },
+					{ to: "#", label: "Contacto" },
+				],
 			}
 		: isCrecimiento
 			? {
-					src: "/images/logo/logo-c-black.png",
+					logo: "/images/logo/logo-c-black.png",
 					alt: "CRECIMIENTO logo",
 					brandName: "CRECIMIENTO",
+					navItems: [
+						{ to: "/crecimiento", label: "Inicio" },
+						{ to: "/crecimiento/talleres", label: "Talleres" },
+						{ to: "/crecimiento/nosotros", label: "Nosotros" },
+						{ to: "#", label: "Contacto" },
+					],
 				}
 			: isPlus
 				? {
-						src: "/images/logo/logo-p-black.png",
+						logo: "/images/logo/logo-p-black.png",
 						alt: "CAEMP PLUS logo",
 						brandName: "CAEMP PLUS",
+						navItems: [
+							{ to: "/plus", label: "Inicio" },
+							{ to: "/plus/nosotros", label: "Nosotros" },
+							{ to: "#", label: "Productos" },
+							{ to: "#", label: "Contacto" },
+						],
 					}
 				: {
-						src: "/images/logo/logo-o-black.png",
+						logo: "/images/logo/logo-o-black.png",
 						alt: "Grupo CAEMP logo",
 						brandName: "Grupo CAEMP",
+						navItems: [
+							{ to: "/", label: "Inicio" },
+							{ to: "#contacto", label: "Contacto" },
+						],
 					}
 
 	return (
-		<footer className="bg-muted/30 border-t">
-			<div className="container mx-auto px-4 py-12 md:py-16">
+		<footer className="bg-muted/30 border-t px-4">
+			<div className="container mx-auto py-12 md:py-16">
 				<div className="flex flex-col gap-8 lg:flex-row lg:gap-20">
-					<div className="space-y-4">
+					<div className="space-y-4 lg:w-1/3">
 						<div className="flex flex-col items-start gap-2">
 							<Image
 								width={112}
 								height={112}
 								loading="lazy"
-								alt={logoConfig.alt}
-								src={logoConfig.src}
+								alt={config.alt}
+								src={config.logo}
 								className="h-28 w-28 object-contain"
 							/>
-							<span className="text-xl font-bold">{logoConfig.brandName}</span>
+							<span className="text-xl font-bold">{config.brandName}</span>
 						</div>
 						<p className="text-muted-foreground text-sm leading-relaxed">
 							{isCrecimiento
@@ -84,136 +107,20 @@ export function Footer() {
 						</div>
 					</div>
 
-					<div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
+					<div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:w-2/3 lg:grid-cols-2">
 						<div>
 							<h3 className="mb-4 font-semibold">Navegación</h3>
 							<ul className="space-y-3 text-sm">
-								<li>
-									<Link
-										to={isCrecimiento ? "/crecimiento" : "/otec"}
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Inicio
-									</Link>
-								</li>
-								<li>
-									<Link
-										to={isCrecimiento ? "/crecimiento" : "/otec/cursos"}
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										{isCrecimiento ? "Servicios" : "Cursos"}
-									</Link>
-								</li>
-								<li>
-									<Link
-										to={isCrecimiento ? "/crecimiento" : "/otec/nosotros"}
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Nosotros
-									</Link>
-								</li>
-								<li>
-									<Link
-										to={isCrecimiento ? "/crecimiento" : "/otec/galeria"}
-										className="text-muted-foreground hover:text-primary transition-colors"
-									>
-										Galería
-									</Link>
-								</li>
-								<li>
-									{isCrecimiento ? (
-										<a
-											href="#contacto"
-											className="text-muted-foreground hover:text-primary transition-colors"
-										>
-											Contacto
-										</a>
-									) : (
+								{config.navItems.map((item) => (
+									<li key={`${item.label}-${item.to}`}>
 										<Link
-											to="/otec/contacto"
+											to={item.to}
 											className="text-muted-foreground hover:text-primary transition-colors"
 										>
-											Contacto
+											{item.label}
 										</Link>
-									)}
-								</li>
-							</ul>
-						</div>
-
-						<div>
-							<h3 className="mb-4 font-semibold">{isCrecimiento ? "Talleres" : "Cursos"}</h3>
-							<ul className="space-y-3 text-sm">
-								{isCrecimiento ? (
-									<>
-										<li>
-											<Link
-												to="/crecimiento"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Coaching Personal
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/crecimiento"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Coaching Empresarial
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/crecimiento"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Liderazgo y Comunicación
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/crecimiento"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Trabajo en Equipo
-											</Link>
-										</li>
-									</>
-								) : (
-									<>
-										<li>
-											<Link
-												to="/otec/cursos"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Riesgos Eléctricos
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/otec/cursos"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Rescate en Altura
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/otec/cursos"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Primeros Auxilios
-											</Link>
-										</li>
-										<li>
-											<Link
-												to="/otec/cursos"
-												className="text-muted-foreground hover:text-primary transition-colors"
-											>
-												Formación de Brigadas
-											</Link>
-										</li>
-									</>
-								)}
+									</li>
+								))}
 							</ul>
 						</div>
 
