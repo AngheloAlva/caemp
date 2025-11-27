@@ -12,7 +12,7 @@ import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
-export const Route = createFileRoute("/crecimiento/talleres/")({
+export const Route = createFileRoute("/crecimiento/cursos/")({
 	component: RouteComponent,
 })
 

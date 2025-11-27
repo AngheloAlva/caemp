@@ -21,14 +21,16 @@ import { Route as OtecNosotrosRouteImport } from './routes/otec/nosotros'
 import { Route as OtecGaleriaRouteImport } from './routes/otec/galeria'
 import { Route as OtecCotizacionRouteImport } from './routes/otec/cotizacion'
 import { Route as OtecContactoRouteImport } from './routes/otec/contacto'
+import { Route as CrecimientoTeatroRouteImport } from './routes/crecimiento/teatro'
+import { Route as CrecimientoTalleresRouteImport } from './routes/crecimiento/talleres'
 import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/nosotros'
 import { Route as CrecimientoGaleriaRouteImport } from './routes/crecimiento/galeria'
 import { Route as CrecimientoCotizacionRouteImport } from './routes/crecimiento/cotizacion'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
-import { Route as CrecimientoTalleresIndexRouteImport } from './routes/crecimiento/talleres/index'
+import { Route as CrecimientoCursosIndexRouteImport } from './routes/crecimiento/cursos/index'
 import { Route as PlusProductosProductIdRouteImport } from './routes/plus/productos/$productId'
 import { Route as OtecCursosCourseSlugRouteImport } from './routes/otec/cursos/$courseSlug'
-import { Route as CrecimientoTalleresSlugRouteImport } from './routes/crecimiento/talleres/$slug'
+import { Route as CrecimientoCursosSlugRouteImport } from './routes/crecimiento/cursos/$slug'
 
 const PlusRoute = PlusRouteImport.update({
   id: '/plus',
@@ -90,6 +92,16 @@ const OtecContactoRoute = OtecContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => OtecRoute,
 } as any)
+const CrecimientoTeatroRoute = CrecimientoTeatroRouteImport.update({
+  id: '/teatro',
+  path: '/teatro',
+  getParentRoute: () => CrecimientoRoute,
+} as any)
+const CrecimientoTalleresRoute = CrecimientoTalleresRouteImport.update({
+  id: '/talleres',
+  path: '/talleres',
+  getParentRoute: () => CrecimientoRoute,
+} as any)
 const CrecimientoNosotrosRoute = CrecimientoNosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
@@ -110,12 +122,11 @@ const OtecCursosIndexRoute = OtecCursosIndexRouteImport.update({
   path: '/cursos/',
   getParentRoute: () => OtecRoute,
 } as any)
-const CrecimientoTalleresIndexRoute =
-  CrecimientoTalleresIndexRouteImport.update({
-    id: '/talleres/',
-    path: '/talleres/',
-    getParentRoute: () => CrecimientoRoute,
-  } as any)
+const CrecimientoCursosIndexRoute = CrecimientoCursosIndexRouteImport.update({
+  id: '/cursos/',
+  path: '/cursos/',
+  getParentRoute: () => CrecimientoRoute,
+} as any)
 const PlusProductosProductIdRoute = PlusProductosProductIdRouteImport.update({
   id: '/productos/$productId',
   path: '/productos/$productId',
@@ -126,9 +137,9 @@ const OtecCursosCourseSlugRoute = OtecCursosCourseSlugRouteImport.update({
   path: '/cursos/$courseSlug',
   getParentRoute: () => OtecRoute,
 } as any)
-const CrecimientoTalleresSlugRoute = CrecimientoTalleresSlugRouteImport.update({
-  id: '/talleres/$slug',
-  path: '/talleres/$slug',
+const CrecimientoCursosSlugRoute = CrecimientoCursosSlugRouteImport.update({
+  id: '/cursos/$slug',
+  path: '/cursos/$slug',
   getParentRoute: () => CrecimientoRoute,
 } as any)
 
@@ -140,6 +151,8 @@ export interface FileRoutesByFullPath {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/talleres': typeof CrecimientoTalleresRoute
+  '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
@@ -148,10 +161,10 @@ export interface FileRoutesByFullPath {
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
   '/plus/': typeof PlusIndexRoute
-  '/crecimiento/talleres/$slug': typeof CrecimientoTalleresSlugRoute
+  '/crecimiento/cursos/$slug': typeof CrecimientoCursosSlugRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
-  '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
+  '/crecimiento/cursos': typeof CrecimientoCursosIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
 export interface FileRoutesByTo {
@@ -159,6 +172,8 @@ export interface FileRoutesByTo {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/talleres': typeof CrecimientoTalleresRoute
+  '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
@@ -167,10 +182,10 @@ export interface FileRoutesByTo {
   '/crecimiento': typeof CrecimientoIndexRoute
   '/otec': typeof OtecIndexRoute
   '/plus': typeof PlusIndexRoute
-  '/crecimiento/talleres/$slug': typeof CrecimientoTalleresSlugRoute
+  '/crecimiento/cursos/$slug': typeof CrecimientoCursosSlugRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
-  '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
+  '/crecimiento/cursos': typeof CrecimientoCursosIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
 export interface FileRoutesById {
@@ -182,6 +197,8 @@ export interface FileRoutesById {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/talleres': typeof CrecimientoTalleresRoute
+  '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
   '/otec/galeria': typeof OtecGaleriaRoute
@@ -190,10 +207,10 @@ export interface FileRoutesById {
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
   '/plus/': typeof PlusIndexRoute
-  '/crecimiento/talleres/$slug': typeof CrecimientoTalleresSlugRoute
+  '/crecimiento/cursos/$slug': typeof CrecimientoCursosSlugRoute
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
-  '/crecimiento/talleres/': typeof CrecimientoTalleresIndexRoute
+  '/crecimiento/cursos/': typeof CrecimientoCursosIndexRoute
   '/otec/cursos/': typeof OtecCursosIndexRoute
 }
 export interface FileRouteTypes {
@@ -206,6 +223,8 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/talleres'
+    | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
@@ -214,10 +233,10 @@ export interface FileRouteTypes {
     | '/crecimiento/'
     | '/otec/'
     | '/plus/'
-    | '/crecimiento/talleres/$slug'
+    | '/crecimiento/cursos/$slug'
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
-    | '/crecimiento/talleres'
+    | '/crecimiento/cursos'
     | '/otec/cursos'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -225,6 +244,8 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/talleres'
+    | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
@@ -233,10 +254,10 @@ export interface FileRouteTypes {
     | '/crecimiento'
     | '/otec'
     | '/plus'
-    | '/crecimiento/talleres/$slug'
+    | '/crecimiento/cursos/$slug'
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
-    | '/crecimiento/talleres'
+    | '/crecimiento/cursos'
     | '/otec/cursos'
   id:
     | '__root__'
@@ -247,6 +268,8 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/talleres'
+    | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
     | '/otec/galeria'
@@ -255,10 +278,10 @@ export interface FileRouteTypes {
     | '/crecimiento/'
     | '/otec/'
     | '/plus/'
-    | '/crecimiento/talleres/$slug'
+    | '/crecimiento/cursos/$slug'
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
-    | '/crecimiento/talleres/'
+    | '/crecimiento/cursos/'
     | '/otec/cursos/'
   fileRoutesById: FileRoutesById
 }
@@ -355,6 +378,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtecContactoRouteImport
       parentRoute: typeof OtecRoute
     }
+    '/crecimiento/teatro': {
+      id: '/crecimiento/teatro'
+      path: '/teatro'
+      fullPath: '/crecimiento/teatro'
+      preLoaderRoute: typeof CrecimientoTeatroRouteImport
+      parentRoute: typeof CrecimientoRoute
+    }
+    '/crecimiento/talleres': {
+      id: '/crecimiento/talleres'
+      path: '/talleres'
+      fullPath: '/crecimiento/talleres'
+      preLoaderRoute: typeof CrecimientoTalleresRouteImport
+      parentRoute: typeof CrecimientoRoute
+    }
     '/crecimiento/nosotros': {
       id: '/crecimiento/nosotros'
       path: '/nosotros'
@@ -383,11 +420,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtecCursosIndexRouteImport
       parentRoute: typeof OtecRoute
     }
-    '/crecimiento/talleres/': {
-      id: '/crecimiento/talleres/'
-      path: '/talleres'
-      fullPath: '/crecimiento/talleres'
-      preLoaderRoute: typeof CrecimientoTalleresIndexRouteImport
+    '/crecimiento/cursos/': {
+      id: '/crecimiento/cursos/'
+      path: '/cursos'
+      fullPath: '/crecimiento/cursos'
+      preLoaderRoute: typeof CrecimientoCursosIndexRouteImport
       parentRoute: typeof CrecimientoRoute
     }
     '/plus/productos/$productId': {
@@ -404,11 +441,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OtecCursosCourseSlugRouteImport
       parentRoute: typeof OtecRoute
     }
-    '/crecimiento/talleres/$slug': {
-      id: '/crecimiento/talleres/$slug'
-      path: '/talleres/$slug'
-      fullPath: '/crecimiento/talleres/$slug'
-      preLoaderRoute: typeof CrecimientoTalleresSlugRouteImport
+    '/crecimiento/cursos/$slug': {
+      id: '/crecimiento/cursos/$slug'
+      path: '/cursos/$slug'
+      fullPath: '/crecimiento/cursos/$slug'
+      preLoaderRoute: typeof CrecimientoCursosSlugRouteImport
       parentRoute: typeof CrecimientoRoute
     }
   }
@@ -418,18 +455,22 @@ interface CrecimientoRouteChildren {
   CrecimientoCotizacionRoute: typeof CrecimientoCotizacionRoute
   CrecimientoGaleriaRoute: typeof CrecimientoGaleriaRoute
   CrecimientoNosotrosRoute: typeof CrecimientoNosotrosRoute
+  CrecimientoTalleresRoute: typeof CrecimientoTalleresRoute
+  CrecimientoTeatroRoute: typeof CrecimientoTeatroRoute
   CrecimientoIndexRoute: typeof CrecimientoIndexRoute
-  CrecimientoTalleresSlugRoute: typeof CrecimientoTalleresSlugRoute
-  CrecimientoTalleresIndexRoute: typeof CrecimientoTalleresIndexRoute
+  CrecimientoCursosSlugRoute: typeof CrecimientoCursosSlugRoute
+  CrecimientoCursosIndexRoute: typeof CrecimientoCursosIndexRoute
 }
 
 const CrecimientoRouteChildren: CrecimientoRouteChildren = {
   CrecimientoCotizacionRoute: CrecimientoCotizacionRoute,
   CrecimientoGaleriaRoute: CrecimientoGaleriaRoute,
   CrecimientoNosotrosRoute: CrecimientoNosotrosRoute,
+  CrecimientoTalleresRoute: CrecimientoTalleresRoute,
+  CrecimientoTeatroRoute: CrecimientoTeatroRoute,
   CrecimientoIndexRoute: CrecimientoIndexRoute,
-  CrecimientoTalleresSlugRoute: CrecimientoTalleresSlugRoute,
-  CrecimientoTalleresIndexRoute: CrecimientoTalleresIndexRoute,
+  CrecimientoCursosSlugRoute: CrecimientoCursosSlugRoute,
+  CrecimientoCursosIndexRoute: CrecimientoCursosIndexRoute,
 }
 
 const CrecimientoRouteWithChildren = CrecimientoRoute._addFileChildren(

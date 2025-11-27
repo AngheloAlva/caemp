@@ -26,7 +26,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion"
 
-export const Route = createFileRoute("/crecimiento/talleres/$slug")({
+export const Route = createFileRoute("/crecimiento/cursos/$slug")({
 	component: RouteComponent,
 })
 

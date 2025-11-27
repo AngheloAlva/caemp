@@ -1,7 +1,8 @@
 "use client"
 
 import { Link } from "@tanstack/react-router"
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
+import { useState, useEffect } from "react"
 
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -11,32 +12,65 @@ const businessLines = [
 	{
 		name: "CAEMP OTEC",
 		title: "Capacitacion y Entrenamiento",
-		logo: "/images/logo/logo-o-black.png",
+		logo: "/images/logo/logo-o-white.png",
 		href: "/otec",
 		color: "#004E8C",
 	},
 	{
+		name: "CAEMP Plus",
+		title: "Asesoria tecnica y venta de EPP",
+		logo: "/images/logo/logo-p-white.png",
+		href: "/plus",
+		color: "#16A34A",
+	},
+	{
 		name: "Crecimiento",
 		title: "Formacion y Couching",
-		logo: "/images/logo/logo-c-black.png",
+		logo: "/images/logo/logo-c-white.png",
 		href: "/crecimiento",
 		color: "#8B5CF6",
 	},
-	{
-		name: "CAEMP Plus",
-		title: "Asesoria tecnica y venta de EPP",
-		logo: "/images/logo/logo-p-black.png",
-		href: "/prevencion",
-		color: "#16A34A",
-	},
+]
+
+const heroImages = [
+	"/images/home/hero.jpg",
+	"/images/home/hero-2.jpg",
+	"/images/crecimiento/galery-4.jpeg",
 ]
 
 export default function Hero() {
+	const [currentImage, setCurrentImage] = useState(0)
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCurrentImage((prev) => (prev + 1) % heroImages.length)
+		}, 5000)
+
+		return () => clearInterval(timer)
+	}, [])
+
 	return (
 		<section className="relative flex min-h-[calc(100dvh-10rem)] w-full items-center justify-center overflow-hidden py-20 md:py-32">
-			<div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-size-[3rem_3rem]">
-				<div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_300px,#e0e7ff,transparent)]"></div>
+			<div className="absolute inset-0 -z-20 h-full w-full">
+				<AnimatePresence mode="popLayout">
+					<motion.div
+						key={currentImage}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 1 }}
+						className="absolute inset-0 h-full w-full"
+					>
+						<img
+							src={heroImages[currentImage]}
+							alt="Background"
+							className="h-full w-full object-cover"
+						/>
+					</motion.div>
+				</AnimatePresence>
 			</div>
+
+			<div className="absolute inset-0 -z-10 bg-black/50" />
 
 			<div className="container mx-auto px-4">
 				<div className="mx-auto max-w-7xl">
@@ -48,7 +82,7 @@ export default function Hero() {
 								transition={{ duration: 0.5 }}
 								className="mb-6"
 							>
-								<h1 className="text-primary mb-6 text-4xl font-black tracking-tight md:text-6xl lg:text-7xl">
+								<h1 className="mb-6 text-4xl font-black tracking-tight text-white md:text-6xl lg:text-7xl">
 									Grupo CAEMP
 								</h1>
 							</motion.div>
@@ -77,7 +111,7 @@ export default function Hero() {
 											/>
 										</div>
 
-										<p className="text-center text-base font-semibold text-gray-700 md:text-xl xl:text-2xl">
+										<p className="text-center text-base font-semibold text-white md:text-xl xl:text-2xl">
 											{line.title}
 										</p>
 									</Link>
@@ -89,9 +123,9 @@ export default function Hero() {
 					<div className="mx-auto mt-12 max-w-7xl lg:mt-20">
 						<div className="text-center">
 							<SlideIn direction="up" delay={0.2}>
-								<p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
-									Más de 15 años acompañando a las empresas de Chile en la construcción de entornos
-									laborales más seguros, conscientes y productivos
+								<p className="mx-auto max-w-3xl text-lg text-white md:text-xl">
+									Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile
+									en la construcción de entornos laborales más seguros, conscientes y productivos
 								</p>
 							</SlideIn>
 						</div>

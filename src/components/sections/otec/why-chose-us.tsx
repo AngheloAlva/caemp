@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
+import { InfiniteMovingImages } from "@/components/ui/infinity-moving-images"
 import { FadeIn } from "@/components/animations/fade-in"
 
 interface BentoGridItemProps {
@@ -142,6 +143,28 @@ export default function WhyChoseUs(): React.ReactElement {
 						/>
 					))}
 				</motion.div>
+
+				<InfiniteMovingImages
+					items={[
+						{
+							image: "/images/shared/sense.png",
+							title: "SENSE",
+						},
+						{
+							image: "/images/shared/sci.png",
+							title: "SCI",
+						},
+						{
+							image: "/images/otec/ipaf.png",
+							title: "IPAF",
+						},
+						{
+							image: "/images/otec/ecsi.png",
+							title: "ECSI",
+							className: "md:w-[320px]",
+						},
+					]}
+				/>
 			</div>
 		</section>
 	)

@@ -5,24 +5,24 @@ import { Images } from "lucide-react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
-import { FadeIn } from "@/components/animations/fade-in"
 import { HoverScale } from "@/components/animations/hover-scale"
+import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
 
 const galleryImages = [
 	{
-		src: "/images/crecimiento/hero.png",
+		src: "/images/crecimiento/galery-1.jpeg",
 		alt: "Experiencia de crecimiento 1",
 		title: "Transformación en acción",
 	},
 	{
-		src: "/images/crecimiento/hero.png",
+		src: "/images/crecimiento/galery-2.jpeg",
 		alt: "Experiencia de crecimiento 2",
 		title: "Equipos conectados",
 	},
 	{
-		src: "/images/crecimiento/hero.png",
+		src: "/images/crecimiento/galery-3.jpeg",
 		alt: "Experiencia de crecimiento 3",
 		title: "Liderazgo consciente",
 	},

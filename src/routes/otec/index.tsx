@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import FeatureCourses from "@/components/sections/otec/feature-courses"
 import WhyChoseUs from "@/components/sections/otec/why-chose-us"
-import Services from "@/components/sections/otec/services"
 import Benefits from "@/components/sections/otec/benefits"
 import TrustUs from "@/components/sections/otec/trust-us"
 import Stats from "@/components/sections/otec/stats"
@@ -18,7 +17,7 @@ function App() {
 			<Stats />
 			<WhyChoseUs />
 			<Benefits />
-			<Services />
+			{/* <Services /> */}
 			<FeatureCourses />
 			<TrustUs />
 			<Cta />

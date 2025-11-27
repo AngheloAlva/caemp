@@ -15,17 +15,6 @@ export default function Services(): React.ReactElement {
 						<h2 className="mb-4 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
 							Nuestros Servicios
 						</h2>
-						<p className="text-muted-foreground mb-6 text-lg leading-relaxed text-pretty">
-							Nos especializamos en la capacitación y entrenamiento en trabajos de alto riesgo y
-							respuesta ante emergencias, con el propósito de elevar la seguridad laboral y prevenir
-							accidentes.
-						</p>
-						<p className="text-muted-foreground text-lg leading-relaxed text-pretty">
-							Contamos con un centro de entrenamiento de alto nivel, equipado con tecnología de
-							vanguardia y todas las herramientas necesarias para complementar nuestros cursos de
-							excelencia. Formamos profesionales preparados para actuar con seguridad, reducir
-							riesgos y proteger vidas en entornos desafiantes.
-						</p>
 					</div>
 				</FadeIn>
 

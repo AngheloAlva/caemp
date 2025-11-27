@@ -23,7 +23,7 @@ export default function Hero(): React.ReactElement {
 				<div className="mx-auto max-w-3xl space-y-8 text-center">
 					<FadeIn delay={0.2}>
 						<Badge variant="secondary" className="mb-4">
-							Más de 25 años de experiencia
+							Desde el 2010, fortaleciendo la seguridad y el talento humano de las empresas
 						</Badge>
 					</FadeIn>
 					<SlideIn delay={0.3} direction="up">
@@ -33,10 +33,12 @@ export default function Hero(): React.ReactElement {
 					</SlideIn>
 					<SlideIn delay={0.4} direction="up">
 						<p className="text-primary-foreground/90 mx-auto max-w-2xl text-lg leading-relaxed text-pretty md:text-xl">
-							Formamos profesionales en prevención de riesgos, rescate en altura, primeros auxilios
-							y formación de brigadas de emergencia en todo Chile.
+							Formamos profesionales altamente competentes para ejecutar labores de alto riesgo en
+							todos los rubros de alto desempeño y en aquellos donde la seguridad es crítica para
+							las operaciones, a lo largo de todo Chile.
 						</p>
 					</SlideIn>
+
 					<FadeIn delay={0.5}>
 						<div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
 							<HoverScale>

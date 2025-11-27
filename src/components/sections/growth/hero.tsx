@@ -5,6 +5,7 @@ import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Link } from "@tanstack/react-router"
 
 export default function Hero(): React.ReactElement {
 	return (
@@ -12,7 +13,6 @@ export default function Hero(): React.ReactElement {
 			className="relative w-screen overflow-hidden text-white"
 			style={{ backgroundColor: "#8B5CF6" }}
 		>
-			{/* Imagen de fondo con transparencia */}
 			<div
 				className="absolute inset-0 bg-cover bg-center"
 				style={{ backgroundImage: "url(/images/crecimiento/hero.png)" }}
@@ -41,8 +41,10 @@ export default function Hero(): React.ReactElement {
 
 					<SlideIn delay={0.4} direction="up" className="mt-2">
 						<p className="text-xl leading-relaxed text-pretty text-white/90">
-							Donde el aprendizaje se encuentra con la acción. ¡Descubre cómo avanzar más allá de
-							tus límites!
+							Donde el aprendizaje se encuentra con la acción.
+						</p>
+						<p className="text-xl leading-relaxed text-pretty text-white/90">
+							¡Descubre cómo avanzar más allá de tus límites!
 						</p>
 					</SlideIn>
 
@@ -54,25 +56,15 @@ export default function Hero(): React.ReactElement {
 									className="group text-primary-purple relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
 									asChild
 								>
-									<a href="#talleres">
-										Ver Talleres
+									<Link to="/crecimiento/cotizacion">
+										Solicitar Cotización
 										<div className="relative ml-2 h-4 w-4 overflow-hidden">
 											<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
 												<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
 												<ArrowUpRightIcon className="h-4 w-4 -translate-x-3 stroke-3" />
 											</div>
 										</div>
-									</a>
-								</Button>
-							</HoverScale>
-							<HoverScale>
-								<Button
-									size="lg"
-									variant="outline"
-									className="hover:text-primary-purple border-white bg-white/10 text-white hover:bg-white/90"
-									asChild
-								>
-									<a href="/crecimiento/cotizacion">Solicitar Cotización</a>
+									</Link>
 								</Button>
 							</HoverScale>
 						</div>

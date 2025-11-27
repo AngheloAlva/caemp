@@ -12,13 +12,13 @@ import { Button } from "@/components/ui/button"
 const contactInfo = [
 	{
 		icon: MailIcon,
-		value: "contacto@grupocaemp.cl",
-		href: "mailto:contacto@grupocaemp.cl",
+		value: "comercial@caemp.cl",
+		href: "mailto:comercial@caemp.cl",
 	},
 	{
 		icon: PhoneIcon,
-		value: "+56 9 0000 0000",
-		href: "tel:+56900000000",
+		value: "+56 9 3247 8827",
+		href: "tel:+56932478827",
 	},
 	{
 		icon: MapPinIcon,
@@ -132,6 +132,20 @@ export default function Contact() {
 												id="email"
 												className="focus:border-primary focus:ring-primary/20 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:outline-none"
 												placeholder="tu@email.com"
+											/>
+										</div>
+										<div>
+											<label
+												htmlFor="phone"
+												className="mb-2 block text-sm font-medium text-gray-700"
+											>
+												Teléfono de contacto
+											</label>
+											<input
+												type="tel"
+												id="phone"
+												className="focus:border-primary focus:ring-primary/20 w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:outline-none"
+												placeholder="+56 9 1234 5678"
 											/>
 										</div>
 										<div>

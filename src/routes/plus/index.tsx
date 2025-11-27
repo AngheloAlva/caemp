@@ -6,6 +6,7 @@ import Categories from "@/components/sections/plus/categories"
 import Hero from "@/components/sections/plus/hero"
 import About from "@/components/sections/plus/about"
 import Cta from "@/components/sections/plus/cta"
+import OfficialProviders from "@/components/sections/plus/oficial-providers"
 
 export const Route = createFileRoute("/plus/")({
 	component: RouteComponent,
@@ -18,6 +19,7 @@ function RouteComponent() {
 			<About />
 			<Categories />
 			<FeaturedProducts />
+			<OfficialProviders />
 			<Testimonials />
 			<Cta />
 		</main>

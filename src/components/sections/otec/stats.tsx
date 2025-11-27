@@ -1,12 +1,53 @@
+"use client"
+
 import { motion } from "motion/react"
+import { useState } from "react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
+import { useCounterAnimation } from "@/hooks/use-counter-animation"
+import { useSimpleCounter } from "@/hooks/use-simple-counter"
 import { StaggerItem } from "@/components/animations/stagger-item"
 
+const START_DATE = new Date(2025, 11, 1)
+
 export default function Stats(): React.ReactElement {
+	const [clientesInView, setClientesInView] = useState(false)
+	const [alumnosInView, setAlumnosInView] = useState(false)
+	const [experienciaInView, setExperienciaInView] = useState(false)
+	const [certificacionInView, setCertificacionInView] = useState(false)
+
+	const clientesCount = useCounterAnimation({
+		baseValue: 700,
+		monthlyIncrement: 4,
+		startDate: START_DATE,
+		duration: 2000,
+		inView: clientesInView,
+	})
+
+	const alumnosCount = useCounterAnimation({
+		baseValue: 30000,
+		monthlyIncrement: 250,
+		startDate: START_DATE,
+		duration: 2000,
+		inView: alumnosInView,
+	})
+
+	const experienciaYears = useSimpleCounter({
+		targetValue: new Date().getFullYear() - 2010,
+		duration: 2000,
+		inView: experienciaInView,
+	})
+
+	const certificacionPercent = useSimpleCounter({
+		targetValue: 100,
+		duration: 2000,
+		inView: certificacionInView,
+		suffix: "%",
+	})
+
 	return (
 		<section className="bg-muted/30 w-screen border-b py-12">
-			<div className="container mx-auto">
+			<div className="container mx-auto space-y-8">
 				<StaggerContainer staggerDelay={0.15}>
 					<div className="grid grid-cols-2 gap-8 md:grid-cols-4">
 						<StaggerItem>
@@ -16,8 +57,11 @@ export default function Stats(): React.ReactElement {
 							>
 								<motion.div
 									className="text-primary text-4xl font-bold md:text-5xl"
-									initial={{ scale: 0 }}
-									whileInView={{ scale: 1 }}
+									initial={{ scale: 0.5 }}
+									whileInView={{
+										scale: 1,
+									}}
+									onViewportEnter={() => setClientesInView(true)}
 									viewport={{ once: true }}
 									transition={{
 										delay: 0.2,
@@ -25,9 +69,9 @@ export default function Stats(): React.ReactElement {
 										stiffness: 200,
 									}}
 								>
-									+700
+									+{clientesCount.toLocaleString()}
 								</motion.div>
-								<div className="text-muted-foreground text-sm">Empresas Capacitadas</div>
+								<div className="text-muted-foreground text-sm">Clientes</div>
 							</motion.div>
 						</StaggerItem>
 						<StaggerItem>
@@ -37,8 +81,11 @@ export default function Stats(): React.ReactElement {
 							>
 								<motion.div
 									className="text-primary text-4xl font-bold md:text-5xl"
-									initial={{ scale: 0 }}
-									whileInView={{ scale: 1 }}
+									initial={{ scale: 0.5 }}
+									whileInView={{
+										scale: 1,
+									}}
+									onViewportEnter={() => setAlumnosInView(true)}
 									viewport={{ once: true }}
 									transition={{
 										delay: 0.3,
@@ -46,9 +93,9 @@ export default function Stats(): React.ReactElement {
 										stiffness: 200,
 									}}
 								>
-									+15,000
+									+{alumnosCount.toLocaleString()}
 								</motion.div>
-								<div className="text-muted-foreground text-sm">Personas Entrenadas</div>
+								<div className="text-muted-foreground text-sm">Alumnos</div>
 							</motion.div>
 						</StaggerItem>
 						<StaggerItem>
@@ -58,8 +105,11 @@ export default function Stats(): React.ReactElement {
 							>
 								<motion.div
 									className="text-primary text-4xl font-bold md:text-5xl"
-									initial={{ scale: 0 }}
-									whileInView={{ scale: 1 }}
+									initial={{ scale: 0.5 }}
+									whileInView={{
+										scale: 1,
+									}}
+									onViewportEnter={() => setExperienciaInView(true)}
 									viewport={{ once: true }}
 									transition={{
 										delay: 0.4,
@@ -67,7 +117,7 @@ export default function Stats(): React.ReactElement {
 										stiffness: 200,
 									}}
 								>
-									25+
+									+{experienciaYears}
 								</motion.div>
 								<div className="text-muted-foreground text-sm">Años de Experiencia</div>
 							</motion.div>
@@ -79,8 +129,11 @@ export default function Stats(): React.ReactElement {
 							>
 								<motion.div
 									className="text-primary text-4xl font-bold md:text-5xl"
-									initial={{ scale: 0 }}
-									whileInView={{ scale: 1 }}
+									initial={{ scale: 0.5 }}
+									whileInView={{
+										scale: 1,
+									}}
+									onViewportEnter={() => setCertificacionInView(true)}
 									viewport={{ once: true }}
 									transition={{
 										delay: 0.5,
@@ -88,7 +141,7 @@ export default function Stats(): React.ReactElement {
 										stiffness: 200,
 									}}
 								>
-									100%
+									{certificacionPercent}
 								</motion.div>
 								<div className="text-muted-foreground text-sm">Certificación</div>
 							</motion.div>

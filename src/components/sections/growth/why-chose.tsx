@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
+import { Image } from "@unpic/react"
 
 const reasons = [
 	{
@@ -128,16 +129,22 @@ export default function WhyChose(): React.ReactElement {
 				</StaggerContainer>
 
 				<FadeIn delay={0.6}>
-					<div className="bg-primary-purple/10 mx-auto mt-14 max-w-6xl rounded-2xl p-8 text-center md:p-10">
+					<div className="relative mx-auto mt-14 max-w-6xl overflow-hidden rounded-2xl bg-black/30 p-8 text-center md:p-10 md:py-24">
+						<Image
+							width={1152}
+							height={396}
+							className="absolute inset-0 -z-10"
+							src="/images/crecimiento/galery-10.jpeg"
+							alt="2 personas dibujadas dandose la mano"
+						/>
+
 						<div className="bg-primary-purple mx-auto mb-4 inline-flex rounded-full p-3">
 							<ShieldCheck className="h-8 w-8 text-white" />
 						</div>
 						<h3 className="text-primary-purple text-2xl font-bold">
 							Agenda tu proceso de coaching y da el siguiente paso
 						</h3>
-						<p className="text-muted-foreground mb-8 text-lg">
-							Todo cambio comienza con una conversación.
-						</p>
+						<p className="mb-8 text-lg text-white">Todo cambio comienza con una conversación.</p>
 
 						<HoverScale>
 							<Button

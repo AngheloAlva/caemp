@@ -25,7 +25,7 @@ export function Header() {
 	const config = isOtec
 		? {
 				logo: ["/images/logo/logo-o-black.png"],
-				brandName: "CAEMP OTEC",
+				brandName: "Capacitacion y Entrenamiento",
 				homeLink: "/otec",
 				navItems: [
 					{ to: "/otec", label: "Inicio" },
@@ -43,13 +43,17 @@ export function Header() {
 		: isCrecimiento
 			? {
 					logo: ["/images/logo/logo-c-black.png"],
-					brandName: "CRECIMIENTO",
+					brandName: "Formacion y Couching",
 					homeLink: "/crecimiento",
 					navItems: [
 						{ to: "/crecimiento", label: "Inicio" },
+						{ to: "/crecimiento/cursos", label: "Cursos" },
 						{ to: "/crecimiento/talleres", label: "Talleres" },
+						{ to: "/crecimiento/programas", label: "Programas" },
+						{ to: "/crecimiento/noticias", label: "Noticias" },
+						{ to: "/crecimiento/teatro", label: "Teatro" },
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
-						{ to: "#", label: "Contacto" },
+						{ to: "/crecimiento/contacto", label: "Contacto" },
 					],
 					ctaButton: {
 						to: "/crecimiento/cotizacion",
@@ -60,7 +64,7 @@ export function Header() {
 			: isPlus
 				? {
 						logo: ["/images/logo/logo-p-black.png"],
-						brandName: "CAEMP PLUS",
+						brandName: "Asesoria tecnica y venta de EPP",
 						homeLink: "/plus",
 						navItems: [
 							{ to: "/plus", label: "Inicio" },

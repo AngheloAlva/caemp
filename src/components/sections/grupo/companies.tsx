@@ -20,11 +20,11 @@ const companies = [
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
 		features: [
-			"Trabajos en Altura y Espacios Confinados",
-			"Control de Riesgos Eléctricos",
-			"Primeros Auxilios Industriales",
-			"Manejo de Sustancias Peligrosas",
-			"Operación de Maquinaria y Equipos",
+			"Técnicas de trabajo y rescate en altura",
+			"Técnicas de trabajo y Rescate en espacios confinados",
+			"Primeros auxilios RCP y DEA",
+			"Técnicas de operación de maquinaria y equipos",
+			"Técnicas de control de riesgos eléctricos NFA 70E",
 		],
 		link: "/otec",
 	},
@@ -52,11 +52,11 @@ const companies = [
 		description:
 			"Potenciamos el liderazgo, la comunicación y la colaboración. Diseñamos programas de capacitación y talleres personalizados que fortalecen las habilidades blandas.",
 		features: [
-			"Liderazgo Consciente",
-			"Comunicación Efectiva",
-			"Gestión del Estrés y Mindfulness",
-			"Coaching Organizacional",
-			"Trabajo en Equipo y Motivación",
+			"Programas de Habilidades interpersonales",
+			"Talleres Lúdicos",
+			"Cursos presenciales, semi presenciales y asincrónicos",
+			"Jornadas Team Building",
+			"Coaching ejecutivo y Coaching de Vida",
 		],
 		link: "/crecimiento",
 	},

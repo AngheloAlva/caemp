@@ -4,11 +4,8 @@ import { motion } from "motion/react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
-import { HoverScale } from "@/components/animations/hover-scale"
 import { FadeIn } from "@/components/animations/fade-in"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Link } from "@tanstack/react-router"
 
 const modalities = [
 	{
@@ -62,7 +59,7 @@ export default function Courses() {
 				<FadeIn>
 					<div className="mb-12 text-center">
 						<h2 className="text-primary-purple mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-							Consulta por Otros Cursos Disponibles
+							Modalidades de Formación Disponibles
 						</h2>
 						<p className="mx-auto max-w-3xl text-lg text-gray-700">
 							Ofrecemos formación adaptada a tus necesidades en tres modalidades:
@@ -122,21 +119,6 @@ export default function Courses() {
 						)
 					})}
 				</StaggerContainer>
-
-				<FadeIn delay={0.6}>
-					<div className="mt-12 text-center">
-						<HoverScale>
-							<Button
-								size="lg"
-								style={{ backgroundColor: "#8B5CF6" }}
-								className="text-white hover:opacity-90"
-								asChild
-							>
-								<Link to="/crecimiento/cotizacion">Solicitar Información Sobre Cursos</Link>
-							</Button>
-						</HoverScale>
-					</div>
-				</FadeIn>
 			</div>
 		</section>
 	)

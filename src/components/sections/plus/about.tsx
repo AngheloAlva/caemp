@@ -1,10 +1,10 @@
 import { Shield, Users, Award, TrendingUp } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 
+import { SlideIn } from "@/components/animations/slide-in"
+import { FadeIn } from "@/components/animations/fade-in"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FadeIn } from "@/components/animations/fade-in"
-import { SlideIn } from "@/components/animations/slide-in"
 
 const features = [
 	{
