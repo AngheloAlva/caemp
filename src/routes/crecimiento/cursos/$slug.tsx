@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
+import { Image } from "@unpic/react"
 import {
 	Clock,
 	Users,
@@ -54,11 +55,25 @@ function RouteComponent() {
 
 	return (
 		<main className="flex flex-col items-center justify-center overflow-x-hidden pb-20">
-			<section
-				className="relative w-screen px-6 py-14 text-white lg:py-20"
-				style={{ backgroundColor: "#8B5CF6" }}
-			>
-				<div className="absolute -top-1 -right-1/3 z-0 size-full bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)] bg-size-[28px_28px]"></div>
+			<section className="relative w-screen px-6 py-14 text-white lg:py-20">
+				{course.image ? (
+					<>
+						<div className="absolute inset-0 z-0">
+							<Image
+								src={course.image}
+								alt={course.title}
+								layout="fullWidth"
+								className="h-full w-full object-cover"
+							/>
+						</div>
+						<div className="absolute inset-0 z-0 bg-linear-to-r from-purple-900/90 via-purple-800/85 to-purple-900/90"></div>
+					</>
+				) : (
+					<>
+						<div className="absolute inset-0 z-0" style={{ backgroundColor: "#8B5CF6" }}></div>
+						<div className="absolute -top-1 -right-1/3 z-0 size-full bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)] bg-size-[28px_28px]"></div>
+					</>
+				)}
 
 				<FadeIn>
 					<div className="relative z-10 mx-auto max-w-6xl">

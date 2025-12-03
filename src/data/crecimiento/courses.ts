@@ -40,6 +40,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 1,
 		slug: "tecnicas-de-gestion-financiera",
 		title: "Técnicas de Gestión Financiera",
+		image: "/images/crecimiento/courses/tecnicas-de-gestion-financiera.jpg",
 		tendenciaActual:
 			"La gestión financiera empresarial se posiciona como clave para la sostenibilidad y el crecimiento, impulsando profesionales que optimizan recursos, anticipan riesgos y fortalecen la toma de decisiones en entornos dinámicos.",
 		codigoSENCE: "1238080390",
@@ -124,6 +125,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 2,
 		slug: "tecnicas-efectivas-de-autocontrol-y-prevencion-de-estres",
 		title: "Técnicas Efectivas de Autocontrol y Prevención de Estrés",
+		image:
+			"/images/crecimiento/courses/tecnicas-efectivas-de-autocontrol-y-prevencion-de-estres.jpg",
 		tendenciaActual:
 			"El autocontrol emocional y la prevención del estrés son pilares del bienestar laboral...",
 		codigoSENCE: "1238080391",
