@@ -36,16 +36,6 @@ export default function Cta(): React.ReactElement {
 									</Link>
 								</Button>
 							</HoverScale>
-							<HoverScale>
-								<Button
-									size="lg"
-									variant="outline"
-									className="hover:text-primary-purple border-white bg-white/10 text-white hover:bg-white/90"
-									asChild
-								>
-									<a href="tel:+56987654321">Llamar Ahora</a>
-								</Button>
-							</HoverScale>
 						</div>
 					</div>
 				</FadeIn>

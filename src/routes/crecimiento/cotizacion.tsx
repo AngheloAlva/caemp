@@ -1,16 +1,25 @@
 import { CheckCircle2Icon, MailIcon, PhoneIcon } from "lucide-react"
 import { createFileRoute } from "@tanstack/react-router"
+import { z } from "zod"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { GrowthQuoteForm } from "@/components/sections/quote/growth-quote-form"
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 
+const searchSchema = z.object({
+	serviceType: z.string().optional(),
+	serviceItem: z.string().optional(),
+})
+
 export const Route = createFileRoute("/crecimiento/cotizacion")({
+	validateSearch: (search) => searchSchema.parse(search),
 	component: RouteComponent,
 })
 
 function RouteComponent() {
+	const { serviceType, serviceItem } = Route.useSearch()
+
 	return (
 		<main className="flex flex-col items-center justify-center space-y-6 overflow-x-hidden pb-20">
 			<section
@@ -32,7 +41,7 @@ function RouteComponent() {
 				</FadeIn>
 			</section>
 
-			<section className="flex w-full max-w-6xl flex-col gap-8 px-4 md:flex-row lg:gap-10">
+			<section className="flex w-full max-w-6xl flex-col-reverse gap-8 px-4 md:flex-row lg:gap-10">
 				<SlideIn
 					delay={0.4}
 					direction="left"
@@ -119,7 +128,7 @@ function RouteComponent() {
 				</SlideIn>
 
 				<SlideIn direction="up" delay={0.4} className="md:w-4/6">
-					<GrowthQuoteForm />
+					<GrowthQuoteForm defaultServiceType={serviceType} defaultServiceItem={serviceItem} />
 				</SlideIn>
 			</section>
 		</main>

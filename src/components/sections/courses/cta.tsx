@@ -19,7 +19,7 @@ export default function Cta(): React.ReactElement {
 						</p>
 						<HoverScale>
 							<Button size="lg" asChild>
-								<Link to="/cotizacion">Solicitar Capacitación Personalizada</Link>
+								<Link to="/otec/cotizacion">Solicitar Capacitación Personalizada</Link>
 							</Button>
 						</HoverScale>
 					</div>

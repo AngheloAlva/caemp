@@ -19,7 +19,7 @@ export const Route = createFileRoute("/crecimiento/")({
 
 function RouteComponent() {
 	return (
-		<main className="flex flex-col items-center justify-center">
+		<main className="flex flex-col items-center justify-center overflow-x-hidden">
 			<Hero />
 			<Courses />
 			<FeaturedCourses />

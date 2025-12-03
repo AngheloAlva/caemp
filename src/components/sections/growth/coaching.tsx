@@ -55,7 +55,7 @@ export default function Coaching() {
 					<StaggerContainer className="space-y-8">
 						<StaggerItem>
 							<Card className="border-primary-purple/20 overflow-hidden">
-								<CardContent className="pr-0">
+								<CardContent className="lg:pr-0">
 									<div className="grid gap-0 lg:grid-cols-2">
 										<div className="bg-primary-purple/5 flex items-center justify-center p-8 md:p-12">
 											<div className="text-center">
@@ -69,7 +69,7 @@ export default function Coaching() {
 											</div>
 										</div>
 
-										<div className="p-8 md:p-12">
+										<div className="px-2 py-4 md:p-12">
 											<p className="mb-4 text-lg font-semibold text-gray-900">
 												Para quienes quieren avanzar, superarse y vivir con propósito.
 											</p>
@@ -104,7 +104,7 @@ export default function Coaching() {
 
 						<StaggerItem>
 							<Card className="border-primary-purple/20 overflow-hidden">
-								<CardContent className="pl-0">
+								<CardContent className="lg:pl-0">
 									<div className="grid gap-0 lg:grid-cols-2">
 										<div className="bg-primary-purple/5 flex items-center justify-center p-8 md:p-12 lg:order-2">
 											<div className="text-center">
@@ -118,7 +118,7 @@ export default function Coaching() {
 											</div>
 										</div>
 
-										<div className="p-8 md:p-12 lg:order-1">
+										<div className="px-2 py-4 md:p-12 lg:order-1">
 											<p className="mb-4 text-lg font-semibold text-gray-900">
 												Para líderes y equipos que buscan elevar su desempeño y potenciar el clima
 												laboral.

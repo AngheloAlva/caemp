@@ -26,7 +26,7 @@ export default function Hero(): React.ReactElement {
 			/>
 
 			<div className="relative container mx-auto py-24 md:py-32 lg:py-40">
-				<div className="mx-auto flex max-w-3xl flex-col gap-6 text-center">
+				<div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 text-center">
 					<FadeIn delay={0.2}>
 						<Badge variant="secondary" className="border-white/30 bg-white/20 text-white">
 							Desarrollo profesional y personal transformador

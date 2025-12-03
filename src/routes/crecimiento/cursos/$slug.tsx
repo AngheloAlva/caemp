@@ -55,7 +55,7 @@ function RouteComponent() {
 	return (
 		<main className="flex flex-col items-center justify-center overflow-x-hidden pb-20">
 			<section
-				className="relative w-screen px-4 py-14 text-white lg:py-20"
+				className="relative w-screen px-6 py-14 text-white lg:py-20"
 				style={{ backgroundColor: "#8B5CF6" }}
 			>
 				<div className="absolute -top-1 -right-1/3 z-0 size-full bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)] bg-size-[28px_28px]"></div>
@@ -375,7 +375,10 @@ function RouteComponent() {
 									className="bg-primary-purple hover:bg-primary-purple/80 tracking-wider text-white hover:opacity-90"
 									asChild
 								>
-									<Link to="/crecimiento/cotizacion">
+									<Link
+										to="/crecimiento/cotizacion"
+										search={{ serviceType: "cursos", serviceItem: course.slug }}
+									>
 										Solicitar Cotización
 										<ArrowRight className="h-5 w-5" />
 									</Link>

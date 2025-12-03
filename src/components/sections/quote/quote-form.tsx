@@ -1,9 +1,10 @@
 import { useAppForm } from "@/components/ui/tanstack-form"
-import { Calendar as CalendarIcon } from "lucide-react"
+import { Calendar as CalendarIcon, CheckCircle2Icon } from "lucide-react"
 import { revalidateLogic } from "@tanstack/react-form"
 import { format } from "date-fns"
 
 import { quoteFormSchema, type QuoteFormSchema } from "./quote.schema"
+import { courses } from "@/data/otec/courses"
 import { cn } from "@/lib/utils"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
@@ -14,7 +15,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-export function QuoteForm() {
+interface QuoteFormProps {
+	defaultCourse?: string
+}
+
+export function QuoteForm({ defaultCourse }: QuoteFormProps) {
 	const draftForm = useAppForm({
 		defaultValues: {
 			full_name: "",
@@ -23,7 +28,7 @@ export function QuoteForm() {
 			role: "",
 			company_name: "",
 			participans_number: 0,
-			courses: [] as string[],
+			courses: defaultCourse ? [defaultCourse] : ([] as string[]),
 			prefer_date: "",
 			message: "",
 		} as QuoteFormSchema,
@@ -207,18 +212,10 @@ export function QuoteForm() {
 
 					<draftForm.AppField name={"courses"}>
 						{(field) => {
-							const options = [
-								{ label: "Control de Riesgos Eléctricos", value: "control_de_riesgos_electricos" },
-								{ label: "Técnicas de Rescate en Altura", value: "tecnicas_de_rescate_en_altura" },
-								{
-									label: "Primeros Auxilios y Manejo del Trauma",
-									value: "primeros_auxilios_y_manjeo_del_trauma",
-								},
-								{
-									label: "Trabajo en Espacios Confinados",
-									value: "trabajo_en_espacios_confinados",
-								},
-							]
+							const options = Object.values(courses).map((course) => ({
+								label: course.title,
+								value: course.slug,
+							}))
 
 							return (
 								<field.FieldSet className="flex w-full flex-col gap-2 py-1">
@@ -229,6 +226,7 @@ export function QuoteForm() {
 											onValueChange={field.handleChange}
 											className="grid w-full grid-cols-1 gap-3 md:grid-cols-2"
 											aria-invalid={!!field.state.meta.errors.length}
+											value={field.state.value as string[]}
 										>
 											{options.map(({ label, value }) => (
 												<ToggleGroupItem
@@ -236,8 +234,11 @@ export function QuoteForm() {
 													value={value}
 													key={value}
 													disabled={false}
-													className="data-[spacing=0]:data-[variant=outline]:first:border-lz h-auto min-h-[48px] rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
+													className="data-[spacing=0]:data-[variant=outline]:first:border-lz h-full min-h-[48px] justify-start rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
 												>
+													{field.state.value.includes(value) && (
+														<CheckCircle2Icon className="h-5 w-5" />
+													)}
 													{label}
 												</ToggleGroupItem>
 											))}

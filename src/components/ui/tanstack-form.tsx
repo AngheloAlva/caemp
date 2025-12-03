@@ -108,6 +108,7 @@ function Field({
 		<DefaultField
 			data-invalid={!!errors.length}
 			id={formItemId}
+			className="gap-2"
 			aria-describedby={
 				!errors.length ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`
 			}

@@ -1,9 +1,13 @@
 import { useAppForm } from "@/components/ui/tanstack-form"
-import { Calendar as CalendarIcon } from "lucide-react"
+import { Calendar as CalendarIcon, CheckCircle2Icon } from "lucide-react"
 import { revalidateLogic } from "@tanstack/react-form"
 import { format } from "date-fns"
 
 import { cn } from "@/lib/utils"
+
+import { courses } from "@/data/crecimiento/courses"
+import { theaterPlays } from "@/data/crecimiento/theater"
+import { programAreas } from "@/data/crecimiento/programs"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
@@ -36,7 +40,12 @@ const growthQuoteFormSchema = z.object({
 
 type GrowthQuoteFormSchema = z.infer<typeof growthQuoteFormSchema>
 
-export function GrowthQuoteForm() {
+interface GrowthQuoteFormProps {
+	defaultServiceType?: string
+	defaultServiceItem?: string
+}
+
+export function GrowthQuoteForm({ defaultServiceType, defaultServiceItem }: GrowthQuoteFormProps) {
 	const draftForm = useAppForm({
 		defaultValues: {
 			full_name: "",
@@ -45,8 +54,8 @@ export function GrowthQuoteForm() {
 			role: "",
 			company_name: "",
 			participans_number: 0,
-			service_type: "",
-			services: [] as string[],
+			service_type: defaultServiceType || "",
+			services: defaultServiceItem ? [defaultServiceItem] : ([] as string[]),
 			prefer_date: "",
 			message: "",
 		} as GrowthQuoteFormSchema,
@@ -244,10 +253,15 @@ export function GrowthQuoteForm() {
 											<SelectValue placeholder="Selecciona un tipo de servicio" />
 										</SelectTrigger>
 										<SelectContent>
-											<SelectItem value="coaching_personal">Coaching Personal</SelectItem>
-											<SelectItem value="coaching_empresarial">Coaching Empresarial</SelectItem>
-											<SelectItem value="talleres">Talleres</SelectItem>
-											<SelectItem value="programas">Programas de Capacitación</SelectItem>
+											<SelectItem className="focus:text-primary-purple" value="cursos">
+												Cursos
+											</SelectItem>
+											<SelectItem className="focus:text-primary-purple" value="talleres">
+												Talleres
+											</SelectItem>
+											<SelectItem className="focus:text-primary-purple" value="programas">
+												Programas de Capacitación
+											</SelectItem>
 										</SelectContent>
 									</Select>
 								</field.Field>
@@ -262,46 +276,67 @@ export function GrowthQuoteForm() {
 						<FieldDescription>Selecciona uno o más servicios de interés *</FieldDescription>
 					</div>
 
-					<draftForm.AppField name={"services"}>
-						{(field) => {
-							const options = [
-								{ label: "Liderazgo y Comunicación", value: "liderazgo_comunicacion" },
-								{ label: "Trabajo en Equipo", value: "trabajo_equipo" },
-								{ label: "Gestión Emocional", value: "gestion_emocional" },
-								{ label: "Coaching Ejecutivo", value: "coaching_ejecutivo" },
-								{ label: "Desarrollo Personal", value: "desarrollo_personal" },
-								{ label: "Convivencia Laboral", value: "convivencia_laboral" },
-							]
+					<draftForm.Subscribe
+						selector={(state) => ({
+							serviceType: state.values.service_type,
+						})}
+						children={({ serviceType }) => (
+							<draftForm.AppField name={"services"}>
+								{(field) => {
+									let options: { label: string; value: string }[] = []
 
-							return (
-								<field.FieldSet className="flex w-full flex-col gap-2 py-1">
-									<field.Field>
-										<ToggleGroup
-											type="multiple"
-											variant="outline"
-											onValueChange={field.handleChange}
-											className="grid w-full grid-cols-1 gap-3 md:grid-cols-2"
-											aria-invalid={!!field.state.meta.errors.length}
-										>
-											{options.map(({ label, value }) => (
-												<ToggleGroupItem
-													name={"services"}
-													value={value}
-													key={value}
-													disabled={false}
-													className="h-auto min-h-[48px] rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
+									if (serviceType === "talleres") {
+										options = theaterPlays.map((play) => ({
+											label: play.title,
+											value: play.title,
+										}))
+									} else if (serviceType === "programas") {
+										options = programAreas.map((program) => ({
+											label: program.title,
+											value: program.title,
+										}))
+									} else {
+										options = Object.values(courses).map((course) => ({
+											label: course.title,
+											value: course.slug,
+										}))
+									}
+
+									return (
+										<field.FieldSet className="flex w-full flex-col gap-2 py-1">
+											<field.Field>
+												<ToggleGroup
+													type="multiple"
+													variant="outline"
+													onValueChange={field.handleChange}
+													className="grid w-full grid-cols-1 gap-3 md:grid-cols-2"
+													aria-invalid={!!field.state.meta.errors.length}
+													value={field.state.value as string[]}
 												>
-													{label}
-												</ToggleGroupItem>
-											))}
-										</ToggleGroup>
-									</field.Field>
+													{options.map(({ label, value }) => (
+														<ToggleGroupItem
+															name={"services"}
+															value={value}
+															key={value}
+															disabled={false}
+															className="data-[spacing=0]:data-[variant=outline]:first:border-lz hover:text-primary-purple data-[state=on]:text-primary-purple h-full min-h-[48px] justify-start rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
+														>
+															{field.state.value.includes(value) && (
+																<CheckCircle2Icon className="h-5 w-5" />
+															)}
+															{label}
+														</ToggleGroupItem>
+													))}
+												</ToggleGroup>
+											</field.Field>
 
-									<field.FieldError />
-								</field.FieldSet>
-							)
-						}}
-					</draftForm.AppField>
+											<field.FieldError />
+										</field.FieldSet>
+									)
+								}}
+							</draftForm.AppField>
+						)}
+					/>
 
 					<div className="mt-4">
 						<h3 className="text-xl font-bold">Detalles Adicionales</h3>
@@ -326,7 +361,7 @@ export function GrowthQuoteForm() {
 												<Button
 													variant={"outline"}
 													className={cn(
-														"w-full justify-start text-start font-normal",
+														"hover:text-primary-purple w-full justify-start text-start font-normal",
 														!date && "text-muted-foreground"
 													)}
 												>
@@ -382,7 +417,10 @@ export function GrowthQuoteForm() {
 					</draftForm.AppField>
 
 					<div className="flex w-full items-center justify-end pt-3">
-						<draftForm.SubmitButton className="bg-primary-purple" label="Solicitar Cotización" />
+						<draftForm.SubmitButton
+							className="bg-primary-purple hover:bg-primary-purple/80"
+							label="Solicitar Cotización"
+						/>
 					</div>
 				</draftForm.Form>
 			</draftForm.AppForm>

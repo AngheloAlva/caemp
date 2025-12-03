@@ -1,12 +1,12 @@
 "use client"
 
+import { motion } from "motion/react"
 import { Link } from "@tanstack/react-router"
-import { motion, AnimatePresence } from "motion/react"
 import { useState, useEffect } from "react"
+import { Image } from "@unpic/react"
 
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
-import { Image } from "@unpic/react"
 
 const businessLines = [
 	{
@@ -52,22 +52,25 @@ export default function Hero() {
 	return (
 		<section className="relative flex min-h-[calc(100dvh-10rem)] w-full items-center justify-center overflow-hidden py-20 md:py-32">
 			<div className="absolute inset-0 -z-20 h-full w-full">
-				<AnimatePresence mode="popLayout">
+				{heroImages.map((src, index) => (
 					<motion.div
-						key={currentImage}
+						key={src}
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
+						animate={{ opacity: index === currentImage ? 1 : 0 }}
 						transition={{ duration: 1 }}
 						className="absolute inset-0 h-full w-full"
 					>
-						<img
-							src={heroImages[currentImage]}
+						<Image
+							priority={index === 0}
+							width={1920}
+							height={935}
+							loading={index === 0 ? "eager" : "lazy"}
 							alt="Background"
+							src={src}
 							className="h-full w-full object-cover"
 						/>
 					</motion.div>
-				</AnimatePresence>
+				))}
 			</div>
 
 			<div className="absolute inset-0 -z-10 bg-black/50" />
@@ -90,28 +93,28 @@ export default function Hero() {
 					</div>
 
 					<SlideIn direction="up" delay={0.4}>
-						<div className="grid gap-12 md:grid-cols-3 md:gap-16">
+						<div className="grid gap-4 md:grid-cols-3 md:gap-16">
 							{businessLines.map((line, index) => (
 								<motion.div
 									key={line.name}
-									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+									initial={{ opacity: 0, y: 20 }}
 									className="flex flex-col items-center"
+									transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
 								>
 									<Link to={line.href} className="group flex flex-col items-center">
 										<div className="transition-transform duration-300">
 											<Image
+												width={384}
+												height={384}
 												src={line.logo}
 												alt={`Logo ${line.name}`}
 												layout="constrained"
-												width={384}
-												height={384}
 												className="h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-96 xl:w-96"
 											/>
 										</div>
 
-										<p className="text-center text-base font-semibold text-white md:text-xl xl:text-2xl">
+										<p className="text-center text-xl font-semibold text-white md:text-2xl lg:text-3xl">
 											{line.title}
 										</p>
 									</Link>
@@ -123,7 +126,7 @@ export default function Hero() {
 					<div className="mx-auto mt-12 max-w-7xl lg:mt-20">
 						<div className="text-center">
 							<SlideIn direction="up" delay={0.2}>
-								<p className="mx-auto max-w-3xl text-lg text-white md:text-xl">
+								<p className="mx-auto max-w-3xl text-white md:text-lg lg:text-xl">
 									Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile
 									en la construcción de entornos laborales más seguros, conscientes y productivos
 								</p>

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Target, Eye, Users, TrendingUp, Award, Lightbulb } from "lucide-react"
+import { Target, Eye, Users, TrendingUp, Lightbulb } from "lucide-react"
+import { Image } from "@unpic/react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/crecimiento/nosotros")({
 })
 
 const stats = [
-	{ value: "15+", label: "Años de experiencia" },
+	{ value: new Date().getFullYear() - 2010 + "+", label: "Años de experiencia" },
 	{ value: "750+", label: "Titulados" },
 	{ value: "100%", label: "Comprometidos" },
 	{ value: "100%", label: "Experiencia Enriquecedora" },
@@ -48,15 +49,23 @@ const reasons = [
 function RouteComponent() {
 	return (
 		<main className="flex flex-col">
-			{/* Hero Section */}
-			<section className="relative overflow-hidden bg-linear-to-br from-purple-50 via-white to-purple-50 py-20 md:py-32">
+			<section className="relative overflow-hidden py-20 md:py-36">
+				<div className="absolute inset-0 -z-10">
+					<Image
+						src="/images/crecimiento/nosotros-2.jpg"
+						layout="fullWidth"
+						alt="Background"
+						className="h-full w-full object-cover brightness-[0.3]"
+					/>
+				</div>
+
 				<div className="container mx-auto max-w-7xl px-4">
 					<FadeIn>
-						<div className="mx-auto max-w-4xl text-center">
-							<h1 className="text-primary-purple mb-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
+						<div className="mx-auto max-w-4xl text-center text-white">
+							<h1 className="mb-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
 								Quiénes Somos
 							</h1>
-							<p className="text-xl leading-relaxed text-gray-700">
+							<p className="text-xl leading-relaxed text-white/90">
 								Transformamos potencial en resultados concretos
 							</p>
 						</div>
@@ -64,7 +73,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* About Section */}
 			<section className="bg-white py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -89,18 +97,19 @@ function RouteComponent() {
 						</SlideIn>
 
 						<SlideIn direction="right" delay={0.2}>
-							<div className="relative">
-								<div className="bg-primary-purple/10 absolute inset-0 blur-3xl" />
-								<div className="from-primary-purple/20 relative rounded-2xl bg-linear-to-br to-[#7C3AED]/20 p-12">
-									<Award className="text-primary-purple h-64 w-64" strokeWidth={1} />
-								</div>
+							<div className="relative aspect-square overflow-hidden rounded-2xl">
+								<Image
+									src="/images/crecimiento/nosotros.jpg"
+									layout="fullWidth"
+									alt="Nosotros"
+									className="h-full w-full object-cover"
+								/>
 							</div>
 						</SlideIn>
 					</div>
 				</div>
 			</section>
 
-			{/* Vision & Mission */}
 			<section className="bg-gray-50 py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<div className="grid gap-8 md:grid-cols-2">
@@ -138,7 +147,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* Stats Section */}
 			<section className="bg-white py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -156,7 +164,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* Why Choose Us */}
 			<section className="bg-gray-50 py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<FadeIn>

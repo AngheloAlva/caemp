@@ -1,29 +1,16 @@
-import { ClockIcon, StarIcon, UsersIcon } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 import { Image } from "@unpic/react"
+
+import { OtecCourse } from "@/data/otec/courses"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { HoverScale } from "@/components/animations/hover-scale"
-import { Card, CardContent } from "@/components/ui/card"
-import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
 
 interface CourseGridProps {
-	courses: {
-		id: string
-		title: string
-		category: string
-		description: string
-		duration: string
-		students: number
-		rating: number
-		level: string
-		modality: string
-		image: string
-		price: string
-	}[]
+	courses: OtecCourse[]
 }
 
 export default function CourseGrid({ courses }: CourseGridProps): React.ReactElement {
@@ -34,62 +21,43 @@ export default function CourseGrid({ courses }: CourseGridProps): React.ReactEle
 					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						{courses.map((course) => (
 							<StaggerItem key={course.id}>
-								<HoverScale scale={1.02}>
+								<HoverScale scale={1.02} className="h-full">
 									<Card className="group h-full gap-0 overflow-hidden py-0 transition-all">
-										<Link to={`/cursos/$courseSlug`} params={{ courseSlug: course.id }}>
-											<div className="bg-muted relative aspect-video overflow-hidden">
-												<Image
-													layout="fullWidth"
-													alt={course.title}
-													src={course.image || "/placeholder.svg"}
-													className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-												/>
-												<div className="absolute top-3 right-3">
-													<Badge variant="secondary" className="bg-background/90 backdrop-blur">
-														{course.modality}
-													</Badge>
+										<Link
+											to="/otec/cursos/$courseSlug"
+											params={{ courseSlug: course.slug }}
+											className="flex h-full flex-col justify-between"
+										>
+											<div>
+												<div className="bg-muted relative aspect-video overflow-hidden">
+													<Image
+														layout="fullWidth"
+														alt={course.title}
+														src={`/images/otec/courses/${course.images[0] || "placeholder.jpg"}`}
+														className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+													/>
+												</div>
+
+												<div className="flex flex-col gap-3 p-5">
+													<div className="space-y-2">
+														<h3 className="group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors">
+															{course.title}
+														</h3>
+													</div>
+
+													<ul className="text-muted-foreground line-clamp-3 text-sm leading-relaxed">
+														{course.competencies.map((competency, index) => (
+															<li key={index}>{competency}</li>
+														))}
+													</ul>
 												</div>
 											</div>
-											<CardContent className="space-y-3 p-5">
-												<div className="space-y-2">
-													<Badge variant="outline" className="text-xs">
-														{course.category}
-													</Badge>
-													<h3 className="group-hover:text-primary line-clamp-2 text-lg leading-tight font-semibold transition-colors">
-														{course.title}
-													</h3>
-												</div>
 
-												<p className="text-muted-foreground line-clamp-2 text-sm leading-relaxed">
-													{course.description}
-												</p>
-
-												<div className="text-muted-foreground flex items-center gap-4 pt-2 text-sm">
-													<div className="flex items-center gap-1">
-														<ClockIcon className="h-4 w-4" />
-														<span>{course.duration}</span>
-													</div>
-													<div className="flex items-center gap-1">
-														<UsersIcon className="h-4 w-4" />
-														<span>{course.students}</span>
-													</div>
-												</div>
-
-												<div className="flex items-center justify-between border-t pt-2">
-													<div className="flex items-center gap-1">
-														<StarIcon className="fill-primary text-primary h-4 w-4" />
-														<span className="font-semibold">{course.rating}</span>
-														<span className="text-muted-foreground text-sm">
-															({course.students})
-														</span>
-													</div>
-													<Badge variant="secondary">{course.level}</Badge>
-												</div>
-
-												<Button className="mt-2 w-full" asChild>
+											<div className="px-5 pb-5">
+												<Button className="w-full" asChild>
 													<span>Ver Detalles</span>
 												</Button>
-											</CardContent>
+											</div>
 										</Link>
 									</Card>
 								</HoverScale>
@@ -98,7 +66,7 @@ export default function CourseGrid({ courses }: CourseGridProps): React.ReactEle
 					</div>
 				</StaggerContainer>
 
-				<FadeIn delay={0.3}>
+				{/* <FadeIn delay={0.3}>
 					<div className="mt-12 flex justify-center">
 						<div className="flex items-center gap-2">
 							<Button variant="outline" size="sm" disabled className="hover-lift bg-transparent">
@@ -118,7 +86,7 @@ export default function CourseGrid({ courses }: CourseGridProps): React.ReactEle
 							</Button>
 						</div>
 					</div>
-				</FadeIn>
+				</FadeIn> */}
 			</div>
 		</section>
 	)

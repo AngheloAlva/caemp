@@ -50,7 +50,7 @@ const workshopsList = [
 
 export default function Workshops(): React.ReactElement {
 	return (
-		<section id="talleres" className="w-full bg-gray-50 py-16 md:py-24">
+		<section id="talleres" className="w-full bg-gray-50 px-4 py-16 md:py-24">
 			<div className="container mx-auto max-w-7xl">
 				<FadeIn>
 					<div className="mb-12 text-center">

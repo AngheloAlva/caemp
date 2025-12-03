@@ -27,7 +27,7 @@ export default function OfficialProviders(): React.ReactElement {
 	return (
 		<section className="w-full bg-white py-12">
 			<div className="container mx-auto max-w-7xl px-4">
-				<div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+				<div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2 md:gap-8">
 					{/* Left Column: Image */}
 					<div className="relative h-[400px] w-full overflow-hidden rounded-xl bg-gray-100">
 						<img

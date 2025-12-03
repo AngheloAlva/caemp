@@ -44,8 +44,8 @@ export default function Contact() {
 				</FadeIn>
 
 				<div className="mx-auto max-w-5xl">
-					<div className="grid gap-8 lg:grid-cols-2">
-						<div className="space-y-6">
+					<div className="flex flex-col-reverse gap-8 lg:flex-row">
+						<div className="space-y-6 lg:w-1/2">
 							<StaggerContainer className="space-y-4">
 								<FadeIn delay={0.2}>
 									<h3 className="text-xl font-semibold">Información de Contacto</h3>
@@ -101,9 +101,9 @@ export default function Contact() {
 							</FadeIn>
 						</div>
 
-						<FadeIn delay={0.3}>
+						<FadeIn delay={0.3} className="lg:w-1/2">
 							<Card className="border-primary/20 p-0">
-								<CardContent className="p-8">
+								<CardContent className="p-6 lg:p-8">
 									<h3 className="text-primary mb-6 text-2xl font-bold">Envíanos un mensaje</h3>
 									<form className="space-y-4">
 										<div>

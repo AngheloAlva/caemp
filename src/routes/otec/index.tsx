@@ -12,7 +12,7 @@ export const Route = createFileRoute("/otec/")({ component: App })
 
 function App() {
 	return (
-		<main className="flex flex-col items-center justify-center">
+		<main className="flex flex-col items-center justify-center overflow-x-hidden">
 			<Hero />
 			<Stats />
 			<WhyChoseUs />

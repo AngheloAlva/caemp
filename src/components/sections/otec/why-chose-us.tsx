@@ -106,7 +106,7 @@ export default function WhyChoseUs(): React.ReactElement {
 	}
 
 	return (
-		<section className="px-4 py-16 md:py-24">
+		<section className="max-w-screen overflow-x-hidden px-4 py-16 md:py-24">
 			<div className="container max-w-6xl">
 				<FadeIn>
 					<div className="mx-auto mb-12 max-w-2xl text-center">
@@ -134,10 +134,10 @@ export default function WhyChoseUs(): React.ReactElement {
 							size={item.size}
 							className={cn(
 								item.size === "large"
-									? "col-span-4"
+									? "md:col-span-4"
 									: item.size === "medium"
-										? "col-span-3"
-										: "col-span-2",
+										? "md:col-span-3"
+										: "md:col-span-2",
 								"h-full"
 							)}
 						/>

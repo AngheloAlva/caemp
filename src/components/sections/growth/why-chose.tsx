@@ -44,7 +44,7 @@ const reasons = [
 
 export default function WhyChose(): React.ReactElement {
 	return (
-		<section className="bg-muted/60 w-screen py-16 md:py-24">
+		<section className="bg-muted/60 w-screen px-4 py-16 md:py-24">
 			<div className="container mx-auto">
 				<FadeIn>
 					<div className="mx-auto mb-12 max-w-3xl text-center">

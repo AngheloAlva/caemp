@@ -1,16 +1,24 @@
 import { CheckCircle2Icon, MailIcon, PhoneIcon } from "lucide-react"
 import { createFileRoute } from "@tanstack/react-router"
+import { z } from "zod"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { QuoteForm } from "@/components/sections/quote/quote-form"
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 
+const searchSchema = z.object({
+	courseSlug: z.string().optional(),
+})
+
 export const Route = createFileRoute("/otec/cotizacion")({
+	validateSearch: (search) => searchSchema.parse(search),
 	component: RouteComponent,
 })
 
 function RouteComponent() {
+	const { courseSlug } = Route.useSearch()
+
 	return (
 		<main className="flex flex-col items-center justify-center space-y-6 overflow-x-hidden pb-20">
 			<section className="bg-primary relative w-screen px-4 py-14 text-white lg:py-24">
@@ -103,7 +111,7 @@ function RouteComponent() {
 				</SlideIn>
 
 				<SlideIn direction="up" delay={0.4} className="md:w-4/6">
-					<QuoteForm />
+					<QuoteForm defaultCourse={courseSlug} />
 				</SlideIn>
 			</section>
 		</main>

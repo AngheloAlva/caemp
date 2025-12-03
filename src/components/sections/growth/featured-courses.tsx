@@ -15,7 +15,7 @@ const cursosDestacados = Object.values(courses).slice(0, 4)
 
 export default function FeaturedCourses(): React.ReactElement {
 	return (
-		<section id="cursos" className="bg-background py-16 md:py-24">
+		<section id="cursos" className="bg-background px-4 py-16 md:py-24">
 			<div className="container max-w-7xl">
 				<FadeIn>
 					<div className="mb-12 text-center">
@@ -42,7 +42,10 @@ export default function FeaturedCourses(): React.ReactElement {
 												className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 											/>
 											<div className="absolute top-3 right-3">
-												<Badge variant="secondary" className="bg-background/90 backdrop-blur">
+												<Badge
+													variant="secondary"
+													className="bg-background/90 text-primary-purple backdrop-blur"
+												>
 													{curso.duracion}
 												</Badge>
 											</div>

@@ -1,4 +1,3 @@
-import { Target, MessageCircle, Users, Sparkles, HeartHandshake } from "lucide-react"
 import { motion } from "motion/react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
@@ -6,40 +5,14 @@ import { StaggerItem } from "@/components/animations/stagger-item"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 
-const programAreas = [
-	{
-		icon: Target,
-		title: "Liderazgo efectivo y motivacional",
-		description: "Desarrolla líderes conscientes que inspiran y guían equipos con propósito.",
-	},
-	{
-		icon: MessageCircle,
-		title: "Comunicación poderosa y gestión emocional",
-		description: "Fortalece la comunicación asertiva y el manejo inteligente de emociones.",
-	},
-	{
-		icon: Users,
-		title: "Trabajo en equipo y colaboración estratégica",
-		description: "Construye equipos cohesionados que trabajan hacia objetivos comunes.",
-	},
-	{
-		icon: Sparkles,
-		title: "Habilidades de coaching para jefaturas",
-		description: "Transforma líderes en coaches que potencian el talento de su equipo.",
-	},
-	{
-		icon: HeartHandshake,
-		title: "Convivencia laboral y clima organizacional",
-		description: "Cultiva ambientes de trabajo positivos, saludables y productivos.",
-	},
-]
+import { programAreas } from "@/data/crecimiento/programs"
 
 export default function Programs() {
 	return (
 		<section className="w-full bg-white py-20 md:py-32">
 			<div className="container mx-auto max-w-7xl px-4">
 				<FadeIn>
-					<div className="mb-16 text-center">
+					<div className="mb-8 text-center lg:mb-16">
 						<h2 className="text-primary-purple mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
 							Programas de Capacitación Transformadora
 						</h2>
