@@ -70,6 +70,7 @@ export default function Courses() {
 				<StaggerContainer className="grid gap-6 lg:grid-cols-3">
 					{modalities.map((modality) => {
 						const Icon = modality.icon
+
 						return (
 							<StaggerItem key={modality.title}>
 								<motion.div

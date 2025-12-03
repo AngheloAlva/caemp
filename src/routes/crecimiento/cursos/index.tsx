@@ -1,5 +1,5 @@
 import { Clock, BookOpen, ArrowRight } from "lucide-react"
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { Image } from "@unpic/react"
 
 import { courses } from "@/data/crecimiento/courses"
@@ -49,9 +49,9 @@ function RouteComponent() {
 									<Card className="group h-full gap-0 overflow-hidden border-2 py-0 transition-all hover:border-[#55206C]/50">
 										<div className="bg-muted relative aspect-video overflow-hidden">
 											<Image
-												src={course.image || "/images/crecimiento/hero.png"}
 												alt={course.title}
 												layout="fullWidth"
+												src={course.image || "/images/crecimiento/hero.png"}
 												className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 											/>
 										</div>
@@ -99,10 +99,10 @@ function RouteComponent() {
 												}}
 												asChild
 											>
-												<a href={`/crecimiento/talleres/${course.slug}`}>
+												<Link to={"/crecimiento/cursos/$slug"} params={{ slug: course.slug }}>
 													Ver detalles
 													<ArrowRight className="h-4 w-4" />
-												</a>
+												</Link>
 											</Button>
 										</CardFooter>
 									</Card>
