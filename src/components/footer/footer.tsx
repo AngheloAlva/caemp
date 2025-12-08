@@ -133,7 +133,7 @@ export function Footer() {
 								</li>
 								<li className="text-muted-foreground flex items-center gap-2">
 									<PhoneIcon className="h-4 w-4" />
-									<span>+56 9 3247 8827</span>
+									<span>+56 9 9884 3486</span>
 								</li>
 								<li className="text-muted-foreground flex items-center gap-2">
 									<MailIcon className="h-4 w-4" />

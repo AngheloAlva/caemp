@@ -17,8 +17,8 @@ const contactInfo = [
 	},
 	{
 		icon: PhoneIcon,
-		value: "+56 9 3247 8827",
-		href: "tel:+56932478827",
+		value: "+56 9 9884 3486",
+		href: "tel:+56998843486",
 	},
 	{
 		icon: MapPinIcon,

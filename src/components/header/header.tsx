@@ -41,8 +41,8 @@ export function Header() {
 					{ to: "/otec", label: "Inicio" },
 					{ to: "/otec/cursos", label: "Cursos" },
 					{ to: "/otec/nosotros", label: "Nosotros" },
-					{ to: "#", label: "Galería" },
-					{ to: "#", label: "Contacto" },
+					{ to: "/otec/galeria", label: "Galería" },
+					{ to: "/otec/contacto", label: "Contacto" },
 				],
 				ctaButton: {
 					to: "/otec/cotizacion",
@@ -81,8 +81,8 @@ export function Header() {
 						navItems: [
 							{ to: "/plus", label: "Inicio" },
 							{ to: "/plus/nosotros", label: "Nosotros" },
-							{ to: "#", label: "Productos" },
-							{ to: "#", label: "Contacto" },
+							{ to: "/plus/productos", label: "Productos" },
+							{ to: "/plus/contacto", label: "Contacto" },
 						],
 						ctaButton: {
 							to: "/plus/cotizacion",

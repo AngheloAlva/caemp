@@ -1,3 +1,4 @@
+import { Image } from "@unpic/react"
 import { CheckCircle2Icon, MailIcon, PhoneIcon } from "lucide-react"
 import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"
@@ -22,14 +23,20 @@ function RouteComponent() {
 
 	return (
 		<main className="flex flex-col items-center justify-center space-y-6 overflow-x-hidden pb-20">
-			<section
-				className="relative w-screen px-4 py-14 text-white lg:py-24"
-				style={{ backgroundColor: "#8B5CF6" }}
-			>
-				<div className="absolute -top-1 -right-1/3 z-0 size-full bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)] bg-size-[28px_28px]"></div>
+			<section className="relative w-screen py-14 lg:py-24">
+				<div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
+					<Image
+						src="/images/crecimiento/hero.png"
+						alt="Fondo Crecimiento"
+						layout="fullWidth"
+						className="h-full w-full object-cover"
+					/>
+					<div className="absolute inset-0 bg-purple-900/80" />
+					<div className="absolute -top-1 -right-1/3 z-10 size-full bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_40%,transparent_100%)] bg-size-[28px_28px]"></div>
+				</div>
 
 				<FadeIn>
-					<div className="relative z-10 mx-auto max-w-3xl space-y-4 text-center">
+					<div className="relative z-10 mx-auto max-w-3xl space-y-4 px-4 text-center text-white">
 						<h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl">
 							Solicita tu Cotización
 						</h1>
@@ -115,7 +122,7 @@ function RouteComponent() {
 
 								<div className="flex items-center gap-2 text-sm">
 									<PhoneIcon className="h-4 w-4" />
-									<span>+56 9 3247 8827</span>
+									<span>+56 9 9884 3486</span>
 								</div>
 
 								<div className="flex items-center gap-2 text-sm">

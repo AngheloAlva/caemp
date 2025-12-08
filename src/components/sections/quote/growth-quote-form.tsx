@@ -5,9 +5,10 @@ import { format } from "date-fns"
 
 import { cn } from "@/lib/utils"
 
-import { courses } from "@/data/crecimiento/courses"
-import { theaterPlays } from "@/data/crecimiento/theater"
 import { programAreas } from "@/data/crecimiento/programs"
+import { theaterPlays } from "@/data/crecimiento/theater"
+import { workshops } from "@/data/crecimiento/workshops"
+import { courses } from "@/data/crecimiento/courses"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
@@ -259,6 +260,9 @@ export function GrowthQuoteForm({ defaultServiceType, defaultServiceItem }: Grow
 											<SelectItem className="focus:text-primary-purple" value="talleres">
 												Talleres
 											</SelectItem>
+											<SelectItem className="focus:text-primary-purple" value="teatro">
+												Teatro Aplicado
+											</SelectItem>
 											<SelectItem className="focus:text-primary-purple" value="programas">
 												Programas de Capacitación
 											</SelectItem>
@@ -286,6 +290,11 @@ export function GrowthQuoteForm({ defaultServiceType, defaultServiceItem }: Grow
 									let options: { label: string; value: string }[] = []
 
 									if (serviceType === "talleres") {
+										options = Object.values(workshops).map((workshop) => ({
+											label: workshop.nombre,
+											value: workshop.slug,
+										}))
+									} else if (serviceType === "teatro") {
 										options = theaterPlays.map((play) => ({
 											label: play.title,
 											value: play.title,
