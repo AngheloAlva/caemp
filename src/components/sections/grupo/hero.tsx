@@ -11,21 +11,21 @@ import { FadeIn } from "@/components/animations/fade-in"
 const businessLines = [
 	{
 		name: "CAEMP OTEC",
-		title: "Capacitacion y Entrenamiento",
+		title: "Capacitación y Entrenamiento",
 		logo: "/images/logo/logo-o-white.png",
 		href: "/otec",
 		color: "#004E8C",
 	},
 	{
 		name: "CAEMP Plus",
-		title: "Asesoria tecnica y venta de EPP",
+		title: "Asesoría Técnica y Venta de EPP",
 		logo: "/images/logo/logo-p-white.png",
 		href: "/plus",
 		color: "#16A34A",
 	},
 	{
 		name: "Crecimiento",
-		title: "Formacion y Couching",
+		title: "Formación y Couching",
 		logo: "/images/logo/logo-c-white.png",
 		href: "/crecimiento",
 		color: "#8B5CF6",
