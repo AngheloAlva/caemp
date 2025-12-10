@@ -77,11 +77,17 @@ const theaterPlays = [
 function RouteComponent() {
 	return (
 		<main className="min-h-screen bg-white">
-			{/* Hero Section */}
 			<section className="bg-primary-purple relative py-20 text-white md:py-32">
 				<div className="absolute inset-0 overflow-hidden opacity-10">
-					<div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white blur-2xl" />
-					<div className="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-white blur-2xl" />
+					<Image
+						alt=""
+						width={1920}
+						height={1080}
+						loading="lazy"
+						decoding="async"
+						src="/images/crecimiento/theater.jpg"
+						className="h-full w-full object-cover"
+					/>
 				</div>
 				<div className="relative container mx-auto px-4 text-center">
 					<FadeIn>
@@ -97,7 +103,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* Theater Plays Grid */}
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

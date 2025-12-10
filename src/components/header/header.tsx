@@ -221,12 +221,12 @@ export function Header() {
 
 					<div
 						className={cn("flex items-center justify-end gap-4", {
-							"md:hidden": !config.ctaButton,
+							"lg:hidden": !config.ctaButton,
 						})}
 					>
 						{config.ctaButton && (
 							<motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-								<Button asChild className={cn("hidden md:inline-flex", config.ctaButton.className)}>
+								<Button asChild className={cn("hidden lg:inline-flex", config.ctaButton.className)}>
 									<Link to={config.ctaButton.to}>{config.ctaButton.label}</Link>
 								</Button>
 							</motion.div>
@@ -236,7 +236,7 @@ export function Header() {
 							<Button
 								variant="ghost"
 								size="icon"
-								className="md:hidden"
+								className="lg:hidden"
 								onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							>
 								<Menu className="h-5 w-5" />
@@ -249,7 +249,7 @@ export function Header() {
 			<AnimatePresence>
 				{mobileMenuOpen && (
 					<motion.div
-						className="border-border border-t md:hidden"
+						className="border-border border-t lg:hidden"
 						initial={{ opacity: 0, height: 0 }}
 						animate={{ opacity: 1, height: "auto" }}
 						exit={{ opacity: 0, height: 0 }}

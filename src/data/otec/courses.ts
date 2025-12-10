@@ -20,6 +20,7 @@ export const courses: Record<string, OtecCourse> = {
 			"primeros-auxilios-y-manejo-de-traumas.jpg",
 			"primeros-auxilios-y-manejo-de-traumas-2.jpg",
 			"primeros-auxilios-y-manejo-de-traumas-3.jpg",
+			"primeros-auxilios-y-manejo-de-traumas-4.jpg",
 		],
 		competencies: [
 			"Al finalizar el curso, los participantes quedarán capacitados para aplicar de manera correcta y efectiva las técnicas de Primeros Auxilios, RCP y uso correcto de DEA. Además serán capaces de responder de buena manera a emergencias médicas. Este curso cumple con la ley 21.156 y el decreto 56 del MINSAL.",

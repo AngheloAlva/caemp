@@ -43,18 +43,20 @@ export default function Hero(): React.ReactElement {
 					<FadeIn delay={0.5}>
 						<div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
 							<HoverScale>
-								<Button
-									size="lg"
-									className="text-primary group relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
-								>
-									<Link to="/otec/cursos">Ver Cursos</Link>
-									<div className="relative h-4 w-4 overflow-hidden">
-										<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
-											<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
-											<ArrowUpRightIcon className="h-4 w-4 -translate-x-3 stroke-3" />
+								<Link to="/otec/cursos">
+									<Button
+										size="lg"
+										className="text-primary group relative inline-flex items-center justify-center rounded-md bg-white font-semibold hover:bg-white/90"
+									>
+										Ver Cursos
+										<div className="relative h-4 w-4 overflow-hidden">
+											<div className="absolute transition-all duration-200 group-hover:translate-x-3 group-hover:-translate-y-4">
+												<ArrowUpRightIcon className="h-4 w-4 stroke-3" />
+												<ArrowUpRightIcon className="h-4 w-4 -translate-x-3 stroke-3" />
+											</div>
 										</div>
-									</div>
-								</Button>
+									</Button>
+								</Link>
 							</HoverScale>
 
 							<HoverScale>

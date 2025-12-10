@@ -2,7 +2,7 @@ export interface CrecimientoCourse {
 	id: number
 	slug: string
 	title: string
-	image?: string
+	image: string
 	tendenciaActual: string
 	codigoSENCE: string
 	duracion: string
@@ -204,6 +204,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 3,
 		slug: "estrategias-prevencion-acoso-trabajo",
 		title: "Estrategias de Prevención del Acoso en el Trabajo",
+		image: "/images/crecimiento/courses/estrategias-prevencion-acoso-trabajo.jpg",
 		tendenciaActual:
 			"La prevención del acoso laboral promueve el respeto, la comunicación segura y la convivencia...",
 		codigoSENCE: "1238080377",
@@ -280,6 +281,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 4,
 		slug: "tecnicas-efectivas-resolucion-conflictos",
 		title: "Técnicas Efectivas de Resolución de Conflictos",
+		image: "/images/crecimiento/courses/tecnicas-efectivas-resolucion-conflictos.jpg",
 		tendenciaActual:
 			"La resolución de conflictos es hoy una habilidad esencial para mantener relaciones laborales saludables. Crecimiento promueve herramientas comunicacionales y emocionales que transforman las diferencias en oportunidades de aprendizaje y colaboración.",
 		codigoSENCE: "1238080423",
@@ -347,6 +349,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 5,
 		slug: "liderazgo-consciente-gestion-equipos",
 		title: "Liderazgo Consciente y Gestión de Equipos",
+		image: "/images/crecimiento/courses/liderazgo-consciente-gestion-equipos.jpg",
 		tendenciaActual:
 			"El liderazgo consciente representa una nueva forma de dirigir basada en la empatía, la confianza y la autenticidad.",
 		codigoSENCE: "Por definir",
@@ -421,6 +424,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 6,
 		slug: "coaching-y-comunicacion-efectiva-para-el-liderazgo",
 		title: "Coaching y Comunicación Efectiva para el Liderazgo",
+		image: "/images/crecimiento/courses/coaching-y-comunicacion-efectiva-para-el-liderazgo.jpg",
 		tendenciaActual:
 			"El coaching aplicado al liderazgo impulsa una gestión más humana y colaborativa.",
 		codigoSENCE: "Por definir",
@@ -491,6 +495,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 7,
 		slug: "mindfulness-y-bienestar-laboral",
 		title: "Mindfulness y Bienestar Laboral",
+		image: "/images/crecimiento/courses/mindfulness-y-bienestar-laboral.jpg",
 		tendenciaActual:
 			"El mindfulness laboral se consolida como una práctica clave para mejorar el bienestar y la productividad.",
 		codigoSENCE: "Por definir",
@@ -553,6 +558,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 8,
 		slug: "inteligencia-emocional-aplicada-al-trabajo",
 		title: "Inteligencia Emocional Aplicada al Trabajo",
+		image: "/images/crecimiento/courses/inteligencia-emocional-aplicada-al-trabajo.jpg",
 		tendenciaActual:
 			"El desarrollo de la inteligencia emocional es una de las competencias más valoradas en el entorno laboral moderno.",
 		codigoSENCE: "Por definir",
@@ -623,6 +629,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 9,
 		slug: "comunicacion-asertiva-y-relaciones-laborales-saludables",
 		title: "Comunicación Asertiva y Relaciones Laborales Saludables",
+		image:
+			"/images/crecimiento/courses/comunicacion-asertiva-y-relaciones-laborales-saludables.jpg",
 		tendenciaActual:
 			"Las empresas están enfocándose en desarrollar comunicación asertiva y relaciones laborales saludables, impulsadas por la Ley Karin y nuevas políticas de convivencia laboral.",
 		codigoSENCE: "Por definir",
@@ -702,6 +710,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 10,
 		slug: "coaching-para-la-gestion-del-cambio-organizacional",
 		title: "Coaching para la Gestión del Cambio Organizacional",
+		image: "/images/crecimiento/courses/coaching-para-la-gestion-del-cambio-organizacional.jpg",
 		tendenciaActual:
 			"El coaching organizacional se consolida como herramienta clave para liderar la transformación empresarial.",
 		codigoSENCE: "Por definir",
@@ -776,6 +785,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 11,
 		slug: "autoliderazgo-y-desarrollo-personal",
 		title: "Autoliderazgo y Desarrollo Personal",
+		image: "/images/crecimiento/courses/autoliderazgo-y-desarrollo-personal.jpg",
 		tendenciaActual:
 			"El autoliderazgo se consolida como habilidad clave en entornos que valoran autonomía e inteligencia emocional.",
 		codigoSENCE: "Por definir",
@@ -843,6 +853,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 12,
 		slug: "motivacion-propósito-y-sentido-del-trabajo",
 		title: "Motivación, Propósito y Sentido del Trabajo",
+		image: "/images/crecimiento/courses/motivacion-propósito-y-sentido-del-trabajo.jpg",
 		tendenciaActual:
 			"Las organizaciones priorizan bienestar emocional y conexión con propósito como ejes para retención de talento.",
 		codigoSENCE: "Por definir",
@@ -905,6 +916,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 13,
 		slug: "trabajo-en-equipo-y-sinergia-organizacional",
 		title: "Trabajo en Equipo y Sinergia Organizacional",
+		image: "/images/crecimiento/courses/trabajo-en-equipo-y-sinergia-organizacional.jpg",
 		tendenciaActual:
 			"Las empresas promueven equipos colaborativos y cohesionados como clave para la productividad.",
 		codigoSENCE: "Por definir",
@@ -967,6 +979,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 14,
 		slug: "gestion-del-tiempo-y-productividad-personal",
 		title: "Gestión del Tiempo y Productividad Personal",
+		image: "/images/crecimiento/courses/gestion-del-tiempo-y-productividad-personal.jpg",
 		tendenciaActual: "La productividad consciente busca equilibrar eficiencia y bienestar.",
 		codigoSENCE: "Por definir",
 		duracion: "60 a 80 horas",
@@ -1029,6 +1042,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		slug: "liderazgo-y-convivencia-laboral",
 		title:
 			"Liderazgo y Convivencia Laboral: Comunicación Efectiva, Trabajo en Equipo y Prevención del Acoso según Ley Karin",
+		image: "/images/crecimiento/courses/liderazgo-y-convivencia-laboral.jpg",
 		tendenciaActual:
 			"Las organizaciones priorizan culturas laborales basadas en liderazgo positivo, comunicación efectiva y relaciones respetuosas. La Ley Karin impulsa entornos seguros e inclusivos.",
 		codigoSENCE: "Por definir",
@@ -1084,6 +1098,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 16,
 		slug: "facilitacion-creativa-y-resolucion-de-problemas-con-bloques-virtuales",
 		title: "Facilitación Creativa y Resolución de Problemas con Bloques Virtuales",
+		image:
+			"/images/crecimiento/courses/facilitacion-creativa-y-resolucion-de-problemas-con-bloques-virtuales.jpg",
 		tendenciaActual:
 			"Las organizaciones buscan metodologías innovadoras que fomenten creatividad, pensamiento visual y comunicación clara.",
 		codigoSENCE: "Por definir",
@@ -1160,6 +1176,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 17,
 		slug: "autoestima-y-gestion-emocional-para-el-logro-de-objetivos",
 		title: "Autoestima y Gestión Emocional para el Logro de Objetivos",
+		image:
+			"/images/crecimiento/courses/autoestima-y-gestion-emocional-para-el-logro-de-objetivos.jpg",
 		tendenciaActual: "El bienestar emocional es clave en el desarrollo personal y organizacional.",
 		codigoSENCE: "Por definir",
 		duracion: "8 horas",
@@ -1235,6 +1253,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 18,
 		slug: "hablar-en-publico-y-oratoria-para-presentaciones-exitosas",
 		title: "Hablar en Público y Oratoria para Presentaciones Exitosas",
+		image:
+			"/images/crecimiento/courses/hablar-en-publico-y-oratoria-para-presentaciones-exitosas.jpg",
 		tendenciaActual: "Hablar en público es hoy una habilidad esencial para cualquier profesional.",
 		codigoSENCE: "Por definir",
 		duracion: "8 horas",
@@ -1310,6 +1330,8 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 19,
 		slug: "conexion-y-sanacion-del-nino-interior-para-el-bienestar-emocional",
 		title: "Conexión y Sanación del Niño Interior para el Bienestar Emocional",
+		image:
+			"/images/crecimiento/courses/conexion-y-sanacion-del-nino-interior-para-el-bienestar-emocional.jpg",
 		tendenciaActual:
 			"El autoconocimiento profundo es clave para la salud emocional en entornos de alta demanda.",
 		codigoSENCE: "Por definir",
@@ -1392,6 +1414,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 20,
 		slug: "ser-hacer-y-tener-transformacion-personal",
 		title: "Ser - Hacer - Tener: Transformación Personal para Lograr Metas con Propósito",
+		image: "/images/crecimiento/courses/ser-hacer-y-tener-transformacion-personal.jpg",
 		tendenciaActual: "Personas y organizaciones valoran coherencia entre ser, hacer y tener.",
 		codigoSENCE: "Por definir",
 		duracion: "8 horas",

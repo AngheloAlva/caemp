@@ -49,7 +49,7 @@ export function BusinessLineContact({
 			ring: "focus:border-primary focus:ring-primary/20",
 			icon: "text-primary",
 			overlay: "bg-primary/90",
-			image: "/images/otec/courses.jpg",
+			image: "/images/otec/contact.jpg",
 			pattern:
 				"bg-[linear-gradient(to_right,#3d16162e_1px,transparent_1px),linear-gradient(to_bottom,#3d16165e_1px,transparent_1px)]",
 		},
@@ -61,7 +61,7 @@ export function BusinessLineContact({
 			ring: "focus:border-primary-purple focus:ring-primary-purple/20",
 			icon: "text-primary-purple",
 			overlay: "bg-purple-900/80",
-			image: "/images/crecimiento/hero.png",
+			image: "/images/crecimiento/contact.jpg",
 			pattern:
 				"bg-[linear-gradient(to_right,#7C3AED2e_1px,transparent_1px),linear-gradient(to_bottom,#7C3AED5e_1px,transparent_1px)]",
 		},
@@ -82,7 +82,7 @@ export function BusinessLineContact({
 	const styles = variants[variant]
 
 	return (
-		<section className="flex min-h-screen w-full flex-col items-center justify-center space-y-6 overflow-x-hidden bg-white pb-20">
+		<section className="flex min-h-screen w-full flex-col items-center justify-start space-y-6 overflow-x-hidden bg-white pb-20">
 			<div className="relative w-full py-16 lg:py-24">
 				<div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
 					<Image
@@ -102,7 +102,7 @@ export function BusinessLineContact({
 
 				<div className="relative z-10 container mx-auto px-4">
 					<FadeIn>
-						<div className="mb-16 text-center text-white">
+						<div className="text-center text-white">
 							<h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">{title}</h2>
 							<p className="mx-auto max-w-2xl text-lg text-white/90">{description}</p>
 						</div>
@@ -119,7 +119,7 @@ export function BusinessLineContact({
 									<h3 className="text-xl font-semibold">Información de Contacto</h3>
 								</FadeIn>
 
-								<Card className={cn(styles.border)}>
+								<Card className={cn("shadow-lg", styles.border)}>
 									<CardContent className="flex flex-col gap-4">
 										{contactInfo.map((item) => {
 											const Icon = item.icon
@@ -152,7 +152,7 @@ export function BusinessLineContact({
 						</div>
 
 						<FadeIn delay={0.3} className="relative z-20 lg:w-1/2">
-							<Card className={cn("border-0 p-0 shadow-xl")}>
+							<Card className={cn("border-0 p-0 shadow-lg")}>
 								<CardContent className="p-6 lg:p-8">
 									<h3 className={cn("mb-6 text-2xl font-bold", styles.text)}>
 										Envíanos un mensaje

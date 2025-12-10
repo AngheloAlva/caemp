@@ -29,6 +29,7 @@ import { Route as CrecimientoCotizacionRouteImport } from './routes/crecimiento/
 import { Route as CrecimientoContactoRouteImport } from './routes/crecimiento/contacto'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
 import { Route as CrecimientoTalleresIndexRouteImport } from './routes/crecimiento/talleres/index'
+import { Route as CrecimientoProgramasIndexRouteImport } from './routes/crecimiento/programas/index'
 import { Route as CrecimientoCursosIndexRouteImport } from './routes/crecimiento/cursos/index'
 import { Route as PlusProductosProductIdRouteImport } from './routes/plus/productos/$productId'
 import { Route as OtecCursosCourseSlugRouteImport } from './routes/otec/cursos/$courseSlug'
@@ -136,6 +137,12 @@ const CrecimientoTalleresIndexRoute =
     path: '/talleres/',
     getParentRoute: () => CrecimientoRoute,
   } as any)
+const CrecimientoProgramasIndexRoute =
+  CrecimientoProgramasIndexRouteImport.update({
+    id: '/programas/',
+    path: '/programas/',
+    getParentRoute: () => CrecimientoRoute,
+  } as any)
 const CrecimientoCursosIndexRoute = CrecimientoCursosIndexRouteImport.update({
   id: '/cursos/',
   path: '/cursos/',
@@ -187,6 +194,7 @@ export interface FileRoutesByFullPath {
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/crecimiento/cursos': typeof CrecimientoCursosIndexRoute
+  '/crecimiento/programas': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
@@ -211,6 +219,7 @@ export interface FileRoutesByTo {
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/crecimiento/cursos': typeof CrecimientoCursosIndexRoute
+  '/crecimiento/programas': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
 }
@@ -239,6 +248,7 @@ export interface FileRoutesById {
   '/otec/cursos/$courseSlug': typeof OtecCursosCourseSlugRoute
   '/plus/productos/$productId': typeof PlusProductosProductIdRoute
   '/crecimiento/cursos/': typeof CrecimientoCursosIndexRoute
+  '/crecimiento/programas/': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres/': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos/': typeof OtecCursosIndexRoute
 }
@@ -268,6 +278,7 @@ export interface FileRouteTypes {
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
     | '/crecimiento/cursos'
+    | '/crecimiento/programas'
     | '/crecimiento/talleres'
     | '/otec/cursos'
   fileRoutesByTo: FileRoutesByTo
@@ -292,6 +303,7 @@ export interface FileRouteTypes {
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
     | '/crecimiento/cursos'
+    | '/crecimiento/programas'
     | '/crecimiento/talleres'
     | '/otec/cursos'
   id:
@@ -319,6 +331,7 @@ export interface FileRouteTypes {
     | '/otec/cursos/$courseSlug'
     | '/plus/productos/$productId'
     | '/crecimiento/cursos/'
+    | '/crecimiento/programas/'
     | '/crecimiento/talleres/'
     | '/otec/cursos/'
   fileRoutesById: FileRoutesById
@@ -472,6 +485,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CrecimientoTalleresIndexRouteImport
       parentRoute: typeof CrecimientoRoute
     }
+    '/crecimiento/programas/': {
+      id: '/crecimiento/programas/'
+      path: '/programas'
+      fullPath: '/crecimiento/programas'
+      preLoaderRoute: typeof CrecimientoProgramasIndexRouteImport
+      parentRoute: typeof CrecimientoRoute
+    }
     '/crecimiento/cursos/': {
       id: '/crecimiento/cursos/'
       path: '/cursos'
@@ -520,6 +540,7 @@ interface CrecimientoRouteChildren {
   CrecimientoCursosSlugRoute: typeof CrecimientoCursosSlugRoute
   CrecimientoTalleresWorkshopSlugRoute: typeof CrecimientoTalleresWorkshopSlugRoute
   CrecimientoCursosIndexRoute: typeof CrecimientoCursosIndexRoute
+  CrecimientoProgramasIndexRoute: typeof CrecimientoProgramasIndexRoute
   CrecimientoTalleresIndexRoute: typeof CrecimientoTalleresIndexRoute
 }
 
@@ -533,6 +554,7 @@ const CrecimientoRouteChildren: CrecimientoRouteChildren = {
   CrecimientoCursosSlugRoute: CrecimientoCursosSlugRoute,
   CrecimientoTalleresWorkshopSlugRoute: CrecimientoTalleresWorkshopSlugRoute,
   CrecimientoCursosIndexRoute: CrecimientoCursosIndexRoute,
+  CrecimientoProgramasIndexRoute: CrecimientoProgramasIndexRoute,
   CrecimientoTalleresIndexRoute: CrecimientoTalleresIndexRoute,
 }
 
