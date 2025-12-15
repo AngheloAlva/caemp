@@ -1,6 +1,13 @@
-import { FacebookIcon, InstagramIcon, LinkedinIcon, MailIcon, PhoneIcon } from "lucide-react"
 import { Link, useRouterState } from "@tanstack/react-router"
 import { Image } from "@unpic/react"
+import {
+	MailIcon,
+	PhoneIcon,
+	LinkedinIcon,
+	FacebookIcon,
+	InstagramIcon,
+	ArrowRightIcon,
+} from "lucide-react"
 
 export function Footer() {
 	const routerState = useRouterState()
@@ -9,6 +16,7 @@ export function Footer() {
 	const isOtec = pathname.startsWith("/otec")
 	const isCrecimiento = pathname.startsWith("/crecimiento")
 	const isPlus = pathname.startsWith("/plus")
+	const isGrupo = pathname === "/" || (!isOtec && !isCrecimiento && !isPlus)
 
 	const config = isOtec
 		? {
@@ -18,9 +26,9 @@ export function Footer() {
 				navItems: [
 					{ to: "/otec", label: "Inicio" },
 					{ to: "/otec/cursos", label: "Cursos" },
-					{ to: "#", label: "Nosotros" },
-					{ to: "#", label: "Galería" },
-					{ to: "#", label: "Contacto" },
+					{ to: "/otec/nosotros", label: "Nosotros" },
+					{ to: "/otec/galeria", label: "Galería" },
+					{ to: "/otec/contacto", label: "Contacto" },
 				],
 			}
 		: isCrecimiento
@@ -30,9 +38,13 @@ export function Footer() {
 					brandName: "CRECIMIENTO",
 					navItems: [
 						{ to: "/crecimiento", label: "Inicio" },
+						{ to: "/crecimiento/cursos", label: "Cursos" },
 						{ to: "/crecimiento/talleres", label: "Talleres" },
+						{ to: "/crecimiento/programas", label: "Programas" },
+						{ to: "/crecimiento/noticias", label: "Noticias" },
+						{ to: "/crecimiento/teatro", label: "Teatro" },
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
-						{ to: "#", label: "Contacto" },
+						{ to: "/crecimiento/contacto", label: "Contacto" },
 					],
 				}
 			: isPlus
@@ -43,8 +55,8 @@ export function Footer() {
 						navItems: [
 							{ to: "/plus", label: "Inicio" },
 							{ to: "/plus/nosotros", label: "Nosotros" },
-							{ to: "#", label: "Productos" },
-							{ to: "#", label: "Contacto" },
+							{ to: "/plus/productos", label: "Productos" },
+							{ to: "/plus/contacto", label: "Contacto" },
 						],
 					}
 				: {
@@ -107,7 +119,7 @@ export function Footer() {
 						</div>
 					</div>
 
-					<div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:w-2/3 lg:grid-cols-2">
+					<div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:w-2/3 lg:grid-cols-3">
 						<div>
 							<h3 className="mb-4 font-semibold">Navegación</h3>
 							<ul className="space-y-3 text-sm">
@@ -125,12 +137,48 @@ export function Footer() {
 						</div>
 
 						<div>
+							<h3 className="mb-4 font-semibold">Líneas de Negocio</h3>
+							<ul className="space-y-3 text-sm">
+								<li>
+									<Link
+										to="/otec"
+										className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
+									>
+										CAEMP OTEC
+									</Link>
+								</li>
+								<li>
+									<Link
+										to="/plus"
+										className="text-muted-foreground hover:text-primary-green flex items-center gap-2 transition-colors"
+									>
+										CAEMP PLUS
+									</Link>
+								</li>
+								<li>
+									<Link
+										to="/crecimiento"
+										className="text-muted-foreground hover:text-primary-purple flex items-center gap-2 transition-colors"
+									>
+										CRECIMIENTO
+									</Link>
+								</li>
+								{!isGrupo && (
+									<li>
+										<Link
+											to="/"
+											className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
+										>
+											<ArrowRightIcon className="h-3 w-3" /> Grupo CAEMP
+										</Link>
+									</li>
+								)}
+							</ul>
+						</div>
+
+						<div>
 							<h3 className="mb-4 font-semibold">Contacto</h3>
 							<ul className="space-y-3 text-sm">
-								<li className="text-muted-foreground flex items-center gap-2">
-									<PhoneIcon className="h-4 w-4" />
-									<span>2 2667 6455</span>
-								</li>
 								<li className="text-muted-foreground flex items-center gap-2">
 									<PhoneIcon className="h-4 w-4" />
 									<span>+56 9 9884 3486</span>

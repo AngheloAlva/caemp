@@ -1,8 +1,9 @@
 "use client"
 
-import { motion } from "motion/react"
+import { transform } from "unpic/providers/vercel"
 import { Link } from "@tanstack/react-router"
 import { useState, useEffect } from "react"
+import { motion } from "motion/react"
 import { Image } from "@unpic/react"
 
 import { SlideIn } from "@/components/animations/slide-in"
@@ -32,11 +33,7 @@ const businessLines = [
 	},
 ]
 
-const heroImages = [
-	"/images/home/hero.jpg",
-	"/images/home/hero-2.jpg",
-	"/images/crecimiento/galery-4.jpeg",
-]
+const heroImages = ["/images/home/hero.png", "/images/home/hero-2.png", "/images/home/hero-3.png"]
 
 export default function Hero() {
 	const [currentImage, setCurrentImage] = useState(0)
@@ -61,12 +58,13 @@ export default function Hero() {
 						className="absolute inset-0 h-full w-full"
 					>
 						<Image
-							priority={index === 0}
+							src={src}
 							width={1920}
 							height={935}
-							loading={index === 0 ? "eager" : "lazy"}
 							alt="Background"
-							src={src}
+							fallback={transform}
+							priority={index === 0}
+							loading={index === 0 ? "eager" : "lazy"}
 							className="h-full w-full object-cover"
 						/>
 					</motion.div>
