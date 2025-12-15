@@ -23,6 +23,7 @@ export const Route = createRootRoute({
 			{
 				rel: "stylesheet",
 				href: appCss,
+				fetchPriority: "high",
 			},
 		],
 	}),

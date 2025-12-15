@@ -70,7 +70,7 @@ export function Footer() {
 					}
 
 	return (
-		<footer className="bg-muted/30 border-t px-4">
+		<footer className="bg-muted/30 min-h-[400px] border-t px-4 md:min-h-[350px]">
 			<div className="container mx-auto py-12 md:py-16">
 				<div className="flex flex-col gap-8 lg:flex-row lg:gap-20">
 					<div className="space-y-4 lg:w-1/3">

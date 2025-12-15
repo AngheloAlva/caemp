@@ -27,6 +27,10 @@ const config = defineConfig({
 			},
 		}),
 	],
+	build: {
+		cssMinify: true,
+		minify: "esbuild",
+	},
 })
 
 export default config

@@ -46,7 +46,7 @@ export default function Hero() {
 	}, [])
 
 	return (
-		<section className="relative flex min-h-[calc(100dvh-10rem)] w-full items-center justify-center overflow-hidden py-20 md:py-32">
+		<section className="relative flex min-h-[600px] w-full items-center justify-center overflow-hidden py-20 md:min-h-[calc(100dvh-10rem)] md:py-32">
 			<div className="absolute inset-0 -z-20 h-full w-full">
 				{heroImages.map((src, index) => (
 					<motion.div
