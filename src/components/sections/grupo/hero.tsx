@@ -1,13 +1,12 @@
 "use client"
 
-import { transform } from "unpic/providers/vercel"
 import { Link } from "@tanstack/react-router"
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
-import { Image } from "@unpic/react"
 
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
+import { Image } from "@/components/shared/image"
 
 const businessLines = [
 	{
@@ -62,10 +61,9 @@ export default function Hero() {
 							width={1920}
 							height={935}
 							alt="Background"
-							fallback={transform}
-							priority={index === 0}
-							loading={index === 0 ? "eager" : "lazy"}
 							className="h-full w-full object-cover"
+							loading={index === 0 ? "eager" : "lazy"}
+							fetchPriority={index === 0 ? "high" : "low"}
 						/>
 					</motion.div>
 				))}
@@ -107,7 +105,6 @@ export default function Hero() {
 												height={384}
 												src={line.logo}
 												alt={`Logo ${line.name}`}
-												layout="constrained"
 												className="h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-96 xl:w-96"
 											/>
 										</div>

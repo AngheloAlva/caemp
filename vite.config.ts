@@ -14,7 +14,18 @@ const config = defineConfig({
 		tailwindcss(),
 		tanstackStart(),
 		viteReact(),
-		nitroV2Plugin(),
+		nitroV2Plugin({
+			vercel: {
+				config: {
+					images: {
+						minimumCacheTTL: 60,
+						domains: ["caemp.vercel.app"],
+						formats: ["image/webp", "image/avif"],
+						sizes: [16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+					},
+				},
+			},
+		}),
 	],
 })
 
