@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { OtecCourse } from "@/data/otec/courses"
 

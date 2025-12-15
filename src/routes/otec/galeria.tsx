@@ -5,7 +5,7 @@ import { useState } from "react"
 
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export const Route = createFileRoute("/otec/galeria")({
 	component: RouteComponent,

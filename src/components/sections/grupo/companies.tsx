@@ -3,7 +3,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 import { motion } from "motion/react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { StaggerContainer } from "@/components/animations/stagger-container"

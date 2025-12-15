@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Target, Eye, Users, TrendingUp, Lightbulb } from "lucide-react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"

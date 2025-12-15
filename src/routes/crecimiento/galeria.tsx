@@ -5,7 +5,7 @@ import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
 
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export const Route = createFileRoute("/crecimiento/galeria")({
 	component: RouteComponent,

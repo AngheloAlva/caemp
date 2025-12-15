@@ -1,4 +1,4 @@
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 import { CheckCircle2Icon, MailIcon, PhoneIcon } from "lucide-react"
 import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"

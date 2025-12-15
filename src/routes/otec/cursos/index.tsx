@@ -4,7 +4,7 @@ import CourseGrid from "@/components/sections/courses/course-grid"
 import Filters from "@/components/sections/courses/filters"
 import { FadeIn } from "@/components/animations/fade-in"
 import { courses } from "@/data/otec/courses"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export const Route = createFileRoute("/otec/cursos/")({
 	component: CoursesPage,

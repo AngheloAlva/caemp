@@ -1,7 +1,7 @@
 import { AwardIcon, ShieldIcon, ZapIcon } from "lucide-react"
 
 import { FadeIn } from "@/components/animations/fade-in"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export default function Benefits(): React.ReactElement {
 	return (

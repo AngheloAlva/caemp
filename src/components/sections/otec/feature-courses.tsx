@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { courses } from "@/data/otec/courses"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export default function FeatureCourses(): React.ReactElement {
 	const featuredCourses = Object.values(courses).slice(0, 4)

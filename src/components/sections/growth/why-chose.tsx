@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 const reasons = [
 	{

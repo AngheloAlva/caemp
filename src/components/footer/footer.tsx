@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 import {
 	MailIcon,
 	PhoneIcon,

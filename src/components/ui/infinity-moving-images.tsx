@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 export const InfiniteMovingImages = ({
 	items,

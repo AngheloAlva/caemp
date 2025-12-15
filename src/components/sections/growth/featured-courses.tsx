@@ -1,5 +1,5 @@
 import { ArrowRight, Clock } from "lucide-react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"

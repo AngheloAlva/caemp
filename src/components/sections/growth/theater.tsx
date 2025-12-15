@@ -1,6 +1,6 @@
 import { ArrowRight, Theater as TheaterIcon } from "lucide-react"
 import { Link } from "@tanstack/react-router"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { theaterPlays } from "@/data/crecimiento/theater"
 

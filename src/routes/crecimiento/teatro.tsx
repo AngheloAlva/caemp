@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Theater as TheaterIcon } from "lucide-react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"

@@ -2,7 +2,7 @@
 
 import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react"
 import { motion } from "motion/react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"

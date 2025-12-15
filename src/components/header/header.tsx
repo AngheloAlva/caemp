@@ -3,7 +3,7 @@
 import { Menu, ChevronDown, ArrowLeftIcon } from "lucide-react"
 import { Link, useRouterState } from "@tanstack/react-router"
 import { motion, AnimatePresence } from "motion/react"
-import { Image } from "@unpic/react"
+import { Image } from "@/components/shared/image"
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
