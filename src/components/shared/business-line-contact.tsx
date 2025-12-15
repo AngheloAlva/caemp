@@ -1,6 +1,5 @@
 "use client"
 
-import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react"
 import { motion } from "motion/react"
 import { Image } from "@/components/shared/image"
 
@@ -15,30 +14,18 @@ interface BusinessLineContactProps {
 	title: string
 	description: string
 	variant?: "default" | "purple" | "green"
+	contactInfo: {
+		icon: React.ComponentType<{ className?: string }>
+		value: string
+		href?: string
+	}[]
 }
-
-const contactInfo = [
-	{
-		icon: MailIcon,
-		value: "comercial@caemp.cl",
-		href: "mailto:comercial@caemp.cl",
-	},
-	{
-		icon: PhoneIcon,
-		value: "+56 9 9884 3486",
-		href: "tel:+56998843486",
-	},
-	{
-		icon: MapPinIcon,
-		value: "Blas Vial 8727, La Cisterna, Santiago",
-		href: "https://www.google.com/maps/place/Blas+Vial+8727,+7980705+La+Cisterna,+Regi%C3%B3n+Metropolitana,+Chile/@-33.537005,-70.655468,15z",
-	},
-]
 
 export function BusinessLineContact({
 	title,
 	description,
 	variant = "default",
+	contactInfo,
 }: BusinessLineContactProps) {
 	const variants = {
 		default: {
@@ -86,9 +73,10 @@ export function BusinessLineContact({
 			<div className="relative w-full py-16 lg:py-24">
 				<div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
 					<Image
+						width={1920}
+						height={1080}
 						src={styles.image}
 						alt="Fondo de contacto"
-						layout="fullWidth"
 						className="h-full w-full object-cover"
 					/>
 					<div className={cn("absolute inset-0", styles.overlay)} />

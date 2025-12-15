@@ -23,6 +23,7 @@ interface HeaderConfig {
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const [empresasMenuOpen, setEmpresasMenuOpen] = useState(false)
+	const [serviciosMenuOpen, setServiciosMenuOpen] = useState(false)
 	const routerState = useRouterState()
 	const pathname = routerState.location.pathname
 
@@ -30,6 +31,13 @@ export function Header() {
 	const isCrecimiento = pathname.startsWith("/crecimiento")
 	const isPlus = pathname.startsWith("/plus")
 	const isGrupo = pathname === "/" || (!isOtec && !isCrecimiento && !isPlus)
+
+	const serviciosCrecimiento = [
+		{ to: "/crecimiento/cursos", label: "Cursos" },
+		{ to: "/crecimiento/talleres", label: "Talleres" },
+		{ to: "/crecimiento/programas", label: "Programas" },
+		{ to: "/crecimiento/teatro", label: "Teatro" },
+	]
 
 	const config: HeaderConfig = isOtec
 		? {
@@ -58,11 +66,7 @@ export function Header() {
 					homeLink: "/crecimiento",
 					navItems: [
 						{ to: "/crecimiento", label: "Inicio" },
-						{ to: "/crecimiento/cursos", label: "Cursos" },
-						{ to: "/crecimiento/talleres", label: "Talleres" },
-						{ to: "/crecimiento/programas", label: "Programas" },
 						{ to: "/crecimiento/noticias", label: "Noticias" },
-						{ to: "/crecimiento/teatro", label: "Teatro" },
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
 						{ to: "/crecimiento/contacto", label: "Contacto" },
 					],
@@ -158,6 +162,46 @@ export function Header() {
 								lineOfBusiness={config.lineOfBusiness}
 							/>
 						))}
+
+						{isCrecimiento && (
+							<div
+								className="relative"
+								onMouseEnter={() => setServiciosMenuOpen(true)}
+								onMouseLeave={() => setServiciosMenuOpen(false)}
+							>
+								<a
+									href="#servicios"
+									className="hover:text-primary-purple flex items-center gap-1 text-sm font-medium text-gray-700 transition-colors"
+								>
+									Servicios
+									<ChevronDown className="h-4 w-4" />
+								</a>
+
+								<AnimatePresence>
+									{serviciosMenuOpen && (
+										<motion.div
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											exit={{ opacity: 0, y: -10 }}
+											transition={{ duration: 0.2 }}
+											className="absolute top-full right-0 mt-2 w-48 rounded-md border bg-white shadow-lg"
+										>
+											<div className="py-2">
+												{serviciosCrecimiento.map((servicio) => (
+													<Link
+														key={servicio.to}
+														to={servicio.to}
+														className="hover:text-primary-purple hover:bg-primary-purple/10 block px-4 py-2 text-sm text-gray-700"
+													>
+														{servicio.label}
+													</Link>
+												))}
+											</div>
+										</motion.div>
+									)}
+								</AnimatePresence>
+							</div>
+						)}
 
 						<div
 							className="relative"
@@ -264,6 +308,23 @@ export function Header() {
 									lineOfBusiness={config.lineOfBusiness}
 								/>
 							))}
+
+							{isCrecimiento && (
+								<div className="border-t pt-4">
+									<p className="mb-2 text-xs font-semibold text-gray-500">Servicios</p>
+									<div className="flex flex-col gap-2">
+										{serviciosCrecimiento.map((servicio) => (
+											<Link
+												key={servicio.to}
+												to={servicio.to}
+												className="hover:text-primary-purple rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
+											>
+												{servicio.label}
+											</Link>
+										))}
+									</div>
+								</div>
+							)}
 
 							<div className="border-t pt-4">
 								<p className="mb-2 text-xs font-semibold text-gray-500">Lineas de Negocio</p>
