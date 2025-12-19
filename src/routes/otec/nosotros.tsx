@@ -4,6 +4,7 @@ import { Target, Eye, ShieldCheck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideIn } from "@/components/animations/slide-in"
+import { Image } from "@/components/shared/image"
 
 export const Route = createFileRoute("/otec/nosotros")({
 	component: RouteComponent,
@@ -12,15 +13,23 @@ export const Route = createFileRoute("/otec/nosotros")({
 function RouteComponent() {
 	return (
 		<main className="flex flex-col">
-			{/* Hero Section */}
-			<section className="relative overflow-hidden bg-linear-to-br from-blue-50 via-white to-blue-50 py-20 md:py-32">
-				<div className="container mx-auto max-w-7xl px-4">
+			<section className="relative overflow-hidden py-32 md:py-40 lg:py-48">
+				<Image
+					width={1920}
+					height={1080}
+					loading="lazy"
+					alt="Purpose Image"
+					src="/images/otec/nosotros.jpg"
+					className="absolute inset-0 h-full w-full object-cover"
+				/>
+
+				<div className="from-primary/70 to-primary/50 absolute inset-0 z-10 flex w-screen items-center justify-center bg-linear-to-br px-4">
 					<FadeIn>
 						<div className="mx-auto max-w-4xl text-center">
-							<h1 className="text-primary mb-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
+							<h1 className="mb-6 text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
 								Quiénes Somos
 							</h1>
-							<p className="text-xl leading-relaxed text-gray-700">
+							<p className="text-xl leading-relaxed text-white">
 								Líderes en capacitación y entrenamiento para trabajos de alto riesgo
 							</p>
 						</div>
@@ -49,10 +58,14 @@ function RouteComponent() {
 
 						<SlideIn direction="right" delay={0.2}>
 							<div className="relative aspect-video overflow-hidden rounded-2xl bg-gray-100">
-								{/* Placeholder for Purpose Image */}
-								<div className="absolute inset-0 flex items-center justify-center text-gray-400">
-									<ShieldCheck className="h-24 w-24 opacity-20" />
-								</div>
+								<Image
+									width={592}
+									height={333}
+									loading="lazy"
+									alt="Purpose Image"
+									src="/images/otec/nosotros.jpg"
+									className="h-full w-full object-cover"
+								/>
 							</div>
 						</SlideIn>
 					</div>

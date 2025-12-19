@@ -1,31 +1,67 @@
+"use client"
+
 import { ArrowUpRightIcon } from "lucide-react"
+import { Link } from "@tanstack/react-router"
+import { useState, useEffect } from "react"
+import { motion } from "motion/react"
 
 import { HoverScale } from "@/components/animations/hover-scale"
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Link } from "@tanstack/react-router"
+import { Image } from "@/components/shared/image"
+
+const heroImages = [
+	"/images/crecimiento/hero.jpg",
+	"/images/crecimiento/hero-2.jpg",
+	"/images/crecimiento/hero-3.jpg",
+	"/images/crecimiento/hero-4.jpg",
+]
 
 export default function Hero(): React.ReactElement {
+	const [currentImage, setCurrentImage] = useState(0)
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCurrentImage((prev) => (prev + 1) % heroImages.length)
+		}, 5000)
+
+		return () => clearInterval(timer)
+	}, [])
+
 	return (
-		<section
-			className="relative w-screen overflow-hidden text-white"
-			style={{ backgroundColor: "#8B5CF6" }}
-		>
-			<div
-				className="absolute inset-0 bg-cover bg-center"
-				style={{ backgroundImage: "url(/images/crecimiento/hero.png)" }}
-			/>
-			<div className="from-primary-purple to-primary-purple absolute inset-0 bg-linear-to-br via-[#7C3AED] opacity-80" />
-			<div className="animate-float absolute top-20 left-10 h-20 w-20 rounded-full bg-white/10 blur-xl" />
+		<section className="relative w-screen overflow-hidden text-white">
+			<div className="absolute inset-0 -z-20 h-full w-full">
+				{heroImages.map((src, index) => (
+					<motion.div
+						key={src}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: index === currentImage ? 1 : 0 }}
+						transition={{ duration: 1 }}
+						className="absolute inset-0 h-full w-full"
+					>
+						<Image
+							src={src}
+							width={1920}
+							height={1080}
+							alt="Background"
+							className="h-full w-full object-cover"
+							loading={index === 0 ? "eager" : "lazy"}
+							fetchPriority={index === 0 ? "high" : "low"}
+						/>
+					</motion.div>
+				))}
+			</div>
+
+			<div className="from-primary-purple to-primary-purple via-primary-purple/80 absolute inset-0 bg-linear-to-br" />
 
 			<div
 				className="animate-float absolute right-10 bottom-20 h-32 w-32 rounded-full bg-white/10 blur-xl"
 				style={{ animationDelay: "1s" }}
 			/>
 
-			<div className="relative container mx-auto py-24 md:py-32 lg:py-40">
+			<div className="relative container mx-auto py-24 md:py-32 lg:py-48">
 				<div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 text-center">
 					<FadeIn delay={0.2}>
 						<Badge variant="secondary" className="border-white/30 bg-white/20 text-white">
