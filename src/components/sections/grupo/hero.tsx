@@ -25,7 +25,7 @@ const businessLines = [
 	},
 	{
 		name: "Crecimiento",
-		title: "Formación y Couching",
+		title: "Formación y Coaching",
 		logo: "/images/logo/logo-c-white.png",
 		href: "/crecimiento",
 		color: "#8B5CF6",

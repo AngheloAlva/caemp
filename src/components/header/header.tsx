@@ -61,7 +61,7 @@ export function Header() {
 		: isCrecimiento
 			? {
 					logo: ["/images/logo/logo-c-black.png"],
-					brandName: "Formacion y Couching",
+					brandName: "Formacion y Coaching",
 					lineOfBusiness: "crecimiento",
 					homeLink: "/crecimiento",
 					navItems: [
