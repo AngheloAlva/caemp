@@ -8,25 +8,40 @@ import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Image } from "@/components/shared/image"
 
+// Type for video sources
+type VideoSource = {
+	src: string
+	type: string
+}
+
 const businessLines = [
 	{
 		name: "CAEMP OTEC",
 		title: "Capacitación y Entrenamiento",
-		logo: "/images/logo/logo-o-white.png",
+		video: [
+			{ src: "/videos/otec-logo.mp4", type: "video/mp4" },
+			{ src: "/videos/otec-logo.webm", type: "video/webm" },
+		] as VideoSource[],
 		href: "/otec",
 		color: "#004E8C",
 	},
 	{
 		name: "CAEMP Plus",
 		title: "Asesoría Técnica y Venta de EPP",
-		logo: "/images/logo/logo-p-white.png",
+		video: [
+			{ src: "/videos/plus-logo.mp4", type: "video/mp4" },
+			{ src: "/videos/plus-logo.webm", type: "video/webm" },
+		] as VideoSource[],
 		href: "/plus",
 		color: "#16A34A",
 	},
 	{
 		name: "Crecimiento",
 		title: "Formación y Coaching",
-		logo: "/images/logo/logo-c-white.png",
+		video: [
+			{ src: "/videos/crecimiento-logo.mp4", type: "video/mp4" },
+			{ src: "/videos/crecimiento-logo.webm", type: "video/webm" },
+		] as VideoSource[],
 		href: "/crecimiento",
 		color: "#8B5CF6",
 	},
@@ -100,13 +115,17 @@ export default function Hero() {
 								>
 									<Link to={line.href} className="group flex flex-col items-center">
 										<div className="transition-transform duration-300">
-											<Image
-												width={384}
-												height={384}
-												src={line.logo}
-												alt={`Logo ${line.name}`}
-												className="h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-96 xl:w-96"
-											/>
+											<video
+												autoPlay
+												loop
+												muted
+												playsInline
+												className="aspect-square h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-100 xl:w-100"
+											>
+												{line.video.map((source) => (
+													<source key={source.src} src={source.src} type={source.type} />
+												))}
+											</video>
 										</div>
 
 										<p className="text-center text-xl font-semibold text-white md:text-2xl lg:text-3xl">

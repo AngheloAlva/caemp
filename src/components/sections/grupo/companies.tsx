@@ -1,70 +1,50 @@
 "use client"
 
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Link } from "@tanstack/react-router"
 import { motion } from "motion/react"
 import { Image } from "@/components/shared/image"
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { FadeIn } from "@/components/animations/fade-in"
-import { Button } from "@/components/ui/button"
 
 const companies = [
 	{
 		name: "CAEMP (OTEC)",
-		subtitle: "Formación Técnica y Prevención de Riesgos",
-		color: "primary",
 		logo: "/images/logo/logo-o-black.png",
+		color: "#0066b3", // Azul
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
-		features: [
-			"Técnicas de trabajo y rescate en altura",
-			"Técnicas de trabajo y Rescate en espacios confinados",
-			"Primeros auxilios RCP y DEA",
-			"Técnicas de operación de maquinaria y equipos",
-			"Técnicas de control de riesgos eléctricos NFA 70E",
-		],
+		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
+		email: "contacto@grupocaemp.cl",
 		link: "/otec",
 	},
 	{
 		name: "CAEMP PLUS",
-		subtitle: "Asesoría Técnica y Equipos de Protección",
-		color: "primary-green",
 		logo: "/images/logo/logo-p-black.png",
+		color: "#00a651", // Verde
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
-		features: [
-			"Venta de EPP certificados (cascos, guantes, arneses)",
-			"Equipos de protección colectiva y líneas de vida",
-			"Asesoría técnica en selección de equipos",
-			"Señalética y elementos de seguridad industrial",
-			"Productos certificados y homologados",
-		],
+		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
+		email: "contacto@grupocaemp.cl",
 		link: "/plus",
 	},
 	{
 		name: "CRECIMIENTO",
-		subtitle: "Desarrollo Humano y Organizacional",
-		color: "primary-purple",
 		logo: "/images/logo/logo-c-black.png",
+		color: "#9b2789", // Púrpura
 		description:
 			"Potenciamos el liderazgo, la comunicación y la colaboración. Diseñamos programas de capacitación y talleres personalizados que fortalecen las habilidades blandas.",
-		features: [
-			"Programas de Habilidades interpersonales",
-			"Talleres Lúdicos",
-			"Cursos presenciales, semi presenciales y asincrónicos",
-			"Jornadas Team Building",
-			"Coaching ejecutivo y Coaching de Vida",
-		],
+		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
+		email: "contacto@grupocaemp.cl",
 		link: "/crecimiento",
 	},
 ]
 
 export default function Companies() {
 	return (
-		<section id="nuestras-empresas" className="w-full bg-gray-50 py-16 md:py-28">
+		<section id="nuestras-empresas" className="w-full bg-slate-100 py-16 md:py-28">
 			<div className="container mx-auto px-4">
 				<FadeIn>
 					<div className="mb-16 text-center">
@@ -78,60 +58,64 @@ export default function Companies() {
 					</div>
 				</FadeIn>
 
-				<StaggerContainer className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+				<StaggerContainer className="grid gap-0 md:grid-cols-1 lg:grid-cols-3">
 					{companies.map((company, index) => (
 						<StaggerItem key={index}>
-							<motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }} className="h-full">
-								<Card className="h-full border transition-all hover:shadow-xl">
-									<CardHeader className="flex flex-row items-center">
-										<Image src={company.logo} alt={company.name} width={100} height={100} />
+							<motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3 }} className="h-full">
+								<div className="flex h-full flex-col bg-white p-8 shadow-sm transition-shadow hover:shadow-lg">
+									{/* Logo Section */}
+									<div className="mb-6">
+										<Image
+											src={company.logo}
+											alt={company.name}
+											width={140}
+											height={70}
+											className="h-16 w-auto object-contain"
+										/>
+										<p className="mt-1 text-xs text-gray-400">Grupo CAEMP</p>
+									</div>
 
-										<div>
-											<CardTitle className="text-2xl" style={{ color: `var(--${company.color})` }}>
-												{company.name}
-											</CardTitle>
-											<p className="text-sm font-medium text-gray-600">{company.subtitle}</p>
-										</div>
-									</CardHeader>
-									<CardContent className="space-y-6">
-										<p className="text-gray-700">{company.description}</p>
+									{/* Description */}
+									<p className="mb-8 grow text-sm leading-relaxed text-gray-700">
+										{company.description}
+									</p>
 
-										<div>
-											<h4 className="mb-3 font-semibold text-gray-900">Servicios destacados:</h4>
-											<ul className="space-y-2">
-												{company.features.map((feature) => (
-													<li key={feature} className="flex items-start gap-2">
-														<CheckCircle2
-															className="mt-0.5 h-5 w-5 shrink-0"
-															style={{ color: company.color }}
-														/>
-														<span className="text-sm text-gray-700">{feature}</span>
-													</li>
-												))}
-											</ul>
-										</div>
-									</CardContent>
-
-									<CardFooter className="mt-auto">
-										<motion.div
-											whileHover={{ scale: 1.02 }}
-											whileTap={{ scale: 0.98 }}
-											className="w-full"
-										>
-											<Button
-												asChild
-												size={"lg"}
-												className="w-full"
-												style={{ backgroundColor: `var(--${company.color})` }}
+									{/* Contact Info with colored left border */}
+									<div className="mb-8 border-l-2 pl-4" style={{ borderColor: company.color }}>
+										<p className="text-xs text-gray-600">
+											<span className="font-medium text-gray-800">Dirección: </span>
+											{company.address}
+										</p>
+										<p className="mt-1 text-xs text-gray-600">
+											<span className="font-medium text-gray-800">Email: </span>
+											<a
+												href={`mailto:${company.email}`}
+												className="hover:underline"
+												style={{ color: company.color }}
 											>
-												<Link to={company.link}>
-													Ver más
-													<ArrowRight className="h-4 w-4" />
-												</Link>
-											</Button>
-										</motion.div>
-									</CardFooter>
-								</Card>
+												{company.email}
+											</a>
+										</p>
+									</div>
+
+									{/* Circular Arrow Button */}
+									<div>
+										<Link to={company.link}>
+											<motion.button
+												whileHover={{ scale: 1.1 }}
+												whileTap={{ scale: 0.95 }}
+												className="flex h-12 w-12 items-center justify-center rounded-full border-2 transition-colors"
+												style={{
+													borderColor: company.color,
+													color: company.color,
+												}}
+												aria-label={`Ver más sobre ${company.name}`}
+											>
+												<ArrowRight className="h-5 w-5" />
+											</motion.button>
+										</Link>
+									</div>
+								</div>
 							</motion.div>
 						</StaggerItem>
 					))}
