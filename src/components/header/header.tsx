@@ -68,6 +68,7 @@ export function Header() {
 						{ to: "/crecimiento", label: "Inicio" },
 						{ to: "/crecimiento/noticias", label: "Noticias" },
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
+						{ to: "/crecimiento/galeria", label: "Galería" },
 						{ to: "/crecimiento/contacto", label: "Contacto" },
 					],
 					ctaButton: {

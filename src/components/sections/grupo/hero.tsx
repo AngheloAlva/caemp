@@ -3,45 +3,31 @@
 import { Link } from "@tanstack/react-router"
 import { useState, useEffect } from "react"
 import { motion } from "motion/react"
+import { ChevronDown } from "lucide-react"
 
 import { SlideIn } from "@/components/animations/slide-in"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Image } from "@/components/shared/image"
 
-// Type for video sources
-type VideoSource = {
-	src: string
-	type: string
-}
-
 const businessLines = [
 	{
 		name: "CAEMP OTEC",
 		title: "Capacitación y Entrenamiento",
-		video: [
-			{ src: "/videos/otec-logo.mp4", type: "video/mp4" },
-			{ src: "/videos/otec-logo.webm", type: "video/webm" },
-		] as VideoSource[],
+		logo: "/images/logo/logo-o-white.png",
 		href: "/otec",
 		color: "#004E8C",
 	},
 	{
 		name: "CAEMP Plus",
 		title: "Asesoría Técnica y Venta de EPP",
-		video: [
-			{ src: "/videos/plus-logo.mp4", type: "video/mp4" },
-			{ src: "/videos/plus-logo.webm", type: "video/webm" },
-		] as VideoSource[],
+		logo: "/images/logo/logo-p-white.png",
 		href: "/plus",
 		color: "#16A34A",
 	},
 	{
 		name: "Crecimiento",
 		title: "Formación y Coaching",
-		video: [
-			{ src: "/videos/crecimiento-logo.mp4", type: "video/mp4" },
-			{ src: "/videos/crecimiento-logo.webm", type: "video/webm" },
-		] as VideoSource[],
+		logo: "/images/logo/logo-c-white.png",
 		href: "/crecimiento",
 		color: "#8B5CF6",
 	},
@@ -60,15 +46,22 @@ export default function Hero() {
 		return () => clearInterval(timer)
 	}, [])
 
+	const scrollToSection = () => {
+		const element = document.getElementById("quienes-somos")
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" })
+		}
+	}
+
 	return (
-		<section className="relative flex min-h-[600px] w-full items-center justify-center overflow-hidden py-20 md:min-h-[calc(100dvh-10rem)] md:py-32">
+		<section className="relative flex min-h-[600px] w-full flex-col items-center justify-center overflow-hidden py-16 md:min-h-[calc(100dvh-5rem)] md:py-24">
 			<div className="absolute inset-0 -z-20 h-full w-full">
 				{heroImages.map((src, index) => (
 					<motion.div
 						key={src}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: index === currentImage ? 1 : 0 }}
-						transition={{ duration: 1 }}
+						transition={{ duration: 1.2, ease: "easeInOut" }}
 						className="absolute inset-0 h-full w-full"
 					>
 						<Image
@@ -84,71 +77,87 @@ export default function Hero() {
 				))}
 			</div>
 
-			<div className="absolute inset-0 -z-10 bg-black/50" />
+			<div className="absolute inset-0 -z-10 bg-linear-to-b from-black/60 via-black/50 to-black/70" />
 
-			<div className="container mx-auto px-4">
-				<div className="mx-auto max-w-7xl">
-					<div className="mb-12 text-center">
-						<FadeIn>
-							<motion.div
-								initial={{ scale: 0.9, opacity: 0 }}
-								animate={{ scale: 1, opacity: 1 }}
-								transition={{ duration: 0.5 }}
-								className="mb-6"
-							>
-								<h1 className="mb-6 text-4xl font-black tracking-tight text-white md:text-6xl lg:text-7xl">
-									Grupo CAEMP
-								</h1>
-							</motion.div>
-						</FadeIn>
-					</div>
+			<div className="container mx-auto flex flex-1 flex-col items-center justify-center px-4">
+				<div className="mx-auto max-w-7xl text-center">
+					<FadeIn>
+						<motion.div
+							initial={{ scale: 0.95, opacity: 0, y: 20 }}
+							animate={{ scale: 1, opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, ease: "easeOut" }}
+							className="mb-4"
+						>
+							<h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl lg:text-7xl">
+								Grupo CAEMP
+							</h1>
+						</motion.div>
+					</FadeIn>
+
+					<SlideIn direction="up" delay={0.2}>
+						<p className="mx-auto mb-8 max-w-2xl text-base text-white/90 md:mb-16 md:text-lg lg:text-xl">
+							Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile en
+							la construcción de entornos laborales más seguros, conscientes y productivos
+						</p>
+					</SlideIn>
 
 					<SlideIn direction="up" delay={0.4}>
-						<div className="grid gap-4 md:grid-cols-3 md:gap-16">
+						<div className="grid gap-6 md:grid-cols-3 md:gap-8 lg:gap-12">
 							{businessLines.map((line, index) => (
 								<motion.div
 									key={line.name}
 									animate={{ opacity: 1, y: 0 }}
-									initial={{ opacity: 0, y: 20 }}
-									className="flex flex-col items-center"
-									transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+									initial={{ opacity: 0, y: 30 }}
+									transition={{ delay: 0.5 + index * 0.15, duration: 0.5, ease: "easeOut" }}
 								>
-									<Link to={line.href} className="group flex flex-col items-center">
-										<div className="transition-transform duration-300">
-											<video
-												autoPlay
-												loop
-												muted
-												playsInline
-												className="aspect-square h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-100 xl:w-100"
-											>
-												{line.video.map((source) => (
-													<source key={source.src} src={source.src} type={source.type} />
-												))}
-											</video>
-										</div>
+									<Link
+										to={line.href}
+										className="group flex flex-col items-center rounded-xs p-2 transition-all duration-300 hover:bg-white/10"
+									>
+										<motion.div
+											whileHover={{ scale: 1.05 }}
+											transition={{ duration: 0.3 }}
+											className="mb-3"
+										>
+											<Image
+												width={384}
+												height={384}
+												src={line.logo}
+												alt={`Logo ${line.name}`}
+												className="h-52 w-52 object-contain lg:h-64 lg:w-64 xl:h-96 xl:w-96"
+											/>
+										</motion.div>
 
-										<p className="text-center text-xl font-semibold text-white md:text-2xl lg:text-3xl">
+										<p className="text-center text-lg font-medium text-white md:text-xl lg:text-2xl">
 											{line.title}
 										</p>
+										<div
+											className="mt-2 h-0.5 w-0 rounded-full transition-all duration-300 group-hover:w-16"
+											style={{ backgroundColor: line.color }}
+										/>
 									</Link>
 								</motion.div>
 							))}
 						</div>
 					</SlideIn>
-
-					<div className="mx-auto mt-12 max-w-7xl lg:mt-20">
-						<div className="text-center">
-							<SlideIn direction="up" delay={0.2}>
-								<p className="mx-auto max-w-3xl text-white md:text-lg lg:text-xl">
-									Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile
-									en la construcción de entornos laborales más seguros, conscientes y productivos
-								</p>
-							</SlideIn>
-						</div>
-					</div>
 				</div>
 			</div>
+
+			<motion.button
+				initial={{ opacity: 0, y: 10 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 1.2, duration: 0.5 }}
+				onClick={scrollToSection}
+				className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer text-white/70 transition-colors hover:text-white"
+				aria-label="Scroll down"
+			>
+				<motion.div
+					animate={{ y: [0, 8, 0] }}
+					transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+				>
+					<ChevronDown className="h-8 w-8" />
+				</motion.div>
+			</motion.button>
 		</section>
 	)
 }

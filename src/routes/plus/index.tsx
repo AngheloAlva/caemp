@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router"
 
+import OfficialProviders from "@/components/sections/plus/oficial-providers"
 import FeaturedProducts from "@/components/sections/plus/featured-products"
 import Testimonials from "@/components/sections/plus/testimonials"
 import Categories from "@/components/sections/plus/categories"
-import Hero from "@/components/sections/plus/hero"
 import About from "@/components/sections/plus/about"
+import Hero from "@/components/sections/plus/hero"
 import Cta from "@/components/sections/plus/cta"
-import OfficialProviders from "@/components/sections/plus/oficial-providers"
 
 export const Route = createFileRoute("/plus/")({
 	component: RouteComponent,

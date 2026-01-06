@@ -63,7 +63,7 @@ function RouteComponent() {
 									height={333}
 									loading="lazy"
 									alt="Purpose Image"
-									src="/images/otec/nosotros.jpg"
+									src="/images/otec/nosotros-2.jpg"
 									className="h-full w-full object-cover"
 								/>
 							</div>

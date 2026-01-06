@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, CheckCircle2, MessageCircle, TrendingUp, ImageIcon } from "lucide-react"
+import { ArrowRight, CheckCircle2, MessageCircle, TrendingUp } from "lucide-react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
+import { Image } from "@/components/shared/image"
 
 const personalCoachingBenefits = [
 	"Clarificar tus metas y encontrar tu propósito",
@@ -57,15 +58,21 @@ export default function Coaching() {
 							<Card className="border-primary-purple/20 overflow-hidden">
 								<CardContent className="lg:pr-0">
 									<div className="grid gap-0 lg:grid-cols-2">
-										<div className="bg-primary-purple/5 flex items-center justify-center p-8 md:p-12">
-											<div className="text-center">
-												<div className="bg-primary-purple mx-auto mb-6 inline-flex rounded-full p-6">
-													<ImageIcon className="h-12 w-12 text-white" />
-												</div>
-												<h3 className="text-primary-purple mb-4 text-3xl font-bold">
+										<div className="bg-primary-purple/5 relative flex items-center justify-center p-8 md:p-12">
+											<div className="absolute inset-0 z-10 bg-black/30"></div>
+											<Image
+												width={100}
+												height={100}
+												alt="Coaching Personal"
+												src="/images/crecimiento/personal-couching.jpg"
+												className="absolute inset-0 h-full w-full rounded-lg object-cover"
+											/>
+
+											<div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+												<h3 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
 													Coaching Personal
 												</h3>
-												<p className="text-primary-purple text-xl font-semibold">(Life Coaching)</p>
+												<p className="text-xl font-semibold text-white">(Life Coaching)</p>
 											</div>
 										</div>
 
@@ -106,15 +113,22 @@ export default function Coaching() {
 							<Card className="border-primary-purple/20 overflow-hidden">
 								<CardContent className="lg:pl-0">
 									<div className="grid gap-0 lg:grid-cols-2">
-										<div className="bg-primary-purple/5 flex items-center justify-center p-8 md:p-12 lg:order-2">
-											<div className="text-center">
-												<div className="bg-primary-purple mx-auto mb-6 inline-flex rounded-full p-6">
-													<ImageIcon className="h-12 w-12 text-white" />
-												</div>
-												<h3 className="text-primary-purple mb-4 text-3xl font-bold">
+										<div className="bg-primary-purple/5 relative flex items-center justify-center p-8 md:p-12 lg:order-2">
+											<div className="absolute inset-0 z-10 bg-black/30"></div>
+
+											<Image
+												width={100}
+												height={100}
+												alt="Coaching Empresarial"
+												src="/images/crecimiento/couching-empresarial.jpg"
+												className="absolute inset-0 h-full w-full rounded-lg object-cover"
+											/>
+
+											<div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+												<h3 className="mb-4 text-3xl font-bold text-white lg:text-4xl">
 													Coaching Empresarial
 												</h3>
-												<p className="text-primary-purple text-xl font-semibold">/ Ejecutivo</p>
+												<p className="text-xl font-semibold text-white">/ Ejecutivo</p>
 											</div>
 										</div>
 

@@ -16,13 +16,13 @@ function RouteComponent() {
 			contactInfo={[
 				{
 					icon: MailIcon,
-					value: "info@caemp.cl",
-					href: "mailto:info@caemp.cl",
+					value: "grupocaemp@caemp.cl",
+					href: "mailto:grupocaemp@caemp.cl",
 				},
 				{
 					icon: PhoneIcon,
-					value: "+56 9 9884 3486",
-					href: "tel:+56998843486",
+					value: "+56 2 2667 6455",
+					href: "tel:+56226676455",
 				},
 				{
 					icon: MapPinIcon,

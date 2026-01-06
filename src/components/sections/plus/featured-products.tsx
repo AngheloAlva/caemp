@@ -6,8 +6,9 @@ import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
-import { Button } from "@/components/ui/button"
+import { Image } from "@/components/shared/image"
 import { Products } from "@/data/plus/products"
+import { Button } from "@/components/ui/button"
 
 const featuredSlugs = [
 	"calzado-quebec-500-antiperforante",
@@ -43,10 +44,12 @@ export default function FeaturedProducts() {
 						<StaggerItem key={`${product.slug}-${index}`}>
 							<motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }} className="h-full">
 								<Card className="group border-primary-green/20 hover:border-primary-green h-full overflow-hidden p-0 transition-all hover:shadow-xl">
-									<div className="relative overflow-hidden bg-gray-50">
-										<img
-											src={`/images/plus/productos/${product.image}`}
+									<div className="relative overflow-hidden bg-white">
+										<Image
+											width={400}
+											height={400}
 											alt={product.name}
+											src={`/images/plus/productos/${product.image}`}
 											className="h-64 w-full object-contain p-4 transition-transform duration-300 group-hover:scale-110"
 										/>
 									</div>

@@ -32,7 +32,7 @@ function RouteComponent() {
 
 	return (
 		<main className="flex flex-col">
-			<section className="bg-white py-4">
+			<section className="bg-white py-4 pb-20 xl:pb-40">
 				<div className="container mx-auto max-w-7xl px-4">
 					<Button
 						asChild
@@ -47,7 +47,7 @@ function RouteComponent() {
 
 					<div className="grid gap-12 lg:grid-cols-2">
 						<FadeIn>
-							<div className="border-primary-green/20 overflow-hidden rounded-2xl border-2 bg-gray-50">
+							<div className="border-primary-green/20 overflow-hidden rounded-2xl border-2 bg-white">
 								<img
 									src={`/images/plus/productos/${product.image}`}
 									alt={product.name}
