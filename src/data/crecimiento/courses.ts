@@ -1414,7 +1414,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 20,
 		slug: "ser-hacer-y-tener-transformacion-personal",
 		title: "Ser - Hacer - Tener: Transformación Personal para Lograr Metas con Propósito",
-		image: "/images/crecimiento/courses/ser-hacer-y-tener-transformacion-personal.jpg",
+		image: "/images/crecimiento/courses/ser-hacer-y-tener-transformacion-personal.png",
 		tendenciaActual: "Personas y organizaciones valoran coherencia entre ser, hacer y tener.",
 		codigoSENCE: "Por definir",
 		duracion: "8 horas",
