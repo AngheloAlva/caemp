@@ -16,8 +16,8 @@ const companies = [
 		color: "#0066b3", // Azul
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
-		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
-		email: "contacto@grupocaemp.cl",
+		address: "Blas Vial 8727, La Cisterna, Santiago",
+		email: "grupocaemp@caemp.cl",
 		link: "/otec",
 	},
 	{
@@ -26,8 +26,8 @@ const companies = [
 		color: "#00a651", // Verde
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
-		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
-		email: "contacto@grupocaemp.cl",
+		address: "Blas Vial 8727, La Cisterna, Santiago",
+		email: "venta@caemp.cl",
 		link: "/plus",
 	},
 	{
@@ -36,8 +36,8 @@ const companies = [
 		color: "#9b2789", // Púrpura
 		description:
 			"Potenciamos el liderazgo, la comunicación y la colaboración. Diseñamos programas de capacitación y talleres personalizados que fortalecen las habilidades blandas.",
-		address: "Calle Uno 6415, Parque Industrial, Pudahuel – Santiago – Chile",
-		email: "contacto@grupocaemp.cl",
+		address: "Blas Vial 8727, La Cisterna, Santiago",
+		email: "contacto@crecimiento.cl",
 		link: "/crecimiento",
 	},
 ]
