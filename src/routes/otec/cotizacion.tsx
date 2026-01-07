@@ -25,9 +25,10 @@ function RouteComponent() {
 			<section className="relative w-screen py-14 lg:py-24">
 				<div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
 					<Image
-						src="/images/otec/courses.jpg"
+						width={1920}
+						height={1080}
 						alt="Fondo OTEC"
-						layout="fullWidth"
+						src="/images/otec/courses.jpg"
 						className="h-full w-full object-cover"
 					/>
 					<div className="bg-primary/90 absolute inset-0" />
@@ -103,17 +104,12 @@ function RouteComponent() {
 							<div className="space-y-2">
 								<div className="flex items-center gap-2 text-sm">
 									<PhoneIcon className="h-4 w-4" />
-									<span>2 2667 6455</span>
-								</div>
-
-								<div className="flex items-center gap-2 text-sm">
-									<PhoneIcon className="h-4 w-4" />
-									<span>+56 9 9884 3486</span>
+									<span>+56 2 2667 6455</span>
 								</div>
 
 								<div className="flex items-center gap-2 text-sm">
 									<MailIcon className="h-4 w-4" />
-									<span>contacto@caemp.cl</span>
+									<a href="mailto:grupocaemp@caemp.cl">grupocaemp@caemp.cl</a>
 								</div>
 							</div>
 						</CardContent>

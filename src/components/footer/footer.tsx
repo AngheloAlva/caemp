@@ -30,6 +30,8 @@ export function Footer() {
 					{ to: "/otec/galeria", label: "Galería" },
 					{ to: "/otec/contacto", label: "Contacto" },
 				],
+				email: "grupocaemp@caemp.cl",
+				phone: "+56 2 2667 6455",
 			}
 		: isCrecimiento
 			? {
@@ -46,6 +48,8 @@ export function Footer() {
 						{ to: "/crecimiento/nosotros", label: "Nosotros" },
 						{ to: "/crecimiento/contacto", label: "Contacto" },
 					],
+					email: "contacto@crecimiento.cl",
+					phone: "+56 9 9884 3486",
 				}
 			: isPlus
 				? {
@@ -58,6 +62,8 @@ export function Footer() {
 							{ to: "/plus/productos", label: "Productos" },
 							{ to: "/plus/contacto", label: "Contacto" },
 						],
+						email: "venta@caemp.cl",
+						phone: "+56 2 2667 6455",
 					}
 				: {
 						logo: "/images/logo/logo-o-black.png",
@@ -67,6 +73,8 @@ export function Footer() {
 							{ to: "/", label: "Inicio" },
 							{ to: "#contacto", label: "Contacto" },
 						],
+						email: "comercial@caemp.cl",
+						phone: "+56 9 9884 3486",
 					}
 
 	return (
@@ -176,19 +184,21 @@ export function Footer() {
 							</ul>
 						</div>
 
-						<div>
-							<h3 className="mb-4 font-semibold">Contacto</h3>
-							<ul className="space-y-3 text-sm">
-								<li className="text-muted-foreground flex items-center gap-2">
-									<PhoneIcon className="h-4 w-4" />
-									<span>+56 9 9884 3486</span>
-								</li>
-								<li className="text-muted-foreground flex items-center gap-2">
-									<MailIcon className="h-4 w-4" />
-									<span>contacto@caemp.cl</span>
-								</li>
-							</ul>
-						</div>
+						{config.email && config.phone && (
+							<div>
+								<h3 className="mb-4 font-semibold">Contacto</h3>
+								<ul className="space-y-3 text-sm">
+									<li className="text-muted-foreground flex items-center gap-2">
+										<PhoneIcon className="h-4 w-4" />
+										<a href={`tel:${config.phone}`}>{config.phone}</a>
+									</li>
+									<li className="text-muted-foreground flex items-center gap-2">
+										<MailIcon className="h-4 w-4" />
+										<a href={`mailto:${config.email}`}>{config.email}</a>
+									</li>
+								</ul>
+							</div>
+						)}
 					</div>
 				</div>
 

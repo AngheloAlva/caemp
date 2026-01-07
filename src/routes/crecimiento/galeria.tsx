@@ -22,7 +22,7 @@ const galleryImages = [
 	{ src: "/images/crecimiento/galery-8.jpeg", alt: "Momentos compartidos" },
 	{ src: "/images/crecimiento/galery-9.jpeg", alt: "Crecimiento personal" },
 	{ src: "/images/crecimiento/galery-10.jpeg", alt: "Conexión humana" },
-	{ src: "/images/crecimiento/hero.png", alt: "Nuestra comunidad" },
+	// { src: "/images/crecimiento/hero.png", alt: "Nuestra comunidad" },
 ]
 
 function RouteComponent() {

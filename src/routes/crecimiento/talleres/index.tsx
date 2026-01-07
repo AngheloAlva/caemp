@@ -48,9 +48,10 @@ function RouteComponent() {
 									<Card className="group h-full overflow-hidden border-none pt-0 shadow-lg transition-all hover:shadow-2xl">
 										<div className="relative aspect-video overflow-hidden">
 											<Image
-												src={workshop.imagen || "/images/placeholder.svg"}
+												width={800}
+												height={600}
 												alt={workshop.nombre}
-												layout="fullWidth"
+												src={workshop.imagen || "/images/placeholder.svg"}
 												className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 											/>
 											<div className="from-primary-purple/80 to-primary-purple/40 absolute inset-0 bg-linear-to-t opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
