@@ -1,3 +1,4 @@
+import { Image } from "@/components/shared/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function OfficialProviders(): React.ReactElement {
@@ -28,16 +29,16 @@ export default function OfficialProviders(): React.ReactElement {
 		<section className="w-full bg-white py-12">
 			<div className="container mx-auto max-w-7xl px-4">
 				<div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2 md:gap-8">
-					{/* Left Column: Image */}
-					<div className="relative h-[400px] w-full overflow-hidden rounded-xl bg-gray-100">
-						<img
-							src="/images/placeholder.jpg"
+					<div className="relative h-[450px] w-full overflow-hidden rounded-xl bg-gray-100">
+						<Image
+							width={608}
+							height={450}
 							alt="Distribuidores Oficiales"
+							src="/images/plus/distributors.jpg"
 							className="h-full w-full object-cover"
 						/>
 					</div>
 
-					{/* Right Column: Card with Brands */}
 					<Card className="h-full border-none shadow-none">
 						<CardHeader className="px-0 pt-0">
 							<CardTitle className="text-primary-green mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">

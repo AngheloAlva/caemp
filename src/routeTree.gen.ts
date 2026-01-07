@@ -17,6 +17,7 @@ import { Route as PlusIndexRouteImport } from './routes/plus/index'
 import { Route as OtecIndexRouteImport } from './routes/otec/index'
 import { Route as CrecimientoIndexRouteImport } from './routes/crecimiento/index'
 import { Route as PlusNosotrosRouteImport } from './routes/plus/nosotros'
+import { Route as PlusCotizacionRouteImport } from './routes/plus/cotizacion'
 import { Route as PlusContactoRouteImport } from './routes/plus/contacto'
 import { Route as OtecNosotrosRouteImport } from './routes/otec/nosotros'
 import { Route as OtecGaleriaRouteImport } from './routes/otec/galeria'
@@ -27,6 +28,7 @@ import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/no
 import { Route as CrecimientoGaleriaRouteImport } from './routes/crecimiento/galeria'
 import { Route as CrecimientoCotizacionRouteImport } from './routes/crecimiento/cotizacion'
 import { Route as CrecimientoContactoRouteImport } from './routes/crecimiento/contacto'
+import { Route as PlusProductosIndexRouteImport } from './routes/plus/productos/index'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
 import { Route as CrecimientoTalleresIndexRouteImport } from './routes/crecimiento/talleres/index'
 import { Route as CrecimientoProgramasIndexRouteImport } from './routes/crecimiento/programas/index'
@@ -74,6 +76,11 @@ const CrecimientoIndexRoute = CrecimientoIndexRouteImport.update({
 const PlusNosotrosRoute = PlusNosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
+  getParentRoute: () => PlusRoute,
+} as any)
+const PlusCotizacionRoute = PlusCotizacionRouteImport.update({
+  id: '/cotizacion',
+  path: '/cotizacion',
   getParentRoute: () => PlusRoute,
 } as any)
 const PlusContactoRoute = PlusContactoRouteImport.update({
@@ -125,6 +132,11 @@ const CrecimientoContactoRoute = CrecimientoContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
   getParentRoute: () => CrecimientoRoute,
+} as any)
+const PlusProductosIndexRoute = PlusProductosIndexRouteImport.update({
+  id: '/productos/',
+  path: '/productos/',
+  getParentRoute: () => PlusRoute,
 } as any)
 const OtecCursosIndexRoute = OtecCursosIndexRouteImport.update({
   id: '/cursos/',
@@ -185,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
   '/plus/contacto': typeof PlusContactoRoute
+  '/plus/cotizacion': typeof PlusCotizacionRoute
   '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
@@ -197,6 +210,7 @@ export interface FileRoutesByFullPath {
   '/crecimiento/programas': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
+  '/plus/productos': typeof PlusProductosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -210,6 +224,7 @@ export interface FileRoutesByTo {
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
   '/plus/contacto': typeof PlusContactoRoute
+  '/plus/cotizacion': typeof PlusCotizacionRoute
   '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento': typeof CrecimientoIndexRoute
   '/otec': typeof OtecIndexRoute
@@ -222,6 +237,7 @@ export interface FileRoutesByTo {
   '/crecimiento/programas': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos': typeof OtecCursosIndexRoute
+  '/plus/productos': typeof PlusProductosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -239,6 +255,7 @@ export interface FileRoutesById {
   '/otec/galeria': typeof OtecGaleriaRoute
   '/otec/nosotros': typeof OtecNosotrosRoute
   '/plus/contacto': typeof PlusContactoRoute
+  '/plus/cotizacion': typeof PlusCotizacionRoute
   '/plus/nosotros': typeof PlusNosotrosRoute
   '/crecimiento/': typeof CrecimientoIndexRoute
   '/otec/': typeof OtecIndexRoute
@@ -251,6 +268,7 @@ export interface FileRoutesById {
   '/crecimiento/programas/': typeof CrecimientoProgramasIndexRoute
   '/crecimiento/talleres/': typeof CrecimientoTalleresIndexRoute
   '/otec/cursos/': typeof OtecCursosIndexRoute
+  '/plus/productos/': typeof PlusProductosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -269,6 +287,7 @@ export interface FileRouteTypes {
     | '/otec/galeria'
     | '/otec/nosotros'
     | '/plus/contacto'
+    | '/plus/cotizacion'
     | '/plus/nosotros'
     | '/crecimiento/'
     | '/otec/'
@@ -281,6 +300,7 @@ export interface FileRouteTypes {
     | '/crecimiento/programas'
     | '/crecimiento/talleres'
     | '/otec/cursos'
+    | '/plus/productos'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -294,6 +314,7 @@ export interface FileRouteTypes {
     | '/otec/galeria'
     | '/otec/nosotros'
     | '/plus/contacto'
+    | '/plus/cotizacion'
     | '/plus/nosotros'
     | '/crecimiento'
     | '/otec'
@@ -306,6 +327,7 @@ export interface FileRouteTypes {
     | '/crecimiento/programas'
     | '/crecimiento/talleres'
     | '/otec/cursos'
+    | '/plus/productos'
   id:
     | '__root__'
     | '/'
@@ -322,6 +344,7 @@ export interface FileRouteTypes {
     | '/otec/galeria'
     | '/otec/nosotros'
     | '/plus/contacto'
+    | '/plus/cotizacion'
     | '/plus/nosotros'
     | '/crecimiento/'
     | '/otec/'
@@ -334,6 +357,7 @@ export interface FileRouteTypes {
     | '/crecimiento/programas/'
     | '/crecimiento/talleres/'
     | '/otec/cursos/'
+    | '/plus/productos/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -399,6 +423,13 @@ declare module '@tanstack/react-router' {
       path: '/nosotros'
       fullPath: '/plus/nosotros'
       preLoaderRoute: typeof PlusNosotrosRouteImport
+      parentRoute: typeof PlusRoute
+    }
+    '/plus/cotizacion': {
+      id: '/plus/cotizacion'
+      path: '/cotizacion'
+      fullPath: '/plus/cotizacion'
+      preLoaderRoute: typeof PlusCotizacionRouteImport
       parentRoute: typeof PlusRoute
     }
     '/plus/contacto': {
@@ -470,6 +501,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/crecimiento/contacto'
       preLoaderRoute: typeof CrecimientoContactoRouteImport
       parentRoute: typeof CrecimientoRoute
+    }
+    '/plus/productos/': {
+      id: '/plus/productos/'
+      path: '/productos'
+      fullPath: '/plus/productos'
+      preLoaderRoute: typeof PlusProductosIndexRouteImport
+      parentRoute: typeof PlusRoute
     }
     '/otec/cursos/': {
       id: '/otec/cursos/'
@@ -586,16 +624,20 @@ const OtecRouteWithChildren = OtecRoute._addFileChildren(OtecRouteChildren)
 
 interface PlusRouteChildren {
   PlusContactoRoute: typeof PlusContactoRoute
+  PlusCotizacionRoute: typeof PlusCotizacionRoute
   PlusNosotrosRoute: typeof PlusNosotrosRoute
   PlusIndexRoute: typeof PlusIndexRoute
   PlusProductosProductIdRoute: typeof PlusProductosProductIdRoute
+  PlusProductosIndexRoute: typeof PlusProductosIndexRoute
 }
 
 const PlusRouteChildren: PlusRouteChildren = {
   PlusContactoRoute: PlusContactoRoute,
+  PlusCotizacionRoute: PlusCotizacionRoute,
   PlusNosotrosRoute: PlusNosotrosRoute,
   PlusIndexRoute: PlusIndexRoute,
   PlusProductosProductIdRoute: PlusProductosProductIdRoute,
+  PlusProductosIndexRoute: PlusProductosIndexRoute,
 }
 
 const PlusRouteWithChildren = PlusRoute._addFileChildren(PlusRouteChildren)

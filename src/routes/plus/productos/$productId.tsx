@@ -72,9 +72,15 @@ function RouteComponent() {
 									</p>
 								</div>
 
-								<Button size="lg" className="bg-primary-green w-full hover:bg-[#16A34A]">
-									<ShoppingCart className="mr-2 h-5 w-5" />
-									Solicitar Cotización
+								<Button
+									size="lg"
+									className="bg-primary-green w-full text-white hover:bg-[#16A34A]"
+									asChild
+								>
+									<Link to="/plus/cotizacion" search={{ productSlug: product.slug }}>
+										<ShoppingCart className="mr-2 h-5 w-5" />
+										Solicitar Cotización
+									</Link>
 								</Button>
 							</SlideIn>
 						</div>
