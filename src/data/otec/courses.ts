@@ -94,7 +94,10 @@ export const courses: Record<string, OtecCourse> = {
 		id: 4,
 		slug: "curso-operacion-segura-de-camion-pluma",
 		title: "CURSO OPERACIÓN SEGURA DE CAMIÓN PLUMA",
-		images: [],
+		images: [
+			"curso-operacion-segura-de-camion-pluma.jpg",
+			"curso-operacion-segura-de-camion-pluma-2.jpg",
+		],
 		competencies: [
 			"Conocimiento del Equipo: Identificación de componentes, lectura y aplicación del manual técnico.",
 			"Operación Segura: Manejo preciso y eficiente del camión pluma, cumpliendo normativas de seguridad.",
@@ -193,7 +196,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 6,
 		slug: "prevencion-de-riesgos-laborales-segun-decreto-supremo-n44-2023",
 		title: "PREVENCION DE RIESGOS LABORALES SEGUN DECRETO SUPREMO N°44/2023",
-		images: [],
+		images: ["prevencion-de-riesgos-laborales-segun-decreto-supremo-n44-2023.jpg"],
 		competencies: [
 			"Fortalecer las competencias preventivas de los trabajadores en el reconocimiento, evaluación y control de riesgos laborales, de acuerdo con el Decreto Supremo N° 44/2023 del Ministerio del Trabajo y Previsión Social.",
 			"Objetivos Específicos:",
@@ -250,7 +253,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 7,
 		slug: "tecnica-de-comunicacion-efectiva",
 		title: "Técnica de Comunicación Efectiva",
-		images: [],
+		images: ["tecnica-de-comunicacion-efectiva.jpg"],
 		competencies: [
 			"Identificar fundamentos, características y principios de la comunicación organizacional, utilizando herramientas efectivas.",
 			"Reconocer el proceso comunicativo, habilidades para comunicación efectiva, componentes de inteligencia emocional y técnicas de liderazgo basadas en emociones para desarrollo personal y directivo.",
@@ -291,7 +294,10 @@ export const courses: Record<string, OtecCourse> = {
 		id: 8,
 		slug: "estrategias-para-fortalecer-el-liderazgo-efectivo",
 		title: "Estrategias Para Fortalecer El Liderazgo Efectivo",
-		images: [],
+		images: [
+			"estrategias-para-fortalecer-el-liderazgo-efectivo.jpg",
+			"estrategias-para-fortalecer-el-liderazgo-efectivo-2.jpg",
+		],
 		competencies: [
 			"Identificar Los Fundamentos, Características Y Principios Del Liderazgo Desde Una Mirada Organizacional, Reconocer Los Principales Componentes Y Dimensiones De La Inteligencia Emocional Desde Una Perspectiva Del Liderazgo Efectivo.",
 			"Aplicar Técnicas De Liderazgo Basado En El Manejo Y Control De Las Emociones y Aplicar Técnicas Que Potencien El Desarrollo De Las Habilidades Personales Y Directivas.",
@@ -324,7 +330,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 9,
 		slug: "maniobras-y-operacion-en-red-bt-mt-y-subterraneas",
 		title: "MANIOBRAS Y OPERACIÓN EN RED BT-MT Y SUBTERRÁNEAS",
-		images: [],
+		images: ["maniobras-y-operacion-en-red-bt-mt-y-subterraneas.jpg"],
 		competencies: [
 			"Al completar este curso, los participantes estarán preparados para llevar a cabo maniobras y operaciones en redes de media tensión de manera segura y cumpliendo con la normativa vigente. Además, podrán identificar y mitigar riesgos eléctricos, aplicar procedimientos de trabajo seguro y brindar primeros auxilios en caso de emergencia",
 		],
@@ -356,7 +362,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 10,
 		slug: "operacion-de-apilador-electrico",
 		title: "OPERACIÓN DE APILADOR ELÉCTRICO",
-		images: [],
+		images: ["operacion-de-apilador-electrico.webp"],
 		competencies: [
 			"Este curso está dirigido a auxiliares de bodega de centro de almacenamiento logístico. El curso le permitirá la operación segura de un apilador eléctrico.",
 		],
@@ -390,7 +396,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 11,
 		slug: "rigger-bajo-tonelaje",
 		title: "RIGGER BAJO TONELAJE",
-		images: [],
+		images: ["rigger-bajo-tonelaje.jpg"],
 		competencies: [
 			"Al finalizar el curso de Rigger, los participantes serán capaces de desarrollar competencias clave para llevar a cabo operaciones de izaje de cargas de manera segura y eficiente. Esto incluye un profundo conocimiento de las normativas locales y regulaciones pertinentes, así como la capacidad de planificar y ejecutar operaciones de izaje, operar equipos de elevación con destreza, gestionar riegos y resolver problemas en situaciones desafiantes. Además adquirirán habilidades de comunicación y trabajo en equipo para colaborar efectivamente en entornos laborales, promoverán la conciencia ambiental y actuaran con ética y responsabilidad profesional en todas sus actividades de Rigger.",
 		],
@@ -441,7 +447,6 @@ export const courses: Record<string, OtecCourse> = {
 		images: [
 			"tecnica-control-riesgos-electricos-nfpa-70e.jpg",
 			"tecnica-control-riesgos-electricos-nfpa-70e-2.jpg",
-			"tecnica-control-riesgos-electricos-nfpa-70e-3.jpg",
 		],
 		competencies: [
 			"Evaluación y mitigación de riesgos eléctricos",
@@ -772,7 +777,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 8,
 		slug: "tecnicas-trabajo-riegos-electricos",
 		title: "Técnicas para Trabajo con Riegos Eléctricos",
-		images: [],
+		images: ["tecnicas-trabajo-riegos-electricos.jpg"],
 		competencies: [
 			"Identificar el peligro",
 			"Evaluar y controlar los riesgos inherentes de la electricidad",
@@ -859,7 +864,7 @@ export const courses: Record<string, OtecCourse> = {
 		id: 10,
 		slug: "uso-manejo-extintores",
 		title: "Uso y Manejo de Extintores",
-		images: [],
+		images: ["uso-manejo-extintores.jpg"],
 		competencies: [
 			"Actuar de manera segura y efectiva ante situaciones de incendio",
 			"Asegurar la protección de su integridad física, la de sus compañeros y los bienes de la empresa",

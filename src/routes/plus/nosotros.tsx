@@ -1,9 +1,10 @@
+import { Eye, Target, CheckCircle2 } from "lucide-react"
 import { createFileRoute } from "@tanstack/react-router"
-import { Shield, Eye, Target, CheckCircle2 } from "lucide-react"
 
+import { SlideIn } from "@/components/animations/slide-in"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
-import { SlideIn } from "@/components/animations/slide-in"
+import { Image } from "@/components/shared/image"
 
 export const Route = createFileRoute("/plus/nosotros")({
 	component: RouteComponent,
@@ -12,15 +13,24 @@ export const Route = createFileRoute("/plus/nosotros")({
 function RouteComponent() {
 	return (
 		<main className="flex flex-col">
-			{/* Hero Section */}
-			<section className="relative overflow-hidden bg-linear-to-br from-green-50 via-white to-green-50 py-20 md:py-32">
-				<div className="container mx-auto max-w-7xl px-4">
+			<section className="relative overflow-hidden bg-linear-to-br py-20 md:py-32">
+				<div className="absolute inset-0 z-10 h-full w-full bg-linear-to-br from-green-600 to-green-800 opacity-40"></div>
+
+				<Image
+					width={1200}
+					height={600}
+					alt="Nosotros"
+					src="/images/plus/nosotros.jpg"
+					className="absolute inset-0 h-full w-full object-cover"
+				/>
+
+				<div className="relative z-10 container mx-auto max-w-7xl px-4">
 					<FadeIn>
 						<div className="mx-auto max-w-4xl text-center">
-							<h1 className="text-primary-green mb-6 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
+							<h1 className="mb-6 text-4xl font-bold tracking-tight text-balance text-white sm:text-5xl md:text-6xl">
 								Quiénes Somos
 							</h1>
-							<p className="text-xl leading-relaxed text-gray-700">
+							<p className="text-xl leading-relaxed text-white">
 								Protegemos a quienes hacen el trabajo duro
 							</p>
 						</div>
@@ -28,7 +38,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* About Section */}
 			<section className="bg-white py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -53,18 +62,18 @@ function RouteComponent() {
 						</SlideIn>
 
 						<SlideIn direction="right" delay={0.2}>
-							<div className="relative">
-								<div className="bg-primary-green/10 absolute inset-0 blur-3xl" />
-								<div className="from-primary-green/20 relative rounded-2xl bg-linear-to-br to-[#16A34A]/20 p-12">
-									<Shield className="text-primary-green h-64 w-64" strokeWidth={1} />
-								</div>
-							</div>
+							<Image
+								width={600}
+								height={400}
+								alt="Nosotros"
+								src="/images/plus/nosotros-2.jpg"
+								className="h-[400px] w-full rounded-2xl object-cover shadow"
+							/>
 						</SlideIn>
 					</div>
 				</div>
 			</section>
 
-			{/* Vision & Mission */}
 			<section className="bg-gray-50 py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<div className="grid gap-8 md:grid-cols-2">
@@ -103,7 +112,6 @@ function RouteComponent() {
 				</div>
 			</section>
 
-			{/* Commitment Section */}
 			<section className="bg-white py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<FadeIn>

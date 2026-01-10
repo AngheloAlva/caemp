@@ -47,7 +47,8 @@ function RouteComponent() {
 						<div className="space-y-2">
 							<div className="bg-muted relative aspect-square overflow-hidden rounded-xl border shadow-sm">
 								<Image
-									layout="fullWidth"
+									width={800}
+									height={800}
 									alt={course.title}
 									className="h-full w-full object-cover"
 									src={`/images/otec/courses/${course.images[activeImageIndex]}`}
@@ -68,7 +69,8 @@ function RouteComponent() {
 											)}
 										>
 											<Image
-												layout="fullWidth"
+												width={124}
+												height={124}
 												src={`/images/otec/courses/${image}`}
 												className="h-full w-full object-cover"
 												alt={`${course.title} - Imagen ${index + 1}`}

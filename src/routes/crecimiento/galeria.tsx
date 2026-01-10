@@ -12,17 +12,16 @@ export const Route = createFileRoute("/crecimiento/galeria")({
 })
 
 const galleryImages = [
-	{ src: "/images/crecimiento/galery-1.jpeg", alt: "Transformación en acción" },
-	{ src: "/images/crecimiento/galery-2.jpeg", alt: "Equipos conectados" },
-	{ src: "/images/crecimiento/galery-3.jpeg", alt: "Liderazgo consciente" },
-	{ src: "/images/crecimiento/galery-4.jpeg", alt: "Aprendizaje experiencial" },
-	{ src: "/images/crecimiento/galery-5.jpeg", alt: "Dinámicas de grupo" },
-	{ src: "/images/crecimiento/galery-6.jpeg", alt: "Colaboración efectiva" },
-	{ src: "/images/crecimiento/galery-7.jpeg", alt: "Desarrollo de habilidades" },
-	{ src: "/images/crecimiento/galery-8.jpeg", alt: "Momentos compartidos" },
-	{ src: "/images/crecimiento/galery-9.jpeg", alt: "Crecimiento personal" },
-	{ src: "/images/crecimiento/galery-10.jpeg", alt: "Conexión humana" },
-	// { src: "/images/crecimiento/hero.png", alt: "Nuestra comunidad" },
+	{ src: "/images/crecimiento/galery-1.jpg", alt: "Transformación en acción" },
+	{ src: "/images/crecimiento/galery-2.jpg", alt: "Equipos conectados" },
+	{ src: "/images/crecimiento/galery-3.jpg", alt: "Liderazgo consciente" },
+	{ src: "/images/crecimiento/galery-4.jpg", alt: "Aprendizaje experiencial" },
+	{ src: "/images/crecimiento/galery-5.jpg", alt: "Dinámicas de grupo" },
+	{ src: "/images/crecimiento/galery-6.jpg", alt: "Colaboración efectiva" },
+	{ src: "/images/crecimiento/galery-7.jpg", alt: "Desarrollo de habilidades" },
+	{ src: "/images/crecimiento/galery-8.jpg", alt: "Momentos compartidos" },
+	{ src: "/images/crecimiento/galery-9.jpg", alt: "Crecimiento personal" },
+	{ src: "/images/crecimiento/galery-10.jpg", alt: "Conexión humana" },
 ]
 
 function RouteComponent() {
