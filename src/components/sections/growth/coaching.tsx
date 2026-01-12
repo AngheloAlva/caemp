@@ -61,8 +61,8 @@ export default function Coaching() {
 										<div className="bg-primary-purple/5 relative flex items-center justify-center p-8 md:p-12">
 											<div className="absolute inset-0 z-10 bg-black/30"></div>
 											<Image
-												width={100}
-												height={100}
+												width={650}
+												height={650}
 												alt="Coaching Personal"
 												src="/images/crecimiento/personal-couching.jpg"
 												className="absolute inset-0 h-full w-full rounded-lg object-cover"
@@ -117,8 +117,8 @@ export default function Coaching() {
 											<div className="absolute inset-0 z-10 bg-black/30"></div>
 
 											<Image
-												width={100}
-												height={100}
+												width={650}
+												height={650}
 												alt="Coaching Empresarial"
 												src="/images/crecimiento/couching-empresarial.jpg"
 												className="absolute inset-0 h-full w-full rounded-lg object-cover"

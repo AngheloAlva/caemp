@@ -111,12 +111,12 @@ function RouteComponent() {
 							<div className="space-y-2">
 								<div className="flex items-center gap-2 text-sm">
 									<PhoneIcon className="h-4 w-4" />
-									<span>+56 9 3913 7837</span>
+									<span>+56 2 2667 6455</span>
 								</div>
 
 								<div className="flex items-center gap-2 text-sm">
 									<MailIcon className="h-4 w-4" />
-									<a href="mailto:contacto@plus.cl">contacto@plus.cl</a>
+									<a href="mailto:venta@caemp.cl">venta@caemp.cl</a>
 								</div>
 							</div>
 						</CardContent>

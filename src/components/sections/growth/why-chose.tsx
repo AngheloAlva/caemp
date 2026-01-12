@@ -5,9 +5,9 @@ import { StaggerItem } from "@/components/animations/stagger-item"
 import { HoverScale } from "@/components/animations/hover-scale"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
+import { Image } from "@/components/shared/image"
 import { Button } from "@/components/ui/button"
 import { Link } from "@tanstack/react-router"
-import { Image } from "@/components/shared/image"
 
 const reasons = [
 	{
@@ -134,7 +134,7 @@ export default function WhyChose(): React.ReactElement {
 							width={1152}
 							height={396}
 							className="absolute inset-0 -z-10"
-							src="/images/crecimiento/galery-10.jpeg"
+							src="/images/crecimiento/galery-10.jpg"
 							alt="2 personas dibujadas dandose la mano"
 						/>
 
