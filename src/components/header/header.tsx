@@ -3,112 +3,27 @@
 import { Menu, ChevronDown, ArrowLeftIcon } from "lucide-react"
 import { Link, useRouterState } from "@tanstack/react-router"
 import { motion, AnimatePresence } from "motion/react"
-import { Image } from "@/components/shared/image"
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
 
+import { Image } from "@/components/shared/image"
 import { Button } from "@/components/ui/button"
 import NavItem from "./nav-item"
 
-interface HeaderConfig {
-	logo: string[]
-	homeLink: string
-	brandName: string
-	navItems: { to: string; label: string }[]
-	lineOfBusiness: "crecimiento" | "otec" | "plus" | "grupo"
-	ctaButton?: { to: string; label: string; className: string }
-}
+import { getHeaderConfig, serviciosCrecimiento } from "./header-config"
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const [empresasMenuOpen, setEmpresasMenuOpen] = useState(false)
 	const [serviciosMenuOpen, setServiciosMenuOpen] = useState(false)
+
 	const routerState = useRouterState()
 	const pathname = routerState.location.pathname
 
-	const isOtec = pathname.startsWith("/otec")
-	const isCrecimiento = pathname.startsWith("/crecimiento")
-	const isPlus = pathname.startsWith("/plus")
-	const isGrupo = pathname === "/" || (!isOtec && !isCrecimiento && !isPlus)
-
-	const serviciosCrecimiento = [
-		{ to: "/crecimiento/cursos", label: "Cursos" },
-		{ to: "/crecimiento/talleres", label: "Talleres" },
-		{ to: "/crecimiento/programas", label: "Programas" },
-		{ to: "/crecimiento/teatro", label: "Teatro" },
-	]
-
-	const config: HeaderConfig = isOtec
-		? {
-				logo: ["/images/logo/logo-o-black.png"],
-				brandName: "Capacitacion y Entrenamiento",
-				lineOfBusiness: "otec",
-				homeLink: "/otec",
-				navItems: [
-					{ to: "/otec", label: "Inicio" },
-					{ to: "/otec/cursos", label: "Cursos" },
-					{ to: "/otec/nosotros", label: "Nosotros" },
-					{ to: "/otec/galeria", label: "Galería" },
-					{ to: "/otec/contacto", label: "Contacto" },
-				],
-				ctaButton: {
-					to: "/otec/cotizacion",
-					label: "Solicitar Cotización",
-					className: "bg-primary text-white",
-				},
-			}
-		: isCrecimiento
-			? {
-					logo: ["/images/logo/logo-c-black.png"],
-					brandName: "Formacion y Coaching",
-					lineOfBusiness: "crecimiento",
-					homeLink: "/crecimiento",
-					navItems: [
-						{ to: "/crecimiento", label: "Inicio" },
-						{ to: "/crecimiento/noticias", label: "Noticias" },
-						{ to: "/crecimiento/nosotros", label: "Nosotros" },
-						{ to: "/crecimiento/galeria", label: "Galería" },
-						{ to: "/crecimiento/contacto", label: "Contacto" },
-					],
-					ctaButton: {
-						to: "/crecimiento/cotizacion",
-						label: "Solicitar Cotización",
-						className: "bg-primary-purple text-white",
-					},
-				}
-			: isPlus
-				? {
-						logo: ["/images/logo/logo-p-black.png"],
-						brandName: "Asesoria tecnica y venta de EPP",
-						lineOfBusiness: "plus",
-						homeLink: "/plus",
-						navItems: [
-							{ to: "/plus", label: "Inicio" },
-							{ to: "/plus/nosotros", label: "Nosotros" },
-							{ to: "/plus/productos", label: "Productos" },
-							{ to: "/plus/contacto", label: "Contacto" },
-						],
-						ctaButton: {
-							to: "/plus/cotizacion",
-							label: "Solicitar Cotización",
-							className: "bg-primary-green text-white",
-						},
-					}
-				: {
-						logo: [
-							"/images/logo/logo-o-black.png",
-							"/images/logo/logo-c-black.png",
-							"/images/logo/logo-p-black.png",
-						],
-						brandName: "Grupo CAEMP",
-						lineOfBusiness: "grupo",
-						homeLink: "/",
-						navItems: [
-							{ to: "/", label: "Inicio" },
-							{ to: "#contacto", label: "Contacto" },
-						],
-					}
+	const config = getHeaderConfig(pathname)
+	const isCrecimiento = config.lineOfBusiness === "crecimiento"
+	const isGrupo = config.lineOfBusiness === "grupo"
 
 	return (
 		<header className="border-border/40 bg-background/95 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b px-4 backdrop-blur">
@@ -149,7 +64,7 @@ export function Header() {
 							)}
 						</div>
 
-						<span className="text-lg leading-6 font-bold xl:text-xl">{config.brandName}</span>
+						<span className="text-lg leading-6 font-semibold xl:text-xl">{config.brandName}</span>
 					</motion.div>
 				</Link>
 

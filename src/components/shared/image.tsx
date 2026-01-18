@@ -1,5 +1,4 @@
-import { useMemo } from "react"
-
+// React 19 Compiler handles memoization automatically - no useMemo needed
 const imageWidths = [
 	16, 32, 48, 64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840,
 ] as const
@@ -14,21 +13,23 @@ const getVercelOptimizedUrl = (url: string, width: ImgWidth) => {
 	return `/_vercel/image?${searchParams.toString()}`
 }
 
-export const useVercelOptimizedImageProps = (src: string, width: number, height: number) =>
-	useMemo(() => {
-		if (!import.meta.env.VITE_VERCEL_ENV || import.meta.env.VITE_VERCEL_ENV === "development")
-			return { src, width, height }
-		const widths = [
-			...new Set(
-				[width, width * 2].map((w) => imageWidths.find((p) => p >= w) || imageWidths.at(-1)!)
-			),
-		] as [ImgWidth, ...Array<ImgWidth>]
-		return {
-			srcSet: widths.map((w, i) => `${getVercelOptimizedUrl(src, w)} ${i + 1}x`).join(", "),
-			width: widths[0],
-			height: Math.round((widths[0] * height) / width),
-		}
-	}, [src, width, height])
+export const useVercelOptimizedImageProps = (src: string, width: number, height: number) => {
+	if (!import.meta.env.VITE_VERCEL_ENV || import.meta.env.VITE_VERCEL_ENV === "development") {
+		return { src, width, height }
+	}
+
+	const widths = [
+		...new Set(
+			[width, width * 2].map((w) => imageWidths.find((p) => p >= w) || imageWidths.at(-1)!)
+		),
+	] as [ImgWidth, ...Array<ImgWidth>]
+
+	return {
+		srcSet: widths.map((w, i) => `${getVercelOptimizedUrl(src, w)} ${i + 1}x`).join(", "),
+		width: widths[0],
+		height: Math.round((widths[0] * height) / width),
+	}
+}
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 	src: string

@@ -1,12 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router"
 import { Target, Eye, Users, TrendingUp, Lightbulb } from "lucide-react"
+import { createFileRoute } from "@tanstack/react-router"
 import { Image } from "@/components/shared/image"
 
-import { Card, CardContent } from "@/components/ui/card"
-import { FadeIn } from "@/components/animations/fade-in"
-import { SlideIn } from "@/components/animations/slide-in"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
+import HeroPage from "@/components/sections/growth/hero-page"
+import { SlideIn } from "@/components/animations/slide-in"
+import { Card, CardContent } from "@/components/ui/card"
+import { FadeIn } from "@/components/animations/fade-in"
 
 export const Route = createFileRoute("/crecimiento/nosotros")({
 	component: RouteComponent,
@@ -49,29 +50,11 @@ const reasons = [
 function RouteComponent() {
 	return (
 		<main className="flex flex-col">
-			<section className="relative overflow-hidden py-20 md:py-36">
-				<div className="absolute inset-0 -z-10">
-					<Image
-						src="/images/crecimiento/nosotros-2.jpg"
-						layout="fullWidth"
-						alt="Background"
-						className="h-full w-full object-cover brightness-[0.3]"
-					/>
-				</div>
-
-				<div className="container mx-auto max-w-7xl px-4">
-					<FadeIn>
-						<div className="mx-auto max-w-4xl text-center text-white">
-							<h1 className="mb-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl">
-								Quiénes Somos
-							</h1>
-							<p className="text-xl leading-relaxed text-white/90">
-								Transformamos potencial en resultados concretos
-							</p>
-						</div>
-					</FadeIn>
-				</div>
-			</section>
+			<HeroPage
+				title="Quiénes Somos"
+				image="/images/crecimiento/nosotros-2.jpg"
+				description="Transformamos potencial en resultados concretos"
+			/>
 
 			<section className="bg-white py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
@@ -99,8 +82,9 @@ function RouteComponent() {
 						<SlideIn direction="right" delay={0.2}>
 							<div className="relative aspect-square overflow-hidden rounded-2xl">
 								<Image
+									width={800}
+									height={800}
 									src="/images/crecimiento/nosotros.jpg"
-									layout="fullWidth"
 									alt="Nosotros"
 									className="h-full w-full object-cover"
 								/>

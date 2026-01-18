@@ -19,8 +19,8 @@ export default function Hero(): React.ReactElement {
 				style={{ animationDelay: "1s" }}
 			/>
 
-			<div className="relative container mx-auto px-4 py-24 md:py-32 lg:py-40">
-				<div className="mx-auto max-w-3xl space-y-8 text-center">
+			<div className="relative container mx-auto px-4 py-24 md:py-32 lg:py-36">
+				<div className="mx-auto max-w-3xl space-y-6 text-center">
 					<FadeIn delay={0.2}>
 						<Badge variant="secondary" className="mb-4 whitespace-normal">
 							Desde el 2010, fortaleciendo la seguridad y el talento humano de las empresas
@@ -29,7 +29,7 @@ export default function Hero(): React.ReactElement {
 
 					<SlideIn delay={0.3} direction="up">
 						<h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl">
-							Especialistas en Capacitación y Seguridad Laboral
+							Especialistas en capacitación, prevención de riesgos y entrenamiento ante emergencias
 						</h1>
 					</SlideIn>
 					<SlideIn delay={0.4} direction="up">

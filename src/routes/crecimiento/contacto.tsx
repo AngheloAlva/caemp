@@ -16,8 +16,8 @@ function RouteComponent() {
 			contactInfo={[
 				{
 					icon: MailIcon,
-					value: "contacto@crecimiento.cl",
-					href: "mailto:contacto@crecimiento.cl",
+					value: "grupocaemp@caemp.cl",
+					href: "mailto:grupocaemp@caemp.cl",
 				},
 				{
 					icon: PhoneIcon,
@@ -26,8 +26,8 @@ function RouteComponent() {
 				},
 				{
 					icon: MapPinIcon,
-					value: "Blas Vial 8727, La Cisterna, Santiago",
-					href: "https://www.google.com/maps/place/Blas+Vial+8727,+7980705+La+Cisterna,+Regi%C3%B3n+Metropolitana,+Chile/@-33.537005,-70.655468,15z",
+					value: "Irarrazaval 5225, oficina 1",
+					href: "https://www.google.com/maps/search/?api=1&query=Irarrazaval+5225",
 				},
 			]}
 		/>

@@ -3,9 +3,9 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
 
-import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { Image } from "@/components/shared/image"
+import HeroPage from "@/components/sections/growth/hero-page"
 
 export const Route = createFileRoute("/crecimiento/galeria")({
 	component: RouteComponent,
@@ -48,22 +48,11 @@ function RouteComponent() {
 
 	return (
 		<main className="min-h-screen bg-white">
-			{/* Hero Section */}
-			<section className="bg-primary-purple relative py-20 text-white md:py-32">
-				<div className="absolute inset-0 overflow-hidden opacity-10">
-					<div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-white blur-2xl" />
-					<div className="absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-white blur-2xl" />
-				</div>
-				<div className="relative container mx-auto px-4 text-center">
-					<FadeIn>
-						<h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">Nuestra Galería</h1>
-						<p className="mx-auto max-w-2xl text-lg text-white/90 md:text-xl">
-							Instantes que transforman. Un recorrido visual por las experiencias que hemos
-							compartido junto a personas y equipos extraordinarios.
-						</p>
-					</FadeIn>
-				</div>
-			</section>
+			<HeroPage
+				title="Nuestra Galería"
+				image="/images/crecimiento/crecimiento.jpg"
+				description="Instantes que transforman. Un recorrido visual por las experiencias que hemos compartido junto a personas y equipos extraordinarios."
+			/>
 
 			{/* Gallery Grid */}
 			<section className="py-16 md:py-24">

@@ -1,3 +1,29 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt para Grupo CAEMP
+# https://www.caemp.cl
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow admin or private pages (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.caemp.cl/sitemap.xml
+
+# Crawl-delay (optional, for heavy traffic sites)
+# Crawl-delay: 10
+
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block aggressive crawlers (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

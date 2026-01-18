@@ -11,6 +11,7 @@ import { HoverScale } from "@/components/animations/hover-scale"
 import { Card, CardContent } from "@/components/ui/card"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
+import HeroPage from "@/components/sections/growth/hero-page"
 
 export const Route = createFileRoute("/crecimiento/programas/")({
 	component: RouteComponent,
@@ -19,35 +20,10 @@ export const Route = createFileRoute("/crecimiento/programas/")({
 function RouteComponent() {
 	return (
 		<main className="min-h-screen bg-white">
-			<section
-				className="relative w-full overflow-hidden text-white"
-				style={{ backgroundColor: "#8B5CF6" }}
-			>
-				<div
-					className="absolute inset-0 bg-cover bg-center"
-					style={{ backgroundImage: "url(/images/crecimiento/hero.png)" }}
-				/>
-				<div className="from-primary-purple to-primary-purple absolute inset-0 bg-linear-to-br via-[#7C3AED] opacity-90" />
-
-				<div className="animate-float absolute top-20 left-10 h-20 w-20 rounded-full bg-white/10 blur-xl" />
-				<div
-					className="animate-float absolute right-10 bottom-20 h-32 w-32 rounded-full bg-white/10 blur-xl"
-					style={{ animationDelay: "1s" }}
-				/>
-
-				<div className="relative container mx-auto px-4 py-20 text-center md:py-32">
-					<FadeIn>
-						<h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
-							Nuestros Programas
-						</h1>
-						<p className="mx-auto max-w-2xl text-lg text-white/90 md:text-xl">
-							Desarrollamos el potencial humano a través de experiencias de aprendizaje
-							transformadoras. Liderazgo, comunicación y trabajo en equipo para el éxito
-							organizacional.
-						</p>
-					</FadeIn>
-				</div>
-			</section>
+			<HeroPage
+				title="Nuestros Programas"
+				description="Desarrollamos el potencial humano a través de experiencias de aprendizaje transformadoras. Liderazgo, comunicación y trabajo en equipo para el éxito organizacional."
+			/>
 
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">

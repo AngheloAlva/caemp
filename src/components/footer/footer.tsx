@@ -1,5 +1,6 @@
+"use client"
+
 import { Link, useRouterState } from "@tanstack/react-router"
-import { Image } from "@/components/shared/image"
 import {
 	MailIcon,
 	PhoneIcon,
@@ -9,73 +10,20 @@ import {
 	ArrowRightIcon,
 } from "lucide-react"
 
+import { Image } from "@/components/shared/image"
+import { getFooterConfig } from "./footer-config"
+
 export function Footer() {
 	const routerState = useRouterState()
 	const pathname = routerState.location.pathname
 
-	const isOtec = pathname.startsWith("/otec")
-	const isCrecimiento = pathname.startsWith("/crecimiento")
-	const isPlus = pathname.startsWith("/plus")
-	const isGrupo = pathname === "/" || (!isOtec && !isCrecimiento && !isPlus)
-
-	const config = isOtec
-		? {
-				logo: "/images/logo/logo-o-black.png",
-				alt: "CAEMP OTEC logo",
-				brandName: "CAEMP OTEC",
-				navItems: [
-					{ to: "/otec", label: "Inicio" },
-					{ to: "/otec/cursos", label: "Cursos" },
-					{ to: "/otec/nosotros", label: "Nosotros" },
-					{ to: "/otec/galeria", label: "Galería" },
-					{ to: "/otec/contacto", label: "Contacto" },
-				],
-				email: "grupocaemp@caemp.cl",
-				phone: "+56 2 2667 6455",
-			}
-		: isCrecimiento
-			? {
-					logo: "/images/logo/logo-c-black.png",
-					alt: "CRECIMIENTO logo",
-					brandName: "CRECIMIENTO",
-					navItems: [
-						{ to: "/crecimiento", label: "Inicio" },
-						{ to: "/crecimiento/cursos", label: "Cursos" },
-						{ to: "/crecimiento/talleres", label: "Talleres" },
-						{ to: "/crecimiento/programas", label: "Programas" },
-						{ to: "/crecimiento/noticias", label: "Noticias" },
-						{ to: "/crecimiento/teatro", label: "Teatro" },
-						{ to: "/crecimiento/nosotros", label: "Nosotros" },
-						{ to: "/crecimiento/contacto", label: "Contacto" },
-					],
-					email: "contacto@crecimiento.cl",
-					phone: "+56 9 9884 3486",
-				}
-			: isPlus
-				? {
-						logo: "/images/logo/logo-p-black.png",
-						alt: "CAEMP PLUS logo",
-						brandName: "CAEMP PLUS",
-						navItems: [
-							{ to: "/plus", label: "Inicio" },
-							{ to: "/plus/nosotros", label: "Nosotros" },
-							{ to: "/plus/productos", label: "Productos" },
-							{ to: "/plus/contacto", label: "Contacto" },
-						],
-						email: "venta@caemp.cl",
-						phone: "+56 2 2667 6455",
-					}
-				: {
-						logo: "/images/logo/logo-o-black.png",
-						alt: "Grupo CAEMP logo",
-						brandName: "Grupo CAEMP",
-						navItems: [
-							{ to: "/", label: "Inicio" },
-							{ to: "#contacto", label: "Contacto" },
-						],
-						email: "comercial@caemp.cl",
-						phone: "+56 9 9884 3486",
-					}
+	// React Compiler will optimize this automatically
+	const config = getFooterConfig(pathname)
+	const isGrupo =
+		pathname === "/" ||
+		(!pathname.startsWith("/otec") &&
+			!pathname.startsWith("/crecimiento") &&
+			!pathname.startsWith("/plus"))
 
 	return (
 		<footer className="bg-muted/30 min-h-[400px] border-t px-4 md:min-h-[350px]">
@@ -93,11 +41,7 @@ export function Footer() {
 							/>
 							<span className="text-xl font-bold">{config.brandName}</span>
 						</div>
-						<p className="text-muted-foreground text-sm leading-relaxed">
-							{isCrecimiento
-								? "Cambiamos culturas, despertamos líderes."
-								: "Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral."}
-						</p>
+						<p className="text-muted-foreground text-sm leading-relaxed">{config.tagline}</p>
 
 						<div className="flex gap-4">
 							<a

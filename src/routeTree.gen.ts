@@ -24,6 +24,7 @@ import { Route as OtecGaleriaRouteImport } from './routes/otec/galeria'
 import { Route as OtecCotizacionRouteImport } from './routes/otec/cotizacion'
 import { Route as OtecContactoRouteImport } from './routes/otec/contacto'
 import { Route as CrecimientoTeatroRouteImport } from './routes/crecimiento/teatro'
+import { Route as CrecimientoNoticiasRouteImport } from './routes/crecimiento/noticias'
 import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/nosotros'
 import { Route as CrecimientoGaleriaRouteImport } from './routes/crecimiento/galeria'
 import { Route as CrecimientoCotizacionRouteImport } from './routes/crecimiento/cotizacion'
@@ -113,6 +114,11 @@ const CrecimientoTeatroRoute = CrecimientoTeatroRouteImport.update({
   path: '/teatro',
   getParentRoute: () => CrecimientoRoute,
 } as any)
+const CrecimientoNoticiasRoute = CrecimientoNoticiasRouteImport.update({
+  id: '/noticias',
+  path: '/noticias',
+  getParentRoute: () => CrecimientoRoute,
+} as any)
 const CrecimientoNosotrosRoute = CrecimientoNosotrosRouteImport.update({
   id: '/nosotros',
   path: '/nosotros',
@@ -191,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/noticias': typeof CrecimientoNoticiasRoute
   '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
@@ -218,6 +225,7 @@ export interface FileRoutesByTo {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/noticias': typeof CrecimientoNoticiasRoute
   '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
   '/crecimiento/nosotros': typeof CrecimientoNosotrosRoute
+  '/crecimiento/noticias': typeof CrecimientoNoticiasRoute
   '/crecimiento/teatro': typeof CrecimientoTeatroRoute
   '/otec/contacto': typeof OtecContactoRoute
   '/otec/cotizacion': typeof OtecCotizacionRoute
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/noticias'
     | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
@@ -308,6 +318,7 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/noticias'
     | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
@@ -338,6 +349,7 @@ export interface FileRouteTypes {
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
     | '/crecimiento/nosotros'
+    | '/crecimiento/noticias'
     | '/crecimiento/teatro'
     | '/otec/contacto'
     | '/otec/cotizacion'
@@ -474,6 +486,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CrecimientoTeatroRouteImport
       parentRoute: typeof CrecimientoRoute
     }
+    '/crecimiento/noticias': {
+      id: '/crecimiento/noticias'
+      path: '/noticias'
+      fullPath: '/crecimiento/noticias'
+      preLoaderRoute: typeof CrecimientoNoticiasRouteImport
+      parentRoute: typeof CrecimientoRoute
+    }
     '/crecimiento/nosotros': {
       id: '/crecimiento/nosotros'
       path: '/nosotros'
@@ -573,6 +592,7 @@ interface CrecimientoRouteChildren {
   CrecimientoCotizacionRoute: typeof CrecimientoCotizacionRoute
   CrecimientoGaleriaRoute: typeof CrecimientoGaleriaRoute
   CrecimientoNosotrosRoute: typeof CrecimientoNosotrosRoute
+  CrecimientoNoticiasRoute: typeof CrecimientoNoticiasRoute
   CrecimientoTeatroRoute: typeof CrecimientoTeatroRoute
   CrecimientoIndexRoute: typeof CrecimientoIndexRoute
   CrecimientoCursosSlugRoute: typeof CrecimientoCursosSlugRoute
@@ -587,6 +607,7 @@ const CrecimientoRouteChildren: CrecimientoRouteChildren = {
   CrecimientoCotizacionRoute: CrecimientoCotizacionRoute,
   CrecimientoGaleriaRoute: CrecimientoGaleriaRoute,
   CrecimientoNosotrosRoute: CrecimientoNosotrosRoute,
+  CrecimientoNoticiasRoute: CrecimientoNoticiasRoute,
   CrecimientoTeatroRoute: CrecimientoTeatroRoute,
   CrecimientoIndexRoute: CrecimientoIndexRoute,
   CrecimientoCursosSlugRoute: CrecimientoCursosSlugRoute,

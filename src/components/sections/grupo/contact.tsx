@@ -12,14 +12,14 @@ const contactInfo = [
 	{
 		icon: MailIcon,
 		label: "Email",
-		value: "comercial@caemp.cl",
-		href: "mailto:comercial@caemp.cl",
+		value: "grupocaemp@caemp.cl",
+		href: "mailto:grupocaemp@caemp.cl",
 	},
 	{
 		icon: PhoneIcon,
 		label: "Teléfono",
-		value: "+56 9 9884 3486",
-		href: "tel:+56998843486",
+		value: "+56 2 2667 6455",
+		href: "tel:+56226676455",
 	},
 	{
 		icon: MapPinIcon,

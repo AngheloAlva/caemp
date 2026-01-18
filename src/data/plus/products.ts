@@ -17,7 +17,7 @@ export const Products: Record<string, Product> = {
 	"amortiguador-eqs-tipo-y-cinta-plana-180mt-escala-dieléctrico": {
 		slug: "amortiguador-eqs-tipo-y-cinta-plana-180mt-escala-dieléctrico",
 		name: "Amortiguador EQS Tipo Y Cinta Plana 1.80mt - Escala Dieléctrico",
-		image: "amortiguador-eqs-tipo-y-cinta-plana-180mt-escala-dieléctrico.png",
+		image: "amortiguador-eqs-tipo-y-cinta-plana-180mt-escala-dielectrico.png",
 		description:
 			"El absorbedor de impacto EQS forma parte de un sistema personal de detención de caídas, es un equipo diseñado para mitigar las fuerzas de impacto que experimenta una persona en caso de una caída desde altura. Esta absorción de energía ayuda a prevenir lesiones al desacelerar gradualmente la caída en lugar de detenerla abruptamente. Este dispositivo reduce la fuerza de impacto ampliando la distancia de desaceleración, permitiendo que la fuerza que recibe el usuario se reduzca a menos de 6kN.\n Los ojos en los extremos están protegidos por una cubierta resistente a la abrasión. Esto evita que la cinta se dañe por el contacto metálico del conector.El absorbedor de caída está protegido por una cápsula termo contraíble transparente para una mejor inspección y revisión por parte del usuario.",
 		category: Categories["equipamiento-de-altura"],
@@ -25,7 +25,7 @@ export const Products: Record<string, Product> = {
 	"amortiguador-eqs-tipo-y-elásticada-180mt-escala": {
 		slug: "amortiguador-eqs-tipo-y-elásticada-180mt-escala",
 		name: "Amortiguador EQS Tipo Y Elásticada 1.80mt - Escala",
-		image: "amortiguador-eqs-tipo-y-elásticada-180mt-escala.png",
+		image: "amortiguador-eqs-tipo-y-elasticada-180mt-escala.png",
 		description:
 			"El absorbedor de impacto EQS forma parte de un sistema personal de detención de caídas, es un equipo diseñado para mitigar las fuerzas de impacto que experimenta una persona en caso de una caída desde altura. Esta absorción de energía ayuda a prevenir lesiones al desacelerar gradualmente la caída en lugar de detenerla abruptamente. Este dispositivo reduce la fuerza de impacto ampliando la distancia de desaceleración, permitiendo que la fuerza que recibe el usuario se reduzca a menos de 6kN.\n Los ojos en los extremos están protegidos por una cubierta resistente a la abrasión. Esto evita que la cinta se dañe por el contacto metálico del conector.El absorbedor de caída está protegido por una cápsula termo contraíble transparente para una mejor inspección y revisión por parte del usuario.",
 		category: Categories["equipamiento-de-altura"],
@@ -38,10 +38,10 @@ export const Products: Record<string, Product> = {
 			"Arnés de seguridad tipo “X” de cuerpo completo, confeccionado en cinta de poliéster de alta tenacidad, posee una argolla dorsal en “D” para la detención y restricción de caídas, una argolla frontal para ascenso y descenso por escaleras que permite una conexión de no más de 22.cm (9 pulgadas) y dos argollas laterales para posicionamiento de trabajo.\n Cuenta con un cinturón con hebilla autocalzante de acero, con un soporte lumbar acolchado para mejor apoyo y mayor comodidad al usuario. Elemento que forma parte de un sistema personal de detención de caídas, confeccionado de acuerdo a los más altos Estándares de calidad.\n Diseño ergonómico que permite al usuario utilizar este equipo de bajo peso durante toda su jornada de trabajo.Su utilización de forma correcta y debidamente bien ajustado, otorga un altísimo nivel de seguridad y conﬁanza para el usuario, en el evento de sufrir una caída de altura.",
 		category: Categories["equipamiento-de-altura"],
 	},
-	"arnes-fersaf-dieléctrico-4d-std-1-respaldo-lumbar": {
-		slug: "arnes-fersaf-dieléctrico-4d-std-1-respaldo-lumbar",
+	"arnes-fersaf-dielectrico-4d-std-1-respaldo-lumbar": {
+		slug: "arnes-fersaf-dielectrico-4d-std-1-respaldo-lumbar",
 		name: "Arnés Fersaf Dieléctrico 4D-STD 1 Respaldo Lumbar",
-		image: "arnes-fersaf-dieléctrico-4d-std-1-respaldo-lumbar.png",
+		image: "arnes-fersaf-dielectrico-4d-std-1-respaldo-lumbar.png",
 		description:
 			"El Arnés FERSF INTEGRAL forma parte de un sistema personal de detención de caídas. Permite unir y sujetar el cuerpo a un punto de anclaje, mediante el uso de una línea de vida. Confeccionado de acuerdo con los más altos estándares de calidad y bajo normativas internacionales ANSI y requerimientos de trabajo OSHA. Diseño ergonómico que permite al usuario utilizar este equipo de bajo peso durante toda su jornada de trabajo, sin incomodidades y debidamente ajustado. Posee un sistema de colocación y ajuste sencillo, y ajustable. Su utilización de forma correcta otorga un altísimo nivel de seguridad y confianza para el usuario, en el evento de sufrir una caída de altura.",
 		category: Categories["equipamiento-de-altura"],
@@ -118,10 +118,10 @@ export const Products: Record<string, Product> = {
 			"Casco diseñado para actividades de rescate, deportivas, trabajo en alturas y espacios confinados además entrega alta comodidad y una protección insuperable. El casco posee cuatro ganchos de posicionamiento para el montaje de una lámpara con cinta elástica. Ajuste tipo roller. Arnés de cuatro puntas. Barbiquejo de 3 puntas con enganche al casco y mentonera siliconada. Slots laterales de tamaño universal para complementar con accesorios y protección auditiva.Visor transparente especialmente diseñado para los cascos YAKO Steelpro. La visera ofrece una excelente protección para los ojos frente a salpicaduras. De fácil montaje gracias al sistema de fijación en los laterales, destinados para una conexión fija y segura",
 		category: Categories["equipamiento-de-altura"],
 	},
-	"chaleco-geólogo-alaska-xpert-amarillo": {
-		slug: "chaleco-geólogo-alaska-xpert-amarillo",
+	"chaleco-geologo-alaska-xpert-amarillo": {
+		slug: "chaleco-geologo-alaska-xpert-amarillo",
 		name: "Chaleco Geólogo Alaska Xpert Amarillo",
-		image: "chaleco-geólogo-alaska-xpert-amarillo.png",
+		image: "chaleco-geologo-alaska-xpert-amarillo.png",
 		description:
 			"El Chaleco Geólogo Xpert no solo ofrece funcionalidad, sino también comodidad gracias a su diseño ligero y reflectivo de 360°. Incorpora dos bolsillos frontales tipo cargo y un cierre en el pecho que simplifica las tareas en el terreno. Presenta cinta reflectiva de 2’’ en la parte frontal y, a su vez, cinta reflectiva tipo cruz en la espalda. Además, su característica transpirable mejora la respirabilidad gracias a la malla acolchada integrada. Con una banda ajustable en la parte inferior, proporciona un calce personalizado para adaptarse a las necesidades individuales.",
 		category: Categories["otras-soluciones"],
@@ -134,10 +134,10 @@ export const Products: Record<string, Product> = {
 			"El Desfibrilador externo automático AED-7000, es un dispositivo de desfibrilación sumamente seguro, portable y fácil de utilizar, se puede aplicar a personas de todas las edades y en cualquier lugar, para dar los primeros auxilios para el síntoma de la muerte súbita. Combinado con técnica analítica avanzada de ECG, el desfibrilador puede analizar ECG del paciente, hacer un juicio para la condición cardiaca del paciente e indicar si la desfibrilación es necesaria y la fuerza de la desfibrilación, que no sólo realza el índice de éxito de desfibrilación, sino también reduce daño de la desfibrilación al corazón al grado extremo. El desfibrilador es fácil de operar. El desfibrilador dirigirá al operador para realizar el tratamiento de la desfibrilación vía aviso de la voz gradualmente y totalmente en Español, presenta alarmas de seguridad de ser necesario, permite proteger al operador con control remoto a distancia, siendo muy aplicable al tratamiento de emergencia para el paciente de paro cardiaco repentino en lugares públicos.",
 		category: Categories["otras-soluciones"],
 	},
-	"guante-antivibración-steelpro-poron": {
-		slug: "guante-antivibración-steelpro-poron",
+	"guante-antivibracion-steelpro-poron": {
+		slug: "guante-antivibracion-steelpro-poron",
 		name: "Guante Antivibración Steelpro Poron",
-		image: "guante-antivibración-steelpro-poron.png",
+		image: "guante-antivibracion-steelpro-poron.png",
 		description:
 			"Guante fabricado en cuero sintético y spandex, palma con porón, puño ajustable con velcro. Es la solución para amortiguar el impacto que se produce al usar maquinarias con movimientos oscilantes continuos.",
 		category: Categories["guantes-de-protección"],
@@ -150,10 +150,10 @@ export const Products: Record<string, Product> = {
 			"Guante Fabricado en cuero sintético, palma antivibración, dorso en spandex, con protectores de nudillos en TPR diseñados para absorber golpes. Este Guante tiene una excelente resistencia a la abrasión con cierre de velcro, que otorga un buen ajuste a la mano Usos: • Manejo de maquinaria pesada • Manipulación general de cargas • Manejo de herramientas • Trabajos donde exista peligro de golpes en dorso y nudillos. • Trabajos de inspección, viales y actividades deportivas. Instrucciones y Mantenimiento. • Se recomienda Ventilar el guante después de usarlo. • Verificar visualmente que el guante no tenga defectos o problemas. • No sumergir la mano, donde no exista protección de baño aplicado.",
 		category: Categories["guantes-de-protección"],
 	},
-	"guante-multiflex-poliéster-nitrilo-foam": {
-		slug: "guante-multiflex-poliéster-nitrilo-foam",
+	"guante-multiflex-poliester-nitrilo-foam": {
+		slug: "guante-multiflex-poliester-nitrilo-foam",
 		name: "Guante Multiflex Poliéster Nitrilo FOAM",
-		image: "guante-multiflex-poliéster-nitrilo-foam.png",
+		image: "guante-multiflex-poliester-nitrilo-foam.png",
 		description:
 			"Guante de alta dexteridad para trabajos de alta precisión. Guante hecho de poliéster 13 Gauges con palma de espuma con nitrilo. Proporciona un buen aislamiento y respirabilidad a la mano, buen agarre en superficies mojadas. Buena resistencia a hidrocarburos.",
 		category: Categories["guantes-de-protección"],

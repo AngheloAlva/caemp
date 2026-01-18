@@ -124,9 +124,7 @@ function RouteComponent() {
 							Excelencia en formación técnica y seguridad laboral. Un vistazo a nuestras actividades
 							prácticas en terreno.
 						</p>
-						<p className="mt-4 text-sm text-white/70">
-							{galleryImages.length} imágenes • Mostrando {visibleImages.length}
-						</p>
+						<p className="mt-4 text-sm text-white/70">{galleryImages.length} imágenes</p>
 					</FadeIn>
 				</div>
 			</section>
@@ -159,9 +157,9 @@ function RouteComponent() {
 									<ZoomIn className="h-8 w-8 text-white drop-shadow-md" />
 								</div>
 								<div className="absolute right-0 bottom-0 left-0 bg-linear-to-t from-black/60 to-transparent p-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-									<p className="translate-y-2 text-sm font-medium text-white transition-transform duration-200 group-hover:translate-y-0">
-										{image}
-									</p>
+									{/*<p className="translate-y-2 text-sm font-medium text-white transition-transform duration-200 group-hover:translate-y-0">
+}
+									</p>*/}
 								</div>
 							</motion.div>
 						))}

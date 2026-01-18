@@ -853,7 +853,7 @@ export const courses: Record<string, CrecimientoCourse> = {
 		id: 12,
 		slug: "motivacion-propósito-y-sentido-del-trabajo",
 		title: "Motivación, Propósito y Sentido del Trabajo",
-		image: "/images/crecimiento/courses/motivacion-propósito-y-sentido-del-trabajo.jpg",
+		image: "/images/crecimiento/courses/motivacion-propósito-y-sentido-del-trabajo.jpg",
 		tendenciaActual:
 			"Las organizaciones priorizan bienestar emocional y conexión con propósito como ejes para retención de talento.",
 		codigoSENCE: "Por definir",

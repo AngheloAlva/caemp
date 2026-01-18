@@ -2,6 +2,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 
 import { Header } from "@/components/header/header"
 import { Footer } from "@/components/footer/footer"
+import { SEOHead } from "@/components/seo/seo-head"
 
 import appCss from "../styles.css?url"
 
@@ -16,7 +17,7 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "Caemp OTEC",
+				title: "Grupo CAEMP",
 			},
 		],
 		links: [
@@ -24,6 +25,10 @@ export const Route = createRootRoute({
 				rel: "stylesheet",
 				href: appCss,
 				fetchPriority: "high",
+			},
+			{
+				rel: "icon",
+				href: "/favicon.ico",
 			},
 		],
 	}),
@@ -34,11 +39,12 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="es">
 			<head>
 				<HeadContent />
 			</head>
 			<body className="font-family scroll-smooth">
+				<SEOHead />
 				<Header />
 				{children}
 				<Footer />

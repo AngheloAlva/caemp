@@ -27,7 +27,7 @@ const companies = [
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "venta@caemp.cl",
+		email: "grupocaemp@caemp.cl",
 		link: "/plus",
 	},
 	{
@@ -36,8 +36,8 @@ const companies = [
 		color: "#9b2789", // Púrpura
 		description:
 			"Potenciamos el liderazgo, la comunicación y la colaboración. Diseñamos programas de capacitación y talleres personalizados que fortalecen las habilidades blandas.",
-		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "contacto@crecimiento.cl",
+		address: "Irarrazaval 5225, oficina 1",
+		email: "grupocaemp@caemp.cl",
 		link: "/crecimiento",
 	},
 ]
@@ -47,13 +47,17 @@ export default function Companies() {
 		<section id="nuestras-empresas" className="w-full bg-slate-50 py-16 md:py-24">
 			<div className="container mx-auto px-4">
 				<FadeIn>
-					<div className="mb-12 text-center">
-						<h2 className="text-primary mb-4 text-3xl font-medium md:text-4xl lg:text-5xl">
-							Nuestras Líneas de Negocio
+					<div className="mb-12 space-y-4 text-center">
+						<h2 className="text-primary text-3xl font-medium md:text-4xl lg:text-5xl">
+							Grupo CAEMP
 						</h2>
 						<p className="mx-auto max-w-3xl text-lg text-gray-600">
-							En <strong className="font-medium">Grupo CAEMP</strong>, integramos tres unidades de
-							negocio especializadas para brindar soluciones completas a nuestros clientes.
+							Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile en
+							la construcción de entornos laborales más seguros, conscientes y productivos.
+						</p>
+						<p className="mx-auto max-w-3xl text-lg text-gray-600">
+							Integramos tres unidades de negocio especializadas para brindar soluciones completas a
+							nuestros clientes.
 						</p>
 					</div>
 				</FadeIn>
@@ -121,7 +125,7 @@ export default function Companies() {
 				</StaggerContainer>
 
 				<FadeIn delay={0.6}>
-					<div className="bg-primary mx-auto mt-16 max-w-6xl rounded-xs p-8 text-center text-white shadow md:p-12">
+					<div className="bg-primary mx-auto mt-20 max-w-6xl rounded-xs p-8 text-center text-white shadow md:p-12">
 						<h3 className="mb-4 text-2xl font-medium md:text-3xl">Valor Diferencial</h3>
 						<p className="mx-auto mb-8 max-w-3xl text-lg">
 							<span className="font-medium">Grupo CAEMP</span> no solo entrega servicios

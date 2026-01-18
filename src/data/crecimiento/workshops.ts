@@ -29,7 +29,7 @@ export const workshops: Record<string, Workshop> = {
 		nombre: "Liderazgo Consciente y Gestión de Equipos",
 		slug: "liderazgo-consciente-gestion-equipos",
 		tipo: "TALLER",
-		imagen: "/images/crecimiento/galery-1.jpeg",
+		imagen: "/images/crecimiento/galery-1.jpg",
 		codigoSence: "Por definir",
 		duracion: {
 			minimo: 100,
@@ -106,7 +106,7 @@ export const workshops: Record<string, Workshop> = {
 	"coaching-y-comunicacion-efectiva-para-el-liderazgo": {
 		nombre: "Coaching y Comunicación Efectiva para el Liderazgo",
 		slug: "coaching-y-comunicacion-efectiva-para-el-liderazgo",
-		imagen: "/images/crecimiento/galery-2.jpeg",
+		imagen: "/images/crecimiento/galery-2.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -185,7 +185,7 @@ export const workshops: Record<string, Workshop> = {
 		nombre: "Mindfulness y Bienestar Laboral",
 		slug: "mindfulness-y-bienestar-laboral",
 		tipo: "TALLER",
-		imagen: "/images/crecimiento/galery-3.jpeg",
+		imagen: "/images/crecimiento/galery-3.jpg",
 		codigoSence: "Por definir",
 		duracion: {
 			minimo: 80,
@@ -262,7 +262,7 @@ export const workshops: Record<string, Workshop> = {
 	"inteligencia-emocional-aplicada-al-trabajo": {
 		nombre: "Inteligencia Emocional Aplicada al Trabajo",
 		slug: "inteligencia-emocional-aplicada-al-trabajo",
-		imagen: "/images/crecimiento/galery-4.jpeg",
+		imagen: "/images/crecimiento/galery-4.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -340,7 +340,7 @@ export const workshops: Record<string, Workshop> = {
 	"comunicacion-asertiva-y-relaciones-laborales-saludables": {
 		nombre: "Comunicación Asertiva y Relaciones Laborales Saludables",
 		slug: "comunicacion-asertiva-y-relaciones-laborales-saludables",
-		imagen: "/images/crecimiento/galery-5.jpeg",
+		imagen: "/images/crecimiento/galery-5.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -418,7 +418,7 @@ export const workshops: Record<string, Workshop> = {
 	"coaching-para-la-gestion-del-cambio-organizacional": {
 		nombre: "Coaching para la Gestión del Cambio Organizacional",
 		slug: "coaching-para-la-gestion-del-cambio-organizacional",
-		imagen: "/images/crecimiento/galery-6.jpeg",
+		imagen: "/images/crecimiento/galery-6.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -496,7 +496,7 @@ export const workshops: Record<string, Workshop> = {
 	"autoliderazgo-y-desarrollo-personal": {
 		nombre: "Autoliderazgo y Desarrollo Personal",
 		slug: "autoliderazgo-y-desarrollo-personal",
-		imagen: "/images/crecimiento/galery-6.jpeg",
+		imagen: "/images/crecimiento/galery-6.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -574,7 +574,7 @@ export const workshops: Record<string, Workshop> = {
 	"motivacion-propósito-y-sentido-del-trabajo": {
 		nombre: "Motivación, Propósito y Sentido del Trabajo",
 		slug: "motivacion-propósito-y-sentido-del-trabajo",
-		imagen: "/images/crecimiento/galery-7.jpeg",
+		imagen: "/images/crecimiento/courses/motivacion-propósito-y-sentido-del-trabajo.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -652,7 +652,7 @@ export const workshops: Record<string, Workshop> = {
 	"trabajo-en-equipo-y-sinergia-organizacional": {
 		nombre: "Trabajo en Equipo y Sinergia Organizacional",
 		slug: "trabajo-en-equipo-y-sinergia-organizacional",
-		imagen: "/images/crecimiento/galery-8.jpeg",
+		imagen: "/images/crecimiento/galery-8.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -730,7 +730,7 @@ export const workshops: Record<string, Workshop> = {
 	"gestion-del-tiempo-y-productividad-personal": {
 		nombre: "Gestión del Tiempo y Productividad Personal",
 		slug: "gestion-del-tiempo-y-productividad-personal",
-		imagen: "/images/crecimiento/galery-9.jpeg",
+		imagen: "/images/crecimiento/galery-9.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -810,7 +810,7 @@ export const workshops: Record<string, Workshop> = {
 			nombre:
 				"Liderazgo y Convivencia Laboral: Comunicación Efectiva, Trabajo en Equipo y Prevención del Acoso según Ley Karin",
 			slug: "liderazgo-y-convivencia-laboral-comunicacion-efectiva-trabajo-en-equipo-y-prevencion-del-acoso-ley-karin",
-			imagen: "/images/crecimiento/galery-10.jpeg",
+			imagen: "/images/crecimiento/galery-10.jpg",
 			tipo: "TALLER",
 			codigoSence: "Por definir",
 			duracion: {
@@ -873,7 +873,8 @@ export const workshops: Record<string, Workshop> = {
 	"facilitacion-creativa-y-resolucion-de-problemas-con-bloques-virtuales": {
 		nombre: "Facilitación Creativa y Resolución de Problemas con Bloques Virtuales",
 		slug: "facilitacion-creativa-y-resolucion-de-problemas-con-bloques-virtuales",
-		imagen: "/images/crecimiento/galery-11.jpeg",
+		imagen:
+			"/images/crecimiento/courses/facilitacion-creativa-y-resolucion-de-problemas-con-bloques-virtuales.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -953,7 +954,8 @@ export const workshops: Record<string, Workshop> = {
 	"autoestima-y-gestion-emocional-para-el-logro-de-objetivos": {
 		nombre: "Autoestima y Gestión Emocional para el Logro de Objetivos",
 		slug: "autoestima-y-gestion-emocional-para-el-logro-de-objetivos",
-		imagen: "/images/crecimiento/galery-12.jpeg",
+		imagen:
+			"/images/crecimiento/courses/autoestima-y-gestion-emocional-para-el-logro-de-objetivos.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -1034,7 +1036,8 @@ export const workshops: Record<string, Workshop> = {
 	"hablar-en-publico-y-oratoria-para-presentaciones-exitosas": {
 		nombre: "Hablar en Público y Oratoria para Presentaciones Exitosas",
 		slug: "hablar-en-publico-y-oratoria-para-presentaciones-exitosas",
-		imagen: "/images/crecimiento/galery-13.jpeg",
+		imagen:
+			"/images/crecimiento/courses/hablar-en-publico-y-oratoria-para-presentaciones-exitosas.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -1117,7 +1120,8 @@ export const workshops: Record<string, Workshop> = {
 	"conexión-y-sanación-del-niño-interior-para-el-bienestar-emocional": {
 		nombre: "Conexión y Sanación del Niño Interior para el Bienestar Emocional",
 		slug: "conexión-y-sanación-del-niño-interior-para-el-bienestar-emocional",
-		imagen: "/images/crecimiento/galery-14.jpeg",
+		imagen:
+			"/images/crecimiento/courses/conexion-y-sanacion-del-nino-interior-para-el-bienestar-emocional.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -1200,7 +1204,7 @@ export const workshops: Record<string, Workshop> = {
 	"ser-hacer-ytener-transformacion-personal-para-lograr-metas-con-propósito": {
 		nombre: "Ser - Hacer - Tener: Transformación Personal para Lograr Metas con Propósito",
 		slug: "ser-hacer-ytener-transformacion-personal-para-lograr-metas-con-propósito",
-		imagen: "/images/crecimiento/galery-15.jpeg",
+		imagen: "/images/crecimiento/courses/ser-hacer-y-tener-transformacion-personal.png",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {

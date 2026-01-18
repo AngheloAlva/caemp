@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Theater as TheaterIcon } from "lucide-react"
 import { Image } from "@/components/shared/image"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { Card, CardContent } from "@/components/ui/card"
-import { FadeIn } from "@/components/animations/fade-in"
+import HeroPage from "@/components/sections/growth/hero-page"
 
 export const Route = createFileRoute("/crecimiento/teatro")({
 	component: RouteComponent,
@@ -77,43 +76,25 @@ const theaterPlays = [
 function RouteComponent() {
 	return (
 		<main className="min-h-screen bg-white">
-			<section className="bg-primary-purple relative py-20 text-white md:py-32">
-				<div className="absolute inset-0 overflow-hidden opacity-10">
-					<Image
-						alt=""
-						width={1920}
-						height={1080}
-						loading="lazy"
-						decoding="async"
-						src="/images/crecimiento/theater.jpg"
-						className="h-full w-full object-cover"
-					/>
-				</div>
-				<div className="relative container mx-auto px-4 text-center">
-					<FadeIn>
-						<div className="mx-auto mb-6 inline-flex rounded-full bg-white/10 p-4 backdrop-blur-sm">
-							<TheaterIcon className="h-10 w-10 text-white" />
-						</div>
-						<h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">Teatro Aplicado</h1>
-						<p className="mx-auto max-w-2xl text-lg text-white/90 md:text-xl">
-							Una herramienta potente para educar, prevenir y transformar equipos a través de
-							historias que reflejan la realidad laboral y generan conversaciones profundas.
-						</p>
-					</FadeIn>
-				</div>
-			</section>
+			<HeroPage
+				title="Teatro Aplicado"
+				image="/images/crecimiento/theater.jpg"
+				description="Una herramienta potente para educar, prevenir y transformar equipos a través de historias que reflejan la realidad laboral y generan conversaciones profundas."
+				// icon={TheaterIcon}
+			/>
 
 			<section className="py-16 md:py-24">
 				<div className="container mx-auto max-w-7xl px-4">
 					<StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 						{theaterPlays.map((play, index) => (
 							<StaggerItem key={index} className="h-full">
-								<Card className="group h-full overflow-hidden border-none pt-0 shadow-lg transition-all hover:shadow-2xl">
+								<Card className="group h-full overflow-hidden border-none pt-0 shadow-lg transition-all hover:shadow-xl">
 									<div className="relative aspect-4/3 overflow-hidden">
 										<Image
+											width={800}
+											height={600}
 											src={play.image}
 											alt={play.title}
-											layout="fullWidth"
 											className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
 										/>
 										<div className="from-primary-purple/80 to-primary-purple/40 absolute inset-0 bg-linear-to-t opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

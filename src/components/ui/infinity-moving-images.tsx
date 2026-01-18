@@ -1,6 +1,7 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
+
 import { cn } from "@/lib/utils"
 import { Image } from "@/components/shared/image"
 
@@ -21,8 +22,8 @@ export const InfiniteMovingImages = ({
 	pauseOnHover?: boolean
 	className?: string
 }) => {
-	const containerRef = React.useRef<HTMLDivElement>(null)
-	const scrollerRef = React.useRef<HTMLUListElement>(null)
+	const containerRef = useRef<HTMLDivElement>(null)
+	const scrollerRef = useRef<HTMLUListElement>(null)
 
 	useEffect(() => {
 		addAnimation()
