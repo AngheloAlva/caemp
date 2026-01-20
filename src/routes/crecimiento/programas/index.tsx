@@ -22,6 +22,7 @@ function RouteComponent() {
 		<main className="min-h-screen bg-white">
 			<HeroPage
 				title="Nuestros Programas"
+				image="/images/crecimiento/programs.ts"
 				description="Desarrollamos el potencial humano a través de experiencias de aprendizaje transformadoras. Liderazgo, comunicación y trabajo en equipo para el éxito organizacional."
 			/>
 

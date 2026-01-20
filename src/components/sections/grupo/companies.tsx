@@ -18,7 +18,7 @@ const companies = [
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "grupocaemp@caemp.cl",
+		email: "ventas@caemplus",
 		link: "/otec",
 	},
 	{

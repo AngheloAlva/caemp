@@ -16,8 +16,8 @@ function RouteComponent() {
 			contactInfo={[
 				{
 					icon: MailIcon,
-					value: "grupocaemp@caemp.cl",
-					href: "mailto:grupocaemp@caemp.cl",
+					value: "ventas@caemplus",
+					href: "mailto:ventas@caemplus",
 				},
 				{
 					icon: PhoneIcon,
@@ -26,8 +26,8 @@ function RouteComponent() {
 				},
 				{
 					icon: MapPinIcon,
-					value: "Irarrazaval 5225, oficina 1",
-					href: "https://www.google.com/maps/search/?api=1&query=Irarrazaval+5225",
+					value: "Blas Vial 8727, La Cisterna, Santiago",
+					href: "https://www.google.com/maps/search/?api=1&query=Blas+Vial+8727,+La+Cisterna,+Santiago",
 				},
 			]}
 		/>
