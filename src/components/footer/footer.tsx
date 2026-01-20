@@ -1,14 +1,7 @@
 "use client"
 
 import { Link, useRouterState } from "@tanstack/react-router"
-import {
-	MailIcon,
-	PhoneIcon,
-	LinkedinIcon,
-	FacebookIcon,
-	InstagramIcon,
-	ArrowRightIcon,
-} from "lucide-react"
+import { MailIcon, PhoneIcon, ArrowRightIcon } from "lucide-react"
 
 import { Image } from "@/components/shared/image"
 import { getFooterConfig } from "./footer-config"
@@ -31,44 +24,42 @@ export function Footer() {
 				<div className="flex flex-col gap-8 lg:flex-row lg:gap-20">
 					<div className="space-y-4 lg:w-1/3">
 						<div className="flex flex-col items-start gap-2">
-							<Image
-								width={112}
-								height={112}
-								loading="lazy"
-								alt={config.alt}
-								src={config.logo}
-								className="h-28 w-28 object-contain"
-							/>
+							<div className="flex items-center gap-1">
+								<Image
+									width={112}
+									height={112}
+									loading="lazy"
+									alt={config.alt}
+									src={config.logo}
+									className="h-28 w-28 object-contain"
+								/>
+
+								{config.logoCrecimiento && (
+									<Image
+										width={112}
+										height={112}
+										loading="lazy"
+										alt={config.alt}
+										src={config.logoCrecimiento}
+										className="h-28 w-28 object-contain"
+									/>
+								)}
+
+								{config.logoPlus && (
+									<Image
+										width={112}
+										height={112}
+										loading="lazy"
+										alt={config.alt}
+										src={config.logoPlus}
+										className="h-28 w-28 object-contain"
+									/>
+								)}
+							</div>
+
 							<span className="text-xl font-bold">{config.brandName}</span>
 						</div>
 						<p className="text-muted-foreground text-sm leading-relaxed">{config.tagline}</p>
-
-						<div className="flex gap-4">
-							<a
-								href="#"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-primary transition-colors"
-							>
-								<FacebookIcon className="h-5 w-5" />
-							</a>
-							<a
-								href="#"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-primary transition-colors"
-							>
-								<InstagramIcon className="h-5 w-5" />
-							</a>
-							<a
-								href="#"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-muted-foreground hover:text-primary transition-colors"
-							>
-								<LinkedinIcon className="h-5 w-5" />
-							</a>
-						</div>
 					</div>
 
 					<div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:w-2/3 lg:grid-cols-3">

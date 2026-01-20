@@ -81,6 +81,7 @@ export const grupoConfig: HeaderConfig = {
 	homeLink: "/",
 	navItems: [
 		{ to: "/", label: "Inicio" },
+		{ to: "#quienes-somos", label: "Quiénes Somos" },
 		{ to: "#contacto", label: "Contacto" },
 	],
 }

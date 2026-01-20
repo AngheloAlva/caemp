@@ -8,6 +8,7 @@ import { Image } from "@/components/shared/image"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { FadeIn } from "@/components/animations/fade-in"
+import { cn } from "@/lib/utils"
 
 const companies = [
 	{
@@ -48,9 +49,7 @@ export default function Companies() {
 			<div className="container mx-auto px-4">
 				<FadeIn>
 					<div className="mb-12 space-y-4 text-center">
-						<h2 className="text-primary text-3xl font-medium md:text-4xl lg:text-5xl">
-							Grupo CAEMP
-						</h2>
+						<h2 className="text-primary text-3xl font-bold md:text-4xl lg:text-6xl">Grupo CAEMP</h2>
 						<p className="mx-auto max-w-3xl text-lg text-gray-600">
 							Más de {new Date().getFullYear() - 2010} años acompañando a las empresas de Chile en
 							la construcción de entornos laborales más seguros, conscientes y productivos.
@@ -65,15 +64,23 @@ export default function Companies() {
 				<StaggerContainer className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-gray-200 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
 					{companies.map((company, index) => (
 						<StaggerItem key={index}>
-							<motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }} className="h-full">
-								<div className="flex h-full flex-col bg-white px-8 py-10 transition-shadow hover:shadow-md">
+							<motion.div whileHover={{ y: -10 }} transition={{ duration: 0.2 }} className="h-full">
+								<div
+									className={cn(
+										"flex h-full flex-col bg-white px-8 py-10 shadow-2xl transition-shadow",
+										{
+											"shadow-neutral-400": index === 1,
+											"shadow-neutral-500": index === 0,
+										}
+									)}
+								>
 									<div className="mb-8">
 										<Image
-											width={80}
-											height={80}
+											width={90}
+											height={90}
 											alt={company.name}
 											src={company.logo}
-											className="h-20 w-auto object-contain"
+											className="h-22 w-auto object-contain"
 										/>
 										<p className="mt-2 text-sm tracking-wide text-gray-400 uppercase">
 											{company.name}

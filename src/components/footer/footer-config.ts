@@ -1,5 +1,7 @@
 interface FooterConfig {
 	logo: string
+	logoCrecimiento?: string
+	logoPlus?: string
 	alt: string
 	brandName: string
 	navItems: { to: string; label: string }[]
@@ -40,7 +42,7 @@ export const crecimientoFooterConfig: FooterConfig = {
 		{ to: "/crecimiento/contacto", label: "Contacto" },
 	],
 	email: "grupocaemp@caemp.cl",
-	phone: "+56 9 9884 3486",
+	phone: "+56 2 2667 6455",
 	tagline: "Cambiamos culturas, despertamos líderes.",
 }
 
@@ -62,16 +64,18 @@ export const plusFooterConfig: FooterConfig = {
 
 export const grupoFooterConfig: FooterConfig = {
 	logo: "/images/logo/logo-o-black.png",
+	logoCrecimiento: "/images/logo/logo-c-black.png",
+	logoPlus: "/images/logo/logo-p-black.png",
 	alt: "Grupo CAEMP logo",
 	brandName: "Grupo CAEMP",
 	navItems: [
 		{ to: "/", label: "Inicio" },
+		{ to: "#quienes-somos", label: "Quiénes Somos" },
 		{ to: "#contacto", label: "Contacto" },
 	],
-	email: "comercial@caemp.cl",
-	phone: "+56 9 9884 3486",
-	tagline:
-		"Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral.",
+	email: "grupocaemp@caemp.cl",
+	phone: "+56 2 2667 6455",
+	tagline: "",
 }
 
 export function getFooterConfig(pathname: string): FooterConfig {

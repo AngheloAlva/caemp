@@ -47,7 +47,7 @@ export function Header() {
 											scale: { type: "spring", visualDuration: 0.6, bounce: 0.5 },
 										}}
 									>
-										<Image alt="Logo" width={64} height={64} src={logo} />
+										<Image alt="Logo" width={60} height={60} src={logo} />
 									</motion.div>
 								))
 							) : (
