@@ -1,9 +1,9 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 
+import { FloatingSocialMedia } from "@/components/shared/floating-social-media"
 import { Header } from "@/components/header/header"
 import { Footer } from "@/components/footer/footer"
 import { SEOHead } from "@/components/seo/seo-head"
-import { FloatingSocialMedia } from "@/components/shared/floating-social-media"
 
 import appCss from "../styles.css?url"
 

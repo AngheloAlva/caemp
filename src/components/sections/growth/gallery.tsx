@@ -12,17 +12,17 @@ import { Link } from "@tanstack/react-router"
 
 const galleryImages = [
 	{
-		src: "/images/crecimiento/galery-1.jpeg",
+		src: "/images/crecimiento/galery-1.jpg",
 		alt: "Experiencia de crecimiento 1",
 		title: "Transformación en acción",
 	},
 	{
-		src: "/images/crecimiento/galery-2.jpeg",
+		src: "/images/crecimiento/galery-2.jpg",
 		alt: "Experiencia de crecimiento 2",
 		title: "Equipos conectados",
 	},
 	{
-		src: "/images/crecimiento/galery-3.jpeg",
+		src: "/images/crecimiento/galery-3.jpg",
 		alt: "Experiencia de crecimiento 3",
 		title: "Liderazgo consciente",
 	},
@@ -89,8 +89,7 @@ export default function Gallery() {
 							<Button
 								asChild
 								size="lg"
-								style={{ backgroundColor: "#8B5CF6" }}
-								className="text-white hover:opacity-90"
+								className="bg-primary-purple hover:bg-primary-purple/80 text-white"
 							>
 								<Link to="/crecimiento/galeria">Ver Galería</Link>
 							</Button>

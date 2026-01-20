@@ -573,8 +573,8 @@ export const workshops: Record<string, Workshop> = {
 	},
 	"motivacion-propósito-y-sentido-del-trabajo": {
 		nombre: "Motivación, Propósito y Sentido del Trabajo",
-		slug: "motivacion-propósito-y-sentido-del-trabajo",
-		imagen: "/images/crecimiento/courses/motivacion-propósito-y-sentido-del-trabajo.jpg",
+		slug: "motivacion-proposito-y-sentido-del-trabajo",
+		imagen: "/images/crecimiento/courses/motivacion-proposito-y-sentido-del-trabajo.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
