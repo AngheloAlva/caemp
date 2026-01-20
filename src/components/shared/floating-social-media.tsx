@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
+import { WhatsappIcon } from "../icons/whatsapp-icon"
 
 const socialLinks = [
 	{
@@ -17,16 +18,23 @@ const socialLinks = [
 	{
 		name: "Facebook",
 		icon: FacebookIcon,
-		href: "https://www.facebook.com/grupocaemp", // Actualizar con URL real
+		href: "https://www.facebook.com/p/CAEMP-CHILE-100076324844004",
 		bgColor: "bg-blue-600",
 		hoverColor: "hover:bg-blue-700",
 	},
 	{
 		name: "LinkedIn",
 		icon: LinkedinIcon,
-		href: "https://www.linkedin.com/company/grupocaemp", // Actualizar con URL real
+		href: "https://www.linkedin.com/company/caempchile",
 		bgColor: "bg-blue-700",
 		hoverColor: "hover:bg-blue-800",
+	},
+	{
+		name: "WhatsApp",
+		icon: WhatsappIcon,
+		href: "https://wa.me/56932478827?text=Hola!%20Me%20gustar%C3%ADa%20tener%20m%C3%A1s%20informaci%C3%B3n%20de%20www.caemp.cl",
+		bgColor: "bg-green-600",
+		hoverColor: "hover:bg-green-700",
 	},
 ]
 
@@ -58,7 +66,7 @@ export function FloatingSocialMedia() {
 									{/* Tooltip */}
 									<div className="absolute top-1/2 right-14 -translate-y-1/2 rounded-md bg-gray-900 px-3 py-1.5 text-sm whitespace-nowrap text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100">
 										{social.name}
-										<div className="absolute top-1/2 right-[-4px] h-2 w-2 -translate-y-1/2 rotate-45 bg-gray-900" />
+										<div className="absolute top-1/2 -right-1 h-2 w-2 -translate-y-1/2 rotate-45 bg-gray-900" />
 									</div>
 
 									{/* Button */}
@@ -73,7 +81,11 @@ export function FloatingSocialMedia() {
 										)}
 										aria-label={social.name}
 									>
-										<Icon className="h-5 w-5" />
+										{social.name === "WhatsApp" ? (
+											<Icon className="h-5 w-5" />
+										) : (
+											<Icon className="h-5 w-5" />
+										)}
 									</a>
 								</motion.div>
 							)
@@ -84,15 +96,23 @@ export function FloatingSocialMedia() {
 
 			{/* Main Toggle Button */}
 			<motion.button
-				onClick={() => setIsExpanded(!isExpanded)}
+				type="button"
+				onClick={(e) => {
+					e.preventDefault()
+					e.stopPropagation()
+					setIsExpanded(!isExpanded)
+				}}
 				whileHover={{ scale: 1.1 }}
 				whileTap={{ scale: 0.95 }}
-				className="bg-primary group relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-xl transition-all hover:shadow-2xl"
+				className="bg-primary group relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-xl transition-all hover:shadow-2xl"
 				aria-label={isExpanded ? "Cerrar redes sociales" : "Abrir redes sociales"}
 			>
-				{/* Pulse animation when closed */}
+				{/* Pulse animation when closed - smooth and slow */}
 				{!isExpanded && (
-					<span className="bg-primary absolute inset-0 animate-ping rounded-full opacity-20" />
+					<>
+						<span className="bg-primary absolute inset-0 -z-10 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] rounded-full opacity-30" />
+						<span className="bg-primary absolute inset-0 -z-10 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite_1.5s] rounded-full opacity-20" />
+					</>
 				)}
 
 				<AnimatePresence mode="wait">
