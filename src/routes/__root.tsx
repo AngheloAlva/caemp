@@ -1,6 +1,5 @@
-import { HeadContent, Scripts, createRootRouteWithContext, redirect } from "@tanstack/react-router"
+import { HeadContent, Scripts, createRootRouteWithContext } from "@tanstack/react-router"
 import type { Tenant } from "../middleware/tenant"
-import { DOMAINS } from "../lib/domains"
 
 import { FloatingSocialMedia } from "@/components/shared/floating-social-media"
 import { Header } from "@/components/header/header"
@@ -15,27 +14,12 @@ interface RouterContext {
 }
 
 export const Route = createRootRouteWithContext<RouterContext>()({
-	beforeLoad: ({ context, location }) => {
-		// Canonical Redirects: If we are on the main group domain but accessing a tenant path,
-		// redirect to the tenant domain.
-		if (context.tenant.id === "group") {
-			if (location.pathname.startsWith("/crecimiento")) {
-				throw redirect({
-					href: `https://${DOMAINS.growth}${location.pathname.replace("/crecimiento", "") || "/"}`,
-				})
-			}
-			if (location.pathname.startsWith("/plus")) {
-				throw redirect({
-					href: `https://${DOMAINS.plus}${location.pathname.replace("/plus", "") || "/"}`,
-				})
-			}
-			if (location.pathname.startsWith("/otec")) {
-				throw redirect({
-					href: `https://${DOMAINS.otec}${location.pathname.replace("/otec", "") || "/"}`,
-				})
-			}
-		}
-	},
+	// NOTE: Canonical redirects are no longer needed here.
+	// The router's `rewrite` handles domain-based routing automatically:
+	// - crecimiento.cl/ → internally routes to /crecimiento
+	// - caempplus.cl/ → internally routes to /plus
+	// - caemp.cl/ → internally routes to /otec
+	// - grupocaemp.cl/ → routes to / (home)
 	head: () => ({
 		meta: [
 			{

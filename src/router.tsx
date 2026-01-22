@@ -84,12 +84,11 @@ export const getRouter = () => {
 				const { pathname } = url
 
 				// Remove prefix: /plus → /, /plus/productos → /productos
-				if (pathname === prefix) {
-					return { ...url, pathname: "/" }
-				}
-
-				if (pathname.startsWith(`${prefix}/`)) {
-					return { ...url, pathname: pathname.slice(prefix.length) }
+				if (pathname === prefix || pathname.startsWith(`${prefix}/`)) {
+					const newPathname = pathname === prefix ? "/" : pathname.slice(prefix.length)
+					const rewrittenUrl = new URL(url.href)
+					rewrittenUrl.pathname = newPathname
+					return rewrittenUrl
 				}
 
 				return url
