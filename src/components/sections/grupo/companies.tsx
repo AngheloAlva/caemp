@@ -67,13 +67,25 @@ export default function Companies() {
 							<motion.div whileHover={{ y: -10 }} transition={{ duration: 0.2 }} className="h-full">
 								<div
 									className={cn(
-										"flex h-full flex-col bg-white px-8 py-10 shadow-2xl transition-shadow",
+										"group relative flex h-full flex-col bg-transparent px-8 py-10 shadow-2xl transition-shadow",
 										{
 											"shadow-neutral-400": index === 1,
 											"shadow-neutral-500": index === 0,
 										}
 									)}
 								>
+									<div className="absolute inset-0 flex items-end">
+										<div
+											className={cn(
+												"bg-primary -z-10 h-0 w-full transition-all duration-500 group-hover:h-full",
+												{
+													"bg-primary-green": index === 1,
+													"bg-primary-purple": index === 2,
+												}
+											)}
+										/>
+									</div>
+
 									<div className="mb-8">
 										<Image
 											width={90}
@@ -82,27 +94,35 @@ export default function Companies() {
 											src={company.logo}
 											className="h-22 w-auto object-contain"
 										/>
-										<p className="mt-2 text-sm tracking-wide text-gray-400 uppercase">
+										<p className="mt-2 text-sm tracking-wide text-gray-400 uppercase transition-colors duration-500 group-hover:text-gray-200">
 											{company.name}
 										</p>
 									</div>
 
-									<p className="mb-10 grow leading-relaxed text-gray-600">{company.description}</p>
+									<p className="mb-10 grow leading-relaxed text-gray-600 transition-colors duration-500 group-hover:text-white">
+										{company.description}
+									</p>
 
 									<div
 										className="mb-10 border-l-2 py-1 pl-4"
 										style={{ borderColor: company.color }}
 									>
-										<p className="text-sm leading-relaxed text-gray-500">
-											<span className="font-semibold text-gray-700">Dirección: </span>
+										<p className="text-sm leading-relaxed text-gray-500 transition-colors duration-300 group-hover:text-gray-200">
+											<span className="font-semibold text-gray-700 transition-colors duration-300 group-hover:text-white">
+												Dirección:{" "}
+											</span>
 											{company.address}
 										</p>
-										<p className="mt-2 text-sm text-gray-500">
-											<span className="font-semibold text-gray-700">Email: </span>
+										<p className="mt-2 text-sm text-gray-500 transition-colors duration-500 group-hover:text-gray-200">
+											<span className="font-semibold text-gray-700 transition-colors duration-300 group-hover:text-white">
+												Email:{" "}
+											</span>
 											<a
 												href={`mailto:${company.email}`}
-												className="transition-colors hover:underline"
-												style={{ color: company.color }}
+												className={cn("text-primary group-hover:text-white hover:underline", {
+													"text-primary-green": index === 1,
+													"text-primary-purple": index === 2,
+												})}
 											>
 												{company.email}
 											</a>
@@ -113,13 +133,15 @@ export default function Companies() {
 										<Link to={company.link}>
 											<motion.button
 												whileTap={{ scale: 0.95 }}
+												whileHover={{ scale: 1.05 }}
 												aria-label={`Ver más sobre ${company.name}`}
-												whileHover={{ backgroundColor: company.color, scale: 1.05 }}
-												className="group flex h-14 w-14 items-center justify-center rounded-full border-2 duration-100 hover:scale-105"
-												style={{
-													borderColor: company.color,
-													color: company.color,
-												}}
+												className={cn(
+													"group border-primary text-primary flex h-14 w-14 items-center justify-center rounded-full border-2 duration-100 group-hover:border-white group-hover:text-white hover:scale-105",
+													{
+														"text-primary-green border-primary-green": index === 1,
+														"text-primary-purple border-primary-purple": index === 2,
+													}
+												)}
 											>
 												<ArrowRight className="h-5 w-5 transition-colors group-hover:text-white" />
 											</motion.button>
