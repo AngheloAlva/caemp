@@ -7,6 +7,7 @@ import { useState } from "react"
 
 import { cn } from "@/lib/utils"
 
+import { TenantLink } from "@/components/shared/tenant-link"
 import { Image } from "@/components/shared/image"
 import { Button } from "@/components/ui/button"
 import NavItem from "./nav-item"
@@ -142,34 +143,34 @@ export function Header() {
 										className="absolute top-full right-0 mt-2 w-48 rounded-md border bg-white shadow-lg"
 									>
 										<div className="py-2">
-											<Link
+											<TenantLink
 												to="/otec"
 												className="hover:text-primary hover:bg-primary/10 block px-4 py-2 text-sm text-gray-700"
 											>
 												CAEMP OTEC
-											</Link>
-											<Link
+											</TenantLink>
+											<TenantLink
 												to="/plus"
 												className="hover:text-primary-green hover:bg-primary-green/10 block px-4 py-2 text-sm text-gray-700"
 											>
 												CAEMP PLUS
-											</Link>
-											<Link
+											</TenantLink>
+											<TenantLink
 												to="/crecimiento"
 												className="hover:text-primary-purple hover:bg-primary-purple/10 block px-4 py-2 text-sm text-gray-700"
 											>
 												CRECIMIENTO
-											</Link>
+											</TenantLink>
 
 											{!isGrupo && (
 												<>
 													<div className="my-1 border-t" />
-													<Link
+													<TenantLink
 														to="/"
 														className="hover:text-primary hover:bg-primary/10 flex items-center gap-2 px-4 py-2 text-sm font-semibold"
 													>
 														<ArrowLeftIcon className="h-3 w-3" /> Grupo CAEMP
-													</Link>
+													</TenantLink>
 												</>
 											)}
 										</div>
@@ -245,30 +246,30 @@ export function Header() {
 							<div className="border-t pt-4">
 								<p className="mb-2 text-xs font-semibold text-gray-500">Lineas de Negocio</p>
 								<div className="flex flex-col gap-2">
-									<Link
+									<TenantLink
 										to="/otec"
 										className="rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#F59E0B]"
 									>
 										CAEMP OTEC
-									</Link>
-									<Link
+									</TenantLink>
+									<TenantLink
 										to="/plus"
 										className="hover:text-primary-green rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
 									>
 										CAEMP PLUS
-									</Link>
-									<Link
+									</TenantLink>
+									<TenantLink
 										to="/crecimiento"
 										className="hover:text-primary-purple rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
 									>
 										CRECIMIENTO
-									</Link>
-									<Link
+									</TenantLink>
+									<TenantLink
 										to="/"
 										className="flex items-center gap-2 rounded-md py-2 text-sm font-semibold text-[#004080] hover:bg-blue-50"
 									>
 										<ArrowLeftIcon className="h-3 w-3" /> Grupo CAEMP
-									</Link>
+									</TenantLink>
 								</div>
 							</div>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { Image } from "@/components/shared/image"
-import { Link } from "@tanstack/react-router"
+import { TenantLink } from "@/components/shared/tenant-link"
 import { ArrowRight } from "lucide-react"
 import { motion } from "motion/react"
 
@@ -130,7 +130,7 @@ export default function Companies() {
 									</div>
 
 									<div>
-										<Link to={company.link}>
+										<TenantLink to={company.link}>
 											<motion.button
 												whileTap={{ scale: 0.95 }}
 												whileHover={{ scale: 1.05 }}
@@ -145,7 +145,7 @@ export default function Companies() {
 											>
 												<ArrowRight className="h-5 w-5 transition-colors group-hover:text-white" />
 											</motion.button>
-										</Link>
+										</TenantLink>
 									</div>
 								</div>
 							</motion.div>

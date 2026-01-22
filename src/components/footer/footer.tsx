@@ -3,6 +3,7 @@
 import { Link, useRouterState } from "@tanstack/react-router"
 import { MailIcon, PhoneIcon, ArrowRightIcon } from "lucide-react"
 
+import { TenantLink } from "@/components/shared/tenant-link"
 import { Image } from "@/components/shared/image"
 import { getFooterConfig } from "./footer-config"
 
@@ -83,37 +84,37 @@ export function Footer() {
 							<h3 className="mb-4 font-semibold">Líneas de Negocio</h3>
 							<ul className="space-y-3 text-sm">
 								<li>
-									<Link
+									<TenantLink
 										to="/otec"
 										className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
 									>
 										CAEMP OTEC
-									</Link>
+									</TenantLink>
 								</li>
 								<li>
-									<Link
+									<TenantLink
 										to="/plus"
 										className="text-muted-foreground hover:text-primary-green flex items-center gap-2 transition-colors"
 									>
 										CAEMP PLUS
-									</Link>
+									</TenantLink>
 								</li>
 								<li>
-									<Link
+									<TenantLink
 										to="/crecimiento"
 										className="text-muted-foreground hover:text-primary-purple flex items-center gap-2 transition-colors"
 									>
 										CRECIMIENTO
-									</Link>
+									</TenantLink>
 								</li>
 								{!isGrupo && (
 									<li>
-										<Link
+										<TenantLink
 											to="/"
 											className="text-muted-foreground hover:text-primary flex items-center gap-2 transition-colors"
 										>
 											<ArrowRightIcon className="h-3 w-3" /> Grupo CAEMP
-										</Link>
+										</TenantLink>
 									</li>
 								)}
 							</ul>
