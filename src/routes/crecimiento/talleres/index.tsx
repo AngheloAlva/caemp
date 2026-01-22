@@ -19,7 +19,7 @@ function RouteComponent() {
 		<main className="min-h-screen bg-white">
 			<HeroPage
 				title="Nuestros Talleres"
-				image="/images/crecimiento/talleres-hero.jpg"
+				image="/images/crecimiento/talleres.jpg"
 				description="Experiencias de aprendizaje vivencial diseñadas para fortalecer la confianza, la cohesión y el compromiso de tu equipo."
 			/>
 

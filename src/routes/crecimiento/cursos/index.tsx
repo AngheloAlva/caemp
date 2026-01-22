@@ -24,7 +24,7 @@ function RouteComponent() {
 		<main className="flex flex-col items-center justify-center space-y-6 overflow-x-hidden pb-20">
 			<HeroPage
 				title="Todos Nuestros Cursos"
-				image="/images/crecimiento/cursos-hero.jpg"
+				image="/images/crecimiento/cursos.jpg"
 				description="Descubre nuestra oferta completa de talleres y programas de capacitación diseñados para el crecimiento personal y organizacional."
 			/>
 

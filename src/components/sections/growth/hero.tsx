@@ -13,10 +13,12 @@ import { Badge } from "@/components/ui/badge"
 import { Image } from "@/components/shared/image"
 
 const heroImages = [
-	"/images/crecimiento/hero.jpg",
-	"/images/crecimiento/hero-2.jpg",
-	"/images/crecimiento/hero-3.jpg",
-	"/images/crecimiento/hero-4.jpg",
+	"/images/crecimiento/inicio-1.jpg",
+	"/images/crecimiento/inicio-2.jpg",
+	"/images/crecimiento/inicio-3.jpg",
+	"/images/crecimiento/inicio-4.jpg",
+	"/images/crecimiento/inicio-5.jpg",
+	"/images/crecimiento/inicio-6.jpg",
 ]
 
 export default function Hero(): React.ReactElement {
@@ -55,11 +57,6 @@ export default function Hero(): React.ReactElement {
 			</div>
 
 			<div className="from-primary-purple to-primary-purple via-primary-purple/80 absolute inset-0 bg-linear-to-br" />
-
-			<div
-				className="animate-float absolute right-10 bottom-20 h-32 w-32 rounded-full bg-white/10 blur-xl"
-				style={{ animationDelay: "1s" }}
-			/>
 
 			<div className="relative container mx-auto py-24 md:py-32 lg:py-48">
 				<div className="mx-auto flex max-w-3xl flex-col gap-6 px-4 text-center">
