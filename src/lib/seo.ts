@@ -1,3 +1,5 @@
+import { DOMAINS } from "./domains"
+
 interface SEOMetadata {
 	title: string
 	description: string
@@ -9,7 +11,7 @@ interface SEOMetadata {
 	noindex?: boolean
 }
 
-export const SITE_URL = "https://caemp.cl" // Cambiar por tu dominio real
+export const SITE_URL = `https://${DOMAINS.group}`
 
 export const defaultSEO: SEOMetadata = {
 	title: "Grupo CAEMP - Capacitación, Seguridad y Desarrollo de Talento",
@@ -163,8 +165,37 @@ export function getSEOMetadata(pathname: string): SEOMetadata {
 	return defaultSEO
 }
 
+// Helper to get domain and clean path
+export function getTenantContext(pathname: string) {
+	if (pathname.startsWith("/crecimiento")) {
+		return {
+			domain: `https://${DOMAINS.growth}`,
+			cleanPath: pathname.replace("/crecimiento", "") || "/",
+		}
+	}
+	if (pathname.startsWith("/plus")) {
+		return {
+			domain: `https://${DOMAINS.plus}`,
+			cleanPath: pathname.replace("/plus", "") || "/",
+		}
+	}
+	if (pathname.startsWith("/otec")) {
+		return {
+			domain: `https://${DOMAINS.otec}`,
+			cleanPath: pathname.replace("/otec", "") || "/",
+		}
+	}
+	return {
+		domain: `https://${DOMAINS.group}`,
+		cleanPath: pathname,
+	}
+}
+
 export function generateMetaTags(metadata: SEOMetadata, pathname: string) {
-	const canonical = metadata.canonical || `${SITE_URL}${pathname}`
+	const { domain, cleanPath } = getTenantContext(pathname)
+	// If metadata.canonical is set, use it. Otherwise construct it.
+	// We use the tenant domain and the clean path (without prefix)
+	const canonical = metadata.canonical || `${domain}${cleanPath === "/" ? "" : cleanPath}`
 
 	return [
 		// Basic meta tags
@@ -183,7 +214,7 @@ export function generateMetaTags(metadata: SEOMetadata, pathname: string) {
 		{ property: "og:locale", content: "es_CL" },
 		...(metadata.ogImage
 			? [
-					{ property: "og:image", content: `${SITE_URL}${metadata.ogImage}` },
+					{ property: "og:image", content: `${domain}${metadata.ogImage}` },
 					{ property: "og:image:width", content: "1200" },
 					{ property: "og:image:height", content: "630" },
 				]
@@ -194,7 +225,7 @@ export function generateMetaTags(metadata: SEOMetadata, pathname: string) {
 		{ name: "twitter:title", content: metadata.title },
 		{ name: "twitter:description", content: metadata.description },
 		...(metadata.ogImage
-			? [{ name: "twitter:image", content: `${SITE_URL}${metadata.ogImage}` }]
+			? [{ name: "twitter:image", content: `${domain}${metadata.ogImage}` }]
 			: []),
 
 		// Additional SEO
@@ -208,7 +239,8 @@ export function generateMetaTags(metadata: SEOMetadata, pathname: string) {
 }
 
 export function generateLinkTags(pathname: string, metadata: SEOMetadata) {
-	const canonical = metadata.canonical || `${SITE_URL}${pathname}`
+	const { domain, cleanPath } = getTenantContext(pathname)
+	const canonical = metadata.canonical || `${domain}${cleanPath === "/" ? "" : cleanPath}`
 
 	return [
 		{ rel: "canonical", href: canonical },
