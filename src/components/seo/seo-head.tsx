@@ -1,7 +1,7 @@
 import { useRouterState } from "@tanstack/react-router"
 import { useEffect } from "react"
 
-import { getSEOMetadata, SITE_URL } from "@/lib/seo"
+import { getSEOMetadata, getTenantContext } from "@/lib/seo"
 import { getStructuredData } from "@/lib/structured-data"
 
 export function SEOHead() {
@@ -10,7 +10,10 @@ export function SEOHead() {
 
 	useEffect(() => {
 		const seo = getSEOMetadata(pathname)
-		const canonical = `${SITE_URL}${pathname}`
+		const { domain, cleanPath } = getTenantContext(pathname)
+
+		// Canonical uses the tenant's domain with the clean path (without prefix)
+		const canonical = `${domain}${cleanPath === "/" ? "" : cleanPath}`
 
 		// Update title
 		document.title = seo.title
@@ -30,7 +33,7 @@ export function SEOHead() {
 		updateMetaTag("og:locale", "es_CL", "property")
 
 		if (seo.ogImage) {
-			updateMetaTag("og:image", `${SITE_URL}${seo.ogImage}`, "property")
+			updateMetaTag("og:image", `${domain}${seo.ogImage}`, "property")
 			updateMetaTag("og:image:width", "1200", "property")
 			updateMetaTag("og:image:height", "630", "property")
 		}
@@ -40,7 +43,7 @@ export function SEOHead() {
 		updateMetaTag("twitter:title", seo.title)
 		updateMetaTag("twitter:description", seo.description)
 		if (seo.ogImage) {
-			updateMetaTag("twitter:image", `${SITE_URL}${seo.ogImage}`)
+			updateMetaTag("twitter:image", `${domain}${seo.ogImage}`)
 		}
 
 		// Robots

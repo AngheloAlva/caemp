@@ -1,13 +1,32 @@
-import { DOMAINS, type DomainType } from "./domains"
+/**
+ * Script to generate sitemaps for each tenant domain.
+ * Run with: npx tsx scripts/generate-sitemaps.ts
+ *
+ * This will generate:
+ * - public/sitemap-group.xml (for grupocaemp.cl)
+ * - public/sitemap-otec.xml (for caemp.cl)
+ * - public/sitemap-growth.xml (for crecimiento.cl)
+ * - public/sitemap-plus.xml (for caempplus.cl)
+ */
+
+import { writeFileSync } from "node:fs"
+import { join } from "node:path"
+
+const DOMAINS = {
+	growth: "crecimiento.cl",
+	plus: "caempplus.cl",
+	otec: "caemp.cl",
+	group: "grupocaemp.cl",
+}
+
+type DomainType = keyof typeof DOMAINS
 
 interface SitemapURL {
 	loc: string
-	lastmod?: string
-	changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never"
-	priority?: number
+	changefreq: string
+	priority: number
 }
 
-// Routes organized by tenant
 const routesByTenant: Record<DomainType, SitemapURL[]> = {
 	group: [{ loc: "/", changefreq: "monthly", priority: 1.0 }],
 
@@ -42,26 +61,9 @@ const routesByTenant: Record<DomainType, SitemapURL[]> = {
 	],
 }
 
-function getDomainUrl(tenant: DomainType): string {
-	switch (tenant) {
-		case "growth":
-			return `https://${DOMAINS.growth}`
-		case "plus":
-			return `https://${DOMAINS.plus}`
-		case "otec":
-			return `https://${DOMAINS.otec}`
-		case "group":
-		default:
-			return `https://${DOMAINS.group}`
-	}
-}
-
-/**
- * Generates a sitemap for a specific tenant/domain
- */
-export function generateSitemapForTenant(tenant: DomainType): string {
+function generateSitemap(tenant: DomainType): string {
 	const lastmod = new Date().toISOString().split("T")[0]
-	const baseUrl = getDomainUrl(tenant)
+	const baseUrl = `https://${DOMAINS[tenant]}`
 	const routes = routesByTenant[tenant]
 
 	const urls = routes
@@ -69,7 +71,7 @@ export function generateSitemapForTenant(tenant: DomainType): string {
 			(route) => `
   <url>
     <loc>${baseUrl}${route.loc === "/" ? "" : route.loc}</loc>
-    <lastmod>${route.lastmod || lastmod}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`
@@ -84,12 +86,23 @@ export function generateSitemapForTenant(tenant: DomainType): string {
 </urlset>`
 }
 
-/**
- * Generates sitemap based on the current hostname
- */
-export function generateSitemapForHost(hostname: string): string {
-	if (hostname.includes(DOMAINS.growth)) return generateSitemapForTenant("growth")
-	if (hostname.includes(DOMAINS.plus)) return generateSitemapForTenant("plus")
-	if (hostname.includes(DOMAINS.otec)) return generateSitemapForTenant("otec")
-	return generateSitemapForTenant("group")
+// Generate all sitemaps
+const tenants: DomainType[] = ["group", "otec", "growth", "plus"]
+const publicDir = join(process.cwd(), "public")
+
+for (const tenant of tenants) {
+	const sitemap = generateSitemap(tenant)
+	const filename = `sitemap-${tenant}.xml`
+	const filepath = join(publicDir, filename)
+
+	writeFileSync(filepath, sitemap)
+	console.log(`✅ Generated ${filename} for ${DOMAINS[tenant]}`)
 }
+
+console.log("\n📋 Next steps:")
+console.log("1. Deploy to Vercel")
+console.log("2. In Google Search Console, submit these sitemaps:")
+console.log("   - grupocaemp.cl → /sitemap-group.xml")
+console.log("   - caemp.cl → /sitemap-otec.xml")
+console.log("   - crecimiento.cl → /sitemap-growth.xml")
+console.log("   - caempplus.cl → /sitemap-plus.xml")
