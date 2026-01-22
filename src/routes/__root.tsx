@@ -1,4 +1,6 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
+import { HeadContent, Scripts, createRootRouteWithContext, redirect } from "@tanstack/react-router"
+import type { Tenant } from "../middleware/tenant"
+import { DOMAINS } from "../lib/domains"
 
 import { FloatingSocialMedia } from "@/components/shared/floating-social-media"
 import { Header } from "@/components/header/header"
@@ -7,7 +9,33 @@ import { SEOHead } from "@/components/seo/seo-head"
 
 import appCss from "../styles.css?url"
 
-export const Route = createRootRoute({
+interface RouterContext {
+	tenant: Tenant
+	prefix: string
+}
+
+export const Route = createRootRouteWithContext<RouterContext>()({
+	beforeLoad: ({ context, location }) => {
+		// Canonical Redirects: If we are on the main group domain but accessing a tenant path,
+		// redirect to the tenant domain.
+		if (context.tenant.id === "group") {
+			if (location.pathname.startsWith("/crecimiento")) {
+				throw redirect({
+					href: `https://${DOMAINS.growth}${location.pathname.replace("/crecimiento", "") || "/"}`,
+				})
+			}
+			if (location.pathname.startsWith("/plus")) {
+				throw redirect({
+					href: `https://${DOMAINS.plus}${location.pathname.replace("/plus", "") || "/"}`,
+				})
+			}
+			if (location.pathname.startsWith("/otec")) {
+				throw redirect({
+					href: `https://${DOMAINS.otec}${location.pathname.replace("/otec", "") || "/"}`,
+				})
+			}
+		}
+	},
 	head: () => ({
 		meta: [
 			{

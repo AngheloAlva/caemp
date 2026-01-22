@@ -45,6 +45,13 @@ export const getRouter = () => {
 				return url
 			},
 		},
+		context: {
+			tenant: {
+				id: "group",
+				name: "Grupo CAEMP",
+			},
+			prefix: "",
+		},
 	})
 
 	return router
