@@ -57,7 +57,13 @@ export const getRouter = () => {
 
 				console.log("[REWRITE INPUT] Rewriting to:", newPathname)
 
-				return { ...url, pathname: newPathname }
+				// Return a NEW URL object with the rewritten pathname
+				const rewrittenUrl = new URL(url.href)
+				rewrittenUrl.pathname = newPathname
+
+				console.log("[REWRITE INPUT] Final URL:", rewrittenUrl.href)
+
+				return rewrittenUrl
 			},
 
 			// OUTPUT: Internal route → External URL for links/navigation
