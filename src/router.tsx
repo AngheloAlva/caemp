@@ -13,14 +13,12 @@ export const getRouter = () => {
 		rewrite: {
 			input: ({ url }) => {
 				const { pathname, hostname } = url
-				console.log("Router Rewrite Input:", { hostname, pathname, DOMAINS })
-
 				// Crecimiento
 				if (hostname.includes(DOMAINS.growth)) {
 					if (pathname.startsWith("/crecimiento")) return url
 					return {
 						...url,
-						pathname: `/crecimiento${pathname === "/" ? "" : pathname}`,
+						pathname: `/crecimiento${pathname === "/" ? "/" : pathname}`,
 					}
 				}
 
@@ -29,7 +27,7 @@ export const getRouter = () => {
 					if (pathname.startsWith("/otec")) return url
 					return {
 						...url,
-						pathname: `/otec${pathname === "/" ? "" : pathname}`,
+						pathname: `/otec${pathname === "/" ? "/" : pathname}`,
 					}
 				}
 
@@ -38,7 +36,7 @@ export const getRouter = () => {
 					if (pathname.startsWith("/plus")) return url
 					return {
 						...url,
-						pathname: `/plus${pathname === "/" ? "" : pathname}`,
+						pathname: `/plus${pathname === "/" ? "/" : pathname}`,
 					}
 				}
 
