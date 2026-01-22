@@ -13,6 +13,7 @@ export const getRouter = () => {
 		rewrite: {
 			input: ({ url }) => {
 				const { pathname, hostname } = url
+				console.log("Router Rewrite Input:", { hostname, pathname, DOMAINS })
 
 				// Crecimiento
 				if (hostname.includes(DOMAINS.growth)) {
