@@ -26,6 +26,13 @@ export const getRouter = () => {
 			input: ({ url }) => {
 				const config = getDomainConfig(url.hostname)
 
+				console.log("[REWRITE INPUT]", {
+					hostname: url.hostname,
+					pathname: url.pathname,
+					config,
+					href: url.href,
+				})
+
 				// No tenant domain (group or localhost) - no rewrite needed
 				if (!config) return url
 
@@ -38,6 +45,8 @@ export const getRouter = () => {
 				// Add prefix: / → /plus, /productos → /plus/productos
 				const newPathname = pathname === "/" ? prefix : `${prefix}${pathname}`
 
+				console.log("[REWRITE INPUT] Rewriting to:", newPathname)
+
 				return { ...url, pathname: newPathname }
 			},
 
@@ -45,6 +54,12 @@ export const getRouter = () => {
 			// /plus/productos → /productos (when on caempplus.cl)
 			output: ({ url }) => {
 				const config = getDomainConfig(url.hostname)
+
+				console.log("[REWRITE OUTPUT]", {
+					hostname: url.hostname,
+					pathname: url.pathname,
+					config,
+				})
 
 				// No tenant domain - no rewrite needed
 				if (!config) return url
