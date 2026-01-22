@@ -2,16 +2,26 @@ import { createRouter } from "@tanstack/react-router"
 
 // Import the generated route tree
 import { routeTree } from "./routeTree.gen"
-import { DOMAINS, type DomainType } from "./lib/domains"
+import { type DomainType, getTenantFromHost } from "./lib/domains"
 
 /**
  * Maps domain to its internal route prefix
+ * Returns null for "group" tenant (no rewrite needed)
  */
 function getDomainConfig(hostname: string): { tenant: DomainType; prefix: string } | null {
-	if (hostname.includes(DOMAINS.growth)) return { tenant: "growth", prefix: "/crecimiento" }
-	if (hostname.includes(DOMAINS.otec)) return { tenant: "otec", prefix: "/otec" }
-	if (hostname.includes(DOMAINS.plus)) return { tenant: "plus", prefix: "/plus" }
-	return null // group domain or localhost without tenant
+	const tenant = getTenantFromHost(hostname)
+
+	switch (tenant) {
+		case "growth":
+			return { tenant, prefix: "/crecimiento" }
+		case "otec":
+			return { tenant, prefix: "/otec" }
+		case "plus":
+			return { tenant, prefix: "/plus" }
+		case "group":
+		default:
+			return null // No rewrite for group domain
+	}
 }
 
 // Create a new router instance

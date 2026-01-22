@@ -11,10 +11,23 @@ export const DOMAINS = {
 
 export type DomainType = "growth" | "plus" | "otec" | "group"
 
+/**
+ * Checks if hostname matches a domain (exact match or with www. prefix)
+ * This avoids false positives like "grupocaemp.cl".includes("caemp.cl") = true
+ */
+function matchesDomain(hostname: string, domain: string): boolean {
+	// Remove port if present (for localhost testing)
+	const hostWithoutPort = hostname.split(":")[0]
+
+	// Exact match or www. prefix
+	return hostWithoutPort === domain || hostWithoutPort === `www.${domain}`
+}
+
 export function getTenantFromHost(host: string): DomainType {
-	if (host.includes(DOMAINS.growth)) return "growth"
-	if (host.includes(DOMAINS.plus)) return "plus"
-	if (host.includes(DOMAINS.otec)) return "otec"
+	if (matchesDomain(host, DOMAINS.growth)) return "growth"
+	if (matchesDomain(host, DOMAINS.plus)) return "plus"
+	if (matchesDomain(host, DOMAINS.otec)) return "otec"
+	// grupocaemp.cl or any other domain defaults to group
 	return "group"
 }
 
