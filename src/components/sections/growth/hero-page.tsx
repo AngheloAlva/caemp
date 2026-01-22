@@ -18,8 +18,9 @@ export default function HeroPage({ title, description, icon: Icon, image }: Hero
 					alt=""
 					width={1920}
 					height={1080}
-					loading="lazy"
+					loading="eager"
 					decoding="async"
+					fetchPriority="high"
 					src={image || "/images/crecimiento/hero.png"}
 					className="h-full w-full object-cover"
 				/>

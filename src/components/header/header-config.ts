@@ -73,8 +73,8 @@ export const plusConfig: HeaderConfig = {
 export const grupoConfig: HeaderConfig = {
 	logo: [
 		"/images/logo/logo-o-black.png",
-		"/images/logo/logo-c-black.png",
 		"/images/logo/logo-p-black.png",
+		"/images/logo/logo-c-black.png",
 	],
 	brandName: "Grupo CAEMP",
 	lineOfBusiness: "grupo",

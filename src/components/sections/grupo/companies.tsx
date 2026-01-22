@@ -1,9 +1,9 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
-import { Link } from "@tanstack/react-router"
-import { motion } from "motion/react"
 import { Image } from "@/components/shared/image"
+import { Link } from "@tanstack/react-router"
+import { ArrowRight } from "lucide-react"
+import { motion } from "motion/react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
@@ -18,7 +18,7 @@ const companies = [
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "ventas@caemplus",
+		email: "grupocaemp@caemp.cl",
 		link: "/otec",
 	},
 	{
@@ -28,7 +28,7 @@ const companies = [
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "grupocaemp@caemp.cl",
+		email: "ventas@caemplus",
 		link: "/plus",
 	},
 	{

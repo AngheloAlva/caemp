@@ -34,17 +34,6 @@ export function Footer() {
 									className="h-28 w-28 object-contain"
 								/>
 
-								{config.logoCrecimiento && (
-									<Image
-										width={112}
-										height={112}
-										loading="lazy"
-										alt={config.alt}
-										src={config.logoCrecimiento}
-										className="h-28 w-28 object-contain"
-									/>
-								)}
-
 								{config.logoPlus && (
 									<Image
 										width={112}
@@ -52,6 +41,17 @@ export function Footer() {
 										loading="lazy"
 										alt={config.alt}
 										src={config.logoPlus}
+										className="h-28 w-28 object-contain"
+									/>
+								)}
+
+								{config.logoCrecimiento && (
+									<Image
+										width={112}
+										height={112}
+										loading="lazy"
+										alt={config.alt}
+										src={config.logoCrecimiento}
 										className="h-28 w-28 object-contain"
 									/>
 								)}
