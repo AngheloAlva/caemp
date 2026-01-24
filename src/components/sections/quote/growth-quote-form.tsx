@@ -5,6 +5,7 @@ import { format } from "date-fns"
 import { useState } from "react"
 
 import { cn } from "@/lib/utils"
+import { postApi } from "@/lib/api"
 
 import { programAreas } from "@/data/crecimiento/programs"
 import { theaterPlays } from "@/data/crecimiento/theater"
@@ -96,31 +97,19 @@ export function GrowthQuoteForm({ defaultServiceType, defaultServiceItem }: Grow
 						.filter(Boolean)
 				}
 
-				const response = await fetch(`${process.env.VITE_PUBLIC_BASE_URL}/api/quote`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						fullName: value.full_name,
-						email: value.email,
-						phone: value.phone,
-						role: value.role,
-						companyName: value.company_name,
-						participantsNumber: value.participans_number,
-						items: serviceNames,
-						preferDate: value.prefer_date,
-						message: value.message,
-						businessLine: "crecimiento",
-						itemType: value.service_type,
-					}),
+				await postApi("/api/quote", {
+					fullName: value.full_name,
+					email: value.email,
+					phone: value.phone,
+					role: value.role,
+					companyName: value.company_name,
+					participantsNumber: value.participans_number,
+					items: serviceNames,
+					preferDate: value.prefer_date,
+					message: value.message,
+					businessLine: "crecimiento",
+					itemType: value.service_type,
 				})
-
-				const data = await response.json()
-
-				if (!response.ok) {
-					throw new Error(data.error || "Error al enviar la solicitud")
-				}
 
 				setSubmitStatus("success")
 

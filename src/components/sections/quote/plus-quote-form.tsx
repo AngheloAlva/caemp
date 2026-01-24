@@ -7,6 +7,7 @@ import { useState } from "react"
 import { quoteFormSchema, type QuoteFormSchema } from "./quote.schema"
 
 import { cn } from "@/lib/utils"
+import { postApi } from "@/lib/api"
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
@@ -58,30 +59,18 @@ export function PlusQuoteForm({ defaultProduct }: PlusQuoteFormProps) {
 					})
 					.filter(Boolean)
 
-				const response = await fetch(`${process.env.VITE_PUBLIC_BASE_URL}/api/quote`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						fullName: value.full_name,
-						email: value.email,
-						phone: value.phone,
-						role: value.role,
-						companyName: value.company_name,
-						participantsNumber: value.participans_number,
-						items: productNames,
-						preferDate: value.prefer_date,
-						message: value.message,
-						businessLine: "plus",
-					}),
+				await postApi("/api/quote", {
+					fullName: value.full_name,
+					email: value.email,
+					phone: value.phone,
+					role: value.role,
+					companyName: value.company_name,
+					participantsNumber: value.participans_number,
+					items: productNames,
+					preferDate: value.prefer_date,
+					message: value.message,
+					businessLine: "plus",
 				})
-
-				const data = await response.json()
-
-				if (!response.ok) {
-					throw new Error(data.error || "Error al enviar la solicitud")
-				}
 
 				setSubmitStatus("success")
 
