@@ -29,6 +29,8 @@ import { Route as CrecimientoNosotrosRouteImport } from './routes/crecimiento/no
 import { Route as CrecimientoGaleriaRouteImport } from './routes/crecimiento/galeria'
 import { Route as CrecimientoCotizacionRouteImport } from './routes/crecimiento/cotizacion'
 import { Route as CrecimientoContactoRouteImport } from './routes/crecimiento/contacto'
+import { Route as ApiQuoteRouteImport } from './routes/api/quote'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as PlusProductosIndexRouteImport } from './routes/plus/productos/index'
 import { Route as OtecCursosIndexRouteImport } from './routes/otec/cursos/index'
 import { Route as CrecimientoTalleresIndexRouteImport } from './routes/crecimiento/talleres/index'
@@ -139,6 +141,16 @@ const CrecimientoContactoRoute = CrecimientoContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => CrecimientoRoute,
 } as any)
+const ApiQuoteRoute = ApiQuoteRouteImport.update({
+  id: '/api/quote',
+  path: '/api/quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlusProductosIndexRoute = PlusProductosIndexRouteImport.update({
   id: '/productos/',
   path: '/productos/',
@@ -193,6 +205,8 @@ export interface FileRoutesByFullPath {
   '/crecimiento': typeof CrecimientoRouteWithChildren
   '/otec': typeof OtecRouteWithChildren
   '/plus': typeof PlusRouteWithChildren
+  '/api/contact': typeof ApiContactRoute
+  '/api/quote': typeof ApiQuoteRoute
   '/crecimiento/contacto': typeof CrecimientoContactoRoute
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
@@ -221,6 +235,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/contact': typeof ApiContactRoute
+  '/api/quote': typeof ApiQuoteRoute
   '/crecimiento/contacto': typeof CrecimientoContactoRoute
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
@@ -253,6 +269,8 @@ export interface FileRoutesById {
   '/crecimiento': typeof CrecimientoRouteWithChildren
   '/otec': typeof OtecRouteWithChildren
   '/plus': typeof PlusRouteWithChildren
+  '/api/contact': typeof ApiContactRoute
+  '/api/quote': typeof ApiQuoteRoute
   '/crecimiento/contacto': typeof CrecimientoContactoRoute
   '/crecimiento/cotizacion': typeof CrecimientoCotizacionRoute
   '/crecimiento/galeria': typeof CrecimientoGaleriaRoute
@@ -286,6 +304,8 @@ export interface FileRouteTypes {
     | '/crecimiento'
     | '/otec'
     | '/plus'
+    | '/api/contact'
+    | '/api/quote'
     | '/crecimiento/contacto'
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
@@ -314,6 +334,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/contact'
+    | '/api/quote'
     | '/crecimiento/contacto'
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
@@ -345,6 +367,8 @@ export interface FileRouteTypes {
     | '/crecimiento'
     | '/otec'
     | '/plus'
+    | '/api/contact'
+    | '/api/quote'
     | '/crecimiento/contacto'
     | '/crecimiento/cotizacion'
     | '/crecimiento/galeria'
@@ -377,6 +401,8 @@ export interface RootRouteChildren {
   CrecimientoRoute: typeof CrecimientoRouteWithChildren
   OtecRoute: typeof OtecRouteWithChildren
   PlusRoute: typeof PlusRouteWithChildren
+  ApiContactRoute: typeof ApiContactRoute
+  ApiQuoteRoute: typeof ApiQuoteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -520,6 +546,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/crecimiento/contacto'
       preLoaderRoute: typeof CrecimientoContactoRouteImport
       parentRoute: typeof CrecimientoRoute
+    }
+    '/api/quote': {
+      id: '/api/quote'
+      path: '/api/quote'
+      fullPath: '/api/quote'
+      preLoaderRoute: typeof ApiQuoteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/plus/productos/': {
       id: '/plus/productos/'
@@ -668,6 +708,8 @@ const rootRouteChildren: RootRouteChildren = {
   CrecimientoRoute: CrecimientoRouteWithChildren,
   OtecRoute: OtecRouteWithChildren,
   PlusRoute: PlusRouteWithChildren,
+  ApiContactRoute: ApiContactRoute,
+  ApiQuoteRoute: ApiQuoteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,12 +1,14 @@
 "use client"
 
-import { MailIcon, PhoneIcon, MapPinIcon, SendIcon } from "lucide-react"
+import { MailIcon, PhoneIcon, MapPinIcon, SendIcon, Loader2Icon } from "lucide-react"
 import { motion } from "motion/react"
+import { useState } from "react"
 
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { StaggerItem } from "@/components/animations/stagger-item"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
+import { SuccessNotification } from "@/components/ui/success-notification"
 
 const contactInfo = [
 	{
@@ -30,6 +32,63 @@ const contactInfo = [
 ]
 
 export default function Contact() {
+	const [formData, setFormData] = useState({
+		fullName: "",
+		email: "",
+		phone: "",
+		message: "",
+	})
+	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+	const [errorMessage, setErrorMessage] = useState("")
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		setIsSubmitting(true)
+		setSubmitStatus("idle")
+		setErrorMessage("")
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					fullName: formData.fullName,
+					email: formData.email,
+					phone: formData.phone,
+					message: formData.message,
+					businessLine: "grupo",
+				}),
+			})
+
+			const data = await response.json()
+
+			if (!response.ok) {
+				throw new Error(data.error || "Error al enviar el mensaje")
+			}
+
+			setSubmitStatus("success")
+			setFormData({
+				fullName: "",
+				email: "",
+				phone: "",
+				message: "",
+			})
+
+			// Reset success message after 3 seconds
+			setTimeout(() => {
+				setSubmitStatus("idle")
+			}, 3000)
+		} catch (error) {
+			setSubmitStatus("error")
+			setErrorMessage(error instanceof Error ? error.message : "Error al enviar el mensaje")
+		} finally {
+			setIsSubmitting(false)
+		}
+	}
+
 	return (
 		<section id="contacto" className="w-full bg-slate-50 py-16 md:py-24">
 			<div className="container mx-auto px-4">
@@ -49,81 +108,131 @@ export default function Contact() {
 					<div className="grid lg:grid-cols-2">
 						<FadeIn delay={0.2}>
 							<div className="rounded-none border border-gray-100 bg-white p-6 md:border-r-0 md:p-8">
-								<h3 className="text-primary mb-6 text-xl font-medium md:text-2xl">
-									Envíanos un mensaje
-								</h3>
-								<form className="space-y-4">
-									<div className="grid gap-4 sm:grid-cols-2">
-										<div>
-											<label
-												htmlFor="name"
-												className="mb-1.5 block text-sm font-medium text-gray-700"
-											>
-												Nombre
-											</label>
-											<input
-												type="text"
-												id="name"
-												className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none"
-												placeholder="Tu nombre"
-											/>
-										</div>
-										<div>
-											<label
-												htmlFor="email"
-												className="mb-1.5 block text-sm font-medium text-gray-700"
-											>
-												Email
-											</label>
-											<input
-												type="email"
-												id="email"
-												className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none"
-												placeholder="tu@email.com"
-											/>
-										</div>
-									</div>
-									<div>
-										<label
-											htmlFor="phone"
-											className="mb-1.5 block text-sm font-medium text-gray-700"
-										>
-											Teléfono
-										</label>
-										<input
-											type="tel"
-											id="phone"
-											className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none"
-											placeholder="+56 9 1234 5678"
-										/>
-									</div>
-									<div>
-										<label
-											htmlFor="message"
-											className="mb-1.5 block text-sm font-medium text-gray-700"
-										>
-											Mensaje
-										</label>
-										<textarea
-											id="message"
-											rows={4}
-											className="focus:border-primary focus:ring-primary/20 w-full resize-none rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none"
-											placeholder="¿En qué podemos ayudarte?"
-										/>
-									</div>
+								{submitStatus === "success" ? (
+									<SuccessNotification
+										title="¡Mensaje Enviado!"
+										description="Gracias por contactarnos. Te responderemos a la brevedad."
+										variant="grupo"
+									/>
+								) : (
+									<>
+										<h3 className="text-primary mb-6 text-xl font-medium md:text-2xl">
+											Envíanos un mensaje
+										</h3>
 
-									<motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-										<Button
-											size="lg"
-											type="submit"
-											onClick={(e) => e.preventDefault()}
-											className="bg-primary hover:bg-primary/90 w-full gap-2 rounded-none tracking-wide"
-										>
-											<SendIcon className="h-4 w-4" />
-											Enviar mensaje
-										</Button>
-									</motion.div>
-								</form>
+										{submitStatus === "error" && (
+											<div className="mb-4 rounded-none border border-red-200 bg-red-50 p-4">
+												<p className="text-sm font-medium text-red-800">{errorMessage}</p>
+											</div>
+										)}
+
+										<form className="space-y-4" onSubmit={handleSubmit}>
+											<div className="grid gap-4 sm:grid-cols-2">
+												<div>
+													<label
+														htmlFor="name"
+														className="mb-1.5 block text-sm font-medium text-gray-700"
+													>
+														Nombre *
+													</label>
+													<input
+														type="text"
+														id="name"
+														required
+														value={formData.fullName}
+														onChange={(e) =>
+															setFormData((prev) => ({ ...prev, fullName: e.target.value }))
+														}
+														disabled={isSubmitting}
+														className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+														placeholder="Tu nombre"
+													/>
+												</div>
+												<div>
+													<label
+														htmlFor="email"
+														className="mb-1.5 block text-sm font-medium text-gray-700"
+													>
+														Email *
+													</label>
+													<input
+														type="email"
+														id="email"
+														required
+														value={formData.email}
+														onChange={(e) =>
+															setFormData((prev) => ({ ...prev, email: e.target.value }))
+														}
+														disabled={isSubmitting}
+														className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+														placeholder="tu@email.com"
+													/>
+												</div>
+											</div>
+											<div>
+												<label
+													htmlFor="phone"
+													className="mb-1.5 block text-sm font-medium text-gray-700"
+												>
+													Teléfono *
+												</label>
+												<input
+													type="tel"
+													id="phone"
+													required
+													value={formData.phone}
+													onChange={(e) =>
+														setFormData((prev) => ({ ...prev, phone: e.target.value }))
+													}
+													disabled={isSubmitting}
+													className="focus:border-primary focus:ring-primary/20 w-full rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+													placeholder="+56 9 1234 5678"
+												/>
+											</div>
+											<div>
+												<label
+													htmlFor="message"
+													className="mb-1.5 block text-sm font-medium text-gray-700"
+												>
+													Mensaje *
+												</label>
+												<textarea
+													id="message"
+													rows={4}
+													required
+													value={formData.message}
+													onChange={(e) =>
+														setFormData((prev) => ({ ...prev, message: e.target.value }))
+													}
+													disabled={isSubmitting}
+													className="focus:border-primary focus:ring-primary/20 w-full resize-none rounded-none border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm transition-colors focus:bg-white focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-60"
+													placeholder="¿En qué podemos ayudarte?"
+												/>
+											</div>
+
+											<motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
+												<Button
+													size="lg"
+													type="submit"
+													disabled={isSubmitting}
+													className="bg-primary hover:bg-primary/90 w-full gap-2 rounded-none tracking-wide"
+												>
+													{isSubmitting ? (
+														<>
+															<Loader2Icon className="h-4 w-4 animate-spin" />
+															Enviando...
+														</>
+													) : (
+														<>
+															<SendIcon className="h-4 w-4" />
+															Enviar mensaje
+														</>
+													)}
+												</Button>
+											</motion.div>
+										</form>
+									</>
+								)}
 							</div>
 						</FadeIn>
 

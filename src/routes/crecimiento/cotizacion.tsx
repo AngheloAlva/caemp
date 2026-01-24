@@ -28,8 +28,8 @@ function RouteComponent() {
 					<Image
 						width={1920}
 						height={1080}
-						src="/images/crecimiento/hero.png"
 						alt="Fondo Crecimiento"
+						src="/images/crecimiento/hero.jpg"
 						className="h-full w-full object-cover"
 					/>
 					<div className="absolute inset-0 bg-purple-900/80" />

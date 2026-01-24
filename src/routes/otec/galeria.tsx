@@ -232,7 +232,6 @@ function RouteComponent() {
 							/>
 							<div className="absolute right-0 bottom-0 left-0 bg-black/60 p-4 text-center text-white backdrop-blur-md">
 								<p className="text-lg font-medium">Imagen {selectedImageIndex + 1}</p>
-								<p className="text-lg font-medium">{galleryImages[selectedImageIndex]}</p>
 							</div>
 						</motion.div>
 

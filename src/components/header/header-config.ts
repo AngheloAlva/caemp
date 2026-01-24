@@ -48,7 +48,7 @@ export const crecimientoConfig: HeaderConfig = {
 	ctaButton: {
 		to: "/crecimiento/cotizacion",
 		label: "Solicitar Cotización",
-		className: "bg-primary-purple text-white",
+		className: "bg-primary-purple hover:bg-primary-purple hover:brightness-90 text-white",
 	},
 }
 
@@ -66,7 +66,7 @@ export const plusConfig: HeaderConfig = {
 	ctaButton: {
 		to: "/plus/cotizacion",
 		label: "Solicitar Cotización",
-		className: "bg-primary-green text-white",
+		className: "bg-primary-green hover:bg-primary-green hover:brightness-90 text-white",
 	},
 }
 
