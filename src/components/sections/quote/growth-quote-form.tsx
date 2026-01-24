@@ -411,7 +411,7 @@ export function GrowthQuoteForm({ defaultServiceType, defaultServiceItem }: Grow
 																value={value}
 																key={value}
 																disabled={false}
-																className="data-[spacing=0]:data-[variant=outline]:first:border-lz hover:text-primary-purple data-[state=on]:text-primary-purple h-full min-h-[48px] justify-start rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
+																className="data-[spacing=0]:data-[variant=outline]:first:border-lz hover:text-primary-purple data-[state=on]:text-primary-purple h-full min-h-12 justify-start rounded-lg border py-3 text-left whitespace-normal data-[spacing=0]:rounded-lg data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-lg data-[spacing=0]:last:rounded-lg data-[spacing=0]:data-[variant=outline]:border"
 															>
 																{field.state.value.includes(value) && (
 																	<CheckCircle2Icon className="h-5 w-5" />
