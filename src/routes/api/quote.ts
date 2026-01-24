@@ -48,8 +48,8 @@ export const Route = createFileRoute("/api/quote")({
 
 					const { data: emailData, error } = await resend.emails.send(
 						{
-							from: "Acme <onboarding@resend.dev>",
-							to: "delivered@resend.dev",
+							from: "Caemp <web@grupocaemp.cl>",
+							to: "anghelo.alva.q@gmail.com",
 							subject: `Nueva solicitud de cotización - ${lineName}`,
 							react: QuoteEmail({
 								fullName: data.fullName,
@@ -100,7 +100,10 @@ export const Route = createFileRoute("/api/quote")({
 					})
 				} catch (error) {
 					console.error("Unexpected error:", error)
-					return Response.json({ error: "Error inesperado", code: "UNEXPECTED_ERROR" }, { status: 500 })
+					return Response.json(
+						{ error: "Error inesperado", code: "UNEXPECTED_ERROR" },
+						{ status: 500 }
+					)
 				}
 			},
 		},
