@@ -12,17 +12,17 @@ import { Link } from "@tanstack/react-router"
 
 const galleryImages = [
 	{
-		src: "/images/crecimiento/galery-1.jpg",
+		src: "/images/crecimiento/gallery/galery-1.jpg",
 		alt: "Experiencia de crecimiento 1",
 		title: "Transformación en acción",
 	},
 	{
-		src: "/images/crecimiento/galery-2.jpg",
+		src: "/images/crecimiento/gallery/galery-2.jpg",
 		alt: "Experiencia de crecimiento 2",
 		title: "Equipos conectados",
 	},
 	{
-		src: "/images/crecimiento/galery-3.jpg",
+		src: "/images/crecimiento/gallery/galery-3.jpg",
 		alt: "Experiencia de crecimiento 3",
 		title: "Liderazgo consciente",
 	},

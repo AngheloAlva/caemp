@@ -134,7 +134,7 @@ export default function WhyChose(): React.ReactElement {
 							width={1152}
 							height={396}
 							className="absolute inset-0 -z-10"
-							src="/images/crecimiento/galery-10.jpg"
+							src="/images/crecimiento/gallery/galery-10.jpg"
 							alt="2 personas dibujadas dandose la mano"
 						/>
 

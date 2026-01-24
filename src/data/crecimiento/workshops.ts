@@ -29,7 +29,7 @@ export const workshops: Record<string, Workshop> = {
 		nombre: "Liderazgo Consciente y Gestión de Equipos",
 		slug: "liderazgo-consciente-gestion-equipos",
 		tipo: "TALLER",
-		imagen: "/images/crecimiento/galery-1.jpg",
+		imagen: "/images/crecimiento/gallery/galery-1.jpg",
 		codigoSence: "Por definir",
 		duracion: {
 			minimo: 100,
@@ -106,7 +106,7 @@ export const workshops: Record<string, Workshop> = {
 	"coaching-y-comunicacion-efectiva-para-el-liderazgo": {
 		nombre: "Coaching y Comunicación Efectiva para el Liderazgo",
 		slug: "coaching-y-comunicacion-efectiva-para-el-liderazgo",
-		imagen: "/images/crecimiento/galery-2.jpg",
+		imagen: "/images/crecimiento/gallery/galery-2.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -185,7 +185,7 @@ export const workshops: Record<string, Workshop> = {
 		nombre: "Mindfulness y Bienestar Laboral",
 		slug: "mindfulness-y-bienestar-laboral",
 		tipo: "TALLER",
-		imagen: "/images/crecimiento/galery-3.jpg",
+		imagen: "/images/crecimiento/gallery/galery-3.jpg",
 		codigoSence: "Por definir",
 		duracion: {
 			minimo: 80,
@@ -262,7 +262,7 @@ export const workshops: Record<string, Workshop> = {
 	"inteligencia-emocional-aplicada-al-trabajo": {
 		nombre: "Inteligencia Emocional Aplicada al Trabajo",
 		slug: "inteligencia-emocional-aplicada-al-trabajo",
-		imagen: "/images/crecimiento/galery-4.jpg",
+		imagen: "/images/crecimiento/gallery/galery-4.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -340,7 +340,7 @@ export const workshops: Record<string, Workshop> = {
 	"comunicacion-asertiva-y-relaciones-laborales-saludables": {
 		nombre: "Comunicación Asertiva y Relaciones Laborales Saludables",
 		slug: "comunicacion-asertiva-y-relaciones-laborales-saludables",
-		imagen: "/images/crecimiento/galery-5.jpg",
+		imagen: "/images/crecimiento/gallery/galery-5.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -418,7 +418,7 @@ export const workshops: Record<string, Workshop> = {
 	"coaching-para-la-gestion-del-cambio-organizacional": {
 		nombre: "Coaching para la Gestión del Cambio Organizacional",
 		slug: "coaching-para-la-gestion-del-cambio-organizacional",
-		imagen: "/images/crecimiento/galery-6.jpg",
+		imagen: "/images/crecimiento/gallery/galery-6.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -496,7 +496,7 @@ export const workshops: Record<string, Workshop> = {
 	"autoliderazgo-y-desarrollo-personal": {
 		nombre: "Autoliderazgo y Desarrollo Personal",
 		slug: "autoliderazgo-y-desarrollo-personal",
-		imagen: "/images/crecimiento/galery-6.jpg",
+		imagen: "/images/crecimiento/gallery/galery-6.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -652,7 +652,7 @@ export const workshops: Record<string, Workshop> = {
 	"trabajo-en-equipo-y-sinergia-organizacional": {
 		nombre: "Trabajo en Equipo y Sinergia Organizacional",
 		slug: "trabajo-en-equipo-y-sinergia-organizacional",
-		imagen: "/images/crecimiento/galery-8.jpg",
+		imagen: "/images/crecimiento/gallery/galery-8.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -730,7 +730,7 @@ export const workshops: Record<string, Workshop> = {
 	"gestion-del-tiempo-y-productividad-personal": {
 		nombre: "Gestión del Tiempo y Productividad Personal",
 		slug: "gestion-del-tiempo-y-productividad-personal",
-		imagen: "/images/crecimiento/galery-9.jpg",
+		imagen: "/images/crecimiento/gallery/galery-9.jpg",
 		tipo: "TALLER",
 		codigoSence: "Por definir",
 		duracion: {
@@ -810,7 +810,7 @@ export const workshops: Record<string, Workshop> = {
 			nombre:
 				"Liderazgo y Convivencia Laboral: Comunicación Efectiva, Trabajo en Equipo y Prevención del Acoso según Ley Karin",
 			slug: "liderazgo-y-convivencia-laboral-comunicacion-efectiva-trabajo-en-equipo-y-prevencion-del-acoso-ley-karin",
-			imagen: "/images/crecimiento/galery-10.jpg",
+			imagen: "/images/crecimiento/gallery/galery-10.jpg",
 			tipo: "TALLER",
 			codigoSence: "Por definir",
 			duracion: {

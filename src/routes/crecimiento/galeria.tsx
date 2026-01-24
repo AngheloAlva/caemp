@@ -1,28 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router"
-import { useState } from "react"
-import { motion, AnimatePresence } from "motion/react"
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
+import { createFileRoute } from "@tanstack/react-router"
+import { motion, AnimatePresence } from "motion/react"
+import { useState } from "react"
 
-import { Button } from "@/components/ui/button"
-import { Image } from "@/components/shared/image"
 import HeroPage from "@/components/sections/growth/hero-page"
+import { galleryImages } from "@/data/crecimiento/gallery"
+import { Image } from "@/components/shared/image"
+import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/crecimiento/galeria")({
 	component: RouteComponent,
 })
-
-const galleryImages = [
-	{ src: "/images/crecimiento/galery-1.jpg", alt: "Transformación en acción" },
-	{ src: "/images/crecimiento/galery-2.jpg", alt: "Equipos conectados" },
-	{ src: "/images/crecimiento/galery-3.jpg", alt: "Liderazgo consciente" },
-	{ src: "/images/crecimiento/galery-4.jpg", alt: "Aprendizaje experiencial" },
-	{ src: "/images/crecimiento/galery-5.jpg", alt: "Dinámicas de grupo" },
-	{ src: "/images/crecimiento/galery-6.jpg", alt: "Colaboración efectiva" },
-	{ src: "/images/crecimiento/galery-7.jpg", alt: "Desarrollo de habilidades" },
-	{ src: "/images/crecimiento/galery-8.jpg", alt: "Momentos compartidos" },
-	{ src: "/images/crecimiento/galery-9.jpg", alt: "Crecimiento personal" },
-	{ src: "/images/crecimiento/galery-10.jpg", alt: "Conexión humana" },
-]
 
 function RouteComponent() {
 	const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
