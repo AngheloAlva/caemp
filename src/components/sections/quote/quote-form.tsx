@@ -57,7 +57,7 @@ export function QuoteForm({ defaultCourse }: QuoteFormProps) {
 					})
 					.filter(Boolean)
 
-				const response = await fetch("/api/quote", {
+				const response = await fetch(`${process.env.VITE_PUBLIC_BASE_URL}/api/quote`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Loader2Icon } from "lucide-react"
 import { SuccessNotification } from "@/components/ui/success-notification"
+import { postApi } from "@/lib/api"
 
 interface BusinessLineContactProps {
 	title: string
@@ -94,25 +95,13 @@ export function BusinessLineContact({
 				green: "plus",
 			} as const
 
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					fullName: formData.fullName,
-					email: formData.email,
-					phone: formData.phone,
-					message: formData.message,
-					businessLine: businessLineMap[variant],
-				}),
+			await postApi("/api/contact", {
+				fullName: formData.fullName,
+				email: formData.email,
+				phone: formData.phone,
+				message: formData.message,
+				businessLine: businessLineMap[variant],
 			})
-
-			const data = await response.json()
-
-			if (!response.ok) {
-				throw new Error(data.error || "Error al enviar el mensaje")
-			}
 
 			setSubmitStatus("success")
 			setFormData({

@@ -9,6 +9,7 @@ import { StaggerItem } from "@/components/animations/stagger-item"
 import { FadeIn } from "@/components/animations/fade-in"
 import { Button } from "@/components/ui/button"
 import { SuccessNotification } from "@/components/ui/success-notification"
+import { postApi } from "@/lib/api"
 
 const contactInfo = [
 	{
@@ -49,25 +50,13 @@ export default function Contact() {
 		setErrorMessage("")
 
 		try {
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					fullName: formData.fullName,
-					email: formData.email,
-					phone: formData.phone,
-					message: formData.message,
-					businessLine: "grupo",
-				}),
+			await postApi("/api/contact", {
+				fullName: formData.fullName,
+				email: formData.email,
+				phone: formData.phone,
+				message: formData.message,
+				businessLine: "grupo",
 			})
-
-			const data = await response.json()
-
-			if (!response.ok) {
-				throw new Error(data.error || "Error al enviar el mensaje")
-			}
 
 			setSubmitStatus("success")
 			setFormData({

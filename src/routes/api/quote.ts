@@ -2,10 +2,11 @@ import { createFileRoute } from "@tanstack/react-router"
 import { Resend } from "resend"
 import { z } from "zod"
 import QuoteEmail from "../../../emails/quote-email"
+import { handleCorsPreFlight, addCorsHeaders } from "@/lib/cors"
 
 const quoteSchema = z.object({
 	fullName: z.string().min(3, "El nombre debe tener al menos 3 caracteres"),
-	email: z.string().email("Email inválido"),
+	email: z.email("Email inválido"),
 	phone: z.string().min(9, "Teléfono inválido"),
 	role: z.string().min(2, "El cargo es requerido"),
 	companyName: z.string().optional(),
@@ -27,29 +28,34 @@ const businessLineNames = {
 export const Route = createFileRoute("/api/quote")({
 	server: {
 		handlers: {
+			// Handle OPTIONS preflight for CORS
+			OPTIONS: async ({ request }) => {
+				return handleCorsPreFlight(request)
+			},
 			POST: async ({ request }) => {
 				try {
 					const body = await request.json()
 					const result = quoteSchema.safeParse(body)
+
 					if (!result.success) {
-						return Response.json(
+						const response = Response.json(
 							{ error: "Datos inválidos", details: result.error.issues },
 							{ status: 400 }
 						)
+						return addCorsHeaders(response, request)
 					}
 
 					const data = result.data
 					const timestamp = Math.floor(Date.now() / 60000)
 					const companySlug = data.companyName?.toLowerCase().replace(/\s+/g, "-") || "individual"
 					const idempotencyKey = `quote-${data.businessLine}/${companySlug}/${data.email}/${timestamp}`
-
 					const resend = new Resend(process.env.RESEND_API_KEY)
 					const lineName = businessLineNames[data.businessLine]
 
 					const { data: emailData, error } = await resend.emails.send(
 						{
-							from: "Caemp <web@grupocaemp.cl>",
-							to: "anghelo.alva.q@gmail.com",
+							from: "Acme <onboarding@resend.dev>",
+							to: "delivered@resend.dev",
 							subject: `Nueva solicitud de cotización - ${lineName}`,
 							react: QuoteEmail({
 								fullName: data.fullName,
@@ -75,35 +81,40 @@ export const Route = createFileRoute("/api/quote")({
 
 					if (error) {
 						console.error("Error sending email:", error)
+
+						let errorResponse
 						if (error.statusCode === 429) {
-							return Response.json(
+							errorResponse = Response.json(
 								{ error: "Demasiadas solicitudes", code: "RATE_LIMITED" },
 								{ status: 429 }
 							)
-						}
-						if (error.statusCode === 422) {
-							return Response.json(
+						} else if (error.statusCode === 422) {
+							errorResponse = Response.json(
 								{ error: "Datos inválidos", details: error.message, code: "VALIDATION_ERROR" },
 								{ status: 422 }
 							)
+						} else {
+							errorResponse = Response.json(
+								{ error: "Error al enviar", details: error.message, code: "SEND_ERROR" },
+								{ status: 500 }
+							)
 						}
-						return Response.json(
-							{ error: "Error al enviar", details: error.message, code: "SEND_ERROR" },
-							{ status: 500 }
-						)
+						return addCorsHeaders(errorResponse, request)
 					}
 
-					return Response.json({
+					const response = Response.json({
 						success: true,
 						message: "Cotización solicitada correctamente",
 						emailId: emailData?.id,
 					})
+					return addCorsHeaders(response, request)
 				} catch (error) {
 					console.error("Unexpected error:", error)
-					return Response.json(
+					const response = Response.json(
 						{ error: "Error inesperado", code: "UNEXPECTED_ERROR" },
 						{ status: 500 }
 					)
+					return addCorsHeaders(response, request)
 				}
 			},
 		},
