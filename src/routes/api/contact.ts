@@ -48,7 +48,7 @@ export const Route = createFileRoute("/api/contact")({
 					const { data: emailData, error } = await resend.emails.send(
 						{
 							from: "Caemp <web@grupocaemp.cl>",
-							to: "anghelo.alva.q@gmail.com",
+							to: "pdiaz@caemp.cl",
 							subject: `Nuevo mensaje de contacto - ${lineName}`,
 							react: ContactEmail({
 								fullName: data.fullName,

@@ -55,7 +55,7 @@ export const Route = createFileRoute("/api/quote")({
 					const { data: emailData, error } = await resend.emails.send(
 						{
 							from: "Caemp <web@grupocaemp.cl>",
-							to: "anghelo.alva.q@gmail.com",
+							to: "pdiaz@caemp.cl",
 							subject: `Nueva solicitud de cotización - ${lineName}`,
 							react: QuoteEmail({
 								fullName: data.fullName,
