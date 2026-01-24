@@ -4,6 +4,16 @@ import { useEffect } from "react"
 import { getSEOMetadata, getTenantContext } from "@/lib/seo"
 import { getStructuredData } from "@/lib/structured-data"
 
+/**
+ * Returns the favicon path based on the current pathname/tenant
+ */
+function getFaviconForTenant(pathname: string): string {
+	if (pathname.startsWith("/crecimiento")) return "/logo-crecimiento.png"
+	if (pathname.startsWith("/plus")) return "/logo-plus.png"
+	// OTEC and Group use the same CAEMP logo
+	return "/logo-caemp.png"
+}
+
 export function SEOHead() {
 	const routerState = useRouterState()
 	const pathname = routerState.location.pathname
@@ -51,6 +61,9 @@ export function SEOHead() {
 
 		// Canonical URL
 		updateOrCreateLink("canonical", canonical)
+
+		// Favicon - dynamic per tenant
+		updateOrCreateLink("icon", getFaviconForTenant(pathname))
 
 		// Structured Data
 		updateStructuredData(getStructuredData(pathname))
