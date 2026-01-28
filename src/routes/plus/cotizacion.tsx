@@ -116,7 +116,7 @@ function RouteComponent() {
 
 								<div className="flex items-center gap-2 text-sm">
 									<MailIcon className="h-4 w-4" />
-									<a href="mailto:ventas@caemp.cl">ventas@caemp.cl</a>
+									<a href="mailto:grupo@caemp.cl">grupo@caemp.cl</a>
 								</div>
 							</div>
 						</CardContent>

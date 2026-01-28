@@ -30,7 +30,7 @@ const companies = [
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "ventas@caemp.cl",
+		email: "grupo@caemp.cl",
 		link: "/plus",
 	},
 	{

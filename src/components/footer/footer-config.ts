@@ -56,7 +56,7 @@ export const plusFooterConfig: FooterConfig = {
 		{ to: "/plus/productos", label: "Productos" },
 		{ to: "/plus/contacto", label: "Contacto" },
 	],
-	email: "ventas@caemp.cl",
+	email: "grupo@caemp.cl",
 	phone: "+56 2 2667 6455",
 	tagline:
 		"Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral.",
