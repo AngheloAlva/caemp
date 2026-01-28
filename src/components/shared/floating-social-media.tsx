@@ -3,6 +3,7 @@
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "lucide-react"
 import { WhatsappIcon } from "../icons/whatsapp-icon"
 import { motion } from "motion/react"
+import { useState, useEffect } from "react"
 
 import { cn } from "@/lib/utils"
 import { type DomainType, getTenantFromHost } from "@/lib/domains"
@@ -61,8 +62,12 @@ function getSocialLinks(tenant: DomainType) {
 }
 
 export function FloatingSocialMedia() {
-	const tenant =
-		typeof window !== "undefined" ? getTenantFromHost(window.location.hostname) : "group"
+	const [tenant, setTenant] = useState<DomainType>("group")
+
+	useEffect(() => {
+		setTenant(getTenantFromHost(window.location.hostname))
+	}, [])
+
 	const socialLinks = getSocialLinks(tenant)
 	return (
 		<div className="fixed right-4 bottom-4 z-50 flex flex-col gap-2 rounded-full bg-white p-1.5 shadow-xl md:right-6 md:bottom-6">
