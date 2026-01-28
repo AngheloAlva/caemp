@@ -54,13 +54,13 @@ function RouteComponent() {
 							>
 								<div className="aspect-square overflow-hidden">
 									<Image
-										src={image.src}
-										alt={image.alt}
 										width={400}
 										height={400}
-										className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
 										loading="lazy"
+										src={image.src}
+										alt={image.alt}
 										decoding="async"
+										className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
 									/>
 								</div>
 								<div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
@@ -111,7 +111,7 @@ function RouteComponent() {
 								className="max-h-[85vh] w-auto object-contain shadow-2xl"
 							/>
 							<div className="absolute right-0 bottom-0 left-0 bg-black/60 p-4 text-center text-white backdrop-blur-md">
-								<p className="text-lg font-medium">{galleryImages[selectedImageIndex].alt}</p>
+								<p className="text-lg font-medium">Imagen {selectedImageIndex + 1}</p>
 							</div>
 						</div>
 

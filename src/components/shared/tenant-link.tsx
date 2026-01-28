@@ -6,6 +6,7 @@ type TenantLinkProps = {
 	to: string
 	children: React.ReactNode
 	className?: string
+	onClick?: () => void
 }
 
 /**
@@ -74,39 +75,34 @@ function removePrefix(path: string, tenant: DomainType): string {
  * <TenantLink to="/plus/productos">Productos</TenantLink>
  * // Renders: <Link to="/plus/productos">Productos</Link> (SPA nav, rewrite handles URL)
  */
-export function TenantLink({ to, children, className }: TenantLinkProps) {
-	// Get current tenant from hostname (works on both client and server)
+export function TenantLink({ to, children, className, onClick }: TenantLinkProps) {
 	const currentTenant =
 		typeof window !== "undefined" ? getTenantFromHost(window.location.hostname) : "group"
 
-	// Get target tenant from the path
 	const targetTenant = getTenantFromPath(to)
 
-	// If we can't determine target tenant, fall back to regular Link
 	if (!targetTenant) {
 		return (
-			<Link to={to} className={className}>
+			<Link to={to} className={className} onClick={onClick}>
 				{children}
 			</Link>
 		)
 	}
 
-	// Same tenant = use SPA navigation
 	if (currentTenant === targetTenant) {
 		return (
-			<Link to={to} className={className}>
+			<Link to={to} className={className} onClick={onClick}>
 				{children}
 			</Link>
 		)
 	}
 
-	// Different tenant = use full URL with anchor tag
 	const domain = getDomainForTenant(targetTenant)
 	const pathWithoutPrefix = removePrefix(to, targetTenant)
 	const fullUrl = `https://${domain}${pathWithoutPrefix}`
 
 	return (
-		<a href={fullUrl} className={className}>
+		<a href={fullUrl} className={className} onClick={onClick}>
 			{children}
 		</a>
 	)

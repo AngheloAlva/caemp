@@ -5,39 +5,65 @@ import { WhatsappIcon } from "../icons/whatsapp-icon"
 import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
+import { type DomainType, getTenantFromHost } from "@/lib/domains"
 
-const socialLinks = [
-	{
-		name: "Instagram",
-		icon: InstagramIcon,
-		href: "https://www.instagram.com/caemp.cl",
-		bgColor: "bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500",
-		hoverColor: "hover:from-purple-700 hover:via-pink-700 hover:to-orange-600",
+const SOCIAL_CONFIG: Record<DomainType, { instagram: string; whatsapp: string }> = {
+	growth: {
+		instagram: "https://www.instagram.com/crecimientospa?igsh=MXB1M3lpcTVxamR5Mg==",
+		whatsapp: "56998843486",
 	},
-	{
-		name: "Facebook",
-		icon: FacebookIcon,
-		href: "https://www.facebook.com/p/CAEMP-CHILE-100076324844004",
-		bgColor: "bg-blue-600",
-		hoverColor: "hover:bg-blue-700",
+	plus: {
+		instagram: "https://www.instagram.com/caemp.plus",
+		whatsapp: "56930672784",
 	},
-	{
-		name: "LinkedIn",
-		icon: LinkedinIcon,
-		href: "https://www.linkedin.com/company/caempchile",
-		bgColor: "bg-blue-700",
-		hoverColor: "hover:bg-blue-800",
+	otec: {
+		instagram: "https://www.instagram.com/caemp.cl",
+		whatsapp: "56930672784",
 	},
-	{
-		name: "WhatsApp",
-		icon: WhatsappIcon,
-		href: "https://wa.me/56932478827?text=Hola!%20Me%20gustar%C3%ADa%20tener%20m%C3%A1s%20informaci%C3%B3n%20de%20www.caemp.cl",
-		bgColor: "bg-green-600",
-		hoverColor: "hover:bg-green-700",
+	group: {
+		instagram: "https://www.instagram.com/caemp.cl",
+		whatsapp: "56930672784",
 	},
-]
+}
+
+function getSocialLinks(tenant: DomainType) {
+	const config = SOCIAL_CONFIG[tenant]
+	return [
+		{
+			name: "Instagram",
+			icon: InstagramIcon,
+			href: config.instagram,
+			bgColor: "bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500",
+			hoverColor: "hover:from-purple-700 hover:via-pink-700 hover:to-orange-600",
+		},
+		{
+			name: "Facebook",
+			icon: FacebookIcon,
+			href: "https://www.facebook.com/p/CAEMP-CHILE-100076324844004",
+			bgColor: "bg-blue-600",
+			hoverColor: "hover:bg-blue-700",
+		},
+		{
+			name: "LinkedIn",
+			icon: LinkedinIcon,
+			href: "https://www.linkedin.com/company/caempchile",
+			bgColor: "bg-blue-700",
+			hoverColor: "hover:bg-blue-800",
+		},
+		{
+			name: "WhatsApp",
+			icon: WhatsappIcon,
+			href: `https://wa.me/${config.whatsapp}?text=Hola!%20Me%20gustar%C3%ADa%20tener%20m%C3%A1s%20informaci%C3%B3n`,
+			bgColor: "bg-green-600",
+			hoverColor: "hover:bg-green-700",
+		},
+	]
+}
 
 export function FloatingSocialMedia() {
+	const tenant =
+		typeof window !== "undefined" ? getTenantFromHost(window.location.hostname) : "group"
+	const socialLinks = getSocialLinks(tenant)
 	return (
 		<div className="fixed right-4 bottom-4 z-50 flex flex-col gap-2 rounded-full bg-white p-1.5 shadow-xl md:right-6 md:bottom-6">
 			{socialLinks.map((social, index) => {

@@ -18,6 +18,10 @@ export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 	const [empresasMenuOpen, setEmpresasMenuOpen] = useState(false)
 	const [serviciosMenuOpen, setServiciosMenuOpen] = useState(false)
+	const [mobileServiciosOpen, setMobileServiciosOpen] = useState(false)
+	const [mobileLineasOpen, setMobileLineasOpen] = useState(false)
+
+	const closeMobileMenu = () => setMobileMenuOpen(false)
 
 	const routerState = useRouterState()
 	const pathname = routerState.location.pathname
@@ -216,67 +220,115 @@ export function Header() {
 						exit={{ opacity: 0, height: 0 }}
 						transition={{ duration: 0.3 }}
 					>
-						<nav className="container flex flex-col gap-4 p-4">
+						<nav className="container flex flex-col px-2 py-4">
 							{config.navItems.map((item) => (
 								<NavItem
 									to={item.to}
 									label={item.label}
 									key={`${item.label}-${item.to}`}
 									lineOfBusiness={config.lineOfBusiness}
+									onClick={closeMobileMenu}
 								/>
 							))}
 
 							{isCrecimiento && (
-								<div className="border-t pt-4">
-									<p className="mb-2 text-xs font-semibold text-gray-500">Servicios</p>
-									<div className="flex flex-col gap-2">
-										{serviciosCrecimiento.map((servicio) => (
-											<Link
-												key={servicio.to}
-												to={servicio.to}
-												className="hover:text-primary-purple rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
+								<div className="border-t py-2">
+									<button
+										type="button"
+										onClick={() => setMobileServiciosOpen(!mobileServiciosOpen)}
+										className="flex w-full items-center justify-between py-2 text-xs font-semibold text-gray-500"
+									>
+										Servicios
+										<ChevronDown
+											className={cn("h-4 w-4 transition-transform", {
+												"rotate-180": mobileServiciosOpen,
+											})}
+										/>
+									</button>
+									<AnimatePresence>
+										{mobileServiciosOpen && (
+											<motion.div
+												initial={{ opacity: 0, height: 0 }}
+												animate={{ opacity: 1, height: "auto" }}
+												exit={{ opacity: 0, height: 0 }}
+												className="flex flex-col gap-0 overflow-hidden"
 											>
-												{servicio.label}
-											</Link>
-										))}
-									</div>
+												{serviciosCrecimiento.map((servicio) => (
+													<Link
+														key={servicio.to}
+														to={servicio.to}
+														onClick={closeMobileMenu}
+														className="hover:text-primary-purple rounded-md px-2 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
+													>
+														{servicio.label}
+													</Link>
+												))}
+											</motion.div>
+										)}
+									</AnimatePresence>
 								</div>
 							)}
 
-							<div className="border-t pt-4">
-								<p className="mb-2 text-xs font-semibold text-gray-500">Lineas de Negocio</p>
-								<div className="flex flex-col gap-2">
-									<TenantLink
-										to="/otec"
-										className="rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#F59E0B]"
-									>
-										CAEMP OTEC
-									</TenantLink>
-									<TenantLink
-										to="/plus"
-										className="hover:text-primary-green rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
-									>
-										CAEMP PLUS
-									</TenantLink>
-									<TenantLink
-										to="/crecimiento"
-										className="hover:text-primary-purple rounded-md py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
-									>
-										CRECIMIENTO
-									</TenantLink>
-									<TenantLink
-										to="/"
-										className="flex items-center gap-2 rounded-md py-2 text-sm font-semibold text-[#004080] hover:bg-blue-50"
-									>
-										<ArrowLeftIcon className="h-3 w-3" /> Grupo CAEMP
-									</TenantLink>
-								</div>
+							<div className="border-t py-2">
+								<button
+									type="button"
+									onClick={() => setMobileLineasOpen(!mobileLineasOpen)}
+									className="flex w-full items-center justify-between py-2 text-xs font-semibold text-gray-500"
+								>
+									Lineas de Negocio
+									<ChevronDown
+										className={cn("h-4 w-4 transition-transform", {
+											"rotate-180": mobileLineasOpen,
+										})}
+									/>
+								</button>
+								<AnimatePresence>
+									{mobileLineasOpen && (
+										<motion.div
+											initial={{ opacity: 0, height: 0 }}
+											animate={{ opacity: 1, height: "auto" }}
+											exit={{ opacity: 0, height: 0 }}
+											className="flex flex-col overflow-hidden"
+										>
+											<TenantLink
+												to="/otec"
+												onClick={closeMobileMenu}
+												className="rounded-md px-2 py-2 text-sm font-medium text-gray-700 hover:bg-orange-50 hover:text-[#F59E0B]"
+											>
+												CAEMP OTEC
+											</TenantLink>
+											<TenantLink
+												to="/plus"
+												onClick={closeMobileMenu}
+												className="hover:text-primary-green rounded-md px-2 py-2 text-sm font-medium text-gray-700 hover:bg-green-50"
+											>
+												CAEMP PLUS
+											</TenantLink>
+											<TenantLink
+												to="/crecimiento"
+												onClick={closeMobileMenu}
+												className="hover:text-primary-purple rounded-md px-2 py-2 text-sm font-medium text-gray-700 hover:bg-purple-50"
+											>
+												CRECIMIENTO
+											</TenantLink>
+											<TenantLink
+												to="/"
+												onClick={closeMobileMenu}
+												className="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-[#004080] hover:bg-blue-50"
+											>
+												<ArrowLeftIcon className="h-3 w-3" /> Grupo CAEMP
+											</TenantLink>
+										</motion.div>
+									)}
+								</AnimatePresence>
 							</div>
 
 							{config.ctaButton && (
 								<motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
 									<Button asChild className={cn("w-full", config.ctaButton.className)}>
-										<Link to={config.ctaButton.to}>{config.ctaButton.label}</Link>
+										<Link to={config.ctaButton.to} onClick={closeMobileMenu}>
+											{config.ctaButton.label}
+										</Link>
 									</Button>
 								</motion.div>
 							)}

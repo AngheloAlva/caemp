@@ -360,7 +360,7 @@ URL: https://www.bing.com/webmasters
 
 Si necesitas ayuda con la implementación SEO:
 
-- Email: grupocaemp@caemp.cl
+- Email: grupo@caemp.cl
 - Teléfono: +56 2 2667 6455
 
 ---
