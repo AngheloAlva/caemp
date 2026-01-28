@@ -80,7 +80,7 @@ export const otecStructuredData: LocalBusiness = {
 	"description":
 		"Organismo Técnico de Capacitación especializado en prevención de riesgos, seguridad laboral y entrenamiento ante emergencias. Cursos certificados SENCE.",
 	"telephone": "+56-2-2667-6455",
-	"email": "grupocaemp@caemp.cl",
+	"email": "grupo@caemp.cl",
 	"priceRange": "$$",
 	"areaServed": "Chile",
 	"contactPoint": [
@@ -113,7 +113,7 @@ export const crecimientoStructuredData: LocalBusiness = {
 	"description":
 		"Especialistas en desarrollo de habilidades blandas, coaching empresarial, team building y teatro aplicado. Transformamos equipos y potenciamos liderazgo.",
 	"telephone": "+56-9-9884-3486",
-	"email": "grupocaemp@caemp.cl",
+	"email": "grupo@caemp.cl",
 	"priceRange": "$$",
 	"areaServed": "Chile",
 	"contactPoint": [
@@ -146,7 +146,7 @@ export const plusStructuredData: LocalBusiness = {
 	"description":
 		"Comercialización de equipos de protección personal (EPP) y colectiva de última generación. Asesoría técnica especializada en seguridad laboral.",
 	"telephone": "+56-2-2667-6455",
-	"email": "grupocaemp@caemp.cl",
+	"email": "grupo@caemp.cl",
 	"priceRange": "$$",
 	"areaServed": "Chile",
 	"contactPoint": [

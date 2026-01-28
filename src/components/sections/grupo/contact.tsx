@@ -15,8 +15,8 @@ const contactInfo = [
 	{
 		icon: MailIcon,
 		label: "Email",
-		value: "grupocaemp@caemp.cl",
-		href: "mailto:grupocaemp@caemp.cl",
+		value: "grupo@caemp.cl",
+		href: "mailto:grupo@caemp.cl",
 	},
 	{
 		icon: PhoneIcon,

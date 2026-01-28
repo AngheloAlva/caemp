@@ -21,7 +21,7 @@ export const otecFooterConfig: FooterConfig = {
 		{ to: "/otec/galeria", label: "Galería" },
 		{ to: "/otec/contacto", label: "Contacto" },
 	],
-	email: "grupocaemp@caemp.cl",
+	email: "grupo@caemp.cl",
 	phone: "+56 2 2667 6455",
 	tagline:
 		"Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral.",
@@ -41,7 +41,7 @@ export const crecimientoFooterConfig: FooterConfig = {
 		{ to: "/crecimiento/nosotros", label: "Nosotros" },
 		{ to: "/crecimiento/contacto", label: "Contacto" },
 	],
-	email: "grupocaemp@caemp.cl",
+	email: "grupo@caemp.cl",
 	phone: "+56 2 2667 6455",
 	tagline: "Cambiamos culturas, despertamos líderes.",
 }
@@ -56,7 +56,7 @@ export const plusFooterConfig: FooterConfig = {
 		{ to: "/plus/productos", label: "Productos" },
 		{ to: "/plus/contacto", label: "Contacto" },
 	],
-	email: "ventas@caemplus",
+	email: "ventas@caemp.cl",
 	phone: "+56 2 2667 6455",
 	tagline:
 		"Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral.",
@@ -73,7 +73,7 @@ export const grupoFooterConfig: FooterConfig = {
 		{ to: "#quienes-somos", label: "Quiénes Somos" },
 		{ to: "#contacto", label: "Contacto" },
 	],
-	email: "grupocaemp@caemp.cl",
+	email: "grupo@caemp.cl",
 	phone: "+56 2 2667 6455",
 	tagline: "",
 }

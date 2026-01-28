@@ -1,13 +1,4 @@
 export const galleryImages = [
-	{ src: "/images/crecimiento/gallery/galery-1.jpg", alt: "Transformación en acción" },
-	{ src: "/images/crecimiento/gallery/galery-2.jpg", alt: "Equipos conectados" },
-	{ src: "/images/crecimiento/gallery/galery-3.jpg", alt: "Liderazgo consciente" },
-	{ src: "/images/crecimiento/gallery/galery-4.jpg", alt: "Aprendizaje experiencial" },
-	{ src: "/images/crecimiento/gallery/galery-5.jpg", alt: "Dinámicas de grupo" },
-	{ src: "/images/crecimiento/gallery/galery-6.jpg", alt: "Colaboración efectiva" },
-	{ src: "/images/crecimiento/gallery/galery-8.jpg", alt: "Momentos compartidos" },
-	{ src: "/images/crecimiento/gallery/galery-9.jpg", alt: "Crecimiento personal" },
-	{ src: "/images/crecimiento/gallery/galery-10.jpg", alt: "Conexión humana" },
 	{ src: "/images/crecimiento/gallery/gallery-11.jpg", alt: "Transformación en acción" },
 	{ src: "/images/crecimiento/gallery/gallery-12.jpg", alt: "Equipos conectados" },
 	{ src: "/images/crecimiento/gallery/gallery-13.jpg", alt: "Liderazgo consciente" },

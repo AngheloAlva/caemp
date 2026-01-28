@@ -16,8 +16,8 @@ function RouteComponent() {
 			contactInfo={[
 				{
 					icon: MailIcon,
-					value: "ventas@caemplus",
-					href: "mailto:ventas@caemplus",
+					value: "ventas@caemp.cl",
+					href: "mailto:ventas@caemp.cl",
 				},
 				{
 					icon: PhoneIcon,

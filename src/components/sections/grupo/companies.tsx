@@ -19,7 +19,7 @@ const companies = [
 		description:
 			"Capacitación, entrenamiento y respuesta ante emergencias. Diseñamos programas certificados por SENCE en sectores como minería, energía, telecomunicaciones y maestranzas.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "grupocaemp@caemp.cl",
+		email: "grupo@caemp.cl",
 		link: "/otec",
 	},
 	{
@@ -30,7 +30,7 @@ const companies = [
 		description:
 			"Comercialización de equipos de protección personal y colectiva de última generación. Brindamos asesoría técnica especializada para garantizar la seguridad en cada entorno de trabajo.",
 		address: "Blas Vial 8727, La Cisterna, Santiago",
-		email: "ventas@caemplus",
+		email: "ventas@caemp.cl",
 		link: "/plus",
 	},
 	{
@@ -41,7 +41,7 @@ const companies = [
 		description:
 			"Potenciamos el liderazgo, la comunicación y la colaboración. Diseñamos programas de capacitación y talleres personalizados que fortalecen las habilidades blandas.",
 		address: "Irarrazaval 5225, oficina 1",
-		email: "grupocaemp@caemp.cl",
+		email: "grupo@caemp.cl",
 		link: "/crecimiento",
 	},
 ]
