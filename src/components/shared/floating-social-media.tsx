@@ -19,11 +19,11 @@ const SOCIAL_CONFIG: Record<DomainType, { instagram: string; whatsapp: string }>
 	},
 	otec: {
 		instagram: "https://www.instagram.com/caemp.cl",
-		whatsapp: "56888080195",
+		whatsapp: "56988080195",
 	},
 	group: {
 		instagram: "https://www.instagram.com/caemp.cl",
-		whatsapp: "56888080195",
+		whatsapp: "56988080195",
 	},
 }
 
