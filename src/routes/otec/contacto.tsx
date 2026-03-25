@@ -21,8 +21,8 @@ function RouteComponent() {
 				},
 				{
 					icon: PhoneIcon,
-					value: "+56 2 2667 6455",
-					href: "tel:+56226676455",
+					value: "+56 9 4476 9378",
+					href: "tel:+56944769378",
 				},
 				{
 					icon: MapPinIcon,

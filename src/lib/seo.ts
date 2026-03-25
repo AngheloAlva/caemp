@@ -56,7 +56,7 @@ export const otecSEO: Record<string, SEOMetadata> = {
 	"/otec/contacto": {
 		title: "Contacto | CAEMP OTEC - Solicita una Cotización",
 		description:
-			"Contáctanos para cotizar cursos de capacitación y seguridad laboral. Irarrazaval 5225, oficina 1. Tel: +56 2 2667 6455",
+			"Contáctanos para cotizar cursos de capacitación y seguridad laboral. Irarrazaval 5225, oficina 1. Tel: +56 9 4476 9378",
 		keywords: "contacto OTEC, cotización cursos, capacitación Chile",
 	},
 }

@@ -22,7 +22,7 @@ export const otecFooterConfig: FooterConfig = {
 		{ to: "/otec/contacto", label: "Contacto" },
 	],
 	email: "grupo@caemp.cl",
-	phone: "+56 2 2667 6455",
+	phone: "+56 9 4476 9378",
 	tagline:
 		"Especialistas en capacitación y entrenamiento en prevención de riesgos y seguridad laboral.",
 }

@@ -104,7 +104,7 @@ function RouteComponent() {
 							<div className="space-y-2">
 								<div className="flex items-center gap-2 text-sm">
 									<PhoneIcon className="h-4 w-4" />
-									<span>+56 2 2667 6455</span>
+									<span>+56 9 4476 9378</span>
 								</div>
 
 								<div className="flex items-center gap-2 text-sm">
