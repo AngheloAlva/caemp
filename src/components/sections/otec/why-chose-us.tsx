@@ -155,10 +155,6 @@ export default function WhyChoseUs(): React.ReactElement {
 							title: "SCI",
 						},
 						{
-							image: "/images/otec/ipaf.png",
-							title: "IPAF",
-						},
-						{
 							image: "/images/otec/ecsi.png",
 							title: "ECSI",
 							className: "md:w-[320px]",
