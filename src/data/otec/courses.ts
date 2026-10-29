@@ -510,7 +510,7 @@ export const courses: Record<string, OtecCourse> = {
 		title: "RIGGER BAJO TONELAJE",
 		images: ["rigger-bajo-tonelaje.jpg"],
 		competencies: [
-			"Al finalizar el curso de Rigger, los participantes serán capaces de desarrollar competencias clave para llevar a cabo operaciones de izaje de cargas de manera segura y eficiente. Esto incluye un profundo conocimiento de las normativas locales y regulaciones pertinentes, así como la capacidad de planificar y ejecutar operaciones de izaje, operar equipos de elevación con destreza, gestionar riegos y resolver problemas en situaciones desafiantes. Además adquirirán habilidades de comunicación y trabajo en equipo para colaborar efectivamente en entornos laborales, promoverán la conciencia ambiental y actuaran con ética y responsabilidad profesional en todas sus actividades de Rigger.",
+			"Al finalizar el curso de Rigger, los participantes serán capaces de desarrollar competencias clave para llevar a cabo operaciones de izaje de cargas de manera segura y eficiente. Esto incluye un profundo conocimiento de las normativas locales y regulaciones pertinentes, así como la capacidad de planificar y ejecutar operaciones de izaje, operar equipos de elevación con destreza, gestionar riesgos y resolver problemas en situaciones desafiantes. Además adquirirán habilidades de comunicación y trabajo en equipo para colaborar efectivamente en entornos laborales, promoverán la conciencia ambiental y actuaran con ética y responsabilidad profesional en todas sus actividades de Rigger.",
 		],
 		directedTo: [
 			"Colaboradores que , según sus labores, requieren realizar trabajos en izaje y rigger con cargas menores a 20 Toneladas",
@@ -888,7 +888,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-riegos-electricos": {
 		id: 8,
 		slug: "tecnicas-trabajo-riegos-electricos",
-		title: "TÉCNICAS PARA TRABAJO CON RIEGOS ELÉCTRICOS",
+		title: "TÉCNICAS PARA TRABAJO CON RIESGOS ELÉCTRICOS",
 		images: ["tecnicas-trabajo-riegos-electricos.jpg"],
 		competencies: [
 			"Identificar el peligro",
@@ -897,7 +897,7 @@ export const courses: Record<string, OtecCourse> = {
 			"Cumplir con legislación vigente y estándares nacionales e internacionales en la materia",
 		],
 		directedTo: [
-			"Colaboradores que, según sus labores, requieren realizar trabajos con riegos eléctricos",
+			"Colaboradores que, según sus labores, requieren realizar trabajos con riesgos eléctricos",
 		],
 		preRequisites: [
 			"Manejo de lectoescritura",
