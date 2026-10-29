@@ -12,6 +12,118 @@ export interface OtecCourse {
 }
 
 export const courses: Record<string, OtecCourse> = {
+	"conduccion-segura-en-manejo-4x4": {
+		id: 12,
+		slug: "conduccion-segura-en-manejo-4x4",
+		title: "CONDUCCIÓN SEGURA EN MANEJO 4X4",
+		images: ["conduccion-segura-en-manejo-4x4.jpg"],
+		competencies: [
+			"Al finalizar la capacitación, los participantes serán capaces de operar y conducir vehículos con tracción integral (4x4) de forma eficiente y segura, aplicando técnicas avanzadas de conducción en terrenos complejos y utilizando los elementos de autorrescate según la normativa interna de seguridad y la legislación vial vigente.",
+		],
+		directedTo: [
+			"Operadores, supervisores, geólogos, ingenieros, prevencionistas de riesgos y personal de terreno de empresas mineras, eléctricas, forestales o de telecomunicaciones que deban conducir camionetas o vehículos 4x4.",
+		],
+		preRequisites: [
+			"Manejo de lectoescritura.",
+			"Mayor de 18 años.",
+			"Salud compatible con altura física y/o geográfica según corresponda.",
+			"Licencia de conducir vigente correspondiente al tipo de vehículo que operará.",
+		],
+		theoreticalContent: [
+			"Principios mecánicos y sistemas de tracción. Diferencia entre tracciones. Funcionamiento y uso correcto del selector de tracción. Principios del diferencial. Ángulos de carrocería.",
+			"Preparación del vehículo, neumáticos y estiba de carga. Inspección pre-operacional. Tipos de neumáticos para uso todoterreno. Leyes físicas aplicadas. Correcto estibado.",
+			"Técnicas de conducción en terrenos complejos y adversos. Conducción en pendientes. Técnicas según el suelo. Técnicas de vadeo seguro en ríos y pasos de agua. Maniobras de emergencias ante pérdida de tracción o tensión de motor.",
+			"Elementos de rescate y gestión de emergencias. Uso y manejo del winch. Implementos de rescate textil. Uso de accesorios complementarios.",
+		],
+		practicalContent: [
+			"Talleres prácticos rotativos.",
+			"Realizar inspección del vehículo.",
+			"Configurar la presión de aire.",
+			"Conducir en diferentes obstáculos bajo supervisión directa.",
+			"Simulación de desatascamiento.",
+			"Conducción en pendientes y según el suelo.",
+		],
+		methodology: [
+			"Clases expositivas interactivas apoyadas por análisis reales de accidentes corporativos para fomentar el debate sobre malas prácticas. Actividades individuales en circuito cerrado, pista de pruebas acondicionadas o terreno natural autorizado.",
+		],
+	},
+	"tecnicas-de-cabalgata-segura-y-prevencion-de-riesgos-en-alta-montana": {
+		id: 13,
+		slug: "tecnicas-de-cabalgata-segura-y-prevencion-de-riesgos-en-alta-montana",
+		title: "TÉCNICAS DE CABALGATA SEGURA Y PREVENCIÓN DE RIESGOS EN ALTA MONTAÑA",
+		images: ["tecnicas-de-cabalgata-segura-y-prevencion-de-riesgos-en-alta-montana.jpg"],
+		competencies: [
+			"Al finalizar la capacitación, los participantes serán capaces de aplicar técnicas fundamentales de manejo, ensillado y conducción segura del caballo, mitigando riesgos operativos conforme a la geografía del terreno y los protocolos de seguridad vigentes.",
+		],
+		directedTo: [
+			"Está dirigido a guías de turismo, arrieros y personal de exploración minera o forestal, y público general que requiera el uso de caballo como medio de transporte en zonas de difícil acceso.",
+		],
+		preRequisites: [
+			"Manejo de lectoescritura.",
+			"Mayor de 18 años.",
+			"Salud compatible con altura física y/o geográfica según corresponda.",
+			"Uso obligatorio de elementos de protección personal mínimos.",
+		],
+		theoreticalContent: [
+			"Introducción y etología del equino. Conceptos básicos y evolución del uso del equino en la montaña.",
+			"Psicología y salud del animal.",
+			"Equipamiento, aperos y ensillado.",
+			"Tipos de monturas.",
+			"Uso correcto de riendas, frenos, estribos y cinchas.",
+			"Limpieza de caballo y cuidado.",
+			"Técnicas de conducción en terrenos complejos.",
+			"Postura del jinete y distribución de peso corporal.",
+			"Técnicas específicas para el ascenso y descenso seguro en pendientes pronunciadas.",
+			"Manejo al paso, trote y control de situaciones de crisis.",
+			"Seguridad, normativa y gestión de riesgos.",
+			"Equipamiento de seguridad para el jinete.",
+			"Estándares de seguridad exigidos por el manual de cabalgata de Sernatur.",
+			"Planes de emergencia y manejo de caídas o accidentes en zonas remotas.",
+		],
+		practicalContent: [
+			"Actividades de simulación directa con caballos en picadero controlado.",
+			"Salida práctica en terreno con diferentes estructuras y pendientes.",
+			"Cuidados y ensillado de caballos.",
+			"Tiempos de trabajo y carga.",
+			"Medidas de seguridad con el caballo.",
+		],
+		methodology: [
+			"El curso adopta un enfoque teórico-práctico centrado en la experiencia directa.",
+		],
+	},
+	"tecnicas-de-manejo-defensivo": {
+		id: 14,
+		slug: "tecnicas-de-manejo-defensivo",
+		title: "TÉCNICAS DE MANEJO DEFENSIVO",
+		images: ["tecnicas-de-manejo-defensivo.jpg"],
+		competencies: [
+			"Al finalizar la capacitación, los participantes serán capaces de aplicar técnicas avanzadas de manejo a la defensiva y seguridad vial, reconociendo y anticipando los factores de riesgos del entorno para evitar accidentes de tránsito, de acuerdo con la legislación vigente.",
+		],
+		directedTo: [
+			"Conductores de flotas comerciales, choferes profesionales, operadores de camionetas en faenas mineras o forestales y personal que utilice vehículos corporativos.",
+		],
+		preRequisites: [
+			"Manejo de lectoescritura.",
+			"Mayor de 18 años.",
+			"Salud compatible con altura física y/o geográfica según corresponda.",
+			"Licencia de conducir vigente correspondiente al tipo de vehículo que operará.",
+		],
+		theoreticalContent: [
+			"Marco legal y estadísticas de accidentabilidad.",
+			"Conceptos y fórmulas del manejo defensivo.",
+			"El factor humano y la psicología del conductor.",
+			"Aplicación práctica e inspección de seguridad.",
+		],
+		practicalContent: [
+			"Identificar las principales causas de accidentes viales y el marco legal que regula el tránsito.",
+			"Reconocer los principios del manejo a la defensiva y la fórmula para evitar accidentes frente a condiciones adversas.",
+			"Evaluar la influencia de factores humanos como la fatiga, el estrés, el alcohol y las drogas en las capacidades de conducción.",
+			"Ejecutar maniobras de conducción defensiva e inspección del vehículo en un entorno práctico controlado.",
+		],
+		methodology: [
+			"Clases expositivas interactivas apoyadas por análisis reales de accidentes corporativos para fomentar el debate sobre malas prácticas. Actividades individuales en terreno, donde se corrigen hábitos de conducción en tiempo real.",
+		],
+	},
 	"primeros-auxilios-y-manejo-de-traumas": {
 		id: 2,
 		slug: "primeros-auxilios-y-manejo-de-traumas",
