@@ -65,7 +65,7 @@ export const courses: Record<string, OtecCourse> = {
 			"Uso obligatorio de elementos de protección personal mínimos.",
 		],
 		theoreticalContent: [
-			"Introducción y etología del equino. Conceptos básicos y evolución del uso del equino en la montaña.",
+			"Introducción y Etiología del equino. Conceptos básicos y evolución del uso del equipo en la montaña.",
 			"Psicología y salud del animal.",
 			"Equipamiento, aperos y ensillado.",
 			"Tipos de monturas.",
@@ -364,7 +364,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnica-de-comunicacion-efectiva": {
 		id: 7,
 		slug: "tecnica-de-comunicacion-efectiva",
-		title: "Técnica de Comunicación Efectiva",
+		title: "TÉCNICA DE COMUNICACIÓN EFECTIVA",
 		images: ["tecnica-de-comunicacion-efectiva.jpg"],
 		competencies: [
 			"Identificar fundamentos, características y principios de la comunicación organizacional, utilizando herramientas efectivas.",
@@ -405,7 +405,7 @@ export const courses: Record<string, OtecCourse> = {
 	"estrategias-para-fortalecer-el-liderazgo-efectivo": {
 		id: 8,
 		slug: "estrategias-para-fortalecer-el-liderazgo-efectivo",
-		title: "Estrategias Para Fortalecer El Liderazgo Efectivo",
+		title: "ESTRATEGIAS PARA FORTALECER EL LIDERAZGO EFECTIVO",
 		images: [
 			"estrategias-para-fortalecer-el-liderazgo-efectivo.jpg",
 			"estrategias-para-fortalecer-el-liderazgo-efectivo-2.jpg",
@@ -555,7 +555,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnica-control-riesgos-electricos-nfpa-70e": {
 		id: 1,
 		slug: "tecnica-control-riesgos-electricos-nfpa-70e",
-		title: "Técnica de control de riesgos eléctricos NFPA 70E",
+		title: "TÉCNICA DE CONTROL DE RIESGOS ELÉCTRICOS NFPA 70E",
 		images: [
 			"tecnica-control-riesgos-electricos-nfpa-70e.jpg",
 			"tecnica-control-riesgos-electricos-nfpa-70e-2.jpg",
@@ -605,7 +605,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-basicas-operaciones-motosierra": {
 		id: 2,
 		slug: "tecnicas-basicas-operaciones-motosierra",
-		title: "Técnicas Básicas de Operaciones con Motosierra",
+		title: "TÉCNICAS BÁSICAS DE OPERACIONES CON MOTOSIERRA",
 		images: ["tecnicas-basicas-operaciones-motosierra.jpg"],
 		competencies: [
 			"Uso correcto de la motosierra",
@@ -649,7 +649,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-rescate-altura": {
 		id: 3,
 		slug: "tecnicas-rescate-altura",
-		title: "Técnicas para el Rescate en Altura",
+		title: "TÉCNICAS PARA EL RESCATE EN ALTURA",
 		images: [
 			"tecnicas-rescate-altura.jpg",
 			"tecnicas-rescate-altura-2.jpg",
@@ -694,7 +694,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-altura": {
 		id: 4,
 		slug: "tecnicas-trabajo-altura",
-		title: "Técnicas para el Trabajo en Altura",
+		title: "TÉCNICAS PARA EL TRABAJO EN ALTURA",
 		images: [
 			"tecnicas-trabajo-altura.jpg",
 			"tecnicas-trabajo-altura-2.jpg",
@@ -747,7 +747,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-espacios-confinados": {
 		id: 5,
 		slug: "tecnicas-trabajo-espacios-confinados",
-		title: "Técnicas para el Trabajo en Espacios Confinados",
+		title: "TÉCNICAS PARA EL TRABAJO EN ESPACIOS CONFINADOS",
 		images: [
 			"tecnicas-trabajo-espacios-confinados.jpg",
 			"tecnicas-trabajo-espacios-confinados-2.jpg",
@@ -792,7 +792,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-postacion": {
 		id: 6,
 		slug: "tecnicas-trabajo-postacion",
-		title: "Técnicas para el Trabajo en Postación",
+		title: "TÉCNICAS PARA EL TRABAJO EN POSTACIÓN",
 		images: [
 			"tecnicas-trabajo-postacion.jpg",
 			"tecnicas-trabajo-postacion-2.jpg",
@@ -839,7 +839,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-montaje-andamios": {
 		id: 7,
 		slug: "tecnicas-montaje-andamios",
-		title: "Técnicas para Montaje de Andamios",
+		title: "TÉCNICAS PARA MONTAJE DE ANDAMIOS",
 		images: [
 			"tecnicas-montaje-andamios.jpg",
 			"tecnicas-montaje-andamios-2.jpg",
@@ -888,7 +888,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-riegos-electricos": {
 		id: 8,
 		slug: "tecnicas-trabajo-riegos-electricos",
-		title: "Técnicas para Trabajo con Riegos Eléctricos",
+		title: "TÉCNICAS PARA TRABAJO CON RIEGOS ELÉCTRICOS",
 		images: ["tecnicas-trabajo-riegos-electricos.jpg"],
 		competencies: [
 			"Identificar el peligro",
@@ -932,7 +932,7 @@ export const courses: Record<string, OtecCourse> = {
 	"tecnicas-trabajo-techumbre-azoteas": {
 		id: 9,
 		slug: "tecnicas-trabajo-techumbre-azoteas",
-		title: "Técnicas Para el Trabajo en Techumbre y Azoteas",
+		title: "TÉCNICAS PARA EL TRABAJO EN TECHUMBRE Y AZOTEAS",
 		images: ["tecnicas-trabajo-techumbre-azoteas.jpg"],
 		competencies: [
 			"Aplicar técnicas de trabajo seguro en techumbres y azoteas",
@@ -975,7 +975,7 @@ export const courses: Record<string, OtecCourse> = {
 	"uso-manejo-extintores": {
 		id: 10,
 		slug: "uso-manejo-extintores",
-		title: "Uso y Manejo de Extintores",
+		title: "USO Y MANEJO DE EXTINTORES",
 		images: ["uso-manejo-extintores.jpg"],
 		competencies: [
 			"Actuar de manera segura y efectiva ante situaciones de incendio",
